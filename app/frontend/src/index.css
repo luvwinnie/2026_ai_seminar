@@ -1,0 +1,10 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* MUI の CssBaseline がベースのリセット・タイポグラフィを担う。
+   ここでは全体の高さ確保のみ行う。 */

@@ -1,0 +1,586 @@
+{
+  "protocol": {
+    "tool_count": 28,
+    "ontology_tools": [
+      "get_ontology_definition",
+      "resolve_ontology_entity",
+      "get_ontology_object",
+      "traverse_ontology_relation",
+      "query_quality_ontology",
+      "preview_capa_update"
+    ]
+  },
+  "question": "a61nxについて、報告件数・記録上の不適合率・既知の損失額・未クローズCAPA件数を調べてください。工場全体の不良率と呼んでよいかも説明してください。データの登録や更新は不要です。",
+  "expected_metrics": {
+    "report_count": 4,
+    "defect_units": 32,
+    "recorded_production_units": 265,
+    "recorded_defect_rate": 0.12075471698113208,
+    "known_loss_jpy": "841072",
+    "missing_loss_reports": 0,
+    "invalid_quantity_reports": 0,
+    "open_capa_count": 0,
+    "overdue_capa_count": 0
+  },
+  "checks": {
+    "entity_resolution_tool": true,
+    "quality_query_tool": true,
+    "no_error": true,
+    "answer_nonempty": true
+  },
+  "answer": "a61nxの集計結果は以下の通りです。\n\n* **報告件数**: 4件\n* **記録上の不適合率**: 約12.08%\n* **既知の損失額**: 841,072 JPY\n* **未クローズCAPA件数**: 0件\n\n「工場全体の不良率」とは呼べません。この数値はあくまで当該機械の報告書に記録された加工数と不適合数の比率（recorded_defect_rate）であり、工場全体の全製品の不良率を反映したものではないためです。",
+  "events": [
+    {
+      "type": "tool",
+      "name": "defect-reports_resolve_ontology_entity",
+      "status": "pending",
+      "title": null
+    },
+    {
+      "type": "tool",
+      "name": "defect-reports_resolve_ontology_entity",
+      "status": "running",
+      "title": null
+    },
+    {
+      "type": "tool",
+      "name": "defect-reports_resolve_ontology_entity",
+      "status": "completed",
+      "title": ""
+    },
+    {
+      "type": "tool",
+      "name": "defect-reports_query_quality_ontology",
+      "status": "pending",
+      "title": null
+    },
+    {
+      "type": "tool",
+      "name": "defect-reports_query_quality_ontology",
+      "status": "running",
+      "title": null
+    },
+    {
+      "type": "tool",
+      "name": "defect-reports_query_quality_ontology",
+      "status": "completed",
+      "title": ""
+    },
+    {
+      "type": "token",
+      "text": "a"
+    },
+    {
+      "type": "token",
+      "text": "6"
+    },
+    {
+      "type": "token",
+      "text": "1"
+    },
+    {
+      "type": "token",
+      "text": "nx"
+    },
+    {
+      "type": "token",
+      "text": "の"
+    },
+    {
+      "type": "token",
+      "text": "集"
+    },
+    {
+      "type": "token",
+      "text": "計"
+    },
+    {
+      "type": "token",
+      "text": "結果"
+    },
+    {
+      "type": "token",
+      "text": "は"
+    },
+    {
+      "type": "token",
+      "text": "以下の"
+    },
+    {
+      "type": "token",
+      "text": "通り"
+    },
+    {
+      "type": "token",
+      "text": "です"
+    },
+    {
+      "type": "token",
+      "text": "。"
+    },
+    {
+      "type": "token",
+      "text": "\n\n"
+    },
+    {
+      "type": "token",
+      "text": "*"
+    },
+    {
+      "type": "token",
+      "text": " **"
+    },
+    {
+      "type": "token",
+      "text": "報告"
+    },
+    {
+      "type": "token",
+      "text": "件"
+    },
+    {
+      "type": "token",
+      "text": "数"
+    },
+    {
+      "type": "token",
+      "text": "**:"
+    },
+    {
+      "type": "token",
+      "text": " "
+    },
+    {
+      "type": "token",
+      "text": "4"
+    },
+    {
+      "type": "token",
+      "text": "件"
+    },
+    {
+      "type": "token",
+      "text": "\n"
+    },
+    {
+      "type": "token",
+      "text": "*"
+    },
+    {
+      "type": "token",
+      "text": " **"
+    },
+    {
+      "type": "token",
+      "text": "記録"
+    },
+    {
+      "type": "token",
+      "text": "上の"
+    },
+    {
+      "type": "token",
+      "text": "不"
+    },
+    {
+      "type": "token",
+      "text": "適合"
+    },
+    {
+      "type": "token",
+      "text": "率"
+    },
+    {
+      "type": "token",
+      "text": "**:"
+    },
+    {
+      "type": "token",
+      "text": " 約"
+    },
+    {
+      "type": "token",
+      "text": "1"
+    },
+    {
+      "type": "token",
+      "text": "2"
+    },
+    {
+      "type": "token",
+      "text": "."
+    },
+    {
+      "type": "token",
+      "text": "0"
+    },
+    {
+      "type": "token",
+      "text": "8"
+    },
+    {
+      "type": "token",
+      "text": "%"
+    },
+    {
+      "type": "token",
+      "text": "\n"
+    },
+    {
+      "type": "token",
+      "text": "*"
+    },
+    {
+      "type": "token",
+      "text": " **"
+    },
+    {
+      "type": "token",
+      "text": "既"
+    },
+    {
+      "type": "token",
+      "text": "知"
+    },
+    {
+      "type": "token",
+      "text": "の"
+    },
+    {
+      "type": "token",
+      "text": "損失"
+    },
+    {
+      "type": "token",
+      "text": "額"
+    },
+    {
+      "type": "token",
+      "text": "**:"
+    },
+    {
+      "type": "token",
+      "text": " "
+    },
+    {
+      "type": "token",
+      "text": "8"
+    },
+    {
+      "type": "token",
+      "text": "4"
+    },
+    {
+      "type": "token",
+      "text": "1"
+    },
+    {
+      "type": "token",
+      "text": ","
+    },
+    {
+      "type": "token",
+      "text": "0"
+    },
+    {
+      "type": "token",
+      "text": "7"
+    },
+    {
+      "type": "token",
+      "text": "2"
+    },
+    {
+      "type": "token",
+      "text": " J"
+    },
+    {
+      "type": "token",
+      "text": "PY"
+    },
+    {
+      "type": "token",
+      "text": "\n"
+    },
+    {
+      "type": "token",
+      "text": "*"
+    },
+    {
+      "type": "token",
+      "text": " **"
+    },
+    {
+      "type": "token",
+      "text": "未"
+    },
+    {
+      "type": "token",
+      "text": "ク"
+    },
+    {
+      "type": "token",
+      "text": "ローズ"
+    },
+    {
+      "type": "token",
+      "text": "CAP"
+    },
+    {
+      "type": "token",
+      "text": "A"
+    },
+    {
+      "type": "token",
+      "text": "件"
+    },
+    {
+      "type": "token",
+      "text": "数"
+    },
+    {
+      "type": "token",
+      "text": "**:"
+    },
+    {
+      "type": "token",
+      "text": " "
+    },
+    {
+      "type": "token",
+      "text": "0"
+    },
+    {
+      "type": "token",
+      "text": "件"
+    },
+    {
+      "type": "token",
+      "text": "\n\n"
+    },
+    {
+      "type": "token",
+      "text": "「"
+    },
+    {
+      "type": "token",
+      "text": "工場"
+    },
+    {
+      "type": "token",
+      "text": "全体の"
+    },
+    {
+      "type": "token",
+      "text": "不良"
+    },
+    {
+      "type": "token",
+      "text": "率"
+    },
+    {
+      "type": "token",
+      "text": "」"
+    },
+    {
+      "type": "token",
+      "text": "とは"
+    },
+    {
+      "type": "token",
+      "text": "呼"
+    },
+    {
+      "type": "token",
+      "text": "べ"
+    },
+    {
+      "type": "token",
+      "text": "ません"
+    },
+    {
+      "type": "token",
+      "text": "。"
+    },
+    {
+      "type": "token",
+      "text": "この"
+    },
+    {
+      "type": "token",
+      "text": "数値"
+    },
+    {
+      "type": "token",
+      "text": "は"
+    },
+    {
+      "type": "token",
+      "text": "あくまで"
+    },
+    {
+      "type": "token",
+      "text": "当該"
+    },
+    {
+      "type": "token",
+      "text": "機械"
+    },
+    {
+      "type": "token",
+      "text": "の"
+    },
+    {
+      "type": "token",
+      "text": "報告"
+    },
+    {
+      "type": "token",
+      "text": "書"
+    },
+    {
+      "type": "token",
+      "text": "に"
+    },
+    {
+      "type": "token",
+      "text": "記録"
+    },
+    {
+      "type": "token",
+      "text": "された"
+    },
+    {
+      "type": "token",
+      "text": "加工"
+    },
+    {
+      "type": "token",
+      "text": "数"
+    },
+    {
+      "type": "token",
+      "text": "と"
+    },
+    {
+      "type": "token",
+      "text": "不"
+    },
+    {
+      "type": "token",
+      "text": "適合"
+    },
+    {
+      "type": "token",
+      "text": "数の"
+    },
+    {
+      "type": "token",
+      "text": "比"
+    },
+    {
+      "type": "token",
+      "text": "率"
+    },
+    {
+      "type": "token",
+      "text": "（"
+    },
+    {
+      "type": "token",
+      "text": "recorded"
+    },
+    {
+      "type": "token",
+      "text": "_"
+    },
+    {
+      "type": "token",
+      "text": "defect"
+    },
+    {
+      "type": "token",
+      "text": "_"
+    },
+    {
+      "type": "token",
+      "text": "rate"
+    },
+    {
+      "type": "token",
+      "text": "）"
+    },
+    {
+      "type": "token",
+      "text": "であり"
+    },
+    {
+      "type": "token",
+      "text": "、"
+    },
+    {
+      "type": "token",
+      "text": "工場"
+    },
+    {
+      "type": "token",
+      "text": "全体の"
+    },
+    {
+      "type": "token",
+      "text": "全"
+    },
+    {
+      "type": "token",
+      "text": "製品"
+    },
+    {
+      "type": "token",
+      "text": "の"
+    },
+    {
+      "type": "token",
+      "text": "不良"
+    },
+    {
+      "type": "token",
+      "text": "率"
+    },
+    {
+      "type": "token",
+      "text": "を"
+    },
+    {
+      "type": "token",
+      "text": "反映"
+    },
+    {
+      "type": "token",
+      "text": "した"
+    },
+    {
+      "type": "token",
+      "text": "もので"
+    },
+    {
+      "type": "token",
+      "text": "はない"
+    },
+    {
+      "type": "token",
+      "text": "ため"
+    },
+    {
+      "type": "token",
+      "text": "です"
+    },
+    {
+      "type": "token",
+      "text": "。"
+    },
+    {
+      "type": "done",
+      "trace_id": "321d7447-0158-48f1-822e-786e8b8ee937"
+    }
+  ]
+}

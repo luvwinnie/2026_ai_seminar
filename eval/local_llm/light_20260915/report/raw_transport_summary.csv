@@ -1,0 +1,6 @@
+﻿model,track,suite,correct,n,median_s
+qwen3.8:27b-mtp-q4_K_M,raw_chatml_json_adapter,rag,11,12,3.685
+qwen3.8:27b-mtp-q4_K_M,raw_chatml_json_adapter,ontology_context,10,10,7.962
+qwen3.8:27b-mtp-q4_K_M,raw_chatml_json_adapter,tool,8,8,4.379
+qwen3.8:27b-mtp-q4_K_M,raw_chatml_json_adapter,ontology,8,10,9.069
+qwen3.8:27b-mtp-q4_K_M,raw_chatml_json_adapter,paraphrase,9,10,4.222

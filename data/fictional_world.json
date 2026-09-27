@@ -1,0 +1,323 @@
+{
+  "company": {
+    "name": "株式会社霧沢精機",
+    "plant": "霧沢工場",
+    "reading": "きりさわせいき",
+    "description": "架空の山あいの都市・霧沢市(きりさわし)に本社と工場を構える従業員約120名の中規模機械加工メーカー。産業機械・重電・航空機器向けの精密部品加工を手がける。"
+  },
+  "machine_makers": [
+    {
+      "name": "ヤマザキマザック株式会社",
+      "reading": "ヤマザキマザック"
+    },
+    {
+      "name": "オークマ株式会社",
+      "reading": "オークマ"
+    },
+    {
+      "name": "中村留精密工業株式会社",
+      "reading": "なかむらとめせいみつこうぎょう"
+    },
+    {
+      "name": "株式会社TAKISAWA",
+      "reading": "タキサワ"
+    },
+    {
+      "name": "DMG森精機株式会社",
+      "reading": "ディーエムジーもりせいき"
+    },
+    {
+      "name": "株式会社松浦機械製作所",
+      "reading": "まつうらきかいせいさくしょ"
+    },
+    {
+      "name": "株式会社牧野フライス製作所",
+      "reading": "まきのフライスせいさくしょ"
+    },
+    {
+      "name": "株式会社山崎技研",
+      "reading": "やまさきぎけん"
+    }
+  ],
+  "machine_mapping": {
+    "LB3000": "QUICK TURN 250MSY",
+    "CMX800": "GENOS M560-V",
+    "CMX1100-4": "GENOS M660-V",
+    "MU8000-1": "VARIAXIS i-800 NEO",
+    "2MW": "TSL-550",
+    "VU65-2": "MX-520",
+    "NLX2500": "WT-150II",
+    "2VB": "YZ-8WR",
+    "汎用フライス": "汎用フライス",
+    "HG800-1": "a61nx",
+    "DMU80evo-R1": "DMU 65 monoBLOCK",
+    "VTM-100": "MEGATURN NEXUS 900"
+  },
+  "machine_catalog": [
+    {
+      "model": "QUICK TURN 250MSY",
+      "maker": "ヤマザキマザック株式会社",
+      "kind": "CNC旋盤(ミーリング・Y軸・第2主軸付)",
+      "source_url": "https://www.mazak.com/jp-ja/products/quick-turn/"
+    },
+    {
+      "model": "WT-150II",
+      "maker": "中村留精密工業株式会社",
+      "kind": "複合精密CNC旋盤(2主軸2タレット)",
+      "source_url": "https://www.nakamura-tome.co.jp/products/wt-150/"
+    },
+    {
+      "model": "MEGATURN NEXUS 900",
+      "maker": "ヤマザキマザック株式会社",
+      "kind": "立形CNC旋盤",
+      "source_url": "https://www.mazak.com/jp-ja/products/mega-turn/"
+    },
+    {
+      "model": "TSL-550",
+      "maker": "株式会社TAKISAWA",
+      "kind": "汎用旋盤",
+      "source_url": "https://www.takisawa.co.jp/product/fs/tsltal/"
+    },
+    {
+      "model": "GENOS M560-V",
+      "maker": "オークマ株式会社",
+      "kind": "立形マシニングセンタ",
+      "source_url": "https://www.okuma.co.jp/product/genos_m560v/"
+    },
+    {
+      "model": "GENOS M660-V",
+      "maker": "オークマ株式会社",
+      "kind": "立形マシニングセンタ(大型)",
+      "source_url": "https://www.okuma.co.jp/product/genos_m/"
+    },
+    {
+      "model": "VARIAXIS i-800 NEO",
+      "maker": "ヤマザキマザック株式会社",
+      "kind": "同時5軸制御マシニングセンタ",
+      "source_url": "https://www.mazak.com/jp-ja/products/variaxis-i-neo/"
+    },
+    {
+      "model": "MX-520",
+      "maker": "株式会社松浦機械製作所",
+      "kind": "5軸制御立形マシニングセンタ",
+      "source_url": "https://www.matsuura.co.jp/japan/products/mx-series/mx-520"
+    },
+    {
+      "model": "DMU 65 monoBLOCK",
+      "maker": "DMG森精機株式会社",
+      "kind": "5軸制御マシニングセンタ",
+      "source_url": "https://www.directindustry.com/prod/dmg-mori/product-5973-2579503.html"
+    },
+    {
+      "model": "a61nx",
+      "maker": "株式会社牧野フライス製作所",
+      "kind": "横形マシニングセンタ",
+      "source_url": "https://info.makino.co.jp/takeoff/lineup/a.html"
+    },
+    {
+      "model": "YZ-8WR",
+      "maker": "株式会社山崎技研",
+      "kind": "汎用タイプ立形NCフライス盤",
+      "source_url": "https://www.yamasakigiken.co.jp/products/general-milling/"
+    },
+    {
+      "model": "汎用フライス",
+      "maker": "株式会社山崎技研",
+      "kind": "汎用フライス盤(一般名詞のためそのまま)",
+      "source_url": "https://www.yamasakigiken.co.jp/products/general-milling/"
+    }
+  ],
+  "customers": {
+    "A社": "翠峰重工業",
+    "B社": "六花電機工業",
+    "C社": "蒼井田機器工業",
+    "D社": "遠原精密工業",
+    "E社": "汐峰造機",
+    "F社": "楠里ポンプ工業",
+    "G社": "深名電子工業",
+    "H社": "綿鍋機工",
+    "I社": "鷹森航空部品",
+    "J社": "霞岡バルブ工業"
+  },
+  "verification": [
+    {
+      "name": "月白精機",
+      "query": "月白精機 株式会社",
+      "result": "類似あり(月白工業=群馬の建設業、株式会社月白=東京のブランディング会社)→混同回避のため自社名候補として不採用、霧沢精機に変更"
+    },
+    {
+      "name": "霧沢精機",
+      "query": "霧沢精機",
+      "result": "実在せず(神沢機械・ムサシノ精機等はいずれも別名称)→自社名として採用"
+    },
+    {
+      "name": "霧沢市",
+      "query": "霧沢市 日本",
+      "result": "実在せず(霧島市・米沢市は別名称。霧沢は小地名にあるが市としては不在)→架空地名として採用"
+    },
+    {
+      "name": "QUICK TURN 250MSY",
+      "query": "ヤマザキマザック QUICK TURN 250MSY CNC旋盤 製品",
+      "result": "実在確認(ヤマザキマザックの現行CNC旋盤QUICK TURNシリーズのモデルであることを確認)→LB3000の代替に採用"
+    },
+    {
+      "name": "WT-150II",
+      "query": "中村留精密工業 複合加工機 CNC旋盤 現行モデル WT-150",
+      "result": "実在確認(中村留精密工業の現行複合精密CNC旋盤。後継WT-150Vが2026年7月発表であることも確認)→NLX2500の代替に採用"
+    },
+    {
+      "name": "MEGATURN NEXUS 900",
+      "query": "マザック MEGATURN NEXUS 700 立形CNC旋盤",
+      "result": "実在確認(ヤマザキマザックの立形CNC旋盤MEGA TURNシリーズの現行モデル。最大振りφ940mm等の仕様を確認)→VTM-100の代替に採用"
+    },
+    {
+      "name": "TSL-550",
+      "query": "汎用旋盤 現行モデル 大日金属工業 DLG 滝澤 TSL",
+      "result": "実在確認(株式会社TAKISAWAの汎用旋盤TSL-Seriesとして公式サイトに現行掲載)→2MWの代替に採用"
+    },
+    {
+      "name": "GENOS M560-V",
+      "query": "オークマ GENOS M560-V 立形マシニングセンタ",
+      "result": "実在確認(オークマの現行立形マシニングセンタGENOS Mシリーズのモデル)→CMX800の代替に採用"
+    },
+    {
+      "name": "GENOS M660-V",
+      "query": "オークマ GENOS M560-V 立形マシニングセンタ",
+      "result": "実在確認(同検索でGENOS MシリーズがM460-VE/M560-V/M660-Vの3機種構成であることを確認)→CMX1100-4の代替に採用"
+    },
+    {
+      "name": "VARIAXIS i-800 NEO",
+      "query": "マザック VARIAXIS i-800 NEO 5軸マシニングセンタ",
+      "result": "実在確認(ヤマザキマザックの現行同時5軸制御マシニングセンタ、MAZATROL SmoothAi搭載)→MU8000-1の代替に採用"
+    },
+    {
+      "name": "MX-520",
+      "query": "松浦機械製作所 MX-520 5軸マシニングセンタ",
+      "result": "実在確認(松浦機械製作所の現行5軸制御立形マシニングセンタMXシリーズのモデル)→VU65-2の代替に採用"
+    },
+    {
+      "name": "DMU 65 monoBLOCK",
+      "query": "DMG森精機 DMU 65 monoBLOCK 5軸マシニングセンタ 製品",
+      "result": "実在確認(DMG森精機の5軸制御マシニングセンタDMU monoBLOCKシリーズのモデル)→DMU80evo-R1の代替に採用(禁止型番DMU80evo-R1とは別モデル)"
+    },
+    {
+      "name": "a61nx",
+      "query": "牧野フライス製作所 a61nx 横形マシニングセンタ",
+      "result": "実在確認(牧野フライス製作所の現行横形マシニングセンタa51nx/a61nx/a81nxシリーズのモデル)→HG800-1の代替に採用"
+    },
+    {
+      "name": "YZ-8WR",
+      "query": "山崎技研 YZ-8 フライス盤 現行",
+      "result": "実在確認(山崎技研の汎用タイプフライス盤YZ-8WR。公式サイトに汎用タイプ立形NCフライス盤として現行掲載)→2VBの代替に採用"
+    },
+    {
+      "name": "大峰重工業",
+      "query": "大峰重工業 株式会社",
+      "result": "類似あり(大峰工業=切粉コンベヤメーカー、大峰産業=大阪の商社)→回避、翠峰重工業に変更"
+    },
+    {
+      "name": "翠峰重工業",
+      "query": "翠峰重工業 株式会社",
+      "result": "実在せず(翠峰通産=東京の商社は別業種・別名称)→A社として採用"
+    },
+    {
+      "name": "霜月電機製作所",
+      "query": "霜月電機製作所",
+      "result": "酷似あり(指月電機製作所=上場企業、一字違い)→回避、六花電機工業に変更"
+    },
+    {
+      "name": "六花電機工業",
+      "query": "六花電機工業",
+      "result": "実在せず(六幸電気工業=千葉の電気工事業、株式会社六花はいずれも別名称)→B社として採用"
+    },
+    {
+      "name": "蒼井田機器工業",
+      "query": "蒼井田機器工業",
+      "result": "実在せず(蒼井設備=空調設備業は別名称)→C社として採用"
+    },
+    {
+      "name": "遠原精密工業",
+      "query": "遠原精密工業",
+      "result": "実在せず(遠州工業・遠田工業・荏原精密はいずれも別名称)→D社として採用"
+    },
+    {
+      "name": "汐峰造機",
+      "query": "汐峰造機 株式会社",
+      "result": "実在せず→E社として採用"
+    },
+    {
+      "name": "楠里ポンプ工業",
+      "query": "楠里ポンプ工業",
+      "result": "実在せず(中村ポンプ工業等は別名称)→F社として採用"
+    },
+    {
+      "name": "深名電子工業",
+      "query": "深名電子工業",
+      "result": "実在せず(深田電機・深見電機は別名称)→G社として採用"
+    },
+    {
+      "name": "綿鍋機工",
+      "query": "綿鍋機工",
+      "result": "実在せず(綿鍋は全国約60人の希少姓のみ、同名企業なし)→H社として採用"
+    },
+    {
+      "name": "鷲塚航空部品",
+      "query": "鷲塚航空部品 株式会社",
+      "result": "長野県に同名の航空機部品企業が実在する可能性を示す検索結果→回避、鷹森航空部品に変更"
+    },
+    {
+      "name": "鷹森航空部品",
+      "query": "鷹森航空部品 株式会社",
+      "result": "実在せず→I社として採用"
+    },
+    {
+      "name": "霞岡バルブ工業",
+      "query": "霞岡バルブ工業",
+      "result": "実在せず(岡部バルブ工業・岡野バルブ製造は別名称)→J社として採用"
+    }
+  ],
+  "id_scheme": {
+    "defect_report": "KZ25-XXXX(KZ=霧沢、25=2025年度、4桁連番)。旧DR-XXXXは実データ由来のため全面置換(2026-09-05)",
+    "part_number": "KRS-{ライン}{2桁}-{4桁}-{A-E}",
+    "capa": "CA-XXXX"
+  },
+  "vocabulary": {
+    "note": "現象・要因・工程の語彙は2026-09-09に全面改名(2025年実プロジェクト由来の語を排除)",
+    "phenomena": [
+      "表面キズ",
+      "寸法公差外れ",
+      "バリ残り",
+      "穴位置ずれ",
+      "加工段差",
+      "面粗さ不良",
+      "NCプログラム誤り",
+      "ひずみ変形",
+      "工具破損",
+      "刻印・表示誤り",
+      "角部欠け",
+      "取付方向誤り"
+    ],
+    "factors": [
+      "初品確認漏れ",
+      "加工条件の理解不足",
+      "習熟不足",
+      "標準手順の省略",
+      "工具寿命超過",
+      "設備不調",
+      "NCデータ設定誤り",
+      "素材欠陥",
+      "図面の読み違い",
+      "変更連絡の不達"
+    ],
+    "processes": [
+      "旋削",
+      "フライス加工",
+      "マシニング",
+      "研削",
+      "溶接",
+      "組付",
+      "最終検査",
+      "仕上げ"
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+# DefectReport AI — セミナー完成イメージアプリ
+# 起動: (app/ で) docker compose up --build
+#   フロントエンド: http://localhost:5173
+#   バックエンドAPI: http://localhost:8000
+services:
+  # アプリDB(PostgreSQL)。AIチャット履歴を含む全データの正本。
+  # ローカル(Docker なし)開発では DATABASE_URL 未設定 → SQLite にフォールバックする。
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_DB=defectreport
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d defectreport"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  backend:
+    build: ./backend
+    ports:
+      # ホスト側ポートは BACKEND_PORT で変更可(既定 8000)
+      - "${BACKEND_PORT:-8000}:8000"
+    env_file:
+      # OPENROUTER_API_KEY / ANTHROPIC_API_KEY 等(example_app/.env または app/.env)
+      - path: ../.env
+        required: false
+      - path: ./.env
+        required: false
+    environment:
+      - DATABASE_URL=postgresql+psycopg://app:app@db:5432/defectreport
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - ANTHROPIC_MODEL=${ANTHROPIC_MODEL:-claude-sonnet-5}
+      # チャット・抽出・4M の生成エンジン: OpenCode サーバー(チャットは OpenCode 専用。
+      # 未設定時は抽出/4M のみ ANTHROPIC_API_KEY があれば Anthropic に縮退)
+      - OPENCODE_URL=${OPENCODE_URL:-http://opencode:4096}
+      - OPENCODE_MODEL=${OPENCODE_MODEL:-anthropic/claude-sonnet-4.5}
+      # Langfuse トレーシング(未設定なら自動で無効化される)
+      - LANGFUSE_HOST=${LANGFUSE_HOST:-http://langfuse:3000}
+      - LANGFUSE_PUBLIC_KEY=${LANGFUSE_PUBLIC_KEY:-pk-lf-defectreport-seminar}
+      - LANGFUSE_SECRET_KEY=${LANGFUSE_SECRET_KEY:-sk-lf-defectreport-seminar}
+      # 報告書トリアージ(判断モデル Jev)。JEV_ENABLED=1 で有効。キーは .env の OPENROUTER_API_KEY か TYPESAFE_API_KEY
+      - JEV_ENABLED=${JEV_ENABLED:-0}
+      - DECISION_MODEL=${DECISION_MODEL:-}
+      - TYPESAFE_API_KEY=${TYPESAFE_API_KEY:-}
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      # SQLite / Chroma の永続化
+      - backend-data:/app/data
+      # 模擬データ CSV(初回起動時の自動シードに使用)
+      - ../data:/seed-data:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  opencode:
+    build: ./opencode
+    env_file:
+      - path: ../.env
+        required: false
+      - path: ./.env
+        required: false
+    environment:
+      - OPENCODE_MODEL=${OPENCODE_MODEL:-anthropic/claude-sonnet-4.5}
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:4096/global/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  frontend:
+    build: ./frontend
+    ports:
+      # ホスト側ポートは FRONTEND_PORT で変更可(既定 5173)
+      - "${FRONTEND_PORT:-5173}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  # --- LLM可観測性: Langfuse(1問ごとのトレースと評価を記録する) -------------
+  # チャット1件=1トレース(RAG検索→OpenCode生成→ツール実行)+ 👍/👎 をスコアとして記録。
+  # UI: http://localhost:3390(初期ユーザー admin@example.com / langfuse-admin)
+  langfuse-db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=langfuse
+      - POSTGRES_PASSWORD=langfuse
+      - POSTGRES_DB=langfuse
+    volumes:
+      - langfuse-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U langfuse -d langfuse"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  langfuse:
+    image: langfuse/langfuse:2
+    ports:
+      - "${LANGFUSE_PORT:-3390}:3000"
+    environment:
+      - DATABASE_URL=postgresql://langfuse:langfuse@langfuse-db:5432/langfuse
+      - NEXTAUTH_URL=http://localhost:${LANGFUSE_PORT:-3390}
+      - NEXTAUTH_SECRET=defectreport-seminar-secret
+      - SALT=defectreport-seminar-salt
+      - TELEMETRY_ENABLED=false
+      # ヘッドレス初期化: 組織/プロジェクト/APIキーを固定で自動作成(セミナーで再現可能に)
+      - LANGFUSE_INIT_ORG_ID=kirisawa
+      - LANGFUSE_INIT_ORG_NAME=霧沢精機
+      - LANGFUSE_INIT_PROJECT_ID=defectreport
+      - LANGFUSE_INIT_PROJECT_NAME=DefectReport AI
+      - LANGFUSE_INIT_PROJECT_PUBLIC_KEY=pk-lf-defectreport-seminar
+      - LANGFUSE_INIT_PROJECT_SECRET_KEY=sk-lf-defectreport-seminar
+      - LANGFUSE_INIT_USER_EMAIL=admin@example.com
+      - LANGFUSE_INIT_USER_NAME=admin
+      - LANGFUSE_INIT_USER_PASSWORD=langfuse-admin
+    depends_on:
+      langfuse-db:
+        condition: service_healthy
+
+volumes:
+  backend-data:
+  db-data:
+  langfuse-db-data:

@@ -1,0 +1,943 @@
+{
+  "version": "1.0",
+  "source_sha256": "421c524a2481e483afae4dafade7ba137aea0cffde5b861467498346fb5cf48d",
+  "fixture_reports": [
+    {
+      "defect_id": "KZ25-9001",
+      "occurrence_date": "2026-01-01",
+      "customer": "BENCH顧客",
+      "process": "BENCH工程",
+      "machine_name": "BENCH設備A",
+      "operator_name": "BENCH作業者",
+      "part_number": "BENCH-P1",
+      "part_name": "評価専用部品",
+      "production_count": 100,
+      "defect_count": 10,
+      "total_cost": 100,
+      "defect_description": "評価専用の不適合報告。実業務データではない。",
+      "phenomenon": "評価傷",
+      "severity": "high",
+      "status": "open"
+    },
+    {
+      "defect_id": "KZ25-9002",
+      "occurrence_date": "2026-01-02",
+      "customer": "BENCH顧客",
+      "process": "BENCH工程",
+      "machine_name": "BENCH設備A",
+      "operator_name": "BENCH作業者",
+      "part_number": "BENCH-P1",
+      "part_name": "評価専用部品",
+      "production_count": 900,
+      "defect_count": 9,
+      "total_cost": 200,
+      "defect_description": "評価専用の不適合報告。実業務データではない。",
+      "phenomenon": "評価傷",
+      "severity": "high",
+      "status": "open"
+    },
+    {
+      "defect_id": "KZ25-9003",
+      "occurrence_date": "2026-01-03",
+      "customer": "BENCH顧客",
+      "process": "BENCH工程",
+      "machine_name": "BENCH設備B",
+      "operator_name": "BENCH作業者",
+      "part_number": "BENCH-P1",
+      "part_name": "評価専用部品",
+      "production_count": 0,
+      "defect_count": 0,
+      "total_cost": null,
+      "defect_description": "評価専用の不適合報告。実業務データではない。",
+      "phenomenon": "評価傷",
+      "severity": "high",
+      "status": "open"
+    }
+  ],
+  "fixture_capas": [
+    {
+      "capa_id": "CA-BENCH-1",
+      "defect_id": "KZ25-9001",
+      "title": "評価専用処置1",
+      "status": "open",
+      "action_type": "corrective",
+      "effect_note": null
+    },
+    {
+      "capa_id": "CA-BENCH-2",
+      "defect_id": "KZ25-9001",
+      "title": "評価専用処置2",
+      "status": "in_progress",
+      "action_type": "corrective",
+      "effect_note": null
+    },
+    {
+      "capa_id": "CA-BENCH-3",
+      "defect_id": "KZ25-9002",
+      "title": "評価専用処置3",
+      "status": "closed",
+      "action_type": "corrective",
+      "effect_note": "再検査済み"
+    }
+  ],
+  "cases": [
+    {
+      "id": "R01",
+      "suite": "rag",
+      "question": "オイル溝を再度つかみ直して削ったつなぎ目に0.191mmの段が残り、手仕上げでも直せなかった事例を探し、報告書ID・機械名・工程名を答えてください。",
+      "output_keys": [
+        "report_id",
+        "machine_name",
+        "process"
+      ],
+      "expected": {
+        "report_id": "KZ25-0117",
+        "machine_name": "a61nx",
+        "process": "マシニング"
+      },
+      "context": [
+        {
+          "defect_id": "KZ25-0091",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "仕上げ",
+          "defect_description": "位置決めダボ穴の再チャック後の加工つなぎ目に約0.044mmの段差が発生し、手仕上げでも許容内に収まらなかった。",
+          "cause": "対称形状の左右を取り違えて読み、反転した位置に加工した。",
+          "countermeasure": "対称形状部品は加工前に治具上でマーキング照合する手順を追加する。"
+        },
+        {
+          "defect_id": "KZ25-0036",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "仕上げ",
+          "defect_description": "チェーンテンショナのオイル溝底に長さ約21mmの線状キズ。搬送トレイ上で隣接品と接触した痕跡があった。",
+          "cause": "対称形状の左右を取り違えて読み、反転した位置に加工した。",
+          "countermeasure": "対称形状部品は加工前に治具上でマーキング照合する手順を追加する。"
+        },
+        {
+          "defect_id": "KZ25-0037",
+          "machine_name": "YZ-8WR",
+          "process": "仕上げ",
+          "defect_description": "洗浄後の目視検査でチェーンテンショナのOリング溝に長さ7mmの円弧状の擦り傷を確認。チャック爪の当たり面に切粉が噛み込んでいた。",
+          "cause": "設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。",
+          "countermeasure": "設計変更は変更通知書の現場受領サインをもって発効とするルールに改める。"
+        },
+        {
+          "defect_id": "KZ25-0117",
+          "machine_name": "a61nx",
+          "process": "マシニング",
+          "defect_description": "オイル溝底の再チャック後の加工つなぎ目に約0.191mmの段差が発生し、手仕上げでも許容内に収まらなかった。",
+          "cause": "主軸のクランプ圧低下により加工中に微小なワークずれが生じていた。",
+          "countermeasure": "クランプ圧の始業点検を点検表に追加し、規定値未満は保全へ即連絡とする。"
+        },
+        {
+          "defect_id": "KZ25-0068",
+          "machine_name": "MEGATURN NEXUS 900",
+          "process": "旋削",
+          "defect_description": "オイル溝底の再チャック後の加工つなぎ目に約0.052mmの段差が発生し、手仕上げでも許容内に収まらなかった。",
+          "cause": "配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。",
+          "countermeasure": "新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。"
+        }
+      ],
+      "gold_ids": [
+        "KZ25-0117"
+      ]
+    },
+    {
+      "id": "R02",
+      "suite": "rag",
+      "question": "フランジの合わせ面の幅が0.046mm大きく、仕上げ代の残し過ぎが疑われた事例を探し、報告書ID・機械名・工程名を答えてください。",
+      "output_keys": [
+        "report_id",
+        "machine_name",
+        "process"
+      ],
+      "expected": {
+        "report_id": "KZ25-0116",
+        "machine_name": "汎用フライス",
+        "process": "フライス加工"
+      },
+      "context": [
+        {
+          "defect_id": "KZ25-0084",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "仕上げ",
+          "defect_description": "キー溝側面の幅寸法が規格を0.135mm超過。仕上げ代の残し過ぎが疑われ、表面粗さ計での再測定でも同傾向だった。",
+          "cause": "工具寿命管理表の更新が漏れ、摩耗限度を超えた工具を使用し続けた。",
+          "countermeasure": "工具寿命を加工数カウンタで自動管理し、限度到達で機械側が警告する設定にする。"
+        },
+        {
+          "defect_id": "KZ25-0116",
+          "machine_name": "汎用フライス",
+          "process": "フライス加工",
+          "defect_description": "フランジ合わせ面の幅寸法が規格を0.046mm超過。仕上げ代の残し過ぎが疑われ、表面粗さ計での再測定でも同傾向だった。",
+          "cause": "プログラム転送時に旧版を呼び出し、修正前の座標で加工した。",
+          "countermeasure": "プログラムは版番号付きでサーバー一元管理とし、機械側のローカル保存を禁止する。"
+        },
+        {
+          "defect_id": "KZ25-0085",
+          "machine_name": "汎用フライス",
+          "process": "フライス加工",
+          "defect_description": "外周リブの幅寸法が規格を0.112mm超過。仕上げ代の残し過ぎが疑われ、三次元測定機での再測定でも同傾向だった。",
+          "cause": "主軸のクランプ圧低下により加工中に微小なワークずれが生じていた。",
+          "countermeasure": "クランプ圧の始業点検を点検表に追加し、規定値未満は保全へ即連絡とする。"
+        },
+        {
+          "defect_id": "KZ25-0047",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "旋削",
+          "defect_description": "外周リブの幅寸法が規格を0.064mm超過。仕上げ代の残し過ぎが疑われ、三次元測定機での再測定でも同傾向だった。",
+          "cause": "材質ごとの切削条件の使い分けを理解しておらず、不適切な条件で加工した。",
+          "countermeasure": "材質別の推奨切削条件表を機械脇に掲示し、初回は有資格者が立ち会う。"
+        },
+        {
+          "defect_id": "KZ25-0011",
+          "machine_name": "汎用フライス",
+          "process": "研削",
+          "defect_description": "シール摺動面の幅寸法が規格を0.156mm超過。仕上げ代の残し過ぎが疑われ、三次元測定機での再測定でも同傾向だった。",
+          "cause": "段取り替え後の初品測定を省略し、ずれに気付かないまま連続加工した。",
+          "countermeasure": "図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。"
+        }
+      ],
+      "gold_ids": [
+        "KZ25-0116"
+      ]
+    },
+    {
+      "id": "R03",
+      "suite": "rag",
+      "question": "洗浄後にケーシングカバーの合わせ面へ10mmの弧状の擦り傷が見つかり、チャック爪に切粉が挟まっていた事例を探し、報告書ID・機械名・工程名を答えてください。",
+      "output_keys": [
+        "report_id",
+        "machine_name",
+        "process"
+      ],
+      "expected": {
+        "report_id": "KZ25-0114",
+        "machine_name": "汎用フライス",
+        "process": "フライス加工"
+      },
+      "context": [
+        {
+          "defect_id": "KZ25-0114",
+          "machine_name": "汎用フライス",
+          "process": "フライス加工",
+          "defect_description": "洗浄後の目視検査でケーシングカバーのフランジ合わせ面に長さ10mmの円弧状の擦り傷を確認。チャック爪の当たり面に切粉が噛み込んでいた。",
+          "cause": "主軸のクランプ圧低下により加工中に微小なワークずれが生じていた。",
+          "countermeasure": "クランプ圧の始業点検を点検表に追加し、規定値未満は保全へ即連絡とする。"
+        },
+        {
+          "defect_id": "KZ25-0021",
+          "machine_name": "汎用フライス",
+          "process": "仕上げ",
+          "defect_description": "洗浄後の目視検査でバルブボディの外周リブに長さ18mmの円弧状の擦り傷を確認。チャック爪の当たり面に切粉が噛み込んでいた。",
+          "cause": "対称形状の左右を取り違えて読み、反転した位置に加工した。",
+          "countermeasure": "対称形状部品は加工前に治具上でマーキング照合する手順を追加する。"
+        },
+        {
+          "defect_id": "KZ25-0034",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "旋削",
+          "defect_description": "洗浄後の目視検査で弁座リングの軸受はめあい面に長さ14mmの円弧状の擦り傷を確認。チャック爪の当たり面に切粉が噛み込んでいた。",
+          "cause": "素材ロットに内部欠陥(鋳巣)があり、加工後の面に露出した。",
+          "countermeasure": "受入時の抜き取り探傷を追加し、素材メーカーへ是正を要求する。"
+        },
+        {
+          "defect_id": "KZ25-0046",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "旋削",
+          "defect_description": "洗浄後の目視検査でスラストカラーの外周リブに長さ4mmの円弧状の擦り傷を確認。チャック爪の当たり面に切粉が噛み込んでいた。",
+          "cause": "設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。",
+          "countermeasure": "設計変更は変更通知書の現場受領サインをもって発効とするルールに改める。"
+        },
+        {
+          "defect_id": "KZ25-0049",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "旋削",
+          "defect_description": "洗浄後の目視検査で弁座リングの軸受はめあい面に長さ10mmの円弧状の擦り傷を確認。チャック爪の当たり面に切粉が噛み込んでいた。",
+          "cause": "配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。",
+          "countermeasure": "新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。"
+        }
+      ],
+      "gold_ids": [
+        "KZ25-0114"
+      ]
+    },
+    {
+      "id": "R04",
+      "suite": "rag",
+      "question": "梱包を開けたインペラハウジングの皿モミ部に0.124mmのへこみがあり、緩衝材の仕切り不足が疑われた事例を探し、報告書ID・機械名・工程名を答えてください。",
+      "output_keys": [
+        "report_id",
+        "machine_name",
+        "process"
+      ],
+      "expected": {
+        "report_id": "KZ25-0115",
+        "machine_name": "YZ-8WR",
+        "process": "研削"
+      },
+      "context": [
+        {
+          "defect_id": "KZ25-0115",
+          "machine_name": "YZ-8WR",
+          "process": "研削",
+          "defect_description": "梱包開封時にインペラハウジングの皿モミ部へ打痕状の凹み(深さ約0.124mm)が1点。緩衝材の仕切り欠品が原因とみられる。",
+          "cause": "設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。",
+          "countermeasure": "設計変更は変更通知書の現場受領サインをもって発効とするルールに改める。"
+        },
+        {
+          "defect_id": "KZ25-0004",
+          "machine_name": "汎用フライス",
+          "process": "フライス加工",
+          "defect_description": "梱包開封時にインペラハウジングの皿モミ部へ打痕状の凹み(深さ約0.175mm)が1点。緩衝材の仕切り欠品が原因とみられる。",
+          "cause": "材質ごとの切削条件の使い分けを理解しておらず、不適切な条件で加工した。",
+          "countermeasure": "材質別の推奨切削条件表を機械脇に掲示し、初回は有資格者が立ち会う。"
+        },
+        {
+          "defect_id": "KZ25-0055",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "仕上げ",
+          "defect_description": "梱包開封時にガイドレールブロックの皿モミ部へ打痕状の凹み(深さ約0.126mm)が1点。緩衝材の仕切り欠品が原因とみられる。",
+          "cause": "設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。",
+          "countermeasure": "設計変更は変更通知書の現場受領サインをもって発効とするルールに改める。"
+        },
+        {
+          "defect_id": "KZ25-0071",
+          "machine_name": "汎用フライス",
+          "process": "溶接",
+          "defect_description": "梱包開封時に補機マウントリブのタップ下穴口元へ打痕状の凹み(深さ約0.031mm)が3点。緩衝材の仕切り欠品が原因とみられる。",
+          "cause": "設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。",
+          "countermeasure": "設計変更は変更通知書の現場受領サインをもって発効とするルールに改める。"
+        },
+        {
+          "defect_id": "KZ25-0028",
+          "machine_name": "WT-150II",
+          "process": "旋削",
+          "defect_description": "梱包開封時にマニホールドブロックのシール摺動面へ打痕状の凹み(深さ約0.127mm)が2点。緩衝材の仕切り欠品が原因とみられる。",
+          "cause": "対称形状の左右を取り違えて読み、反転した位置に加工した。",
+          "countermeasure": "対称形状部品は加工前に治具上でマーキング照合する手順を追加する。"
+        }
+      ],
+      "gold_ids": [
+        "KZ25-0115"
+      ]
+    },
+    {
+      "id": "R05",
+      "suite": "rag",
+      "question": "バルブボディの新しいプログラムで座標系を誤り、穴のまとまり全体が0.192mmずれた初品の事例を探し、報告書ID・機械名・工程名を答えてください。",
+      "output_keys": [
+        "report_id",
+        "machine_name",
+        "process"
+      ],
+      "expected": {
+        "report_id": "KZ25-0113",
+        "machine_name": "YZ-8WR",
+        "process": "最終検査"
+      },
+      "context": [
+        {
+          "defect_id": "KZ25-0113",
+          "machine_name": "YZ-8WR",
+          "process": "最終検査",
+          "defect_description": "バルブボディの新規プログラムの座標系設定ミスで初品の穴群全体が0.192mmオフセット。初品検証で流出は防止した。",
+          "cause": "設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。",
+          "countermeasure": "設計変更は変更通知書の現場受領サインをもって発効とするルールに改める。"
+        },
+        {
+          "defect_id": "KZ25-0105",
+          "machine_name": "汎用フライス",
+          "process": "フライス加工",
+          "defect_description": "バルブボディの新規プログラムの座標系設定ミスで初品の穴群全体が0.048mmオフセット。初品検証で流出は防止した。",
+          "cause": "図面改訂版の反映を確認せず、旧寸法のまま加工した。",
+          "countermeasure": "図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。"
+        },
+        {
+          "defect_id": "KZ25-0064",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "旋削",
+          "defect_description": "ケーシングカバーの新規プログラムの座標系設定ミスで初品の穴群全体が0.16mmオフセット。初品検証で流出は防止した。",
+          "cause": "対称形状の左右を取り違えて読み、反転した位置に加工した。",
+          "countermeasure": "対称形状部品は加工前に治具上でマーキング照合する手順を追加する。"
+        },
+        {
+          "defect_id": "KZ25-0013",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "旋削",
+          "defect_description": "チェーンテンショナの新規プログラムの座標系設定ミスで初品の穴群全体が0.212mmオフセット。初品検証で流出は防止した。",
+          "cause": "対称形状の左右を取り違えて読み、反転した位置に加工した。",
+          "countermeasure": "対称形状部品は加工前に治具上でマーキング照合する手順を追加する。"
+        },
+        {
+          "defect_id": "KZ25-0065",
+          "machine_name": "汎用フライス",
+          "process": "溶接",
+          "defect_description": "吸込ノズルフランジの新規プログラムの座標系設定ミスで初品の穴群全体が0.161mmオフセット。初品検証で流出は防止した。",
+          "cause": "対称形状の左右を取り違えて読み、反転した位置に加工した。",
+          "countermeasure": "対称形状部品は加工前に治具上でマーキング照合する手順を追加する。"
+        }
+      ],
+      "gold_ids": [
+        "KZ25-0113"
+      ]
+    },
+    {
+      "id": "R06",
+      "suite": "rag",
+      "question": "マニホールドブロックの皿モミ部に15mmの円弧状の擦り傷があり、新任者の段取りが原因と記録された事例を探し、報告書ID・機械名・工程名を答えてください。",
+      "output_keys": [
+        "report_id",
+        "machine_name",
+        "process"
+      ],
+      "expected": {
+        "report_id": "KZ25-0112",
+        "machine_name": "YZ-8WR",
+        "process": "フライス加工"
+      },
+      "context": [
+        {
+          "defect_id": "KZ25-0112",
+          "machine_name": "YZ-8WR",
+          "process": "フライス加工",
+          "defect_description": "洗浄後の目視検査でマニホールドブロックの皿モミ部に長さ15mmの円弧状の擦り傷を確認。チャック爪の当たり面に切粉が噛み込んでいた。",
+          "cause": "配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。",
+          "countermeasure": "新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。"
+        },
+        {
+          "defect_id": "KZ25-0081",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "仕上げ",
+          "defect_description": "マニホールドブロックの軸受はめあい面交差部に返りバリが残存し、Oリング装着時に切れを起こす恐れがある。",
+          "cause": "段取り替え後の初品測定を省略し、ずれに気付かないまま連続加工した。",
+          "countermeasure": "段取り替え後の初品測定をチェックシート必須項目とし、記録を班長が確認する。"
+        },
+        {
+          "defect_id": "KZ25-0095",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "旋削",
+          "defect_description": "洗浄後の目視検査でマニホールドブロックの軸受はめあい面に長さ14mmの円弧状の擦り傷を確認。チャック爪の当たり面に切粉が噛み込んでいた。",
+          "cause": "対称形状の左右を取り違えて読み、反転した位置に加工した。",
+          "countermeasure": "対称形状部品は加工前に治具上でマーキング照合する手順を追加する。"
+        },
+        {
+          "defect_id": "KZ25-0055",
+          "machine_name": "QUICK TURN 250MSY",
+          "process": "仕上げ",
+          "defect_description": "梱包開封時にガイドレールブロックの皿モミ部へ打痕状の凹み(深さ約0.126mm)が1点。緩衝材の仕切り欠品が原因とみられる。",
+          "cause": "設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。",
+          "countermeasure": "設計変更は変更通知書の現場受領サインをもって発効とするルールに改める。"
+        },
+        {
+          "defect_id": "KZ25-0028",
+          "machine_name": "WT-150II",
+          "process": "旋削",
+          "defect_description": "梱包開封時にマニホールドブロックのシール摺動面へ打痕状の凹み(深さ約0.127mm)が2点。緩衝材の仕切り欠品が原因とみられる。",
+          "cause": "対称形状の左右を取り違えて読み、反転した位置に加工した。",
+          "countermeasure": "対称形状部品は加工前に治具上でマーキング照合する手順を追加する。"
+        }
+      ],
+      "gold_ids": [
+        "KZ25-0112"
+      ]
+    },
+    {
+      "id": "T01",
+      "suite": "tool",
+      "question": "機械名 a61nx が実在するか、最初に正確な対象を確認してください。",
+      "expected_call": {
+        "name": "resolve_ontology_entity",
+        "arguments": {
+          "object_type": "MachineLabel",
+          "query": "a61nx"
+        }
+      }
+    },
+    {
+      "id": "T02",
+      "suite": "tool",
+      "question": "KZ25-0117の報告書の全文を取得してください。",
+      "expected_call": {
+        "name": "get_defect_report",
+        "arguments": {
+          "defect_id": "KZ25-0117"
+        }
+      }
+    },
+    {
+      "id": "T03",
+      "suite": "tool",
+      "question": "KZ25-9001の報告書に関連するCAPAを、Ontologyの関係からたどってください。",
+      "expected_call": {
+        "name": "traverse_ontology_relation",
+        "arguments": {
+          "object_type": "DefectReport",
+          "object_id": "KZ25-9001",
+          "relation": "has_capa"
+        }
+      }
+    },
+    {
+      "id": "T04",
+      "suite": "tool",
+      "question": "CA-BENCH-1をclosedにした場合の検証だけをしてください。効果確認メモはまだありません。保存はしないでください。",
+      "expected_call": {
+        "name": "preview_capa_update",
+        "arguments": {
+          "capa_id": "CA-BENCH-1",
+          "status": "closed"
+        }
+      }
+    },
+    {
+      "id": "T05",
+      "suite": "tool",
+      "question": "Ontologyのグラフを画面に表示してください。",
+      "expected_call": {
+        "name": "ui_navigate",
+        "arguments": {
+          "page": "ontology_graph"
+        }
+      }
+    },
+    {
+      "id": "T06",
+      "suite": "tool",
+      "question": "画面をダークモードにしてください。",
+      "expected_call": {
+        "name": "ui_set_theme",
+        "arguments": {
+          "mode": "dark"
+        }
+      }
+    },
+    {
+      "id": "T07",
+      "suite": "tool",
+      "question": "2025年10月1日から12月31日までに発生したhighの報告について、Ontologyで損失額と件数を集計してください。",
+      "expected_call": {
+        "name": "query_quality_ontology",
+        "arguments": {
+          "scope": {
+            "date_from": "2025-10-01",
+            "date_to": "2025-12-31",
+            "severity": "high"
+          }
+        }
+      }
+    },
+    {
+      "id": "T08",
+      "suite": "tool",
+      "question": "「工具の摩耗で寸法がずれた」に似た不具合を検索してください。",
+      "expected_call": {
+        "name": "search_defect_reports",
+        "arguments": {
+          "query": "工具の摩耗で寸法がずれた"
+        }
+      }
+    },
+    {
+      "id": "O01",
+      "suite": "ontology",
+      "question": "a61nxの報告件数、既知の損失額、記録上の不適合率を調べてください。",
+      "output_keys": [
+        "report_count",
+        "known_loss_jpy",
+        "recorded_defect_rate"
+      ],
+      "expected": {
+        "report_count": 4,
+        "known_loss_jpy": 841072.0,
+        "recorded_defect_rate": 0.12075471698113208
+      },
+      "required_calls": [
+        {
+          "name": "resolve_ontology_entity",
+          "arguments": {
+            "object_type": "MachineLabel",
+            "query": "a61nx"
+          }
+        },
+        {
+          "name": "query_quality_ontology",
+          "arguments": {
+            "scope": {
+              "machine_id": "MachineLabel:YTYxbng"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "O02",
+      "suite": "ontology",
+      "question": "a61nxについて、発生日が2025年7月1日から12月31日の報告件数と既知損失を調べてください。",
+      "output_keys": [
+        "report_count",
+        "known_loss_jpy"
+      ],
+      "expected": {
+        "report_count": 2,
+        "known_loss_jpy": 79945.0
+      },
+      "required_calls": [
+        {
+          "name": "resolve_ontology_entity",
+          "arguments": {
+            "object_type": "MachineLabel",
+            "query": "a61nx"
+          }
+        },
+        {
+          "name": "query_quality_ontology",
+          "arguments": {
+            "scope": {
+              "machine_id": "MachineLabel:YTYxbng",
+              "date_from": "2025-07-01",
+              "date_to": "2025-12-31"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "O03",
+      "suite": "ontology",
+      "question": "BENCH設備Aの報告件数、既知損失、記録上の不適合率、未クローズCAPA件数を調べてください。",
+      "output_keys": [
+        "report_count",
+        "known_loss_jpy",
+        "recorded_defect_rate",
+        "open_capa_count"
+      ],
+      "expected": {
+        "report_count": 2,
+        "known_loss_jpy": 300,
+        "recorded_defect_rate": 0.019,
+        "open_capa_count": 2
+      },
+      "required_calls": [
+        {
+          "name": "resolve_ontology_entity",
+          "arguments": {
+            "object_type": "MachineLabel",
+            "query": "BENCH設備A"
+          }
+        },
+        {
+          "name": "query_quality_ontology",
+          "arguments": {
+            "scope": {
+              "machine_id": "MachineLabel:QkVOQ0joqK3lgplB"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "O04",
+      "suite": "ontology",
+      "question": "BENCH設備Bの記録上の不適合率、既知の損失額、損失額未入力の報告件数を調べてください。不明はnullとしてください。",
+      "output_keys": [
+        "recorded_defect_rate",
+        "known_loss_jpy",
+        "missing_loss_reports"
+      ],
+      "expected": {
+        "recorded_defect_rate": null,
+        "known_loss_jpy": null,
+        "missing_loss_reports": 1
+      },
+      "required_calls": [
+        {
+          "name": "resolve_ontology_entity",
+          "arguments": {
+            "object_type": "MachineLabel",
+            "query": "BENCH設備B"
+          }
+        },
+        {
+          "name": "query_quality_ontology",
+          "arguments": {
+            "scope": {
+              "machine_id": "MachineLabel:QkVOQ0joqK3lgplC"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "O05",
+      "suite": "ontology",
+      "question": "KZ25-9001に関連する全CAPAのIDを調べてください。",
+      "output_keys": [
+        "capa_ids"
+      ],
+      "expected": {
+        "capa_ids": [
+          "CA-BENCH-1",
+          "CA-BENCH-2"
+        ]
+      },
+      "required_calls": [
+        {
+          "alternatives": [
+            {
+              "name": "traverse_ontology_relation",
+              "arguments": {
+                "object_type": "DefectReport",
+                "object_id": "KZ25-9001",
+                "relation": "has_capa"
+              }
+            },
+            {
+              "name": "list_capa_actions",
+              "arguments": {
+                "defect_id": "KZ25-9001"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "O06",
+      "suite": "ontology",
+      "question": "TXG-9000という機械名が実在しますか。似た名前へ読み替えず確認してください。",
+      "output_keys": [
+        "exists"
+      ],
+      "expected": {
+        "exists": false
+      },
+      "required_calls": [
+        {
+          "alternatives": [
+            {
+              "name": "resolve_ontology_entity",
+              "arguments": {
+                "object_type": "MachineLabel",
+                "query": "TXG-9000"
+              }
+            },
+            {
+              "name": "list_masters",
+              "arguments": {
+                "category": "machine"
+              }
+            }
+          ]
+        }
+      ],
+      "forbidden_calls": [
+        "query_quality_ontology"
+      ]
+    },
+    {
+      "id": "O07",
+      "suite": "ontology",
+      "question": "BENCH設備の損失額を知りたいです。対象を一意に選べるか確認し、確認が必要ならその旨を答えてください。",
+      "output_keys": [
+        "needs_clarification"
+      ],
+      "expected": {
+        "needs_clarification": true
+      },
+      "required_calls": [
+        {
+          "name": "resolve_ontology_entity",
+          "arguments": {
+            "object_type": "MachineLabel",
+            "query": "BENCH設備"
+          }
+        }
+      ],
+      "forbidden_calls": [
+        "query_quality_ontology"
+      ]
+    },
+    {
+      "id": "O08",
+      "suite": "ontology",
+      "question": "CA-BENCH-1をclosedにできるか検証してください。効果確認メモは空欄です。保存はしないでください。",
+      "output_keys": [
+        "valid",
+        "saved"
+      ],
+      "expected": {
+        "valid": false,
+        "saved": false
+      },
+      "required_calls": [
+        {
+          "name": "preview_capa_update",
+          "arguments": {
+            "capa_id": "CA-BENCH-1",
+            "status": "closed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "O09",
+      "suite": "ontology",
+      "question": "BENCH設備Aで、未クローズCAPAがある報告だけの件数・既知損失・未クローズCAPA件数を調べてください。",
+      "output_keys": [
+        "report_count",
+        "known_loss_jpy",
+        "open_capa_count"
+      ],
+      "expected": {
+        "report_count": 1,
+        "known_loss_jpy": 100,
+        "open_capa_count": 2
+      },
+      "required_calls": [
+        {
+          "name": "resolve_ontology_entity",
+          "arguments": {
+            "object_type": "MachineLabel",
+            "query": "BENCH設備A"
+          }
+        },
+        {
+          "name": "query_quality_ontology",
+          "arguments": {
+            "scope": {
+              "machine_id": "MachineLabel:QkVOQ0joqK3lgplB",
+              "has_open_capa": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "O10",
+      "suite": "ontology",
+      "question": "CA-BENCH-1の対象報告書IDと、その報告に記録された機械名をOntologyの関係から調べてください。",
+      "output_keys": [
+        "report_id",
+        "machine_name"
+      ],
+      "expected": {
+        "report_id": "KZ25-9001",
+        "machine_name": "BENCH設備A"
+      },
+      "required_calls": [
+        {
+          "name": "traverse_ontology_relation",
+          "arguments": {
+            "object_type": "CapaAction",
+            "object_id": "CA-BENCH-1",
+            "relation": "for_report"
+          }
+        }
+      ]
+    }
+  ],
+  "retrieval": [
+    {
+      "id": "R01",
+      "query": "オイル溝を再度つかみ直して削ったつなぎ目に0.191mmの段が残り、手仕上げでも直せなかった事例",
+      "gold_ids": [
+        "KZ25-0117"
+      ],
+      "retrieved_ids": [
+        "KZ25-0091",
+        "KZ25-0036",
+        "KZ25-0037",
+        "KZ25-0117",
+        "KZ25-0068"
+      ],
+      "rank": 4,
+      "hit_at_5": true,
+      "reciprocal_rank": 0.25
+    },
+    {
+      "id": "R02",
+      "query": "フランジの合わせ面の幅が0.046mm大きく、仕上げ代の残し過ぎが疑われた事例",
+      "gold_ids": [
+        "KZ25-0116"
+      ],
+      "retrieved_ids": [
+        "KZ25-0084",
+        "KZ25-0116",
+        "KZ25-0085",
+        "KZ25-0047",
+        "KZ25-0011"
+      ],
+      "rank": 2,
+      "hit_at_5": true,
+      "reciprocal_rank": 0.5
+    },
+    {
+      "id": "R03",
+      "query": "洗浄後にケーシングカバーの合わせ面へ10mmの弧状の擦り傷が見つかり、チャック爪に切粉が挟まっていた事例",
+      "gold_ids": [
+        "KZ25-0114"
+      ],
+      "retrieved_ids": [
+        "KZ25-0114",
+        "KZ25-0021",
+        "KZ25-0034",
+        "KZ25-0046",
+        "KZ25-0049"
+      ],
+      "rank": 1,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "id": "R04",
+      "query": "梱包を開けたインペラハウジングの皿モミ部に0.124mmのへこみがあり、緩衝材の仕切り不足が疑われた事例",
+      "gold_ids": [
+        "KZ25-0115"
+      ],
+      "retrieved_ids": [
+        "KZ25-0115",
+        "KZ25-0004",
+        "KZ25-0055",
+        "KZ25-0071",
+        "KZ25-0028"
+      ],
+      "rank": 1,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "id": "R05",
+      "query": "バルブボディの新しいプログラムで座標系を誤り、穴のまとまり全体が0.192mmずれた初品の事例",
+      "gold_ids": [
+        "KZ25-0113"
+      ],
+      "retrieved_ids": [
+        "KZ25-0113",
+        "KZ25-0105",
+        "KZ25-0064",
+        "KZ25-0013",
+        "KZ25-0065"
+      ],
+      "rank": 1,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "id": "R06",
+      "query": "マニホールドブロックの皿モミ部に15mmの円弧状の擦り傷があり、新任者の段取りが原因と記録された事例",
+      "gold_ids": [
+        "KZ25-0112"
+      ],
+      "retrieved_ids": [
+        "KZ25-0112",
+        "KZ25-0081",
+        "KZ25-0095",
+        "KZ25-0055",
+        "KZ25-0028"
+      ],
+      "rank": 1,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0
+    }
+  ]
+}

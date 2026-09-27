@@ -1,0 +1,9 @@
+flowchart LR
+    N["Noul の答え<br/>(真である確率 p)"] --> B{"p はどこか"}
+    B -- "p ≥ 0.7" --> T["真として採る<br/>例:客先流出 → CAPA へ"]
+    B -- "0.3 < p < 0.7" --> H["五分五分に近い<br/>人が確かめる"]
+    B -- "p ≤ 0.3" --> F["偽として採る"]
+    classDef ok fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
+    classDef human fill:#E3F2FD,stroke:#2E75B6,color:#0D47A1
+    class T,F ok
+    class H human

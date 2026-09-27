@@ -1,0 +1,17 @@
+{
+  "native_cases": 432,
+  "opencode_cases": 15,
+  "database_unchanged": true,
+  "code_and_dataset_hashes_match": true,
+  "scoring_tests_passed": 12,
+  "tables": 9,
+  "expandable_items": 452,
+  "report_browser_checks": "desktop/mobile, links, figure, expandable traces: passed",
+  "app_health": {
+    "status": "ok",
+    "reports": 117,
+    "anthropic_configured": true,
+    "chat_backend": "opencode",
+    "vector_search": "e5"
+  }
+}

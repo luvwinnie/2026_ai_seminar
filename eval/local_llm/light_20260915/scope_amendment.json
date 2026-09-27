@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-09-15T12:47:38.446200+00:00",
+  "model": "unlimited-ocr:q8",
+  "role": "ocr_specialist",
+  "reason": "Official model is trained for document image parsing, not a general chat agent. Repeated off-label text responses do not measure its intended OCR function.",
+  "source": "https://github.com/baidu/Unlimited-OCR",
+  "completed_off_label_cases": 8,
+  "preserve_partial_text_cases": true,
+  "replacement_test": "ocr_check.py: three clean Japanese document images with explicit ground truth",
+  "other_models_protocol": "unchanged; all 50 cases for each usable generation tag"
+}

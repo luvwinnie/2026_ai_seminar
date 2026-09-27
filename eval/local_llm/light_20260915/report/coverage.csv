@@ -1,0 +1,44 @@
+﻿model,size_GB,kind,selected,reason,digest
+kimi-k2.5:cloud,0.0,generation,False,cloud,6d1c3246c6080b61c87b543323760b8f36cb68cf4473080b9429d09e2a73ddb7
+kimi-k2.6:cloud,0.0,generation,False,cloud,a90cd0d1590c53b9f9f4e0f66218e4c514d190652b8bed2842528e2530e34dc6
+kimi-k2-thinking:cloud,0.0,generation,False,cloud,9752ffb77f53ac4d60b9d21712231f17550e46a4acd3d1c46d104ff2fb675cf5
+jina-v5:nano,0.233,embedding,True,local <=20 GB,222b6d0f5ae0ee1476c65d56f7e894d37716ac3a1e9fac9500b14c6a513ddb7b
+gemma3:270m,0.292,generation,True,local <=20 GB,e7d36fb2c3b3293cfe56d55889867a064b3a2b22e98335f2e6e8a387e081d6be
+embeddinggemma:latest,0.622,embedding,True,local <=20 GB,85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1
+qwen3-embedding:0.6b,0.639,embedding,True,local <=20 GB,ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d
+nemotron3-embed:1b,0.749,embedding,True,local <=20 GB,74cd51ce717f69716d390928dec1abb2883a4d4641b91d248c9cd92a21e00bb1
+gemma3:1b,0.815,generation,True,local <=20 GB,8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc
+qwen3.5:0.8b,1.036,generation,True,local <=20 GB,f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4
+jina-v5:small,1.198,embedding,True,local <=20 GB,dd3dbd1595b795c465d6b7d61a4184213a9bfdf313edba03d9bc3fb81885b38a
+qwen3-embedding:4b,2.497,embedding,True,local <=20 GB,df5bd2e3c74cd8d069d21dc038f1b359fcdc9458fce1c99bd43c9eb1518ff907
+qwen3.5:2b,2.741,generation,True,local <=20 GB,324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df
+gemma3:4b,3.339,generation,True,local <=20 GB,a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a
+qwen3.5:4b,3.39,generation,True,local <=20 GB,2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd
+unlimited-ocr:q8,3.938,ocr_specialist,True,local <=20 GB,cee99c573dee9e515729a9ca8e9618b90a53b8207006c12516ccd649910df77c
+bonsai-27b:1bit,4.433,generation,True,local <=20 GB,96f14e2fa5f94e109b10d6e5e6f0b6180498d3a000ed9242e7a06ba07e21dad6
+qwen3-embedding:8b,4.677,embedding,True,local <=20 GB,64b933495768fbd3b87c20583d379728a07471e0c66733a9df87cd1901b3c44b
+qwen2.5vl:latest,5.969,generation,True,local <=20 GB,5ced39dfa4bac325dc183dd1e4febaa1c46b3ea28bce48896c8e69c1e79611cc
+qwen3-vl:8b,6.14,generation,True,local <=20 GB,901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28
+qwen3.5:9b,6.594,generation,True,local <=20 GB,6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7
+qwen3.5:9b-nothink,6.594,generation,True,local <=20 GB,01ab85d80844077dffb6099d1428c28cd03fd0ef0315c55716bdbbf9d20712f6
+llama3.2-vision:latest,7.817,generation,True,local <=20 GB,6f2f9757ae97e8a3f8ea33d6adb2b11d93d9a35bef277cd2c0b1b5af8e8d0b1e
+gemma3:12b,8.149,generation,True,local <=20 GB,f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a
+hf.co/mmnga-o/NVIDIA-Nemotron-Nano-9B-v2-Japanese-gguf:Q8_0,9.458,generation,True,local <=20 GB,4105be11fbad36319c75e8d6ddf100eaea737285b8d7fad4a8b06b62ca072ea0
+qwythos:9b,10.704,generation,True,local <=20 GB,e7e73c423dac58486e3a840ee70927d748ef1cb4be29ecced6c68efd3eb5da90
+gpt-oss:20b,13.793,generation,True,local <=20 GB,17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7
+gemma4:26b-a4b,15.442,generation,True,local <=20 GB,d4dc94e63de9aa4fcf7a3ecb49c67cfa01da871cc55246614d90b6580f1df5c7
+qwen3.8:27b-mtp-q4_K_M,17.742,generation,True,local <=20 GB,22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643
+qwen3.8:27b,17.923,generation,True,local <=20 GB,276bc0e81bebe0c1b7943921a3048d8335be906005e6c6031fc7a9b0cc56847b
+gemma4:26b,17.988,generation,True,local <=20 GB,5571076f3d70050487b26b341705799e0ab29b808164f90d20d4cf84f699d251
+glm-4.7-flash:q4_K_M,19.019,generation,True,local <=20 GB,d1a8a26252f18b34301218d22abd2620a65b85ba4b78987842eb157e01321222
+qwen3-vl:30b,19.595,generation,True,local <=20 GB,eda0be1008774ea4e575187712b9a3b1201f3e66e7ecff899cc295db1cf00248
+gemma4:31b,19.869,generation,True,local <=20 GB,6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7
+qwen3.5:35b,23.869,generation,False,>20 GB,3460ffeede5453ead027dbd2f821b12ad0aa3de54630971993babdb2165221f7
+qwen3.6:35b-a3b,23.938,generation,False,>20 GB,07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522
+qwen3.8:27b-mtp-q8_0,29.978,generation,False,>20 GB,8a15828773037bdbb79b103ca20344c67a05251521b918a534c135ca76f1f04d
+ornith:35b,36.903,generation,False,>20 GB,8482e875d98d541e7889e6bc7bce49949d2ab68b60a1094f8aa3a01526258b2e
+genesis-uncensored:latest,36.903,generation,False,>20 GB,2cc30f48a92916c0340607d704fb7f92cb098eb7338875b156b281b2e4e8480f
+qwen3.6:35b-a3b-mtp-q8_0,38.706,generation,False,>20 GB,c61138a79add459de71c9227941af0a2aaa89597e4c1e81a611043d43cd6d023
+gpt-oss:120b,65.37,generation,False,>20 GB,a951a23b46a1f6093dafee2ea481d634b4e31ac720a8a16f3f91e04f5a40ecd9
+llama4:scout,67.437,generation,False,>20 GB,bf31604e25c25d964e250bcf28a82bfbdbe88af5f236257fabb27629bb24c7f3
+laguna-s-2.1:q4_K_M,75.173,generation,False,>20 GB,592a1286688ed51a183a158a60c5a86e1f3df8ee66375f8335fcfdfb33dbfb3d

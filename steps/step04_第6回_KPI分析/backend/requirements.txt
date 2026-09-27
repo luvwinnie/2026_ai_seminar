@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+anthropic
+chromadb
+python-multipart
+openpyxl
+pandas
+reportlab
+httpx
+pytest

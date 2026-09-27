@@ -1,0 +1,34 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "openrouter": {
+      "models": {
+        "anthropic/claude-sonnet-4.5": {
+          "limit": {
+            "context": 200000,
+            "output": 8000
+          }
+        },
+        "openai/gpt-4o-mini": {
+          "limit": {
+            "context": 200000,
+            "output": 8000
+          }
+        },
+        "google/gemini-2.5-flash": {
+          "limit": {
+            "context": 200000,
+            "output": 8000
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "defect-reports": {
+      "type": "remote",
+      "url": "http://backend:8000/mcp/",
+      "enabled": true
+    }
+  }
+}

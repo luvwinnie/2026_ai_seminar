@@ -1,0 +1,493 @@
+{
+  "report_count": 117,
+  "embedding_mode": "e5",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "bm25_k1": 1.4,
+  "bm25_b": 0.75,
+  "rrf_k": 60,
+  "embedding_warmup_s": 9.342219713027589,
+  "records": [
+    {
+      "case_id": "R01",
+      "method": "BM25 + synonym expansion",
+      "query": "オイル溝を再度つかみ直して削ったつなぎ目に0.191mmの段が残り、手仕上げでも直せなかった事例",
+      "gold_ids": [
+        "KZ25-0117"
+      ],
+      "ids": [
+        "KZ25-0117",
+        "KZ25-0068",
+        "KZ25-0010",
+        "KZ25-0103",
+        "KZ25-0091"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.0007625829894095659
+    },
+    {
+      "case_id": "R01",
+      "method": "e5 dense only",
+      "query": "オイル溝を再度つかみ直して削ったつなぎ目に0.191mmの段が残り、手仕上げでも直せなかった事例",
+      "gold_ids": [
+        "KZ25-0117"
+      ],
+      "ids": [
+        "KZ25-0068",
+        "KZ25-0117",
+        "KZ25-0010",
+        "KZ25-0103",
+        "KZ25-0097"
+      ],
+      "rank": 2,
+      "hit_at_1": false,
+      "hit_at_5": true,
+      "reciprocal_rank": 0.5,
+      "elapsed_s": 0.015849084011279047
+    },
+    {
+      "case_id": "R01",
+      "method": "RRF only k=60",
+      "query": "オイル溝を再度つかみ直して削ったつなぎ目に0.191mmの段が残り、手仕上げでも直せなかった事例",
+      "gold_ids": [
+        "KZ25-0117"
+      ],
+      "ids": [
+        "KZ25-0117",
+        "KZ25-0068",
+        "KZ25-0010",
+        "KZ25-0103",
+        "KZ25-0097"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": null
+    },
+    {
+      "case_id": "R01",
+      "method": "Application full hybrid",
+      "query": "オイル溝を再度つかみ直して削ったつなぎ目に0.191mmの段が残り、手仕上げでも直せなかった事例",
+      "gold_ids": [
+        "KZ25-0117"
+      ],
+      "ids": [
+        "KZ25-0091",
+        "KZ25-0036",
+        "KZ25-0037",
+        "KZ25-0117",
+        "KZ25-0068"
+      ],
+      "rank": 4,
+      "hit_at_1": false,
+      "hit_at_5": true,
+      "reciprocal_rank": 0.25,
+      "elapsed_s": 0.427840958989691
+    },
+    {
+      "case_id": "R02",
+      "method": "BM25 + synonym expansion",
+      "query": "フランジの合わせ面の幅が0.046mm大きく、仕上げ代の残し過ぎが疑われた事例",
+      "gold_ids": [
+        "KZ25-0116"
+      ],
+      "ids": [
+        "KZ25-0116",
+        "KZ25-0067",
+        "KZ25-0084",
+        "KZ25-0111",
+        "KZ25-0070"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.0004901670035906136
+    },
+    {
+      "case_id": "R02",
+      "method": "e5 dense only",
+      "query": "フランジの合わせ面の幅が0.046mm大きく、仕上げ代の残し過ぎが疑われた事例",
+      "gold_ids": [
+        "KZ25-0116"
+      ],
+      "ids": [
+        "KZ25-0116",
+        "KZ25-0040",
+        "KZ25-0097",
+        "KZ25-0085",
+        "KZ25-0047"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.01474120799684897
+    },
+    {
+      "case_id": "R02",
+      "method": "RRF only k=60",
+      "query": "フランジの合わせ面の幅が0.046mm大きく、仕上げ代の残し過ぎが疑われた事例",
+      "gold_ids": [
+        "KZ25-0116"
+      ],
+      "ids": [
+        "KZ25-0116",
+        "KZ25-0084",
+        "KZ25-0085",
+        "KZ25-0097",
+        "KZ25-0040"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": null
+    },
+    {
+      "case_id": "R02",
+      "method": "Application full hybrid",
+      "query": "フランジの合わせ面の幅が0.046mm大きく、仕上げ代の残し過ぎが疑われた事例",
+      "gold_ids": [
+        "KZ25-0116"
+      ],
+      "ids": [
+        "KZ25-0084",
+        "KZ25-0116",
+        "KZ25-0085",
+        "KZ25-0047",
+        "KZ25-0011"
+      ],
+      "rank": 2,
+      "hit_at_1": false,
+      "hit_at_5": true,
+      "reciprocal_rank": 0.5,
+      "elapsed_s": 0.019839207991026342
+    },
+    {
+      "case_id": "R03",
+      "method": "BM25 + synonym expansion",
+      "query": "洗浄後にケーシングカバーの合わせ面へ10mmの弧状の擦り傷が見つかり、チャック爪に切粉が挟まっていた事例",
+      "gold_ids": [
+        "KZ25-0114"
+      ],
+      "ids": [
+        "KZ25-0114",
+        "KZ25-0049",
+        "KZ25-0034",
+        "KZ25-0021",
+        "KZ25-0016"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.0006484590121544898
+    },
+    {
+      "case_id": "R03",
+      "method": "e5 dense only",
+      "query": "洗浄後にケーシングカバーの合わせ面へ10mmの弧状の擦り傷が見つかり、チャック爪に切粉が挟まっていた事例",
+      "gold_ids": [
+        "KZ25-0114"
+      ],
+      "ids": [
+        "KZ25-0114",
+        "KZ25-0021",
+        "KZ25-0046",
+        "KZ25-0006",
+        "KZ25-0058"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.020176125050056726
+    },
+    {
+      "case_id": "R03",
+      "method": "RRF only k=60",
+      "query": "洗浄後にケーシングカバーの合わせ面へ10mmの弧状の擦り傷が見つかり、チャック爪に切粉が挟まっていた事例",
+      "gold_ids": [
+        "KZ25-0114"
+      ],
+      "ids": [
+        "KZ25-0114",
+        "KZ25-0021",
+        "KZ25-0034",
+        "KZ25-0046",
+        "KZ25-0049"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": null
+    },
+    {
+      "case_id": "R03",
+      "method": "Application full hybrid",
+      "query": "洗浄後にケーシングカバーの合わせ面へ10mmの弧状の擦り傷が見つかり、チャック爪に切粉が挟まっていた事例",
+      "gold_ids": [
+        "KZ25-0114"
+      ],
+      "ids": [
+        "KZ25-0114",
+        "KZ25-0021",
+        "KZ25-0034",
+        "KZ25-0046",
+        "KZ25-0049"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.025627250084653497
+    },
+    {
+      "case_id": "R04",
+      "method": "BM25 + synonym expansion",
+      "query": "梱包を開けたインペラハウジングの皿モミ部に0.124mmのへこみがあり、緩衝材の仕切り不足が疑われた事例",
+      "gold_ids": [
+        "KZ25-0115"
+      ],
+      "ids": [
+        "KZ25-0115",
+        "KZ25-0004",
+        "KZ25-0055",
+        "KZ25-0069",
+        "KZ25-0018"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.0006089580128900707
+    },
+    {
+      "case_id": "R04",
+      "method": "e5 dense only",
+      "query": "梱包を開けたインペラハウジングの皿モミ部に0.124mmのへこみがあり、緩衝材の仕切り不足が疑われた事例",
+      "gold_ids": [
+        "KZ25-0115"
+      ],
+      "ids": [
+        "KZ25-0115",
+        "KZ25-0004",
+        "KZ25-0055",
+        "KZ25-0109",
+        "KZ25-0071"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.021084249950945377
+    },
+    {
+      "case_id": "R04",
+      "method": "RRF only k=60",
+      "query": "梱包を開けたインペラハウジングの皿モミ部に0.124mmのへこみがあり、緩衝材の仕切り不足が疑われた事例",
+      "gold_ids": [
+        "KZ25-0115"
+      ],
+      "ids": [
+        "KZ25-0115",
+        "KZ25-0004",
+        "KZ25-0055",
+        "KZ25-0071",
+        "KZ25-0028"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": null
+    },
+    {
+      "case_id": "R04",
+      "method": "Application full hybrid",
+      "query": "梱包を開けたインペラハウジングの皿モミ部に0.124mmのへこみがあり、緩衝材の仕切り不足が疑われた事例",
+      "gold_ids": [
+        "KZ25-0115"
+      ],
+      "ids": [
+        "KZ25-0115",
+        "KZ25-0004",
+        "KZ25-0055",
+        "KZ25-0071",
+        "KZ25-0028"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.025821249990258366
+    },
+    {
+      "case_id": "R05",
+      "method": "BM25 + synonym expansion",
+      "query": "バルブボディの新しいプログラムで座標系を誤り、穴のまとまり全体が0.192mmずれた初品の事例",
+      "gold_ids": [
+        "KZ25-0113"
+      ],
+      "ids": [
+        "KZ25-0113",
+        "KZ25-0105",
+        "KZ25-0013",
+        "KZ25-0064",
+        "KZ25-0065"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.0006190839922055602
+    },
+    {
+      "case_id": "R05",
+      "method": "e5 dense only",
+      "query": "バルブボディの新しいプログラムで座標系を誤り、穴のまとまり全体が0.192mmずれた初品の事例",
+      "gold_ids": [
+        "KZ25-0113"
+      ],
+      "ids": [
+        "KZ25-0113",
+        "KZ25-0105",
+        "KZ25-0064",
+        "KZ25-0065",
+        "KZ25-0013"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.01968545897398144
+    },
+    {
+      "case_id": "R05",
+      "method": "RRF only k=60",
+      "query": "バルブボディの新しいプログラムで座標系を誤り、穴のまとまり全体が0.192mmずれた初品の事例",
+      "gold_ids": [
+        "KZ25-0113"
+      ],
+      "ids": [
+        "KZ25-0113",
+        "KZ25-0105",
+        "KZ25-0064",
+        "KZ25-0013",
+        "KZ25-0065"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": null
+    },
+    {
+      "case_id": "R05",
+      "method": "Application full hybrid",
+      "query": "バルブボディの新しいプログラムで座標系を誤り、穴のまとまり全体が0.192mmずれた初品の事例",
+      "gold_ids": [
+        "KZ25-0113"
+      ],
+      "ids": [
+        "KZ25-0113",
+        "KZ25-0105",
+        "KZ25-0064",
+        "KZ25-0013",
+        "KZ25-0065"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.025608708965592086
+    },
+    {
+      "case_id": "R06",
+      "method": "BM25 + synonym expansion",
+      "query": "マニホールドブロックの皿モミ部に15mmの円弧状の擦り傷があり、新任者の段取りが原因と記録された事例",
+      "gold_ids": [
+        "KZ25-0112"
+      ],
+      "ids": [
+        "KZ25-0112",
+        "KZ25-0055",
+        "KZ25-0095",
+        "KZ25-0081",
+        "KZ25-0004"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.0006902910536155105
+    },
+    {
+      "case_id": "R06",
+      "method": "e5 dense only",
+      "query": "マニホールドブロックの皿モミ部に15mmの円弧状の擦り傷があり、新任者の段取りが原因と記録された事例",
+      "gold_ids": [
+        "KZ25-0112"
+      ],
+      "ids": [
+        "KZ25-0112",
+        "KZ25-0081",
+        "KZ25-0095",
+        "KZ25-0025",
+        "KZ25-0031"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.019676624971907586
+    },
+    {
+      "case_id": "R06",
+      "method": "RRF only k=60",
+      "query": "マニホールドブロックの皿モミ部に15mmの円弧状の擦り傷があり、新任者の段取りが原因と記録された事例",
+      "gold_ids": [
+        "KZ25-0112"
+      ],
+      "ids": [
+        "KZ25-0112",
+        "KZ25-0081",
+        "KZ25-0095",
+        "KZ25-0055",
+        "KZ25-0028"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": null
+    },
+    {
+      "case_id": "R06",
+      "method": "Application full hybrid",
+      "query": "マニホールドブロックの皿モミ部に15mmの円弧状の擦り傷があり、新任者の段取りが原因と記録された事例",
+      "gold_ids": [
+        "KZ25-0112"
+      ],
+      "ids": [
+        "KZ25-0112",
+        "KZ25-0081",
+        "KZ25-0095",
+        "KZ25-0055",
+        "KZ25-0028"
+      ],
+      "rank": 1,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "reciprocal_rank": 1.0,
+      "elapsed_s": 0.024568708962760866
+    }
+  ],
+  "note": "同じ6問・1試行。BM25は同義語展開込み、RRF単独は後段の補正なし。Application fullにはファセット補正・近傍グラフ展開等の既存処理を含む。",
+  "measured_at": "2026-09-15T11:36:01.316007+00:00"
+}

@@ -1,0 +1,38 @@
+sequenceDiagram
+    autonumber
+    actor U as 品質担当
+    participant API as FastAPI /api/triage
+    participant G as LangGraph<br/>(SQLite に毎回保存)
+    participant C as decision_client<br/>(同じ入力は10分使い回す)
+    participant OR as OpenRouter<br/>(版を固定・ZDR)
+    participant J as 判断モデル Jev
+    participant L as LLM(OpenCode)
+    U->>API: 判定する(報告書 1 件)
+    API->>G: run(run_id)
+    G->>C: 不具合内容だけ 4問 / 原因だけ 3問
+    par 2回を並列
+        C->>OR: state＋questions(session_id=run_id)
+        OR->>J: 判断
+        J-->>C: 型付きの答え＋確率
+    and
+        C->>OR: 原因の state
+        OR->>J: 判断
+        J-->>C: 型付きの答え＋確率
+    end
+    C-->>G: 答え(1位の確率・2位との差)
+    alt 1位の確率・差が閾値に届かない
+        G->>L: 現象・要因だけ選び直し(理由つき)
+        L-->>G: 提案(人が確かめるまで採用しない)
+    end
+    alt 客先流出、または仕組みの原因＋重要度 high
+        G->>L: 処置案の下書き
+        G->>C: 処置案ごとに 3問(原因に対応・再発を防ぐ・具体的)
+        C-->>G: 3つの確率(3つとも 0.7 以上の案だけ最初から選ぶ)
+        G-->>API: waiting_approval(interrupt で止まる)
+        U->>API: 承認(採る案を選ぶ)
+        API->>G: resume(run_id)
+        G-->>API: 選んだ案だけ CAPA に登録
+    else CAPA は不要
+        G-->>API: completed
+    end
+    Note over API: /api/triage/metrics が、最新の判定といまの登録値(人が確かめた値)を比べ続ける

@@ -1,0 +1,20 @@
+flowchart TD
+    A["Jev の答え(Choice)<br/>確率の分布"] --> V{"答えた版は<br/>閾値を測った版と同じか"}
+    V -- 違う --> H1["自動では採らない<br/>(測り直すまで)"]
+    V -- 同じ --> O{"「その他」「不明」か"}
+    O -- はい --> H2["採らない"]
+    O -- いいえ --> M{"記述不足と判断<br/>(Noul ≥ 0.7)"}
+    M -- はい --> H3["現象は採らない"]
+    M -- いいえ --> R{"1位の確率 ≥ 0.8<br/>かつ 2位との差 ≥ 0.6"}
+    R -- はい --> OK["採用(自動)"]
+    R -- いいえ --> L["LLM が選び直す<br/>(理由つき)"]
+    H1 --> P["人が確かめる"]
+    H2 --> P
+    H3 --> P
+    L --> P
+    classDef ok fill:#E8F5E9,stroke:#2E7D32,color:#1B5E20
+    classDef human fill:#E3F2FD,stroke:#2E75B6,color:#0D47A1
+    classDef llm fill:#FFF3E0,stroke:#C55A11,color:#8A3A00
+    class OK ok
+    class P,H1,H2,H3 human
+    class L llm

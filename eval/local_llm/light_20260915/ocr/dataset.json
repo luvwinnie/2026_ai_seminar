@@ -1,0 +1,35 @@
+{
+  "documents": [
+    {
+      "id": "V01",
+      "image": "document_1.png",
+      "image_sha256": "7f2fd0910344e2a36a1eb7514ca37e7797594eb80fc68ff3fcb3632d58be40b7",
+      "expected_text": "評価用 不適合報告書\n\nこれはOCR動作確認用の合成資料です。\n\n報告書ID\tKZ25-9001\n機械名\tBENCH設備A\n発生日\t2026年1月1日\n工程\tBENCH工程\n加工数\t100\n不適合数\t10\n損失額（円）\t100\n状態\topen\n\n記録内容：加工後の検査で傷を確認した。\n処置内容：対象品を隔離し、再検査する。",
+      "required_ids": [
+        "KZ25-9001",
+        "BENCH設備A"
+      ]
+    },
+    {
+      "id": "V02",
+      "image": "document_2.png",
+      "image_sha256": "791f9b1ef340a3531698f83b39c69a9ff81f75baba7d6444549ed9995d2e0727",
+      "expected_text": "評価用 不適合報告書\n\nこれはOCR動作確認用の合成資料です。\n\n報告書ID\tKZ25-9002\n機械名\tBENCH設備A\n発生日\t2026年1月2日\n工程\tBENCH工程\n加工数\t900\n不適合数\t9\n損失額（円）\t200\n状態\topen\n\n記録内容：加工後の検査で傷を確認した。\n処置内容：対象品を隔離し、再検査する。",
+      "required_ids": [
+        "KZ25-9002",
+        "BENCH設備A"
+      ]
+    },
+    {
+      "id": "V03",
+      "image": "document_3.png",
+      "image_sha256": "441ac9b9e76a751ac478178066d7abf24c23fb8939141af75639c837be9f2991",
+      "expected_text": "評価用 不適合報告書\n\nこれはOCR動作確認用の合成資料です。\n\n報告書ID\tKZ25-9003\n機械名\tBENCH設備B\n発生日\t2026年1月3日\n工程\tBENCH工程\n加工数\t0\n不適合数\t0\n損失額（円）\t未入力\n状態\topen\n\n記録内容：加工後の検査で傷を確認した。\n処置内容：対象品を隔離し、再検査する。",
+      "required_ids": [
+        "KZ25-9003",
+        "BENCH設備B"
+      ]
+    }
+  ],
+  "note": "Three clean synthetic Japanese pages; smoke test, not general OCR benchmark."
+}

@@ -1,0 +1,27 @@
+{
+  "recorded_at": "2026-09-15T12:58:56.174821+00:00",
+  "local_platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.7",
+  "packages": {
+    "httpx": "0.28.1",
+    "fastmcp": "3.4.2",
+    "jsonschema": "4.26.0",
+    "sqlalchemy": "2.0.51",
+    "pydantic": "2.13.4",
+    "numpy": "2.5.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1",
+    "playwright": "1.61.0"
+  },
+  "backend_image_id": "sha256:fbe3d7cec8d17167ee342496d7593fd86b7bca7a887f1b33f606bf0a1e97c425",
+  "baseline_docker_source_sha256": {
+    "services.rag": "b06e70f71a7b33599df1bc9d291966bee2b8573af2179059f1207f82a1ff170a",
+    "services.hybrid": "66eeb8cf4c72b2202f4b10fe873161a82f05939ab5915e03dd64c25101f4b948"
+  },
+  "baseline_local_source_sha256": {
+    "services.rag": "b06e70f71a7b33599df1bc9d291966bee2b8573af2179059f1207f82a1ff170a",
+    "services.hybrid": "66eeb8cf4c72b2202f4b10fe873161a82f05939ab5915e03dd64c25101f4b948"
+  },
+  "baseline_sources_match": true,
+  "remote_hardware": "GPU model / total RAM not confirmed; per-model api/ps observations are saved."
+}

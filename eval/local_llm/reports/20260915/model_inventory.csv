@@ -1,0 +1,44 @@
+﻿model,selected,reason,size_bytes,digest,parameter_size,quantization,capabilities
+qwen3.8:27b-mtp-q4_K_M,True,評価対象,17741872154,22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643,27.3B,Q4_K_M,"completion,tools,thinking,vision"
+qwen3.8:27b-mtp-q8_0,True,評価対象,29978242072,8a15828773037bdbb79b103ca20344c67a05251521b918a534c135ca76f1f04d,27.3B,Q8_0,"completion,tools,thinking,vision"
+qwen3.8:27b,False,tools capabilityなし,17923394892,276bc0e81bebe0c1b7943921a3048d8335be906005e6c6031fc7a9b0cc56847b,27.3B,Q4_K_S,completion
+laguna-s-2.1:q4_K_M,True,評価対象,75173106511,592a1286688ed51a183a158a60c5a86e1f3df8ee66375f8335fcfdfb33dbfb3d,117.6B,Q4_K_M,"completion,tools,thinking"
+nemotron3-embed:1b,False,tools capabilityなし,749352367,74cd51ce717f69716d390928dec1abb2883a4d4641b91d248c9cd92a21e00bb1,1.1B,Q4_K_M,embedding
+unlimited-ocr:q8,False,tools capabilityなし,3938016705,cee99c573dee9e515729a9ca8e9618b90a53b8207006c12516ccd649910df77c,2.9B,Q8_0,"completion,vision"
+gemma4:26b,True,評価対象,17987581215,5571076f3d70050487b26b341705799e0ab29b808164f90d20d4cf84f699d251,25.8B,Q4_K_M,"completion,tools,thinking"
+gemma4:31b,True,評価対象,19868981791,6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7,31.3B,Q4_K_M,"completion,tools,thinking"
+bonsai-27b:1bit,False,tools capabilityなし,4432699700,96f14e2fa5f94e109b10d6e5e6f0b6180498d3a000ed9242e7a06ba07e21dad6,26.9B,Q1_0,"completion,vision"
+jina-v5:nano,False,tools capabilityなし,232884048,222b6d0f5ae0ee1476c65d56f7e894d37716ac3a1e9fac9500b14c6a513ddb7b,211.77M,Q8_0,embedding
+jina-v5:small,False,tools capabilityなし,1198182729,dd3dbd1595b795c465d6b7d61a4184213a9bfdf313edba03d9bc3fb81885b38a,596.05M,F16,completion
+gemma4:26b-a4b,True,評価対象,15442104444,d4dc94e63de9aa4fcf7a3ecb49c67cfa01da871cc55246614d90b6580f1df5c7,25.2B,Q4_0,"completion,tools,thinking,vision"
+qwythos:9b,False,tools capabilityなし,10704226705,e7e73c423dac58486e3a840ee70927d748ef1cb4be29ecced6c68efd3eb5da90,9.2B,Q8_0,"completion,vision"
+ornith:35b,False,tools capabilityなし,36903139287,8482e875d98d541e7889e6bc7bce49949d2ab68b60a1094f8aa3a01526258b2e,34.7B,Q8_0,completion
+genesis-uncensored:latest,False,tools capabilityなし,36903139728,2cc30f48a92916c0340607d704fb7f92cb098eb7338875b156b281b2e4e8480f,34.7B,Q8_0,completion
+qwen3.6:35b-a3b-mtp-q8_0,True,評価対象,38705807003,c61138a79add459de71c9227941af0a2aaa89597e4c1e81a611043d43cd6d023,35.5B,Q8_0,"completion,tools,thinking,vision"
+qwen3.6:35b-a3b,True,評価対象,23938333577,07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522,36.0B,Q4_K_M,"vision,completion,tools,thinking"
+gpt-oss:120b,True,評価対象,65369818941,a951a23b46a1f6093dafee2ea481d634b4e31ac720a8a16f3f91e04f5a40ecd9,116.8B,MXFP4,"completion,tools,thinking"
+kimi-k2.5:cloud,False,クラウド転送,340,6d1c3246c6080b61c87b543323760b8f36cb68cf4473080b9429d09e2a73ddb7,,,"completion,tools,thinking,vision"
+kimi-k2.6:cloud,False,クラウド転送,384,a90cd0d1590c53b9f9f4e0f66218e4c514d190652b8bed2842528e2530e34dc6,1T,int4,"completion,tools,thinking,vision"
+qwen3-embedding:4b,False,tools capabilityなし,2496704041,df5bd2e3c74cd8d069d21dc038f1b359fcdc9458fce1c99bd43c9eb1518ff907,4.0B,Q4_K_M,embedding
+qwen3-embedding:0.6b,False,tools capabilityなし,639150858,ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d,595.78M,Q8_0,embedding
+qwen3-embedding:8b,False,tools capabilityなし,4676805193,64b933495768fbd3b87c20583d379728a07471e0c66733a9df87cd1901b3c44b,7.6B,Q4_K_M,embedding
+qwen3.5:35b,True,評価対象,23869191742,3460ffeede5453ead027dbd2f821b12ad0aa3de54630971993babdb2165221f7,36.0B,Q4_K_M,"vision,completion,tools,thinking"
+embeddinggemma:latest,False,tools capabilityなし,621875917,85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1,307.58M,BF16,embedding
+qwen3.5:9b-nothink,True,評価対象,6594475178,01ab85d80844077dffb6099d1428c28cd03fd0ef0315c55716bdbbf9d20712f6,9.7B,Q4_K_M,"vision,completion,tools,thinking"
+qwen3.5:9b,True,評価対象,6594474711,6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7,9.7B,Q4_K_M,"vision,completion,tools,thinking"
+hf.co/mmnga-o/NVIDIA-Nemotron-Nano-9B-v2-Japanese-gguf:Q8_0,False,tools capabilityなし,9458095016,4105be11fbad36319c75e8d6ddf100eaea737285b8d7fad4a8b06b62ca072ea0,8.89B,unknown,completion
+qwen3.5:4b,True,評価対象,3389983735,2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd,4.7B,Q4_K_M,"vision,completion,tools,thinking"
+qwen3.5:2b,True,評価対象,2741192820,324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df,2.3B,Q8_0,"vision,completion,tools,thinking"
+qwen3.5:0.8b,True,評価対象,1036046583,f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4,873.44M,Q8_0,"vision,completion,tools,thinking"
+glm-4.7-flash:q4_K_M,True,評価対象,19019270852,d1a8a26252f18b34301218d22abd2620a65b85ba4b78987842eb157e01321222,29.9B,Q4_K_M,"completion,tools,thinking"
+kimi-k2-thinking:cloud,False,クラウド転送,393,9752ffb77f53ac4d60b9d21712231f17550e46a4acd3d1c46d104ff2fb675cf5,1T,INT4,"completion,tools,thinking"
+llama3.2-vision:latest,False,tools capabilityなし,7816589186,6f2f9757ae97e8a3f8ea33d6adb2b11d93d9a35bef277cd2c0b1b5af8e8d0b1e,10.7B,Q4_K_M,"vision,completion"
+gemma3:1b,False,tools capabilityなし,815319791,8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc,999.89M,Q4_K_M,completion
+gemma3:270m,False,tools capabilityなし,291554930,e7d36fb2c3b3293cfe56d55889867a064b3a2b22e98335f2e6e8a387e081d6be,268.10M,Q8_0,completion
+gpt-oss:20b,True,評価対象,13793441244,17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7,20.9B,MXFP4,"completion,tools,thinking"
+qwen3-vl:30b,True,評価対象,19595410062,eda0be1008774ea4e575187712b9a3b1201f3e66e7ecff899cc295db1cf00248,31.1B,Q4_K_M,"vision,completion,tools,thinking"
+gemma3:12b,False,tools capabilityなし,8149190253,f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a,12.2B,Q4_K_M,completion
+llama4:scout,True,評価対象,67436862523,bf31604e25c25d964e250bcf28a82bfbdbe88af5f236257fabb27629bb24c7f3,108.6B,Q4_K_M,"vision,completion,tools"
+qwen3-vl:8b,True,評価対象,6140415879,901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28,8.8B,Q4_K_M,"vision,completion,tools,thinking"
+gemma3:4b,False,tools capabilityなし,3338801804,a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a,4.3B,Q4_K_M,completion
+qwen2.5vl:latest,False,tools capabilityなし,5969245856,5ced39dfa4bac325dc183dd1e4febaa1c46b3ea28bce48896c8e69c1e79611cc,8.3B,Q4_K_M,"vision,completion"

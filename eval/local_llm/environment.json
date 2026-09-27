@@ -1,0 +1,44 @@
+{
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "client_platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "httpx": "0.28.1",
+    "fastmcp": "3.4.2",
+    "jsonschema": "4.26.0",
+    "sqlalchemy": "2.0.51",
+    "pydantic": "2.13.4",
+    "pytest": "9.1.1",
+    "matplotlib": "3.11.2",
+    "markdown": "3.10.3"
+  },
+  "ollama_version": {
+    "version": "0.32.11"
+  },
+  "opencode_version": "1.18.28",
+  "remote_hardware": "not independently verified",
+  "opencode_image_id": "sha256:1e8ca7adedbd498bc1ef36d47c1c205b281da43386194db549125813c2a9b6f1",
+  "app_source_sha256": {
+    "app/backend/services/digest.py": "e1b69627abc142f08f34d6a4c30260c2c845b56b538778a59d9dbf7b129dfa51",
+    "app/backend/services/ui_bus.py": "bf1293eeb8044a85971713e23eed1a428600d527c6c5271dacf33196c64ebc6a",
+    "app/backend/services/ontology_contract.py": "d8ab42b827e860df8fbc6d48e31544934509638f4e2a5608708d90b1eae91943",
+    "app/backend/services/hybrid.py": "66eeb8cf4c72b2202f4b10fe873161a82f05939ab5915e03dd64c25101f4b948",
+    "app/backend/services/graph.py": "f66a93f4c4b37c6bc97924736a17909a5d543dfd2d9b9d4e3cb4b3f95db7f964",
+    "app/backend/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/backend/services/telemetry.py": "5c62b485f06c91305c53ce9e9f1fb8caf5012d5eedddd0fb850ca067f72b9406",
+    "app/backend/services/llm.py": "92c0447f47971661197f8c50fec3643f1d62f605163ef48d0986e437b172ca5b",
+    "app/backend/services/capa_service.py": "e6c9e46098ca8b2d52f1db140140d4b589fcdcc98462ba58e291117f02e69b74",
+    "app/backend/services/opencode_client.py": "de3f6b5a2ee32a14c0614257059c1157865c4f887c448c98d82a922e94bd9f7a",
+    "app/backend/services/report_service.py": "913d13dc1c2780bb7d0d009e0bc8d80dd64f8c73db7a2d979c97e648f0fc1c1d",
+    "app/backend/services/ui_control.py": "2bbaf411bcd8e70bb70399dbfbdd37b4ea97727d3efb18a53d4f0982e7068eef",
+    "app/backend/services/rag.py": "b06e70f71a7b33599df1bc9d291966bee2b8573af2179059f1207f82a1ff170a",
+    "app/backend/services/stats.py": "381ac5944b4aa2d15b28768275cc0bdd88c546693b755e6c80d33db9dcf45fa0",
+    "app/backend/services/ontology.py": "78d130e439edf8eeafcc0663a847451e2d138b2bcf3535acd9ceb06fc1cd3f98",
+    "app/backend/services/ontology_mcp.py": "6acef2facfd0406446bb3ba3070fb8093962aebb7da325f07adec83aa35a0614",
+    "app/backend/services/mcp_server.py": "31439baf3bfa682d19d485962518a41119e1f86df333a548f7fe7267e659fd59",
+    "app/backend/ontology/quality.json": "4dae1e351b85ea344dea625f27a5950b230d49cdffd8a27b76180a5e8920f102",
+    "app/backend/models.py": "c55d208713539cae84c667bf5916b2214af625ebb7edec7a937d0c9b6bf39404",
+    "app/backend/database.py": "6e66d947c086bb5a65b898916b7d6f76309ee1b140648559f002b10cfe949ba7",
+    "app/backend/routers/chat.py": "3216c451d207670b46309f50259dbc49668480f9a2c46128ddc408318351df2c",
+    "app/opencode/AGENTS.md": "c47c9739ed242af0736b9e6fd2a7c14834f47ff368bdc4a5538d2d913fd87fd2"
+  }
+}

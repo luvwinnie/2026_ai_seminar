@@ -1,0 +1,65 @@
+[
+  {
+    "model": "gemma4:26b-a4b",
+    "case_id": "O09",
+    "title": "成功例：名前をIDへ解決してから、設備と未完了CAPAの両方で絞る",
+    "explanation": "まずMachineLabelとしてBENCH設備Aを解決し、返却されたobject_idを次のscope.machine_idへ渡す。同じscope内にhas_open_capa=trueも指定する。実サービスが報告1件・損失100円・未完了CAPA2件を返し、その値をJSONにする。名前の解決、条件付き集計、回答の整形を別の段階に分けて追える成功例。後述のQwen3.5:4bの同じ設問と比較すると、最終値が同じでも根拠取得の正しさが異なる。",
+    "source_sha256": "23183183c265d76dd105d6a97bee7c56d54f13b9283f5cd5529f449c9e09c3f8"
+  },
+  {
+    "model": "gemma4:26b-a4b",
+    "case_id": "O04",
+    "title": "成功例：ゼロ分母と未入力の金額を、ゼロ円・0%にしない",
+    "explanation": "BENCH設備BをIDへ解決して実集計を取得し、分母ゼロの不適合率と未入力の損失額をnullで返した。missing_loss_reports=1も保持している。Ontologyの指標定義とサービス側のNULL処理が、AIによる誤った補完を防ぐための共通契約になる。",
+    "source_sha256": "23183183c265d76dd105d6a97bee7c56d54f13b9283f5cd5529f449c9e09c3f8"
+  },
+  {
+    "model": "gemma4:26b-a4b",
+    "case_id": "O07",
+    "title": "成功例：曖昧な設備名で勝手に対象を決めない",
+    "explanation": "MachineLabelとしてBENCHを検索すると複数候補が返る。モデルは任意の候補で集計せず、needs_clarification=trueを返した。曖昧さを候補一覧として表現するOntologyツールと、確定できない場合に確認へ戻るエージェントの役割を説明できる。",
+    "source_sha256": "23183183c265d76dd105d6a97bee7c56d54f13b9283f5cd5529f449c9e09c3f8"
+  },
+  {
+    "model": "qwen3.5:2b",
+    "case_id": "O01",
+    "title": "値・根拠が正しくても、機械処理用の形式に失敗する",
+    "explanation": "この回答の件数4、損失841072円、不適合率0.12075471698113208は正しい。履歴ではID解決後に正しいmachine_idで集計できている。ただし最後が自然文であり、要求したJSON形式を満たさないため主指標では不合格。ここから「このモデルは数値を理解できない」と結論しない。主表の値一致もJSONから抽出する指標なので、この自然文の意味的正しさを自動採点したものではない。",
+    "source_sha256": "7976ca99ef1c66ab342461739c113cea87c3c1858b39ab9b44af7227b54ffd8c"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "O09",
+    "title": "答えの数値が偶然合っていても、検索条件が欠けている",
+    "explanation": "回答の1件・100円・CAPA2件は正解値と一致する。しかし実際のquery_quality_ontologyにはmachine_idがなく、has_open_capa=trueだけで問い合わせている。今回のfixtureでは未完了CAPAのある報告がBENCH設備Aにしかないため一致した。将来、別設備にCAPAが追加されると誤答になる。採点は値だけでなく正しい対象条件を確認し、不合格にする。",
+    "source_sha256": "e875110d00e73a571de2623d4800e75395e46844cb98cf4768619280e646243d"
+  },
+  {
+    "model": "qwen3.5:4b",
+    "case_id": "O01",
+    "title": "名前とOntology上のID・型を取り違える",
+    "explanation": "a61nxはこのデータでは機械名だが、初手でdefect_idに入れ、その後もDefectReportとして解決している。サービスが不正な対象を拒否し、モデルは不明値を返した。講義ではMachineLabelという型、表示名a61nx、解決後のobject_idを別々に示す。",
+    "source_sha256": "e875110d00e73a571de2623d4800e75395e46844cb98cf4768619280e646243d"
+  },
+  {
+    "model": "bonsai-27b:1bit",
+    "case_id": "O03",
+    "title": "公開Schemaの検証とアプリ内部の制約は別の検証",
+    "explanation": "group_byに引用符を含む文字列が渡されている。公開Schemaではstringなので通るが、内部のQualityQueryはMachineLabel / Process / Customerという選択肢を検証し拒否する。モデルは条件を落として再試行し、同一呼び出しの反復上限で停止した。公開Schemaにもenumを出す設計と、エラーを受けて修正するハーネスの両方を検討する材料になる。",
+    "source_sha256": "8479b85aea2e2591b544bb9bfc6aca31018123634b1322debc1024234e5996cf"
+  },
+  {
+    "model": "qwen3.5:2b",
+    "case_id": "C03",
+    "title": "返却済みの集計結果を再計算して取り違えない",
+    "explanation": "正しい既知損失は300円だが、モデルは400円を返している。2つのCAPAが同じ100円の報告に紐づくfixtureなので、関連行を重複して数えると400円になる。ただし内部の誤りの原因を出力だけから断定はできない。講義では報告2行とCAPA3行を図示し、SUMの母集団とサーバー計算済みmetricsの意味を説明する。",
+    "source_sha256": "7976ca99ef1c66ab342461739c113cea87c3c1858b39ab9b44af7227b54ffd8c"
+  },
+  {
+    "model": "qwen3.5:0.8b",
+    "case_id": "O08",
+    "title": "保存しない検証依頼でも、操作の実行境界が必要",
+    "explanation": "利用者はclosedにできるかの検証だけを求めているが、モデルはcreate_capa_actionを試行した。ハーネスは参照・previewの許可リストにない呼び出しを遮断し、DBは変更していない。モデルへの指示、ツール引数の検証、操作許可、サービスの業務制約、DB変更の監査を具体的に分けて説明する。",
+    "source_sha256": "062fd4a3f0f545e2a3806d67bbd44cb01ab05c591d92a440df5891454cd8c94a"
+  }
+]

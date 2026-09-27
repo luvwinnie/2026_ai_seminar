@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-09-15T14:11:18.078276+00:00",
+  "report_script_sha256": "497e0871764f0f3a1ed144b5deb0e73c7af1d849e8869599136b4763b7139f5b",
+  "complete": true,
+  "generation_completed_models": 21,
+  "generation_unavailable_models": 2,
+  "generation_records": 1050,
+  "embedding_completed_models": 7,
+  "embedding_error_models": 0,
+  "embedding_records": 336,
+  "database_unchanged": true,
+  "ocr_records": 3,
+  "off_label_ocr_records": 8,
+  "structured_diagnostic_records": 48,
+  "raw_transport_records": 50,
+  "agent_prompt_diagnostic_records": 70
+}

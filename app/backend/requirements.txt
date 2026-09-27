@@ -1,0 +1,21 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+anthropic
+chromadb
+python-multipart
+openpyxl
+pandas
+reportlab
+httpx
+pytest
+fastmcp
+psycopg[binary]
+# 形態素BM25用(任意)。未導入時は文字バイグラムに自動フォールバック(services/hybrid.py)
+sudachipy
+sudachidict_core
+langfuse>=2.53,<3
+# 報告書トリアージ(判断モデル Jev の呼び出しは httpx。流れと承認待ちは LangGraph+SQLite チェックポイント)
+langgraph>=1.2,<2
+langgraph-checkpoint-sqlite>=3.1,<4

@@ -1,0 +1,3933 @@
+{
+  "recorded_at": "2026-09-15T12:20:05.148033+00:00",
+  "models": [
+    {
+      "model": "gemma3:270m",
+      "digest": "e7d36fb2c3b3293cfe56d55889867a064b3a2b22e98335f2e6e8a387e081d6be",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 1.0562222499866039,
+          "request": {
+            "model": "gemma3:270m",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            }
+          },
+          "response": {
+            "model": "gemma3:270m",
+            "created_at": "2026-09-15T12:18:29.209062Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了\n"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1032135625,
+            "load_duration": 1008830709,
+            "prompt_eval_count": 20,
+            "prompt_eval_duration": 12910000,
+            "eval_count": 4,
+            "eval_duration": 8747000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 400,
+          "elapsed_s": 0.1051128749968484,
+          "request": {
+            "model": "gemma3:270m",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "error": "registry.ollama.ai/library/gemma3:270m does not support tools"
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "gemma3:270m",
+            "model": "gemma3:270m",
+            "size": 409605242,
+            "digest": "e7d36fb2c3b3293cfe56d55889867a064b3a2b22e98335f2e6e8a387e081d6be",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma3",
+              "families": [
+                "gemma3"
+              ],
+              "parameter_size": "268.10M",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:29.209133+09:00",
+            "size_vram": 409605242,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "gemma3:1b",
+      "digest": "8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 1.4454107920173556,
+          "request": {
+            "model": "gemma3:1b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            }
+          },
+          "response": {
+            "model": "gemma3:1b",
+            "created_at": "2026-09-15T12:18:30.778805Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了です。"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1434462584,
+            "load_duration": 1365556709,
+            "prompt_eval_count": 21,
+            "prompt_eval_duration": 49559000,
+            "eval_count": 5,
+            "eval_duration": 18141000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 400,
+          "elapsed_s": 0.17632416705600917,
+          "request": {
+            "model": "gemma3:1b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "error": "registry.ollama.ai/library/gemma3:1b does not support tools"
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "gemma3:1b",
+            "model": "gemma3:1b",
+            "size": 1011676610,
+            "digest": "8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma3",
+              "families": [
+                "gemma3"
+              ],
+              "parameter_size": "999.89M",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:30.77887+09:00",
+            "size_vram": 1011676610,
+            "context_length": 32768
+          },
+          {
+            "name": "gemma3:270m",
+            "model": "gemma3:270m",
+            "size": 409605242,
+            "digest": "e7d36fb2c3b3293cfe56d55889867a064b3a2b22e98335f2e6e8a387e081d6be",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma3",
+              "families": [
+                "gemma3"
+              ],
+              "parameter_size": "268.10M",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:29.209133+09:00",
+            "size_vram": 409605242,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen3.5:0.8b",
+      "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 1.3237779579358175,
+          "request": {
+            "model": "qwen3.5:0.8b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "qwen3.5:0.8b",
+            "created_at": "2026-09-15T12:18:32.29795Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了です。"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1313352042,
+            "load_duration": 1271631250,
+            "prompt_eval_count": 22,
+            "prompt_eval_duration": 20538000,
+            "eval_count": 5,
+            "eval_duration": 19921000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.33823320793453604,
+          "request": {
+            "model": "qwen3.5:0.8b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "qwen3.5:0.8b",
+            "created_at": "2026-09-15T12:18:32.636288Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "call_yzi6n8go",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 328017417,
+            "load_duration": 174655042,
+            "prompt_eval_count": 287,
+            "prompt_eval_duration": 37972000,
+            "eval_count": 26,
+            "eval_duration": 111794000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "qwen3.5:0.8b",
+            "model": "qwen3.5:0.8b",
+            "size": 1544195930,
+            "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "873.44M",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:32.636355+09:00",
+            "size_vram": 1544195930,
+            "context_length": 32768
+          },
+          {
+            "name": "gemma3:1b",
+            "model": "gemma3:1b",
+            "size": 1011676610,
+            "digest": "8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma3",
+              "families": [
+                "gemma3"
+              ],
+              "parameter_size": "999.89M",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:30.77887+09:00",
+            "size_vram": 1011676610,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen3.5:2b",
+      "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 1.8769042500061914,
+          "request": {
+            "model": "qwen3.5:2b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "qwen3.5:2b",
+            "created_at": "2026-09-15T12:18:34.531537Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1866566667,
+            "load_duration": 1819164167,
+            "prompt_eval_count": 22,
+            "prompt_eval_duration": 32296000,
+            "eval_count": 3,
+            "eval_duration": 13674000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.4265167089179158,
+          "request": {
+            "model": "qwen3.5:2b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "qwen3.5:2b",
+            "created_at": "2026-09-15T12:18:34.954789Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "call_hodtzqp3",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 413024500,
+            "load_duration": 185238000,
+            "prompt_eval_count": 287,
+            "prompt_eval_duration": 65709000,
+            "eval_count": 26,
+            "eval_duration": 158243000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "qwen3.5:2b",
+            "model": "qwen3.5:2b",
+            "size": 2825933289,
+            "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "2.3B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:34.954871+09:00",
+            "size_vram": 2825933289,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.5:0.8b",
+            "model": "qwen3.5:0.8b",
+            "size": 1544195930,
+            "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "873.44M",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:32.636355+09:00",
+            "size_vram": 1544195930,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "gemma3:4b",
+      "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 2.7486154589569196,
+          "request": {
+            "model": "gemma3:4b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            }
+          },
+          "response": {
+            "model": "gemma3:4b",
+            "created_at": "2026-09-15T12:18:37.72518Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了\n"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 2737975541,
+            "load_duration": 2653880666,
+            "prompt_eval_count": 21,
+            "prompt_eval_duration": 59502000,
+            "eval_count": 4,
+            "eval_duration": 23309000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 400,
+          "elapsed_s": 0.18557850003708154,
+          "request": {
+            "model": "gemma3:4b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "error": "registry.ollama.ai/library/gemma3:4b does not support tools"
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "gemma3:4b",
+            "model": "gemma3:4b",
+            "size": 3938011053,
+            "digest": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma3",
+              "families": [
+                "gemma3"
+              ],
+              "parameter_size": "4.3B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:37.725254+09:00",
+            "size_vram": 3938011053,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.5:2b",
+            "model": "qwen3.5:2b",
+            "size": 2825933289,
+            "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "2.3B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:34.954871+09:00",
+            "size_vram": 2825933289,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen3.5:4b",
+      "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 2.4171220420394093,
+          "request": {
+            "model": "qwen3.5:4b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "qwen3.5:4b",
+            "created_at": "2026-09-15T12:18:40.338537Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 2398114583,
+            "load_duration": 2315598833,
+            "prompt_eval_count": 22,
+            "prompt_eval_duration": 60328000,
+            "eval_count": 3,
+            "eval_duration": 20758000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.5776996670756489,
+          "request": {
+            "model": "qwen3.5:4b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "qwen3.5:4b",
+            "created_at": "2026-09-15T12:18:40.924582Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "call_m5zaq124",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 565662750,
+            "load_duration": 191173375,
+            "prompt_eval_count": 287,
+            "prompt_eval_duration": 146278000,
+            "eval_count": 26,
+            "eval_duration": 220464000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "qwen3.5:4b",
+            "model": "qwen3.5:4b",
+            "size": 4231255816,
+            "digest": "2a654d98e6fba55d452b7043684e9b57a947e393bbffa62485a7aac05ee4eefd",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "4.7B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:40.924655+09:00",
+            "size_vram": 4231255816,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.5:2b",
+            "model": "qwen3.5:2b",
+            "size": 2825933289,
+            "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "2.3B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:34.954871+09:00",
+            "size_vram": 2825933289,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "unlimited-ocr:q8",
+      "digest": "cee99c573dee9e515729a9ca8e9618b90a53b8207006c12516ccd649910df77c",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 2.199418667005375,
+          "request": {
+            "model": "unlimited-ocr:q8",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            }
+          },
+          "response": {
+            "model": "unlimited-ocr:q8",
+            "created_at": "2026-09-15T12:18:43.142356Z",
+            "message": {
+              "role": "assistant",
+              "content": ""
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 2188846625,
+            "load_duration": 2175947041,
+            "prompt_eval_count": 12,
+            "prompt_eval_duration": 11269000,
+            "eval_count": 1,
+            "eval_duration": 1000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 400,
+          "elapsed_s": 0.06321808404754847,
+          "request": {
+            "model": "unlimited-ocr:q8",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "error": "registry.ollama.ai/library/unlimited-ocr:q8 does not support tools"
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "unlimited-ocr:q8",
+            "model": "unlimited-ocr:q8",
+            "size": 6580485488,
+            "digest": "cee99c573dee9e515729a9ca8e9618b90a53b8207006c12516ccd649910df77c",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "deepseek2-ocr",
+              "families": [
+                "deepseek2-ocr"
+              ],
+              "parameter_size": "2.9B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:43.14241+09:00",
+            "size_vram": 6580485488,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.5:2b",
+            "model": "qwen3.5:2b",
+            "size": 2825933289,
+            "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "2.3B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:34.954871+09:00",
+            "size_vram": 2825933289,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "bonsai-27b:1bit",
+      "digest": "96f14e2fa5f94e109b10d6e5e6f0b6180498d3a000ed9242e7a06ba07e21dad6",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 3.0571212499635294,
+          "request": {
+            "model": "bonsai-27b:1bit",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "bonsai-27b:1bit",
+            "created_at": "2026-09-15T12:18:46.278524Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 3045260334,
+            "load_duration": 2758953709,
+            "prompt_eval_count": 22,
+            "prompt_eval_duration": 248354000,
+            "eval_count": 3,
+            "eval_duration": 36481000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 1.4856730420142412,
+          "request": {
+            "model": "bonsai-27b:1bit",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "bonsai-27b:1bit",
+            "created_at": "2026-09-15T12:18:47.762525Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "2pahLSYPOJynD31g1rcLAKEdO2d5XdSD",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1473429042,
+            "load_duration": 147844792,
+            "prompt_eval_count": 287,
+            "prompt_eval_duration": 878991000,
+            "eval_count": 26,
+            "eval_duration": 427353000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "bonsai-27b:1bit",
+            "model": "bonsai-27b:1bit",
+            "size": 6726237551,
+            "digest": "96f14e2fa5f94e109b10d6e5e6f0b6180498d3a000ed9242e7a06ba07e21dad6",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "26.9B",
+              "quantization_level": "Q1_0"
+            },
+            "expires_at": "2026-09-15T21:20:47.762608+09:00",
+            "size_vram": 6726237551,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.5:2b",
+            "model": "qwen3.5:2b",
+            "size": 2825933289,
+            "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "2.3B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:34.954871+09:00",
+            "size_vram": 2825933289,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen2.5vl:latest",
+      "digest": "5ced39dfa4bac325dc183dd1e4febaa1c46b3ea28bce48896c8e69c1e79611cc",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 3.5840535829775035,
+          "request": {
+            "model": "qwen2.5vl:latest",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            }
+          },
+          "response": {
+            "model": "qwen2.5vl:latest",
+            "created_at": "2026-09-15T12:18:51.359264Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 3570750208,
+            "load_duration": 3493950708,
+            "prompt_eval_count": 30,
+            "prompt_eval_duration": 53369000,
+            "eval_count": 3,
+            "eval_duration": 21013000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 400,
+          "elapsed_s": 0.10362733399961144,
+          "request": {
+            "model": "qwen2.5vl:latest",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "error": "registry.ollama.ai/library/qwen2.5vl:latest does not support tools"
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "qwen2.5vl:latest",
+            "model": "qwen2.5vl:latest",
+            "size": 8758293953,
+            "digest": "5ced39dfa4bac325dc183dd1e4febaa1c46b3ea28bce48896c8e69c1e79611cc",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen25vl",
+              "families": [
+                "qwen25vl"
+              ],
+              "parameter_size": "8.3B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:51.359405+09:00",
+            "size_vram": 8758293953,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.5:2b",
+            "model": "qwen3.5:2b",
+            "size": 2825933289,
+            "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "2.3B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:34.954871+09:00",
+            "size_vram": 2825933289,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen3-vl:8b",
+      "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 4.394901083083823,
+          "request": {
+            "model": "qwen3-vl:8b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "qwen3-vl:8b",
+            "created_at": "2026-09-15T12:18:55.86953Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了",
+              "thinking": "<think>\nOkay, the user is asking me to respond in Japanese with just \"準備完了\". Let me check the instructions again.\n\nThey want the response to be only \"準備完了\" in Japanese. So I need to make sure I don't add anything else. Sometimes people might add a greeting or something, but the user specifically said \"だけ返してください\", which means \"only return\". So I should strictly follow that.\n\nWait, the user wrote \"日本語で「準備完了」とだけ返してください。\" So they want the response in Japanese, and only the phrase \"準備完了\". No extra text. Let me confirm the exact wording. Yes, \"準備完了\" is the phrase they want. I need to make sure there's nothing else. Maybe check if there's any hidden requirement, but the user seems straightforward.\n\nI should just output \"準備完了\" without any additional characters or spaces. Let me make sure the katakana or kanji is correct. \"準備完了\" is correct. Sometimes people might write it as \"じゅうびょうかんりょう\" but no, the user specified the Japanese phrase, so it's the kanji version. So the answer is simply \"準備完了\"."
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 4374599458,
+            "load_duration": 1722209333,
+            "prompt_eval_count": 19,
+            "prompt_eval_duration": 52996000,
+            "eval_count": 252,
+            "eval_duration": 2598017000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 1.8057222079951316,
+          "request": {
+            "model": "qwen3-vl:8b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "qwen3-vl:8b",
+            "created_at": "2026-09-15T12:18:57.684244Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "thinking": "<think>\nOkay, the user wants me to use the echo_text tool with the text set to \"確認\". Let me check the available tools. There's a function called echo_text that requires a \"text\" parameter. The user specified to set text to \"確認\", which is Japanese for \"confirmation\". I need to make sure the parameters are correctly formatted. The required parameter is text, so I'll structure the tool call with name \"echo_text\" and arguments {\"text\": \"確認\"}. No other parameters are needed. Let me double-check the function definition to confirm. Yep, it's correct. So the tool call should be straightforward.",
+              "tool_calls": [
+                {
+                  "id": "call_8vtmrtyr",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1794944625,
+            "load_duration": 110687916,
+            "prompt_eval_count": 167,
+            "prompt_eval_duration": 140264000,
+            "eval_count": 152,
+            "eval_duration": 1541427000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.5:2b",
+            "model": "qwen3.5:2b",
+            "size": 2825933289,
+            "digest": "324d162be6ca5629ae4517c8710434d0bd2d665bc94dbad46e9af8fbf8a2f0df",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "2.3B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:20:34.954871+09:00",
+            "size_vram": 2825933289,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen3.5:9b",
+      "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 2.4160225830273703,
+          "request": {
+            "model": "qwen3.5:9b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "qwen3.5:9b",
+            "created_at": "2026-09-15T12:19:00.118425Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 2405024917,
+            "load_duration": 2296422708,
+            "prompt_eval_count": 22,
+            "prompt_eval_duration": 81040000,
+            "eval_count": 3,
+            "eval_duration": 26304000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.7620721670100465,
+          "request": {
+            "model": "qwen3.5:9b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "qwen3.5:9b",
+            "created_at": "2026-09-15T12:19:00.88062Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "call_7a1dudz9",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 751470291,
+            "load_duration": 183281208,
+            "prompt_eval_count": 287,
+            "prompt_eval_duration": 251826000,
+            "eval_count": 26,
+            "eval_duration": 308521000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "qwen3.5:9b",
+            "model": "qwen3.5:9b",
+            "size": 6601687693,
+            "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "9.7B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:00.880681+09:00",
+            "size_vram": 6601687693,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen3.5:9b-nothink",
+      "digest": "01ab85d80844077dffb6099d1428c28cd03fd0ef0315c55716bdbbf9d20712f6",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 0.2615333329886198,
+          "request": {
+            "model": "qwen3.5:9b-nothink",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "qwen3.5:9b-nothink",
+            "created_at": "2026-09-15T12:19:01.156826Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 250951000,
+            "load_duration": 183560875,
+            "prompt_eval_count": 22,
+            "prompt_eval_duration": 34217000,
+            "eval_count": 3,
+            "eval_duration": 24784000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.545051374938339,
+          "request": {
+            "model": "qwen3.5:9b-nothink",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "qwen3.5:9b-nothink",
+            "created_at": "2026-09-15T12:19:01.693203Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "call_pexwkx6n",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 524179250,
+            "load_duration": 177340709,
+            "prompt_eval_count": 287,
+            "prompt_eval_duration": 30190000,
+            "eval_count": 26,
+            "eval_duration": 306979000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "qwen3.5:9b",
+            "model": "qwen3.5:9b",
+            "size": 6601687693,
+            "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "9.7B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:01.693283+09:00",
+            "size_vram": 6601687693,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "llama3.2-vision:latest",
+      "digest": "6f2f9757ae97e8a3f8ea33d6adb2b11d93d9a35bef277cd2c0b1b5af8e8d0b1e",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 500,
+          "elapsed_s": 0.4828520000446588,
+          "request": {
+            "model": "llama3.2-vision:latest",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            }
+          },
+          "response": {
+            "error": "llama-server process has terminated: exit status 1: error loading model: unknown model architecture: 'mllama'\nerror loading model: unknown model architecture: 'mllama'"
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 500,
+          "elapsed_s": 0.43334308301564306,
+          "request": {
+            "model": "llama3.2-vision:latest",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "error": "llama-server process has terminated: exit status 1: error loading model: unknown model architecture: 'mllama'\nerror loading model: unknown model architecture: 'mllama'"
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "gemma3:12b",
+      "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 4.876513249939308,
+          "request": {
+            "model": "gemma3:12b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            }
+          },
+          "response": {
+            "model": "gemma3:12b",
+            "created_at": "2026-09-15T12:19:07.537894Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了。"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 4865490458,
+            "load_duration": 4684230375,
+            "prompt_eval_count": 21,
+            "prompt_eval_duration": 129527999,
+            "eval_count": 4,
+            "eval_duration": 50448000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 400,
+          "elapsed_s": 0.18094333296176046,
+          "request": {
+            "model": "gemma3:12b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "error": "registry.ollama.ai/library/gemma3:12b does not support tools"
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "gemma3:12b",
+            "model": "gemma3:12b",
+            "size": 9261201488,
+            "digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma3",
+              "families": [
+                "gemma3"
+              ],
+              "parameter_size": "12.2B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:07.537971+09:00",
+            "size_vram": 9261201488,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "hf.co/mmnga-o/NVIDIA-Nemotron-Nano-9B-v2-Japanese-gguf:Q8_0",
+      "digest": "4105be11fbad36319c75e8d6ddf100eaea737285b8d7fad4a8b06b62ca072ea0",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 4.798355292063206,
+          "request": {
+            "model": "hf.co/mmnga-o/NVIDIA-Nemotron-Nano-9B-v2-Japanese-gguf:Q8_0",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "hf.co/mmnga-o/NVIDIA-Nemotron-Nano-9B-v2-Japanese-gguf:Q8_0",
+            "created_at": "2026-09-15T12:19:12.531046Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了\n"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 4780711667,
+            "load_duration": 4523523834,
+            "prompt_eval_count": 30,
+            "prompt_eval_duration": 154415000,
+            "eval_count": 6,
+            "eval_duration": 97372000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 1.236103417002596,
+          "request": {
+            "model": "hf.co/mmnga-o/NVIDIA-Nemotron-Nano-9B-v2-Japanese-gguf:Q8_0",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "hf.co/mmnga-o/NVIDIA-Nemotron-Nano-9B-v2-Japanese-gguf:Q8_0",
+            "created_at": "2026-09-15T12:19:13.774047Z",
+            "message": {
+              "role": "assistant",
+              "content": "  \n",
+              "tool_calls": [
+                {
+                  "id": "d5lCH9th8gRhfY7HW5yqhbyAPOCVXslP",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1225131000,
+            "load_duration": 126931708,
+            "prompt_eval_count": 252,
+            "prompt_eval_duration": 334148000,
+            "eval_count": 39,
+            "eval_duration": 737012000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "hf.co/mmnga-o/NVIDIA-Nemotron-Nano-9B-v2-Japanese-gguf:Q8_0",
+            "model": "hf.co/mmnga-o/NVIDIA-Nemotron-Nano-9B-v2-Japanese-gguf:Q8_0",
+            "size": 10444477561,
+            "digest": "4105be11fbad36319c75e8d6ddf100eaea737285b8d7fad4a8b06b62ca072ea0",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "nemotron_h",
+              "families": [
+                "nemotron_h"
+              ],
+              "parameter_size": "8.89B",
+              "quantization_level": "unknown"
+            },
+            "expires_at": "2026-09-15T21:21:13.774129+09:00",
+            "size_vram": 10444477561,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwythos:9b",
+      "digest": "e7e73c423dac58486e3a840ee70927d748ef1cb4be29ecced6c68efd3eb5da90",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 5.293864334002137,
+          "request": {
+            "model": "qwythos:9b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "qwythos:9b",
+            "created_at": "2026-09-15T12:19:19.08801Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 5281553625,
+            "load_duration": 5080303791,
+            "prompt_eval_count": 103,
+            "prompt_eval_duration": 165108000,
+            "eval_count": 3,
+            "eval_duration": 34283000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.9079753749538213,
+          "request": {
+            "model": "qwythos:9b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "qwythos:9b",
+            "created_at": "2026-09-15T12:19:19.994799Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "b9VuGa28ePm8usSdfJ6GmB7FB0iXndRC",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 895585042,
+            "load_duration": 147033042,
+            "prompt_eval_count": 364,
+            "prompt_eval_duration": 320945000,
+            "eval_count": 26,
+            "eval_duration": 416515000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 13607622409,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:22:08.399208+09:00",
+            "size_vram": 13607622409,
+            "context_length": 131072
+          },
+          {
+            "name": "qwythos:9b",
+            "model": "qwythos:9b",
+            "size": 11171685988,
+            "digest": "e7e73c423dac58486e3a840ee70927d748ef1cb4be29ecced6c68efd3eb5da90",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "9.2B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:21:19.994889+09:00",
+            "size_vram": 11171685988,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "gpt-oss:20b",
+      "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 1.683538332930766,
+          "request": {
+            "model": "gpt-oss:20b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": "low"
+          },
+          "response": {
+            "model": "gpt-oss:20b",
+            "created_at": "2026-09-15T12:19:21.69283Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了",
+              "thinking": "Just reply \"準備完了\"."
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1665809750,
+            "load_duration": 1365080666,
+            "prompt_eval_count": 80,
+            "prompt_eval_duration": 99538000,
+            "eval_count": 22,
+            "eval_duration": 198578000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.6617251669522375,
+          "request": {
+            "model": "gpt-oss:20b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": "low",
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "gpt-oss:20b",
+            "created_at": "2026-09-15T12:19:22.353341Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "thinking": "We need to call function echo_text with text \"確認\".",
+              "tool_calls": [
+                {
+                  "id": "call_wwrdqhnw",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 642956708,
+            "load_duration": 201473375,
+            "prompt_eval_count": 144,
+            "prompt_eval_duration": 119226000,
+            "eval_count": 36,
+            "eval_duration": 319802000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 12888267816,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:21:22.353444+09:00",
+            "size_vram": 12888267816,
+            "context_length": 32768
+          },
+          {
+            "name": "qwythos:9b",
+            "model": "qwythos:9b",
+            "size": 11171685988,
+            "digest": "e7e73c423dac58486e3a840ee70927d748ef1cb4be29ecced6c68efd3eb5da90",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "9.2B",
+              "quantization_level": "Q8_0"
+            },
+            "expires_at": "2026-09-15T21:21:19.994889+09:00",
+            "size_vram": 11171685988,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "gemma4:26b-a4b",
+      "digest": "d4dc94e63de9aa4fcf7a3ecb49c67cfa01da871cc55246614d90b6580f1df5c7",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 2.046529540908523,
+          "request": {
+            "model": "gemma4:26b-a4b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "gemma4:26b-a4b",
+            "created_at": "2026-09-15T12:19:24.418768Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 2026117375,
+            "load_duration": 1934482875,
+            "prompt_eval_count": 24,
+            "prompt_eval_duration": 68432000,
+            "eval_count": 3,
+            "eval_duration": 21965000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.4954253330361098,
+          "request": {
+            "model": "gemma4:26b-a4b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "gemma4:26b-a4b",
+            "created_at": "2026-09-15T12:19:24.923662Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "call_rtzat59k",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 484722375,
+            "load_duration": 247976125,
+            "prompt_eval_count": 78,
+            "prompt_eval_duration": 103144000,
+            "eval_count": 15,
+            "eval_duration": 131740000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gemma4:26b-a4b",
+            "model": "gemma4:26b-a4b",
+            "size": 15109088870,
+            "digest": "d4dc94e63de9aa4fcf7a3ecb49c67cfa01da871cc55246614d90b6580f1df5c7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma4",
+              "families": [
+                "gemma4"
+              ],
+              "parameter_size": "25.2B",
+              "quantization_level": "Q4_0"
+            },
+            "expires_at": "2026-09-15T21:21:24.923722+09:00",
+            "size_vram": 15109088870,
+            "context_length": 32768
+          },
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 12888267816,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:21:22.353444+09:00",
+            "size_vram": 12888267816,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen3.8:27b-mtp-q4_K_M",
+      "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 500,
+          "elapsed_s": 2.060926374979317,
+          "request": {
+            "model": "qwen3.8:27b-mtp-q4_K_M",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "error": "unknown renderer \"qwen3.8\""
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 500,
+          "elapsed_s": 0.15790587500669062,
+          "request": {
+            "model": "qwen3.8:27b-mtp-q4_K_M",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "error": "unknown renderer \"qwen3.8\""
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "qwen3.8:27b-mtp-q4_K_M",
+            "model": "qwen3.8:27b-mtp-q4_K_M",
+            "size": 18251209767,
+            "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "27.3B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:27.163333+09:00",
+            "size_vram": 18251209767,
+            "context_length": 32768
+          },
+          {
+            "name": "gpt-oss:20b",
+            "model": "gpt-oss:20b",
+            "size": 12888267816,
+            "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gptoss",
+              "families": [
+                "gptoss"
+              ],
+              "parameter_size": "20.9B",
+              "quantization_level": "MXFP4"
+            },
+            "expires_at": "2026-09-15T21:21:22.353444+09:00",
+            "size_vram": 12888267816,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen3.8:27b",
+      "digest": "276bc0e81bebe0c1b7943921a3048d8335be906005e6c6031fc7a9b0cc56847b",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 8.167810708051547,
+          "request": {
+            "model": "qwen3.8:27b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "qwen3.8:27b",
+            "created_at": "2026-09-15T12:19:35.343064Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 8154609959,
+            "load_duration": 7829651084,
+            "prompt_eval_count": 22,
+            "prompt_eval_duration": 251061000,
+            "eval_count": 3,
+            "eval_duration": 72286000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 2.1139083330053836,
+          "request": {
+            "model": "qwen3.8:27b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "qwen3.8:27b",
+            "created_at": "2026-09-15T12:19:37.45629Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "9BMDiriRZe2l4nl94FO9ggym8tBvV9il",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 2098112291,
+            "load_duration": 148407125,
+            "prompt_eval_count": 287,
+            "prompt_eval_duration": 1038016000,
+            "eval_count": 26,
+            "eval_duration": 891408000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "qwen3.8:27b",
+            "model": "qwen3.8:27b",
+            "size": 20300221644,
+            "digest": "276bc0e81bebe0c1b7943921a3048d8335be906005e6c6031fc7a9b0cc56847b",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "27.3B",
+              "quantization_level": "Q4_K_S"
+            },
+            "expires_at": "2026-09-15T21:21:37.456374+09:00",
+            "size_vram": 20300221644,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.8:27b-mtp-q4_K_M",
+            "model": "qwen3.8:27b-mtp-q4_K_M",
+            "size": 18251209767,
+            "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "27.3B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:27.163333+09:00",
+            "size_vram": 18251209767,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "gemma4:26b",
+      "digest": "5571076f3d70050487b26b341705799e0ab29b808164f90d20d4cf84f699d251",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 8.631306665949523,
+          "request": {
+            "model": "gemma4:26b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "gemma4:26b",
+            "created_at": "2026-09-15T12:19:46.120855Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 8619690208,
+            "load_duration": 8514811833,
+            "prompt_eval_count": 24,
+            "prompt_eval_duration": 80684000,
+            "eval_count": 3,
+            "eval_duration": 22936000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.5204729998949915,
+          "request": {
+            "model": "gemma4:26b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "gemma4:26b",
+            "created_at": "2026-09-15T12:19:46.636765Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "call_w4b70jjo",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 505309375,
+            "load_duration": 245383417,
+            "prompt_eval_count": 78,
+            "prompt_eval_duration": 107743000,
+            "eval_count": 15,
+            "eval_duration": 150474000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gemma4:26b",
+            "model": "gemma4:26b",
+            "size": 17661060710,
+            "digest": "5571076f3d70050487b26b341705799e0ab29b808164f90d20d4cf84f699d251",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma4",
+              "families": [
+                "gemma4"
+              ],
+              "parameter_size": "25.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:46.63683+09:00",
+            "size_vram": 17661060710,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.8:27b-mtp-q4_K_M",
+            "model": "qwen3.8:27b-mtp-q4_K_M",
+            "size": 18251209767,
+            "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "27.3B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:27.163333+09:00",
+            "size_vram": 18251209767,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "glm-4.7-flash:q4_K_M",
+      "digest": "d1a8a26252f18b34301218d22abd2620a65b85ba4b78987842eb157e01321222",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 3.982829457963817,
+          "request": {
+            "model": "glm-4.7-flash:q4_K_M",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "glm-4.7-flash:q4_K_M",
+            "created_at": "2026-09-15T12:19:50.643722Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 3971140834,
+            "load_duration": 3855796334,
+            "prompt_eval_count": 17,
+            "prompt_eval_duration": 67605000,
+            "eval_count": 4,
+            "eval_duration": 45996000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 0.6934725829632953,
+          "request": {
+            "model": "glm-4.7-flash:q4_K_M",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "glm-4.7-flash:q4_K_M",
+            "created_at": "2026-09-15T12:19:51.337387Z",
+            "message": {
+              "role": "assistant",
+              "content": "echo_textツールを使用して、textに「確認」を指定します。",
+              "tool_calls": [
+                {
+                  "id": "call_liryvdse",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 682778625,
+            "load_duration": 173815166,
+            "prompt_eval_count": 179,
+            "prompt_eval_duration": 168525000,
+            "eval_count": 27,
+            "eval_duration": 338531000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "glm-4.7-flash:q4_K_M",
+            "model": "glm-4.7-flash:q4_K_M",
+            "size": 20891733852,
+            "digest": "d1a8a26252f18b34301218d22abd2620a65b85ba4b78987842eb157e01321222",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "glm4moelite",
+              "families": [
+                "glm4moelite"
+              ],
+              "parameter_size": "29.9B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:51.337453+09:00",
+            "size_vram": 20891733852,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.8:27b-mtp-q4_K_M",
+            "model": "qwen3.8:27b-mtp-q4_K_M",
+            "size": 18251209767,
+            "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "27.3B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:27.163333+09:00",
+            "size_vram": 18251209767,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen3-vl:30b",
+      "digest": "eda0be1008774ea4e575187712b9a3b1201f3e66e7ecff899cc295db1cf00248",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 5.432104040984996,
+          "request": {
+            "model": "qwen3-vl:30b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "qwen3-vl:30b",
+            "created_at": "2026-09-15T12:19:56.77273Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "thinking": "<think>\nOkay, the user wants me to respond with just \"準備完了\" in Japanese. Let me check the instructions again. They said \"日本語で「準備完了」とだけ返してください.\" So I need to make sure I only output that phrase without any extra text.\n\nFirst, I should confirm that \"準備完了\" is the correct Japanese phrase for \"Prepared\" or \"Ready.\" Let me think. \"準備\" is \"preparation,\" and \"完了\" is \"completed.\" So together, it's \"Preparation completed,\" which translates to \"Ready\" or \"All set.\" That seems right.\n\nWait, sometimes in Japanese, there might be different ways to say it, but the user specifically asked for \"準備完了.\" So I shouldn't add anything else. Maybe they want a confirmation message. But the instruction says \"just\" return that phrase. So no additional sentences or explanations.\n\nI need to make sure there are no typos. Let me spell it out: 準 (jun), 備 (bei), 完 (kan), 了 (ryou). Wait, \"完了\" is \"kanryou,\" but in kanji, it's 完 and 了. Yes, that's correct. So \"準備"
+            },
+            "done": true,
+            "done_reason": "length",
+            "total_duration": 5412061375,
+            "load_duration": 2997293750,
+            "prompt_eval_count": 19,
+            "prompt_eval_duration": 54551000,
+            "eval_count": 256,
+            "eval_duration": 2358720000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 1.476293749990873,
+          "request": {
+            "model": "qwen3-vl:30b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "qwen3-vl:30b",
+            "created_at": "2026-09-15T12:19:58.25832Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "thinking": "<think>\nOkay, the user wants me to use the echo_text tool with the text \"確認\". Let me check the tool's description. It says it's a test tool that returns the specified string. The required parameter is \"text\", which needs to be a string.\n\nSo I need to call echo_text with text set to \"確認\". Let me make sure the parameters are correct. The function requires \"text\", so I'll structure the tool_call accordingly. No other parameters are needed. Just wrap it in the tool_call tags as specified.",
+              "tool_calls": [
+                {
+                  "id": "call_8ufbnldd",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1465070583,
+            "load_duration": 116525417,
+            "prompt_eval_count": 167,
+            "prompt_eval_duration": 136481000,
+            "eval_count": 132,
+            "eval_duration": 1209683000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "qwen3-vl:30b",
+            "model": "qwen3-vl:30b",
+            "size": 22265483754,
+            "digest": "eda0be1008774ea4e575187712b9a3b1201f3e66e7ecff899cc295db1cf00248",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vlmoe",
+              "families": [
+                "qwen3vlmoe"
+              ],
+              "parameter_size": "31.1B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:58.258414+09:00",
+            "size_vram": 22265483754,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.8:27b-mtp-q4_K_M",
+            "model": "qwen3.8:27b-mtp-q4_K_M",
+            "size": 18251209767,
+            "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "27.3B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:27.163333+09:00",
+            "size_vram": 18251209767,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    },
+    {
+      "model": "gemma4:31b",
+      "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+      "probes": [
+        {
+          "mode": "chat",
+          "http_status": 200,
+          "elapsed_s": 5.634150417055935,
+          "request": {
+            "model": "gemma4:31b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "日本語で「準備完了」とだけ返してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false
+          },
+          "response": {
+            "model": "gemma4:31b",
+            "created_at": "2026-09-15T12:20:03.90544Z",
+            "message": {
+              "role": "assistant",
+              "content": "準備完了"
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 5613364292,
+            "load_duration": 5270058458,
+            "prompt_eval_count": 24,
+            "prompt_eval_duration": 269238000,
+            "eval_count": 3,
+            "eval_duration": 73005000
+          }
+        },
+        {
+          "mode": "tools",
+          "http_status": 200,
+          "elapsed_s": 1.2092532920651138,
+          "request": {
+            "model": "gemma4:31b",
+            "messages": [
+              {
+                "role": "user",
+                "content": "echo_textツールを使い、textに「確認」を指定してください。"
+              }
+            ],
+            "stream": false,
+            "keep_alive": "2m",
+            "options": {
+              "temperature": 0,
+              "num_ctx": 32768,
+              "num_predict": 256
+            },
+            "think": false,
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "echo_text",
+                  "description": "指定した文字列を返すテスト用ツール",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "text": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "text"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "response": {
+            "model": "gemma4:31b",
+            "created_at": "2026-09-15T12:20:05.119037Z",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "tool_calls": [
+                {
+                  "id": "call_u4k8z7mb",
+                  "function": {
+                    "index": 0,
+                    "name": "echo_text",
+                    "arguments": {
+                      "text": "確認"
+                    }
+                  }
+                }
+              ]
+            },
+            "done": true,
+            "done_reason": "stop",
+            "total_duration": 1192642958,
+            "load_duration": 244943666,
+            "prompt_eval_count": 78,
+            "prompt_eval_duration": 437981000,
+            "eval_count": 15,
+            "eval_duration": 506006000
+          }
+        }
+      ],
+      "runtime": {
+        "models": [
+          {
+            "name": "gemma4:31b",
+            "model": "gemma4:31b",
+            "size": 20969684991,
+            "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "gemma4",
+              "families": [
+                "gemma4"
+              ],
+              "parameter_size": "31.3B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:22:05.119114+09:00",
+            "size_vram": 20969684991,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3.8:27b-mtp-q4_K_M",
+            "model": "qwen3.8:27b-mtp-q4_K_M",
+            "size": 18251209767,
+            "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen35",
+              "families": [
+                "qwen35"
+              ],
+              "parameter_size": "27.3B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:21:27.163333+09:00",
+            "size_vram": 18251209767,
+            "context_length": 32768
+          },
+          {
+            "name": "qwen3-vl:8b",
+            "model": "qwen3-vl:8b",
+            "size": 10226101124,
+            "digest": "901cae73216286ea8c5aba8b46d307ff7188f737285ec500c795a12f05225d28",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen3vl",
+              "families": [
+                "qwen3vl"
+              ],
+              "parameter_size": "8.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "expires_at": "2026-09-15T21:20:57.684323+09:00",
+            "size_vram": 10226101124,
+            "context_length": 32768
+          }
+        ]
+      }
+    }
+  ]
+}

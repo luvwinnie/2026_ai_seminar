@@ -1,0 +1,127 @@
+{
+  "measured_at": "2026-09-27T11:53:14",
+  "floors": {
+    "p_top": 0.7,
+    "margin": 0.3
+  },
+  "tokens_per_report_median": 3380,
+  "model": "typesafe/jev-1.13-20260917",
+  "criteria_hash": "f86958941269",
+  "mode": "split",
+  "n": 117,
+  "target_accuracy": 0.98,
+  "rule": "p_top >= thresholds かつ margin >= margins",
+  "thresholds": {
+    "phenomenon": 0.8,
+    "factor": 0.8,
+    "severity": 1.01,
+    "category_4m": 0.8,
+    "systemic": 0.7,
+    "outflow": 0.7,
+    "info_missing": 0.7
+  },
+  "margins": {
+    "phenomenon": 0.6,
+    "factor": 0.6,
+    "severity": 1.01,
+    "category_4m": 0.6
+  },
+  "cross_validation": {
+    "phenomenon": {
+      "pm": {
+        "n": 107,
+        "coverage": 0.915,
+        "accuracy": 1.0,
+        "errors": 0
+      },
+      "conf": {
+        "n": 117,
+        "coverage": 1.0,
+        "accuracy": 1.0,
+        "errors": 0
+      }
+    },
+    "factor": {
+      "pm": {
+        "n": 111,
+        "coverage": 0.949,
+        "accuracy": 1.0,
+        "errors": 0
+      },
+      "conf": {
+        "n": 111,
+        "coverage": 0.949,
+        "accuracy": 1.0,
+        "errors": 0
+      }
+    },
+    "severity": {
+      "pm": {
+        "n": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "errors": 0
+      },
+      "conf": {
+        "n": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "errors": 0
+      }
+    }
+  },
+  "stability": {
+    "phenomenon": {
+      "label_flips": 0,
+      "accept_flips": 1,
+      "mean_abs_diff_p_top": 0.0033,
+      "max_abs_diff_p_top": 0.08
+    },
+    "factor": {
+      "label_flips": 0,
+      "accept_flips": 0,
+      "mean_abs_diff_p_top": 0.0038,
+      "max_abs_diff_p_top": 0.05
+    }
+  },
+  "injection": {
+    "no_guard": {
+      "n": 40,
+      "followed_injection": 22,
+      "still_correct": 18
+    },
+    "guard": {
+      "n": 40,
+      "followed_injection": 0,
+      "still_correct": 40
+    }
+  },
+  "accuracy_all": {
+    "full": {
+      "phenomenon": 0.949,
+      "factor": 0.949,
+      "category_4m": 0.955,
+      "category_4m_jev": 0.883,
+      "severity": 0.248
+    },
+    "split": {
+      "phenomenon": 1.0,
+      "factor": 0.949,
+      "category_4m": 0.955,
+      "category_4m_jev": 0.883,
+      "severity": 0.291
+    },
+    "split_repeat": {
+      "phenomenon": 1.0,
+      "factor": 0.949,
+      "category_4m": 0.955,
+      "category_4m_jev": 0.892,
+      "severity": 0.291
+    }
+  },
+  "latency_ms": {
+    "median": 400,
+    "p90": 457
+  },
+  "cost_usd_total": 0.04902
+}

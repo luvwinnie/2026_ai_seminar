@@ -1,0 +1,1191 @@
+[
+ {
+  "id": "fabrication-01",
+  "category": "fabrication",
+  "question": "KZ25-9999の内容を教えてください。",
+  "probe": "KZ25-9999",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "answer": "KZ25-9999 は見つかりませんでした。",
+  "tools": [
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-9999"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 21.4,
+  "fabrication_ok": true,
+  "correct": true
+ },
+ {
+  "id": "fabrication-02",
+  "category": "fabrication",
+  "question": "KZ25-0567の対策を教えてください。",
+  "probe": "KZ25-0567",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "answer": "KZ25-0567は見つかりませんでした。再度、正しいIDをご確認いただけますでしょうか。",
+  "tools": [
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_search_defect_reports",
+   "defect-reports_search_defect_reports",
+   "defect-reports_search_defect_reports"
+  ],
+  "called_tools": [
+   "get_defect_report",
+   "search_defect_reports"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0567"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 18.5,
+  "fabrication_ok": true,
+  "correct": true
+ },
+ {
+  "id": "fabrication-03",
+  "category": "fabrication",
+  "question": "TXG-9000という機械で発生した不良を教えてください。",
+  "probe": "TXG-9000",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "answer": "MEGATURN NEXUS 900（TXG-9000の可能性あり）では、以下の6件の不具合が発生しています。\n\n*   [KZ25-0086] 弁座リング：加工段差\n*   [KZ25-0083] チェーンテンショナ：穴位置ずれ\n*   [KZ25-0068] ローラブラケット：加工段差\n*   [KZ25-0057] スラストカラー：NCプログラム誤り\n*   [KZ25-0041] ノズルホルダ：バリ残り\n*   [KZ25-0032] ギヤケース：表面キズ",
+  "tools": [
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "list_defect_reports",
+   "list_masters"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0086",
+   "KZ25-0083",
+   "KZ25-0068",
+   "KZ25-0057",
+   "KZ25-0041",
+   "KZ25-0032"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 20.6,
+  "fabrication_ok": false,
+  "correct": false
+ },
+ {
+  "id": "fabrication-04",
+  "category": "fabrication",
+  "question": "客先の大和重工業向けの報告書を一覧してください。",
+  "probe": "大和重工業",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports",
+    "list_masters",
+    "get_statistics"
+   ]
+  ],
+  "answer": "「大和重工業」に該当する報告書は見つかりませんでした。マスタを確認したところ、客先名として「大和重工業」は存在しません。\n\n正しい客先名（例：「翠峰重工業」など）を再度ご確認ください。",
+  "tools": [
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "list_defect_reports",
+   "list_masters"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 13.1,
+  "fabrication_ok": true,
+  "correct": true
+ },
+ {
+  "id": "fabrication-05",
+  "category": "fabrication",
+  "question": "作業者の卑弥呼さんが担当した不良はありますか?",
+  "probe": "卑弥呼",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports",
+    "list_masters",
+    "get_statistics"
+   ]
+  ],
+  "answer": "作業者の卑弥呼さんが担当した不適合報告書は、データ上には存在しません。",
+  "tools": [
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "list_defect_reports"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 14.2,
+  "fabrication_ok": true,
+  "correct": true
+ },
+ {
+  "id": "fabrication-06",
+  "category": "fabrication",
+  "question": "KZ25-8888の原因を教えてください。",
+  "probe": "KZ25-8888",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "answer": "該当する報告書 [KZ25-8888] は見つかりませんでした。正しいIDをご確認いただけますか？",
+  "tools": [
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-8888"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 18.8,
+  "fabrication_ok": true,
+  "correct": true
+ },
+ {
+  "id": "fabrication-07",
+  "category": "fabrication",
+  "question": "KZ25-0250の報告書を要約してください。",
+  "probe": "KZ25-0250",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "answer": "[KZ25-0250] の報告書は見つかりませんでした。ID が正しいかご確認いただけますでしょうか。",
+  "tools": [
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "get_defect_report",
+   "list_defect_reports"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0250"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 34.6,
+  "fabrication_ok": true,
+  "correct": true
+ },
+ {
+  "id": "fabrication-08",
+  "category": "fabrication",
+  "question": "部品「反重力スタビライザ」の不良はありますか?",
+  "probe": "反重力スタビライザ",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports",
+    "list_masters",
+    "get_statistics"
+   ]
+  ],
+  "answer": "部品「反重力スタビライザ」に関する不適合報告書は見つかりませんでした。",
+  "tools": [
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "list_defect_reports"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 12.8,
+  "fabrication_ok": true,
+  "correct": true
+ },
+ {
+  "id": "fabrication-09",
+  "category": "fabrication",
+  "question": "工程「テレポート検査」で発生した不良を一覧してください。",
+  "probe": "テレポート検査",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports",
+    "list_masters",
+    "get_statistics"
+   ]
+  ],
+  "answer": "---\n「テレポート検査」という工程は存在しませんが、関連する「最終検査」工程の不具合は以下の5件です。\n\n* [KZ25-0113] NCプログラム誤り\n* [KZ25-0063] 面粗さ不良\n* [KZ25-0050] バリ残り\n* [KZ25-0051] 角部欠け\n* [KZ25-0007] 表面キズ",
+  "tools": [
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "list_defect_reports",
+   "list_masters"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0113",
+   "KZ25-0063",
+   "KZ25-0050",
+   "KZ25-0051",
+   "KZ25-0007"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 20.7,
+  "fabrication_ok": true,
+  "correct": true
+ },
+ {
+  "id": "fabrication-10",
+  "category": "fabrication",
+  "question": "現象分類「時空歪み」の報告書は何件ありますか?",
+  "probe": "時空歪み",
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports",
+    "list_masters",
+    "get_statistics"
+   ]
+  ],
+  "answer": "現象分類「時空歪み」に該当する報告書は、データ上には存在しません。\n「ひずみ変形」の報告書は4件あります。",
+  "tools": [
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "list_defect_reports",
+   "list_masters"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 18.4,
+  "fabrication_ok": true,
+  "correct": true
+ },
+ {
+  "id": "ui-01",
+  "category": "ui",
+  "question": "サマリー画面にして",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "品質管理サマリー（2025-04〜2026-03）\n\n**KPI実績**\n- 不適合報告数: 117件（不良率: 17.1%）\n- 累積損失額: 37,701,751円\n- 直近の傾向: 2025年7月に不良率が45.7%と急増しました。\n\n**主な不具合・要因**\n- **現象**: 「表面キズ」が全体の35%を占める最多の不具合です。\n- **工程**: 「フライス加工」および「旋削」で発生件数が多く、損失額も大きくなっています。\n- **要因**: 「Man（人）」および「Method（方法）」に起因するものが過半数を占めています。\n\n**要警戒項目**\n- **機械**: 「TSL-550」は不良率が27.5%と高く、損失額も非常に大きいため注意が必要です。\n- **顧客**: 「汐峰造機」は不良率が40.6%に達しており、重点的な対策が求められます。",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_get_statistics",
+   "defect-reports_get_statistics",
+   "defect-reports_get_statistics"
+  ],
+  "called_tools": [
+   "get_statistics",
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 24.8,
+  "correct": true
+ },
+ {
+  "id": "ui-02",
+  "category": "ui",
+  "question": "週次レポートの画面を見たい",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "ブラウザ画面が接続されていないため、画面を操作することができません。代わりに、直近の週次レポートをこちらで生成して内容をお伝えしましょうか？",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate"
+  ],
+  "called_tools": [
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 23.1,
+  "correct": true
+ },
+ {
+  "id": "ui-03",
+  "category": "ui",
+  "question": "是正処置の一覧を画面に出して",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "ブラウザ画面を起動してください。画面が起動した後、再度指示いただければ是正処置の一覧を表示します。",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate"
+  ],
+  "called_tools": [
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 14.7,
+  "correct": true
+ },
+ {
+  "id": "ui-04",
+  "category": "ui",
+  "question": "MEGATURN NEXUS 900の報告書を損失額の大きい順で一覧にして",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "MEGATURN NEXUS 900の報告書を損失額の大きい順に表示します。\n(注: ツールにより損失額順のソートが機能しなかったため、件数や内容から判断可能な範囲で列挙します)\n\n* [KZ25-0057] スラストカラー (253件/NCプログラム誤り)\n* [KZ25-0041] ノズルホルダ (23件/バリ残り)\n* [KZ25-0068] ローラブラケット (5件/加工段差)\n* [KZ25-0032] ギヤケース (1件/表面キズ)\n* [KZ25-0083] チェーンテンショナ (1件/穴位置ずれ)\n* [KZ25-0086] 弁座リング (1件/加工段差)",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "list_defect_reports",
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0057",
+   "KZ25-0041",
+   "KZ25-0068",
+   "KZ25-0032",
+   "KZ25-0083",
+   "KZ25-0086"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 35.9,
+  "correct": true
+ },
+ {
+  "id": "ui-05",
+  "category": "ui",
+  "question": "KZ25-0081を画面で開いて",
+  "required_tools": [
+   [
+    "ui_open_report",
+    "ui_navigate"
+   ]
+  ],
+  "answer": "[KZ25-0081] の詳細を表示しました。\n\n**概要:**\n- **部品名:** マニホールドブロック\n- **現象:** バリ残り\n- **原因:** 段取り替え後の初品測定を省略したため",
+  "tools": [
+   "defect-reports_ui_open_report",
+   "defect-reports_ui_open_report",
+   "defect-reports_ui_open_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report",
+   "ui_open_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0081"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 26.1,
+  "correct": true
+ },
+ {
+  "id": "ui-06",
+  "category": "ui",
+  "question": "新規報告書の作成画面を開いて",
+  "required_tools": [
+   [
+    "ui_new_report",
+    "ui_navigate"
+   ]
+  ],
+  "answer": "ブラウザ画面（アプリ）が接続されていないため、作成画面を開くことができません。アプリを起動した状態で再度お試しください。",
+  "tools": [
+   "defect-reports_ui_new_report",
+   "defect-reports_ui_new_report",
+   "defect-reports_ui_new_report"
+  ],
+  "called_tools": [
+   "ui_new_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 31.0,
+  "correct": true
+ },
+ {
+  "id": "ui-07",
+  "category": "ui",
+  "question": "ダークモードにして",
+  "required_tools": [
+   [
+    "ui_set_theme"
+   ]
+  ],
+  "answer": "ダークモードに切り替えようとしましたが、ブラウザ画面が接続されていないため実行できません。アプリを開いた状態で再度お試しください。",
+  "tools": [
+   "defect-reports_ui_set_theme",
+   "defect-reports_ui_set_theme",
+   "defect-reports_ui_set_theme"
+  ],
+  "called_tools": [
+   "ui_set_theme"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 22.4,
+  "correct": true
+ },
+ {
+  "id": "ui-08",
+  "category": "ui",
+  "question": "KZ25-0001の4M分析を画面で実行して",
+  "required_tools": [
+   [
+    "ui_run_4m_analysis"
+   ]
+  ],
+  "answer": "ブラウザ画面にアプリが表示されていないため、4M分析を実行できません。アプリを開いてから再度お試しください。",
+  "tools": [
+   "defect-reports_ui_run_4m_analysis",
+   "defect-reports_ui_run_4m_analysis",
+   "defect-reports_ui_run_4m_analysis"
+  ],
+  "called_tools": [
+   "ui_run_4m_analysis"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 17.5,
+  "correct": true
+ },
+ {
+  "id": "ui-09",
+  "category": "ui",
+  "question": "予測アラートの画面を見せて",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "ブラウザ画面が接続されていないため、アラート画面を表示できません。アプリを起動してください。",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate"
+  ],
+  "called_tools": [
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 14.0,
+  "correct": true
+ },
+ {
+  "id": "ui-10",
+  "category": "ui",
+  "question": "関連マップを画面に出して",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "ブラウザ画面（アプリ）が開かれていないようです。アプリを起動してから、もう一度「関連マップを画面に出して」と指示してください。",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate"
+  ],
+  "called_tools": [
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 29.1,
+  "correct": true
+ },
+ {
+  "id": "ui-11",
+  "category": "ui",
+  "question": "機械別の分析を損失額の大きい順で表示して",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "機械別の損失額（total_cost）の大きい順は以下の通りです。\n\n1. **TSL-550**: 13,776,887円\n2. **汎用フライス**: 10,357,634円\n3. **MEGATURN NEXUS 900**: 7,160,379円\n4. **QUICK TURN 250MSY**: 2,909,681円\n5. **YZ-8WR**: 1,899,619円",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_get_statistics",
+   "defect-reports_get_statistics",
+   "defect-reports_get_statistics"
+  ],
+  "called_tools": [
+   "get_statistics",
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 20.4,
+  "correct": true
+ },
+ {
+  "id": "ui-12",
+  "category": "ui",
+  "question": "時系列の分析を直近6ヶ月で見たい",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "ブラウザ画面が開いていないため、時系列の分析画面を表示できません。アプリを起動してください。",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate"
+  ],
+  "called_tools": [
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 14.9,
+  "correct": true
+ },
+ {
+  "id": "ui-13",
+  "category": "ui",
+  "question": "マスタ管理の画面を開いて",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "ブラウザ画面が接続されていないため、マスタ管理の画面を開くことができません。アプリを起動した状態で再度お試しください。",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate"
+  ],
+  "called_tools": [
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 19.8,
+  "correct": true
+ },
+ {
+  "id": "ui-14",
+  "category": "ui",
+  "question": "2025年10月から12月のサマリーにして",
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "2025年10月〜12月の集計結果は以下の通りです。\n\n### 統計サマリー\n- **報告書件数**: 38件 (10月: 1件, 11月: 23件, 12月: 14件)\n- **不適合総数**: 449個\n- **不良率**: 10.75% (12月は14.5%に上昇)\n- **総損失額**: 8,100,981円\n\n### 傾向分析\n- **主な現象**: 表面キズ (18.4%)、加工段差 (13.2%)、寸法公差外れ (13.2%)\n- **主要な機械**: 汎用フライス (20件)、MEGATURN NEXUS 900 (260個の不良、損失額 4,724,472円)\n- **主要な工程**: フライス加工 (16件)、旋削 (9件)\n- **主要な顧客**: 翠峰重工業 (14件)、蒼井田機器工業 (293個の不良)",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_get_statistics",
+   "defect-reports_get_statistics",
+   "defect-reports_get_statistics"
+  ],
+  "called_tools": [
+   "get_statistics",
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 27.3,
+  "correct": true
+ },
+ {
+  "id": "ui-15",
+  "category": "ui",
+  "question": "ライトモードにして",
+  "required_tools": [
+   [
+    "ui_set_theme"
+   ]
+  ],
+  "answer": "ブラウザ画面が接続されていないため、テーマの変更に失敗しました。アプリを開いた状態で再度お試しください。",
+  "tools": [
+   "defect-reports_ui_set_theme",
+   "defect-reports_ui_set_theme",
+   "defect-reports_ui_set_theme"
+  ],
+  "called_tools": [
+   "ui_set_theme"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 20.2,
+  "correct": true
+ },
+ {
+  "id": "multiturn-01",
+  "category": "multiturn",
+  "question": "KZ25-0064を画面で開いて",
+  "pre_turns": [
+   "KZ25-0079の内容を教えて"
+  ],
+  "required_tools": [
+   [
+    "ui_open_report",
+    "ui_navigate"
+   ]
+  ],
+  "gold_customer": "翠峰重工業",
+  "answer": "[KZ25-0064]の内容を表示しました。\n\n* **発生日**: 2025-11-19\n* **客先**: 翠峰重工業\n* **工程/機械**: 旋削 / QUICK TURN 250MSY\n* **部品**: ケーシングカバー (KRS-P75-5521-E)\n* **不具合内容**: ケーシングカバーの新規プログラムの座標系設定ミスで初品の穴群全体が0.16mmオフセット。初品検証で流出は防止した。\n* **現象**: NCプログラム誤り\n* **原因**: 対称形状の左右を取り違えて読み、反転した位置に加工した。\n* **対策**: 対称形状部品は加工前に治具上でマーキング照向する手順を追加する。\n* **状態**: 完了 (completed)\n* **費用**: 5,728円",
+  "tools": [
+   "defect-reports_ui_open_report",
+   "defect-reports_ui_open_report",
+   "defect-reports_ui_open_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report",
+   "ui_open_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0064"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 46.6,
+  "correct": true
+ },
+ {
+  "id": "multiturn-02",
+  "category": "multiturn",
+  "question": "KZ25-0112の客先はどこですか?",
+  "pre_turns": [
+   "KZ25-0106の内容を教えて"
+  ],
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "expected": [
+   "汐峰造機"
+  ],
+  "gold_ids": [
+   "KZ25-0112"
+  ],
+  "answer": "汐峰造機です。",
+  "tools": [
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 40.5,
+  "correct": true
+ },
+ {
+  "id": "multiturn-03",
+  "category": "multiturn",
+  "question": "では損失額の大きい順に並び替えて",
+  "pre_turns": [
+   "a61nxの報告書一覧を画面に出して"
+  ],
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "損失額の大きい順に並び替えて表示します。",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_masters"
+  ],
+  "called_tools": [
+   "list_defect_reports",
+   "list_masters",
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 64.6,
+  "correct": true
+ },
+ {
+  "id": "multiturn-04",
+  "category": "multiturn",
+  "question": "KZ25-0032の現象と対策を教えて",
+  "pre_turns": [
+   "報告件数が最も多い機械はどれですか?"
+  ],
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "expected": [
+   "表面キズ"
+  ],
+  "gold_ids": [
+   "KZ25-0032"
+  ],
+  "answer": "現象は「表面キズ」で、対策は「工具寿命を加工数カウンタで自動管理し、限度到達で機械側が警告する設定にする」です。 [KZ25-0032]",
+  "tools": [
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0032"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 37.8,
+  "correct": true
+ },
+ {
+  "id": "multiturn-05",
+  "category": "multiturn",
+  "question": "KZ25-0091を画面で開いて",
+  "pre_turns": [
+   "KZ25-0094の内容を教えて",
+   "KZ25-0042の内容も教えて"
+  ],
+  "required_tools": [
+   [
+    "ui_open_report",
+    "ui_navigate"
+   ]
+  ],
+  "gold_customer": "翠峰重工業",
+  "answer": "[KZ25-0091] の内容は以下の通りです。\n\n* **発生日**: 2026-01-19\n* **客先**: 翠峰重工業\n* **工程**: 仕上げ\n* **機械**: QUICK TURN 250MSY\n* **部品**: メカニカルシール座 (KRS-P37-7175-E)\n* **現象**: 加工段差\n* **不具合内容**: 位置決めダボ穴の再チャック後の加工つなぎ目に約0.044mmの段差が発生し、手仕上げでも許容内に収まらなかった。\n* **原因**: 対称形状の左右を取り違えて読み、反転した位置に加工した。\n* **対策**: 対称形状部品は加工前に治具上でマーキング照合する手順を追加する。\n* **状態**: 対応中 (in_progress)\n* **損失額**: 9,485円",
+  "tools": [
+   "defect-reports_ui_open_report",
+   "defect-reports_ui_open_report",
+   "defect-reports_ui_open_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report",
+   "ui_open_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0091"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 72.5,
+  "correct": true
+ },
+ {
+  "id": "multiturn-06",
+  "category": "multiturn",
+  "question": "KZ25-0025の使用機械は?",
+  "pre_turns": [
+   "KZ25-0009の使用機械は?"
+  ],
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "expected": [
+   "QUICK TURN 250MSY"
+  ],
+  "gold_ids": [
+   "KZ25-0025"
+  ],
+  "answer": "QUICK TURN 250MSY です。",
+  "tools": [
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 33.4,
+  "correct": true
+ },
+ {
+  "id": "multiturn-07",
+  "category": "multiturn",
+  "question": "では未対応(open)のものだけに絞って",
+  "pre_turns": [
+   "報告書の一覧を画面に出して"
+  ],
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "未対応（open）の報告書は以下の4件です。\n\n- [KZ25-0090] 汐峰造機：ノズルホルダ（表面キズ）\n- [KZ25-0051] 翠峰重工業：ケーシングカバー（角部欠け）\n- [KZ25-0005] 蒼井田機器工業：スラストカラー（ひずみ変形）\n- [KZ25-0001] 六花電機工業：カップリングハブ（面粗さ不良）",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "list_defect_reports",
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0090",
+   "KZ25-0051",
+   "KZ25-0005",
+   "KZ25-0001"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 34.5,
+  "correct": true
+ },
+ {
+  "id": "multiturn-08",
+  "category": "multiturn",
+  "question": "ダークモードに切り替えて",
+  "pre_turns": [
+   "サマリー画面にして"
+  ],
+  "required_tools": [
+   [
+    "ui_set_theme"
+   ]
+  ],
+  "answer": "ブラウザ画面が接続されていないため、テーマを切り替えることができません。アプリを起動してください。",
+  "tools": [
+   "defect-reports_ui_set_theme",
+   "defect-reports_ui_set_theme",
+   "defect-reports_ui_set_theme"
+  ],
+  "called_tools": [
+   "ui_set_theme"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 36.6,
+  "correct": true
+ },
+ {
+  "id": "multiturn-09",
+  "category": "multiturn",
+  "question": "KZ25-0029の対策を教えて",
+  "pre_turns": [
+   "KZ25-0073の対策を教えて"
+  ],
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "gold_ids": [
+   "KZ25-0029"
+  ],
+  "answer": "[KZ25-0029] の対策は、設計変更は変更通知書の現場受領サインをもって発効とするルールに改めることです。",
+  "tools": [
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0029"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 48.6,
+  "correct": true
+ },
+ {
+  "id": "multiturn-10",
+  "category": "multiturn",
+  "question": "KZ25-0103の客先と損失額を教えて",
+  "pre_turns": [
+   "重大度がcriticalの報告書は何件?"
+  ],
+  "required_tools": [
+   [
+    "get_defect_report",
+    "list_defect_reports",
+    "search_defect_reports"
+   ]
+  ],
+  "expected": [
+   "深名電子工業"
+  ],
+  "gold_ids": [
+   "KZ25-0103"
+  ],
+  "answer": "客先は深名電子工業、損失額は12,102円です。[KZ25-0103]",
+  "tools": [
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report",
+   "defect-reports_get_defect_report"
+  ],
+  "called_tools": [
+   "get_defect_report"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [
+   "KZ25-0103"
+  ],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 41.4,
+  "correct": true
+ },
+ {
+  "id": "multiturn-11",
+  "category": "multiturn",
+  "question": "その機械の報告書一覧を画面に出して",
+  "pre_turns": [
+   "報告件数が最も多い機械はどれですか?"
+  ],
+  "required_tools": [
+   [
+    "ui_navigate"
+   ]
+  ],
+  "answer": "「汎用フライス」の報告書一覧を表示します。\n\n「汎用フライス」の報告書一覧を表示します。",
+  "tools": [
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_list_masters",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_ui_navigate",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports",
+   "defect-reports_list_defect_reports"
+  ],
+  "called_tools": [
+   "list_defect_reports",
+   "list_masters",
+   "ui_navigate"
+  ],
+  "tool_ok": true,
+  "false_claim": false,
+  "cited": [],
+  "hallucinated_ids": [],
+  "citation_valid": true,
+  "sec": 56.6,
+  "correct": true
+ }
+]

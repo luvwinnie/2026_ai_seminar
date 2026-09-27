@@ -1,0 +1,36 @@
+# ---- 秘密情報(絶対にコミットしない) ----
+.env
+*.env
+!.env.example
+!app/.env.example
+
+# ---- Python ----
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# ---- Node ----
+node_modules/
+dist/
+
+# ---- 実行時データ(DB / ベクトル索引) ----
+app/backend/data/
+steps/*/backend/data/
+
+# ---- OS / エディタ ----
+.DS_Store
+*.log
+
+# ---- ローカル LLM 評価の生の出力(レポート・スクリプトだけを残す) ----
+eval/local_llm/**/*.npz
+eval/local_llm/**/embeddings/
+eval/local_llm/**/generation/
+eval/local_llm/runs/
+eval/local_llm/benchmark.db
+eval/local_llm/light_20260915/raw_transport.json
+eval/local_llm/light_20260915/inventory.json
+eval/local_llm/light_20260915/agent_prompt_diagnostic.json
+eval/local_llm/**/generation_remaining/
+eval/local_llm/opencode_openapi.json
+eval/local_llm/light_20260915/tool_execution_audit.json

@@ -1,0 +1,11 @@
+{
+  "analyzed_at": "2026-09-15T21:09:53.729363+09:00",
+  "analysis_sha256": "81971d40a8daf4878fec6ada49618fc10f216c781bf5adb69533b438a5afc88d",
+  "native_metadata_sha256": "9e597c7ee545a498eecbf8f1ca28f8ba5813b91419026c5fb960db2b0cdfeaae",
+  "dataset_sha256": "b0264987d90cb16e7d8ea4663c6ffdef97f1b9ab2667173a744a298eb9f308f8",
+  "posthoc_rules": [
+    "singleton-array normalization",
+    "grounded equivalent routes"
+  ],
+  "original_scores_preserved": true
+}

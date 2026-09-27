@@ -1,0 +1,36 @@
+{
+  "id": "manufacturing-quality",
+  "version": "1.0.0",
+  "title": "製造品質 Ontology",
+  "description": "既存の報告書DBを業務上の対象・関係・指標・操作として公開する、このアプリ固有の意味モデル。OWL/RDFやPalantirの設定ファイルではない。",
+  "objects": {
+    "DefectReport": {"label": "不適合報告書", "meaning": "不適合を記録した報告1件。不適合品1個や製造ロット1個とは異なる。", "identity": "defect_id", "source": "defect_reports", "properties": {"production_count": "当該報告に記録された加工数（個）", "defect_count": "当該報告に記録された不適合数（個）", "total_cost": "記録された損失額（JPY）。未入力は不明であり0円ではない。", "occurrence_date": "発生日。期間指定はこの日付に適用し、両端を含む。", "status": "報告書の対応状態。CAPAの状態とは別。"}},
+    "MachineLabel": {"label": "機械名", "meaning": "報告書に記録された機械名による集合。設備個体・シリアル番号・工場を識別しない。", "identity": "型名と元の文字列から生成するID。名称変更時は別ID。", "source": "defect_reports.machine_name の異なる値", "properties": {"name": "元データの機械名。似た名前の機械への自動読み替えは禁止。"}},
+    "Process": {"label": "工程名", "meaning": "報告書に記録された工程名による集合。工程順序や作業手順を表すものではない。", "identity": "型名と元の文字列から生成するID", "source": "defect_reports.process の異なる値", "properties": {"name": "元データの工程名"}},
+    "Customer": {"label": "顧客名", "meaning": "報告書に記録された顧客名による集合。法人番号や企業グループの同一性は未管理。", "identity": "型名と元の文字列から生成するID", "source": "defect_reports.customer の異なる値", "properties": {"name": "元データの顧客名"}},
+    "CapaAction": {"label": "是正・予防処置", "meaning": "1件の不適合報告書に対する処置。1報告書に複数のCAPAを持てる。", "identity": "capa_id", "source": "capa_actions", "properties": {"defect_id": "対象報告書ID", "status": "open / in_progress / effect_check / closed", "effect_note": "効果確認メモ。記載自体は効果の実証・第三者承認を意味しない。", "due_date": "処置期限。期限超過はdue_dateが基準日より前、かつ未クローズ。"}}
+  },
+  "relations": [
+    {"name": "recorded_on", "from": "DefectReport", "to": "MachineLabel", "cardinality": "many-to-one", "meaning": "報告に記録された機械名", "inverse": "reports", "binding": "machine_name"},
+    {"name": "in_process", "from": "DefectReport", "to": "Process", "cardinality": "many-to-one", "meaning": "報告に記録された工程名", "inverse": "reports", "binding": "process"},
+    {"name": "for_customer", "from": "DefectReport", "to": "Customer", "cardinality": "many-to-one", "meaning": "報告に記録された顧客名", "inverse": "reports", "binding": "customer"},
+    {"name": "has_capa", "from": "DefectReport", "to": "CapaAction", "cardinality": "one-to-many", "meaning": "報告書IDが一致する処置。類似検索で推測した関係ではない。", "inverse": "for_report", "binding": "defect_id"}
+  ],
+  "metrics": {
+    "report_count": {"label": "報告件数", "unit": "件", "formula": "COUNT(DefectReport)", "meaning": "条件に合う報告書の件数。CAPAとの結合で増やさない。"},
+    "defect_units": {"label": "記録不適合数", "unit": "個", "formula": "SUM(defect_count)", "meaning": "報告書上の不適合数の合計。重複ロットの排除は未対応。"},
+    "recorded_production_units": {"label": "記録加工数", "unit": "個", "formula": "SUM(production_count)", "meaning": "対象報告書に記録された加工数。工場の総生産数ではない。"},
+    "recorded_defect_rate": {"label": "記録上の不適合率", "unit": "ratio", "formula": "SUM(defect_count) / SUM(production_count)", "meaning": "報告書ごとの率の単純平均は使わない。分母0・件数0・個数異常ならnull。工場全体の不良率とは呼ばない。"},
+    "known_loss_jpy": {"label": "既知の損失額", "unit": "JPY", "formula": "SUM(non-null total_cost)", "meaning": "未入力件数を併記。対象ありで全額不明ならnull。金額は10進文字列で返す。"},
+    "open_capa_count": {"label": "未クローズCAPA", "unit": "件", "formula": "COUNT(CapaAction WHERE status != 'closed' AND defect_id IN selected_reports)", "meaning": "対象報告書に関連する処置の件数。未対応報告書数とは異なる。"},
+    "overdue_capa_count": {"label": "期限超過CAPA", "unit": "件", "formula": "COUNT(selected CapaAction WHERE status != 'closed' AND due_date < as_of_date)", "meaning": "対象報告書に関連する未クローズ処置のうち期限を過ぎた件数。期限未設定は含めない。as_of_dateはサーバーの当日で、結果に明示する。"}
+  },
+  "actions": {
+    "update_capa_action": {"target": "CapaAction", "preview_tool": "preview_capa_update", "execute_tool": "update_capa_action", "statuses": ["open", "in_progress", "effect_check", "closed"], "action_types": ["corrective", "preventive"], "required_when_closed": ["effect_note"], "rules": ["対象報告書が存在すること", "closedの処置には空白以外の効果確認メモが必要。更新後の状態全体に適用する。", "previewは保存・承認・予約を行わない。実行時に同じルールで再検証する。", "ユーザーの明示した更新依頼がある場合のみ実行する。これはエージェント指示であり認可機構ではない。"]}
+  },
+  "limitations": [
+    "このアプリには利用者ごとの行権限・承認ワークフロー・改ざん防止監査・更新競合の検出をまだ実装していない。",
+    "機械個体ID、工場ID、ロットID、正常生産を含む母集団、故障・因果関係は元データにない。推論で補わない。",
+    "取得時点のDBを読む。過去時点の状態復元や複数ツール間の同一スナップショットは保証しない。"
+  ]
+}

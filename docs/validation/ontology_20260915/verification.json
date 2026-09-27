@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-15",
+  "backend": {
+    "result": "passed",
+    "tests": 75,
+    "storage": "isolated SQLite",
+    "log": "backend_tests.txt"
+  },
+  "production_storage": {
+    "engine": "PostgreSQL",
+    "query": "passed",
+    "reports": 117
+  },
+  "frontend_build": "passed; existing bundle size warning",
+  "frontend_lint": {
+    "changed_files": "passed",
+    "whole_project": "existing Capa.tsx only-export-components warning"
+  },
+  "live_agent": {
+    "result": "passed",
+    "file": "live_agent.json",
+    "manual_numeric_review": "4 reports, 12.08%, JPY 841072, 0 open CAPAs match SQL"
+  },
+  "mcp": {
+    "tools": 28,
+    "resource": "ontology://quality/definition",
+    "opencode_connection": "connected"
+  },
+  "generation_only_tools": {
+    "configuration": {
+      "*": false
+    },
+    "executed_tool_parts": 0,
+    "note": "Model produced tool-call-shaped JSON text; the harness did not execute it. This check confirms no tool execution, not response-schema accuracy."
+  },
+  "ui": "ui_checks.json",
+  "limitations": [
+    "No per-user row authorization, approval ledger or optimistic locking",
+    "Graph is one-report neighborhood, not all records at once",
+    "No OWL reasoner; an application semantic model over existing RDB"
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "enabled_providers": [
+    "ollama"
+  ],
+  "model": "ollama/gpt-oss:20b",
+  "share": "disabled",
+  "autoupdate": false,
+  "agent": {
+    "build": {
+      "temperature": 0,
+      "steps": 6
+    },
+    "title": {
+      "disable": true
+    },
+    "summary": {
+      "disable": true
+    }
+  },
+  "permission": {
+    "*": "deny",
+    "defect-reports_*": "allow"
+  },
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "{env:OLLAMA_BASE_URL}/v1"
+      },
+      "models": {
+        "gpt-oss:20b": {
+          "name": "gpt-oss:20b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.8:27b-mtp-q4_K_M": {
+          "name": "qwen3.8:27b-mtp-q4_K_M",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "gemma4:26b": {
+          "name": "gemma4:26b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.5:4b": {
+          "name": "qwen3.5:4b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.5:9b": {
+          "name": "qwen3.5:9b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.6:35b-a3b": {
+          "name": "qwen3.6:35b-a3b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "gemma4:31b": {
+          "name": "gemma4:31b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.5:2b": {
+          "name": "qwen3.5:2b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.5:0.8b": {
+          "name": "qwen3.5:0.8b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "gemma4:26b-a4b": {
+          "name": "gemma4:26b-a4b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "glm-4.7-flash:q4_K_M": {
+          "name": "glm-4.7-flash:q4_K_M",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.8:27b-mtp-q8_0": {
+          "name": "qwen3.8:27b-mtp-q8_0",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.6:35b-a3b-mtp-q8_0": {
+          "name": "qwen3.6:35b-a3b-mtp-q8_0",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.5:35b": {
+          "name": "qwen3.5:35b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3.5:9b-nothink": {
+          "name": "qwen3.5:9b-nothink",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3-vl:8b": {
+          "name": "qwen3-vl:8b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "qwen3-vl:30b": {
+          "name": "qwen3-vl:30b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "gpt-oss:120b": {
+          "name": "gpt-oss:120b",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "laguna-s-2.1:q4_K_M": {
+          "name": "laguna-s-2.1:q4_K_M",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        },
+        "llama4:scout": {
+          "name": "llama4:scout",
+          "tool_call": true,
+          "limit": {
+            "context": 32768,
+            "output": 2048
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "defect-reports": {
+      "type": "remote",
+      "url": "http://host.docker.internal:8766/mcp/",
+      "enabled": true
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "analyzed_at": "2026-09-15T14:06:37.380946+00:00",
+  "script_sha256": "b4854b331b7b13d7212607f72147ef988a4058bdabffa30e915ad0b5b5d98c5f",
+  "raw_sha256": "922c3a315d57a1081cfd9d344484998f725d46d9910b71d01820c2f854334fe8",
+  "reason": "The installed API returns header/text/table [x1,y1,x2,y2] without <|det|> delimiters. Initial normalization left these metadata prefixes in document text. Correct the intended metadata removal offline, retaining original responses and CER values. Applies to all three images; no new inference.",
+  "records": [
+    {
+      "case_id": "V01",
+      "status": "completed",
+      "initial_cer_including_plain_layout_prefixes": 0.7410071942446043,
+      "expected_text_normalized": "評価用不適合報告書これはOCR動作確認用の合成資料です。報告書IDKZ25-9001機械名BENCH設備A発生日2026年1月1日工程BENCH工程加工数100不適合数10損失額(円)100状態open記録内容:加工後の検査で傷を確認した。処置内容:対象品を隔離し、再検査する。",
+      "actual_text_normalized": "評估用不適合報告書これはOCR動作確認用の合成資料です。報告書IDKZ25-9001機械名BENCH設備A発生日2026年1月1日工程BENCH工程加工数100不適合数10損失額(円)100状態open記録内容:加工後の検査で傷を確認した。処置内容:対象品を隔離し、再検査する。",
+      "edit_distance": 1,
+      "expected_characters": 139,
+      "corrected_text_cer": 0.007194244604316547
+    },
+    {
+      "case_id": "V02",
+      "status": "completed",
+      "initial_cer_including_plain_layout_prefixes": 0.7463768115942029,
+      "expected_text_normalized": "評価用不適合報告書これはOCR動作確認用の合成資料です。報告書IDKZ25-9002機械名BENCH設備A発生日2026年1月2日工程BENCH工程加工数900不適合数9損失額(円)200状態open記録内容:加工後の検査で傷を確認した。処置内容:対象品を隔離し、再検査する。",
+      "actual_text_normalized": "評估用不適合報告書これはOCR動作確認用の合成資料です。報告書IDKZ25-9002機械名BENCH設備A発生日2026年1月2日工程BENCH工程加工数900不適合数9損失額(円)200状態open記録内容:加工後の検査で傷を確認した。処置内容:対象品を隔離し、再検査する。",
+      "edit_distance": 1,
+      "expected_characters": 138,
+      "corrected_text_cer": 0.007246376811594203
+    },
+    {
+      "case_id": "V03",
+      "status": "completed",
+      "initial_cer_including_plain_layout_prefixes": 0.7573529411764706,
+      "expected_text_normalized": "評価用不適合報告書これはOCR動作確認用の合成資料です。報告書IDKZ25-9003機械名BENCH設備B発生日2026年1月3日工程BENCH工程加工数0不適合数0損失額(円)未入力状態open記録内容:加工後の検査で傷を確認した。処置内容:対象品を隔離し、再検査する。",
+      "actual_text_normalized": "評估用不適合報告書これはOCR動作確認用の合成資料です。報告書IDKZ25-9003機械名BENCH設備B発生日2026年1月3日工程BENCH工程加工数0不適合数0損失額(円)未入力状態open記録内容:加工後の検査で傷を確認した。処置内容:対象品を隔離し、再検査する。",
+      "edit_distance": 1,
+      "expected_characters": 136,
+      "corrected_text_cer": 0.007352941176470588
+    }
+  ]
+}
