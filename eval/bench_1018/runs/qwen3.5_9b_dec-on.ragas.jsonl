@@ -1,0 +1,51 @@
+{"id": "fact-02", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.984034458805077, "factual_correctness(mode=f1)": 1.0, "sec": 27.8}
+{"id": "fact-06", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.797455010621342, "factual_correctness(mode=f1)": 0.67, "sec": 34.6}
+{"id": "fact-10", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.759080631812435, "factual_correctness(mode=f1)": 1.0, "sec": 31.4}
+{"id": "fact-12", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.8129681847746073, "factual_correctness(mode=f1)": 1.0, "sec": 28.8}
+{"id": "fact-14", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.8163055628496577, "factual_correctness(mode=f1)": 1.0, "sec": 31.3}
+{"id": "fact-16", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.8532076894280213, "factual_correctness(mode=f1)": 1.0, "sec": 31.8}
+{"id": "fact-17", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.972994464175071, "factual_correctness(mode=f1)": 1.0, "sec": 27.0}
+{"id": "fact-18", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.7502095454712625, "factual_correctness(mode=f1)": 1.0, "sec": 28.5}
+{"id": "fact-19", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.9714934973260168, "factual_correctness(mode=f1)": 1.0, "sec": 30.8}
+{"id": "fact-26", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.8403899770912264, "factual_correctness(mode=f1)": 1.0, "sec": 30.7}
+{"id": "fact-28", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.9947718856505172, "factual_correctness(mode=f1)": 1.0, "sec": 28.8}
+{"id": "fact-30", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.771102269646003, "factual_correctness(mode=f1)": 1.0, "sec": 30.1}
+{"id": "aggregate-02", "category": "aggregate", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.8033108767992584, "factual_correctness(mode=f1)": 0.0, "sec": 33.1}
+{"id": "aggregate-07", "category": "aggregate", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.7179522799436515, "factual_correctness(mode=f1)": 0.5, "sec": 34.2}
+{"id": "aggregate-10", "category": "aggregate", "judge": "gpt-oss:120b", "faithfulness": 0.7, "answer_relevancy": 0.7611699392925244, "factual_correctness(mode=f1)": 0.67, "sec": 51.5}
+{"id": "aggregate-15", "category": "aggregate", "judge": "gpt-oss:120b", "faithfulness": 0.5, "answer_relevancy": 0.3687628664983859, "factual_correctness(mode=f1)": 0.0, "sec": 34.0}
+{"id": "aggregate-17", "category": "aggregate", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.9920539231602934, "factual_correctness(mode=f1)": 1.0, "sec": 31.6}
+{"id": "aggregate-21", "category": "aggregate", "judge": "gpt-oss:120b", "faithfulness": 0.3333333333333333, "answer_relevancy": 0.9863540965469856, "factual_correctness(mode=f1)": 0.0, "sec": 49.8}
+{"id": "semantic-01", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.3064832600468515, "factual_correctness(mode=f1)": 0.0, "context_recall": 1.0, "sec": 60.5}
+{"id": "semantic-02", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.5, "answer_relevancy": 0.928178976278795, "factual_correctness(mode=f1)": 0.5, "context_recall": 1.0, "sec": 66.9}
+{"id": "semantic-05", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.49084899897884304, "factual_correctness(mode=f1)": 0.46, "context_recall": 1.0, "sec": 101.5}
+{"id": "semantic-06", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.47747470063824676, "factual_correctness(mode=f1)": 0.0, "context_recall": 1.0, "sec": 55.5}
+{"id": "semantic-07", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.6271057405946492, "factual_correctness(mode=f1)": 0.57, "context_recall": 1.0, "sec": 92.7}
+{"id": "semantic-08", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.3137473023134474, "factual_correctness(mode=f1)": 0.0, "context_recall": 1.0, "sec": 53.6}
+{"id": "semantic-09", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.3406507613677487, "factual_correctness(mode=f1)": 0.0, "context_recall": 1.0, "sec": 50.0}
+{"id": "semantic-10", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.42262060441777366, "factual_correctness(mode=f1)": 0.0, "context_recall": 1.0, "sec": 58.5}
+{"id": "semantic-12", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.4444444444444444, "answer_relevancy": 0.6078277151094004, "factual_correctness(mode=f1)": 0.62, "context_recall": 1.0, "sec": 107.0}
+{"id": "fabrication-02", "category": "fabrication", "judge": "gpt-oss:120b", "faithfulness": 0.3333333333333333, "answer_relevancy": 0.7606289314641339, "sec": 22.9}
+{"id": "fabrication-04", "category": "fabrication", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.25932551195395503, "sec": 16.4}
+{"id": "fabrication-07", "category": "fabrication", "judge": "gpt-oss:120b", "faithfulness": 0.6666666666666666, "answer_relevancy": 0.8209914822973932, "sec": 25.6}
+{"id": "fabrication-09", "category": "fabrication", "judge": "gpt-oss:120b", "faithfulness": 0.3333333333333333, "answer_relevancy": 0.8150647757394386, "sec": 43.3}
+{"id": "fabrication-10", "category": "fabrication", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.4104036804097305, "sec": 16.8}
+{"id": "multiturn-06", "category": "multiturn", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.985147040162051, "factual_correctness(mode=f1)": 1.0, "sec": 31.2}
+{"id": "multiturn-08", "category": "multiturn", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.7008399326235015, "sec": 19.9}
+{"id": "multiturn-09", "category": "multiturn", "judge": "gpt-oss:120b", "faithfulness": 0.875, "answer_relevancy": 0.8408056678438476, "sec": 37.9}
+{"id": "multiturn-10", "category": "multiturn", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.8717183132909823, "factual_correctness(mode=f1)": 0.5, "sec": 37.7}
+{"id": "multiturn-11", "category": "multiturn", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.5406029393143258, "sec": 31.5}
+{"id": "ont-count-a61nx", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.5714285714285714, "answer_relevancy": 0.9621659136220442, "factual_correctness(mode=f1)": 0.33, "sec": 62.6}
+{"id": "ont-count-TSL-550", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.9999997546056966, "factual_correctness(mode=f1)": 1.0, "sec": 29.3}
+{"id": "ont-none-GENOS M560-V", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.8061423166498765, "factual_correctness(mode=f1)": 0.67, "sec": 48.2}
+{"id": "ont-none-TXG-9000", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.3333333333333333, "answer_relevancy": 0.7357841113150219, "factual_correctness(mode=f1)": 0.4, "sec": 77.2}
+{"id": "ont-rate-a61nx", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.8516988951532553, "factual_correctness(mode=f1)": 0.0, "sec": 38.4}
+{"id": "ont-rate-汎用フライス", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.9202297156462128, "factual_correctness(mode=f1)": 0.33, "sec": 59.6}
+{"id": "ont-loss-YZ-8WR", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.5870279656333591, "factual_correctness(mode=f1)": 0.0, "sec": 29.5}
+{"id": "ont-recur", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.14285714285714285, "answer_relevancy": 0.8037649377982652, "factual_correctness(mode=f1)": 0.0, "sec": 66.5}
+{"id": "rag-Q1", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.9130434782608695, "answer_relevancy": 0.5970495776736571, "context_recall": 0.3333333333333333, "sec": 115.2}
+{"id": "rag-Q3", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.1111111111111111, "answer_relevancy": 0.9000675266952489, "sec": 42.1}
+{"id": "rag-Q5", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.7905932111073479, "context_recall": 0.8333333333333334, "sec": 75.5}
+{"id": "rag-P3", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.75, "answer_relevancy": 0.8158174635061884, "context_recall": 0.4166666666666667, "sec": 201.1}
+{"id": "rag-P4", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.8181818181818182, "answer_relevancy": 0.3952956112156001, "context_recall": 0.6666666666666666, "sec": 191.3}
+{"id": "rag-P5", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.5, "answer_relevancy": 0.33029795417865615, "context_recall": 0.21052631578947367, "sec": 117.3}

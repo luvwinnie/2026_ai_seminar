@@ -1,0 +1,1025 @@
+{
+ "n": 54,
+ "pairs": [
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0110] では、GENOS M660-V で表面キズが起きた。",
+   "KZ25-0110"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0110] では、YZ-8WR で表面キズが起きた。",
+   "KZ25-0110"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0101] の原因は「設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。」とされている。",
+   "KZ25-0101"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0101] の原因は「材質ごとの切削条件の使い分けを理解しておらず、不適切な条件で加工した。」とされている。",
+   "KZ25-0101"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0026] では、加工数2個のうち1個が不適合だった。",
+   "KZ25-0026"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0026] では、加工数2個のうち4個が不適合だった。",
+   "KZ25-0026"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0043] の現象は表面キズで、対策は「新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。」などである。",
+   "KZ25-0043"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0043] の現象は穴位置ずれで、対策は「新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。」などである。",
+   "KZ25-0043"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0100] では、汎用フライス で表面キズが起きた。",
+   "KZ25-0100"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0100] では、QUICK TURN 250MSY で表面キズが起きた。",
+   "KZ25-0100"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0009] の原因は「工具寿命管理表の更新が漏れ、摩耗限度を超えた工具を使用し続けた。」とされている。",
+   "KZ25-0009"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0009] の原因は「設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。」とされている。",
+   "KZ25-0009"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0059] では、加工数39個のうち8個が不適合だった。",
+   "KZ25-0059"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0059] では、加工数39個のうち11個が不適合だった。",
+   "KZ25-0059"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0065] の現象はNCプログラム誤りで、対策は「対称形状部品は加工前に治具上でマーキング照合する手順を追加する。」などである。",
+   "KZ25-0065"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0065] の現象は表面キズで、対策は「対称形状部品は加工前に治具上でマーキング照合する手順を追加する。」などである。",
+   "KZ25-0065"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0070] では、YZ-8WR で寸法公差外れが起きた。",
+   "KZ25-0070"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0070] では、QUICK TURN 250MSY で寸法公差外れが起きた。",
+   "KZ25-0070"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0015] の原因は「配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。」とされている。",
+   "KZ25-0015"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0015] の原因は「プログラム転送時に旧版を呼び出し、修正前の座標で加工した。」とされている。",
+   "KZ25-0015"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0029] では、加工数7個のうち1個が不適合だった。",
+   "KZ25-0029"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0029] では、加工数7個のうち4個が不適合だった。",
+   "KZ25-0029"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0008] の現象はバリ残りで、対策は「工程順序をポカヨケ化(前工程の検印が無いと次工程の治具が使えない)する。」などである。",
+   "KZ25-0008"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0008] の現象は取付方向誤りで、対策は「工程順序をポカヨケ化(前工程の検印が無いと次工程の治具が使えない)する。」などである。",
+   "KZ25-0008"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0080] では、QUICK TURN 250MSY で寸法公差外れが起きた。",
+   "KZ25-0080"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0080] では、VARIAXIS i-800 NEO で寸法公差外れが起きた。",
+   "KZ25-0080"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0035] の原因は「標準書で定める中間検査を飛ばして次工程へ進めた。」とされている。",
+   "KZ25-0035"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0035] の原因は「材質ごとの切削条件の使い分けを理解しておらず、不適切な条件で加工した。」とされている。",
+   "KZ25-0035"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0033] では、加工数234個のうち5個が不適合だった。",
+   "KZ25-0033"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0033] では、加工数234個のうち8個が不適合だった。",
+   "KZ25-0033"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0074] の現象は表面キズで、対策は「図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。」などである。",
+   "KZ25-0074"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0074] の現象は加工段差で、対策は「図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。」などである。",
+   "KZ25-0074"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0024] では、汎用フライス でバリ残りが起きた。",
+   "KZ25-0024"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0024] では、YZ-8WR でバリ残りが起きた。",
+   "KZ25-0024"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0102] の原因は「プログラム転送時に旧版を呼び出し、修正前の座標で加工した。」とされている。",
+   "KZ25-0102"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0102] の原因は「段取り替え後の初品測定を省略し、ずれに気付かないまま連続加工した。」とされている。",
+   "KZ25-0102"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0066] では、加工数13個のうち3個が不適合だった。",
+   "KZ25-0066"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0066] では、加工数13個のうち6個が不適合だった。",
+   "KZ25-0066"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0007] の現象は表面キズで、対策は「図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。」などである。",
+   "KZ25-0007"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0007] の現象はひずみ変形で、対策は「図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。」などである。",
+   "KZ25-0007"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0031] では、TSL-550 で工具破損が起きた。",
+   "KZ25-0031"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0031] では、汎用フライス で工具破損が起きた。",
+   "KZ25-0031"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0017] の原因は「図面改訂版の反映を確認せず、旧寸法のまま加工した。」とされている。",
+   "KZ25-0017"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0017] の原因は「設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。」とされている。",
+   "KZ25-0017"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0082] では、加工数93個のうち16個が不適合だった。",
+   "KZ25-0082"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0082] では、加工数93個のうち19個が不適合だった。",
+   "KZ25-0082"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0109] の現象はひずみ変形で、対策は「受入時の抜き取り探傷を追加し、素材メーカーへ是正を要求する。」などである。",
+   "KZ25-0109"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0109] の現象は表面キズで、対策は「受入時の抜き取り探傷を追加し、素材メーカーへ是正を要求する。」などである。",
+   "KZ25-0109"
+  ],
+  [
+   "shift",
+   false,
+   "[KZ25-0012] では、工具チップの欠けが原因で面粗さ不良が起きた。",
+   "KZ25-0012"
+  ],
+  [
+   "shift_ok",
+   true,
+   "[KZ25-0012] では、面粗さ不良のあとで工具チップの欠けも確認された。",
+   "KZ25-0012"
+  ],
+  [
+   "shift",
+   false,
+   "[KZ25-0026] では、工具チップの欠けが原因で面粗さ不良が起きた。",
+   "KZ25-0026"
+  ],
+  [
+   "shift_ok",
+   true,
+   "[KZ25-0026] では、面粗さ不良のあとで工具チップの欠けも確認された。",
+   "KZ25-0026"
+  ],
+  [
+   "shift",
+   false,
+   "[KZ25-0063] では、工具チップの欠けが原因で面粗さ不良が起きた。",
+   "KZ25-0063"
+  ],
+  [
+   "shift_ok",
+   true,
+   "[KZ25-0063] では、面粗さ不良のあとで工具チップの欠けも確認された。",
+   "KZ25-0063"
+  ]
+ ],
+ "results": {
+  "inception/mercury-decide:free": {
+   "summary": {
+    "accuracy@0.5": 0.963,
+    "auroc": 1.0,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 0.67,
+     "cause": 1.0,
+     "cause_swap": 1.0,
+     "count": 1.0,
+     "count_swap": 1.0,
+     "phen": 1.0,
+     "phen_swap": 1.0,
+     "shift": 1.0,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0,
+    "sec": 1.9
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9989677687346824,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.005911069543051468,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9997040428807004,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0001584361895961588,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.9993736657148067,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0002611904224510246,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9997694933726572,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.0009697519695871381,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9975273767652634,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.012431651996580367,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9993736658278997,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.00020342690418235728,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.999569442988818,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.00026119019896042784,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.999512142947608,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.00033535016543449395,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9992903296458108,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.7310585786300049,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9991959142016767,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.00017952801899580908,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.9994472213010753,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0001686527067190193,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9993736657427883,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.0035936027848414397,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9990889488437463,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.001032230942640745,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9995121428454286,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.00031503874599725156,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.999569442963166,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0004305571101832874,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9978172831631783,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.11920292358664389,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9990889487530414,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.5926665999540697,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9995121429607777,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0003799844719476711,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.999664649970691,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.00026119029720871886,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9995694429206794,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.00048785704149287876,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9994472214366543,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.010328153109514005,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9995694429643683,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.025957354513420506,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.9997040427977598,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0005193048275156557,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9997219690156721,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.00048785720759118015,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.037326887611855576,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9975273767893831,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.0052201258434819205,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9975273767032413,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.0026316742694453173,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9959298624992893,
+     "cost": 0.0
+    }
+   ]
+  },
+  "respan/span-01-lite:free": {
+   "summary": {
+    "accuracy@0.5": 0.519,
+    "auroc": 0.708,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 0.0,
+     "cause": 1.0,
+     "cause_swap": 0.17,
+     "count": 1.0,
+     "count_swap": 0.0,
+     "phen": 1.0,
+     "phen_swap": 0.0,
+     "shift": 0.0,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0,
+    "sec": 4.5
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.7117077,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.7449626,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.8557765,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.64954674,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.80070204,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.76879483,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.8285912,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.77111614,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.7126906,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.7142967,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.76238537,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.4670498,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.7406657,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.7376153,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.6733636,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.7111669,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.7163019,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.64551705,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.7267157,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.6180099,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.7958789,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.758193,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.7940597,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.74523497,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.7110168,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.6626368,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.8391645,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.6420212,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.824796,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.8388818,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.80649906,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.77880037,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.8188041,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.83772135,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.77729267,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.67406124,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.72310996,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.7157619,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.83953375,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.8330765,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.7027121,
+     "cost": 0.0
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.757885,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.8142662,
+     "cost": 0.0
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.74993825,
+     "cost": 0.0
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.80205745,
+     "cost": 0.0
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.77756524,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.7864412,
+     "cost": 0.0
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.78475904,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.75353545,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.7816791,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.7633511,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.8076319,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.679743,
+     "cost": 0.0
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.79270977,
+     "cost": 0.0
+    }
+   ]
+  }
+ }
+}

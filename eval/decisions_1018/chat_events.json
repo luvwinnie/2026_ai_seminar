@@ -1,0 +1,161 @@
+[
+ {
+  "q": "主軸のクランプ圧低下が原因の報告は何件？",
+  "times": {
+   "session": 0.06,
+   "sources": 0.6,
+   "route": 0.71,
+   "thinking": 23.86,
+   "tool": 28.89,
+   "token": 39.56,
+   "citations": 39.64,
+   "done": 39.64
+  },
+  "route": {
+   "intent": "count",
+   "p": 0.9959,
+   "margin": 0.9941,
+   "taken": true,
+   "hint": "この質問は数を求めている。get_statistics・list_defect_reports の total・query_quality_ontology で全件を数える。検索(search_defect_reports)の上位の件数で答えない。",
+   "model": "perplexity/pplx-decider-v1.2-20261016",
+   "cost_usd": 9.12e-06
+  },
+  "citations": {
+   "model": "liquid/d1-ultra",
+   "checks": [],
+   "unsupported": 0,
+   "cost_usd": 0
+  },
+  "sources": [
+   "KZ25-0040",
+   "KZ25-0030",
+   "KZ25-0104",
+   "KZ25-0085",
+   "KZ25-0110"
+  ],
+  "answer": "6件です。",
+  "error": null
+ },
+ {
+  "q": "KZ25-0043 の内容を教えて",
+  "times": {
+   "session": 0.01,
+   "sources": 0.47,
+   "route": 0.53,
+   "tool": 16.63,
+   "token": 18.42,
+   "citations": 21.63,
+   "done": 21.63
+  },
+  "route": {
+   "intent": "one",
+   "p": 0.998,
+   "margin": 0.9973,
+   "taken": true,
+   "hint": "この質問は番号が分かっている1件。get_defect_report で取得してから答える。無ければ「見つからない」と答え、中身を作らない。",
+   "model": "perplexity/pplx-decider-v1.2-20261016",
+   "cost_usd": 9.08e-06
+  },
+  "citations": {
+   "model": "liquid/d1-ultra",
+   "checks": [
+    {
+     "defect_id": "KZ25-0043",
+     "sentence": "[KZ25-0043] の内容は以下の通りです。",
+     "p": 0.8977,
+     "exists": true,
+     "supported": true,
+     "cost_usd": 1.4154e-05
+    }
+   ],
+   "unsupported": 0,
+   "cost_usd": 1.4154e-05
+  },
+  "sources": [
+   "KZ25-0044",
+   "KZ25-0037",
+   "KZ25-0057",
+   "KZ25-0042",
+   "KZ25-0029"
+  ],
+  "answer": "[KZ25-0043] の内容は以下の通りです。\n\n- **発生日**: 2025-09-13\n- **客先**: 翠峰重工業\n- **工程**: マシニング\n- **機械**: a61nx\n- **部品名**: 補機マウントリブ (KRS-A58-5211-D)\n- **不具合内容**: 位置決めダボ穴に長さ約3mmの線状キズ。搬送トレイ上で隣接品と接触した痕跡あり。\n- **現象**: 表面キズ\n- **原因**: 配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った（要因：習熟不足）。\n- **対策**: 新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。\n- **重要度**: medium\n- **状態**: completed\n- **費用**: 60,581円",
+  "error": null
+ },
+ {
+  "q": "搬送中に隣の品物と当たって付いたキズの事例は？",
+  "times": {
+   "session": 0.01,
+   "sources": 0.48,
+   "route": 0.58,
+   "tool": 17.03,
+   "token": 23.9,
+   "citations": 25.98,
+   "done": 25.98
+  },
+  "route": {
+   "intent": "search",
+   "p": 0.8561,
+   "margin": 0.7218,
+   "taken": true,
+   "hint": "この質問は言い換え・文章の内容で探す問い。search_defect_reports で候補を探し、述べる前に get_defect_report で確かめる。",
+   "model": "perplexity/pplx-decider-v1.2-20261016",
+   "cost_usd": 9.16e-06
+  },
+  "citations": {
+   "model": "liquid/d1-ultra",
+   "checks": [
+    {
+     "defect_id": "KZ25-0098",
+     "sentence": "[KZ25-0098] ステムガイド：長さ約25mmの線状キズ",
+     "p": 0.9811,
+     "exists": true,
+     "supported": true,
+     "cost_usd": 1.4196e-05
+    },
+    {
+     "defect_id": "KZ25-0003",
+     "sentence": "[KZ25-0003] ローラブラケット：長さ約20mmの線状キズ",
+     "p": 0.9811,
+     "exists": true,
+     "supported": true,
+     "cost_usd": 1.4028e-05
+    },
+    {
+     "defect_id": "KZ25-0089",
+     "sentence": "[KZ25-0089] ベーンプレート：長さ約17mmの線状キズ",
+     "p": 0.9909,
+     "exists": true,
+     "supported": true,
+     "cost_usd": 1.4112e-05
+    },
+    {
+     "defect_id": "KZ25-0036",
+     "sentence": "[KZ25-0036] チェーンテンショナ：長さ約21mmの線状キズ",
+     "p": 0.9735,
+     "exists": true,
+     "supported": true,
+     "cost_usd": 1.4574e-05
+    },
+    {
+     "defect_id": "KZ25-0060",
+     "sentence": "[KZ25-0060] ステムガイド：長さ約20mmの線状キズ",
+     "p": 0.9759,
+     "exists": true,
+     "supported": true,
+     "cost_usd": 1.4322e-05
+    }
+   ],
+   "unsupported": 0,
+   "cost_usd": 7.1232e-05
+  },
+  "sources": [
+   "KZ25-0036",
+   "KZ25-0100",
+   "KZ25-0023",
+   "KZ25-0002",
+   "KZ25-0098"
+  ],
+  "answer": "搬送トレイ上で隣接品と接触して発生したキズの事例が複数あります。\n\n* [KZ25-0098] ステムガイド：長さ約25mmの線状キズ\n* [KZ25-0003] ローラブラケット：長さ約20mmの線状キズ\n* [KZ25-0089] ベーンプレート：長さ約17mmの線状キズ\n* [KZ25-0036] チェーンテンショナ：長さ約21mmの線状キズ\n* [KZ25-0060] ステムガイド：長さ約20mmの線状キズ",
+  "error": null
+ }
+]

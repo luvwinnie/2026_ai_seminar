@@ -1,6 +1,6 @@
 {
  "seed": 0,
- "n_rows": 117,
+ "n_rows": 110,
  "cases": [
   {
    "id": "fact-01",
@@ -59,24 +59,6 @@
   {
    "id": "fact-04",
    "category": "fact",
-   "question": "KZ25-0114の使用機械はどれですか?",
-   "expected": [
-    "汎用フライス"
-   ],
-   "gold_ids": [
-    "KZ25-0114"
-   ],
-   "required_tools": [
-    [
-     "get_defect_report",
-     "list_defect_reports",
-     "search_defect_reports"
-    ]
-   ]
-  },
-  {
-   "id": "fact-05",
-   "category": "fact",
    "question": "KZ25-0054の使用機械はどれですか?",
    "expected": [
     "汎用フライス"
@@ -93,7 +75,7 @@
    ]
   },
   {
-   "id": "fact-06",
+   "id": "fact-05",
    "category": "fact",
    "question": "KZ25-0006の使用機械はどれですか?",
    "expected": [
@@ -111,11 +93,11 @@
    ]
   },
   {
-   "id": "fact-07",
+   "id": "fact-06",
    "category": "fact",
-   "question": "KZ25-0034の客先はどこですか?",
+   "question": "KZ25-0034の使用機械はどれですか?",
    "expected": [
-    "蒼井田機器工業"
+    "QUICK TURN 250MSY"
    ],
    "gold_ids": [
     "KZ25-0034"
@@ -129,7 +111,7 @@
    ]
   },
   {
-   "id": "fact-08",
+   "id": "fact-07",
    "category": "fact",
    "question": "KZ25-0066の客先はどこですか?",
    "expected": [
@@ -147,7 +129,7 @@
    ]
   },
   {
-   "id": "fact-09",
+   "id": "fact-08",
    "category": "fact",
    "question": "KZ25-0063の客先はどこですか?",
    "expected": [
@@ -165,7 +147,7 @@
    ]
   },
   {
-   "id": "fact-10",
+   "id": "fact-09",
    "category": "fact",
    "question": "KZ25-0052の客先はどこですか?",
    "expected": [
@@ -183,7 +165,7 @@
    ]
   },
   {
-   "id": "fact-11",
+   "id": "fact-10",
    "category": "fact",
    "question": "KZ25-0101の客先はどこですか?",
    "expected": [
@@ -201,11 +183,11 @@
    ]
   },
   {
-   "id": "fact-12",
+   "id": "fact-11",
    "category": "fact",
-   "question": "KZ25-0107の現象分類は何ですか?",
+   "question": "KZ25-0107の客先はどこですか?",
    "expected": [
-    "穴位置ずれ"
+    "蒼井田機器工業"
    ],
    "gold_ids": [
     "KZ25-0107"
@@ -219,7 +201,7 @@
    ]
   },
   {
-   "id": "fact-13",
+   "id": "fact-12",
    "category": "fact",
    "question": "KZ25-0039の現象分類は何ですか?",
    "expected": [
@@ -237,7 +219,7 @@
    ]
   },
   {
-   "id": "fact-14",
+   "id": "fact-13",
    "category": "fact",
    "question": "KZ25-0062の現象分類は何ですか?",
    "expected": [
@@ -255,7 +237,7 @@
    ]
   },
   {
-   "id": "fact-15",
+   "id": "fact-14",
    "category": "fact",
    "question": "KZ25-0046の現象分類は何ですか?",
    "expected": [
@@ -273,7 +255,7 @@
    ]
   },
   {
-   "id": "fact-16",
+   "id": "fact-15",
    "category": "fact",
    "question": "KZ25-0075の現象分類は何ですか?",
    "expected": [
@@ -291,47 +273,11 @@
    ]
   },
   {
-   "id": "fact-17",
+   "id": "fact-16",
    "category": "fact",
-   "question": "KZ25-0115の発生工程はどこですか?",
+   "question": "KZ25-0028の現象分類は何ですか?",
    "expected": [
-    "研削"
-   ],
-   "gold_ids": [
-    "KZ25-0115"
-   ],
-   "required_tools": [
-    [
-     "get_defect_report",
-     "list_defect_reports",
-     "search_defect_reports"
-    ]
-   ]
-  },
-  {
-   "id": "fact-18",
-   "category": "fact",
-   "question": "KZ25-0117の発生工程はどこですか?",
-   "expected": [
-    "マシニング"
-   ],
-   "gold_ids": [
-    "KZ25-0117"
-   ],
-   "required_tools": [
-    [
-     "get_defect_report",
-     "list_defect_reports",
-     "search_defect_reports"
-    ]
-   ]
-  },
-  {
-   "id": "fact-19",
-   "category": "fact",
-   "question": "KZ25-0028の発生工程はどこですか?",
-   "expected": [
-    "旋削"
+    "表面キズ"
    ],
    "gold_ids": [
     "KZ25-0028"
@@ -345,7 +291,7 @@
    ]
   },
   {
-   "id": "fact-20",
+   "id": "fact-17",
    "category": "fact",
    "question": "KZ25-0065の発生工程はどこですか?",
    "expected": [
@@ -363,11 +309,11 @@
    ]
   },
   {
-   "id": "fact-21",
+   "id": "fact-18",
    "category": "fact",
-   "question": "KZ25-0018の作業者は誰ですか?",
+   "question": "KZ25-0018の発生工程はどこですか?",
    "expected": [
-    "美濃部"
+    "旋削"
    ],
    "gold_ids": [
     "KZ25-0018"
@@ -381,11 +327,11 @@
    ]
   },
   {
-   "id": "fact-22",
+   "id": "fact-19",
    "category": "fact",
-   "question": "KZ25-0037の作業者は誰ですか?",
+   "question": "KZ25-0037の発生工程はどこですか?",
    "expected": [
-    "霧嶋"
+    "仕上げ"
    ],
    "gold_ids": [
     "KZ25-0037"
@@ -399,11 +345,11 @@
    ]
   },
   {
-   "id": "fact-23",
+   "id": "fact-20",
    "category": "fact",
-   "question": "KZ25-0097の作業者は誰ですか?",
+   "question": "KZ25-0097の発生工程はどこですか?",
    "expected": [
-    "荻原"
+    "フライス加工"
    ],
    "gold_ids": [
     "KZ25-0097"
@@ -417,7 +363,7 @@
    ]
   },
   {
-   "id": "fact-24",
+   "id": "fact-21",
    "category": "fact",
    "question": "KZ25-0013の作業者は誰ですか?",
    "expected": [
@@ -435,11 +381,11 @@
    ]
   },
   {
-   "id": "fact-25",
+   "id": "fact-22",
    "category": "fact",
-   "question": "KZ25-0080の部品名は何ですか?",
+   "question": "KZ25-0080の作業者は誰ですか?",
    "expected": [
-    "ステムガイド"
+    "真壁"
    ],
    "gold_ids": [
     "KZ25-0080"
@@ -453,11 +399,11 @@
    ]
   },
   {
-   "id": "fact-26",
+   "id": "fact-23",
    "category": "fact",
-   "question": "KZ25-0103の部品名は何ですか?",
+   "question": "KZ25-0103の作業者は誰ですか?",
    "expected": [
-    "メカニカルシール座"
+    "三雲"
    ],
    "gold_ids": [
     "KZ25-0103"
@@ -471,11 +417,11 @@
    ]
   },
   {
-   "id": "fact-27",
+   "id": "fact-24",
    "category": "fact",
-   "question": "KZ25-0033の部品名は何ですか?",
+   "question": "KZ25-0033の作業者は誰ですか?",
    "expected": [
-    "ロータシャフト"
+    "小早川"
    ],
    "gold_ids": [
     "KZ25-0033"
@@ -489,29 +435,11 @@
    ]
   },
   {
-   "id": "fact-28",
+   "id": "fact-25",
    "category": "fact",
-   "question": "KZ25-0117の発生日はいつですか?",
+   "question": "KZ25-0069の部品名は何ですか?",
    "expected": [
-    "2026-03-31"
-   ],
-   "gold_ids": [
-    "KZ25-0117"
-   ],
-   "required_tools": [
-    [
-     "get_defect_report",
-     "list_defect_reports",
-     "search_defect_reports"
-    ]
-   ]
-  },
-  {
-   "id": "fact-29",
-   "category": "fact",
-   "question": "KZ25-0069の発生日はいつですか?",
-   "expected": [
-    "2025-11-26"
+    "メカニカルシール座"
    ],
    "gold_ids": [
     "KZ25-0069"
@@ -525,11 +453,11 @@
    ]
   },
   {
-   "id": "fact-30",
+   "id": "fact-26",
    "category": "fact",
-   "question": "KZ25-0091の発生日はいつですか?",
+   "question": "KZ25-0091の部品名は何ですか?",
    "expected": [
-    "2026-01-19"
+    "メカニカルシール座"
    ],
    "gold_ids": [
     "KZ25-0091"
@@ -543,13 +471,85 @@
    ]
   },
   {
+   "id": "fact-27",
+   "category": "fact",
+   "question": "KZ25-0104の部品名は何ですか?",
+   "expected": [
+    "ローラブラケット"
+   ],
+   "gold_ids": [
+    "KZ25-0104"
+   ],
+   "required_tools": [
+    [
+     "get_defect_report",
+     "list_defect_reports",
+     "search_defect_reports"
+    ]
+   ]
+  },
+  {
+   "id": "fact-28",
+   "category": "fact",
+   "question": "KZ25-0078の発生日はいつですか?",
+   "expected": [
+    "2025-12-14"
+   ],
+   "gold_ids": [
+    "KZ25-0078"
+   ],
+   "required_tools": [
+    [
+     "get_defect_report",
+     "list_defect_reports",
+     "search_defect_reports"
+    ]
+   ]
+  },
+  {
+   "id": "fact-29",
+   "category": "fact",
+   "question": "KZ25-0019の発生日はいつですか?",
+   "expected": [
+    "2025-06-23"
+   ],
+   "gold_ids": [
+    "KZ25-0019"
+   ],
+   "required_tools": [
+    [
+     "get_defect_report",
+     "list_defect_reports",
+     "search_defect_reports"
+    ]
+   ]
+  },
+  {
+   "id": "fact-30",
+   "category": "fact",
+   "question": "KZ25-0040の発生日はいつですか?",
+   "expected": [
+    "2025-08-27"
+   ],
+   "gold_ids": [
+    "KZ25-0040"
+   ],
+   "required_tools": [
+    [
+     "get_defect_report",
+     "list_defect_reports",
+     "search_defect_reports"
+    ]
+   ]
+  },
+  {
    "id": "aggregate-01",
    "category": "aggregate",
-   "question": "汎用フライスの報告書は全部で何件ありますか?",
+   "question": "GENOS M660-Vの報告書は全部で何件ありますか?",
    "expected": [
-    "49"
+    "1"
    ],
-   "stat": "汎用フライスの件数=49",
+   "stat": "GENOS M660-Vの件数=1",
    "required_tools": [
     [
      "get_statistics",
@@ -560,11 +560,11 @@
   {
    "id": "aggregate-02",
    "category": "aggregate",
-   "question": "MEGATURN NEXUS 900の報告書は全部で何件ありますか?",
+   "question": "汎用フライスの報告書は全部で何件ありますか?",
    "expected": [
-    "6"
+    "46"
    ],
-   "stat": "MEGATURN NEXUS 900の件数=6",
+   "stat": "汎用フライスの件数=46",
    "required_tools": [
     [
      "get_statistics",
@@ -574,36 +574,6 @@
   },
   {
    "id": "aggregate-03",
-   "category": "aggregate",
-   "question": "TSL-550の報告書は全部で何件ありますか?",
-   "expected": [
-    "8"
-   ],
-   "stat": "TSL-550の件数=8",
-   "required_tools": [
-    [
-     "get_statistics",
-     "list_defect_reports"
-    ]
-   ]
-  },
-  {
-   "id": "aggregate-04",
-   "category": "aggregate",
-   "question": "DMU 65 monoBLOCKの報告書は全部で何件ありますか?",
-   "expected": [
-    "1"
-   ],
-   "stat": "DMU 65 monoBLOCKの件数=1",
-   "required_tools": [
-    [
-     "get_statistics",
-     "list_defect_reports"
-    ]
-   ]
-  },
-  {
-   "id": "aggregate-05",
    "category": "aggregate",
    "question": "VARIAXIS i-800 NEOの報告書は全部で何件ありますか?",
    "expected": [
@@ -618,13 +588,43 @@
    ]
   },
   {
+   "id": "aggregate-04",
+   "category": "aggregate",
+   "question": "QUICK TURN 250MSYの報告書は全部で何件ありますか?",
+   "expected": [
+    "18"
+   ],
+   "stat": "QUICK TURN 250MSYの件数=18",
+   "required_tools": [
+    [
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ]
+  },
+  {
+   "id": "aggregate-05",
+   "category": "aggregate",
+   "question": "TSL-550の報告書は全部で何件ありますか?",
+   "expected": [
+    "8"
+   ],
+   "stat": "TSL-550の件数=8",
+   "required_tools": [
+    [
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ]
+  },
+  {
    "id": "aggregate-06",
    "category": "aggregate",
-   "question": "WT-150IIの報告書は全部で何件ありますか?",
+   "question": "DMU 65 monoBLOCKの報告書は全部で何件ありますか?",
    "expected": [
-    "3"
+    "1"
    ],
-   "stat": "WT-150IIの件数=3",
+   "stat": "DMU 65 monoBLOCKの件数=1",
    "required_tools": [
     [
      "get_statistics",
@@ -665,11 +665,11 @@
   {
    "id": "aggregate-09",
    "category": "aggregate",
-   "question": "現象分類が加工段差の報告書は何件ありますか?",
+   "question": "現象分類がバリ残りの報告書は何件ありますか?",
    "expected": [
-    "10"
+    "14"
    ],
-   "stat": "加工段差の件数=10",
+   "stat": "バリ残りの件数=14",
    "required_tools": [
     [
      "get_statistics",
@@ -680,11 +680,11 @@
   {
    "id": "aggregate-10",
    "category": "aggregate",
-   "question": "現象分類がNCプログラム誤りの報告書は何件ありますか?",
+   "question": "現象分類が加工段差の報告書は何件ありますか?",
    "expected": [
-    "7"
+    "9"
    ],
-   "stat": "NCプログラム誤りの件数=7",
+   "stat": "加工段差の件数=9",
    "required_tools": [
     [
      "get_statistics",
@@ -740,11 +740,11 @@
   {
    "id": "aggregate-14",
    "category": "aggregate",
-   "question": "翠峰重工業向けの報告書は何件ありますか?",
+   "question": "深名電子工業向けの報告書は何件ありますか?",
    "expected": [
-    "33"
+    "5"
    ],
-   "stat": "翠峰重工業の件数=33",
+   "stat": "深名電子工業の件数=5",
    "required_tools": [
     [
      "get_statistics",
@@ -755,11 +755,11 @@
   {
    "id": "aggregate-15",
    "category": "aggregate",
-   "question": "蒼井田機器工業向けの報告書は何件ありますか?",
+   "question": "霞岡バルブ工業向けの報告書は何件ありますか?",
    "expected": [
-    "23"
+    "9"
    ],
-   "stat": "蒼井田機器工業の件数=23",
+   "stat": "霞岡バルブ工業の件数=9",
    "required_tools": [
     [
      "get_statistics",
@@ -770,11 +770,11 @@
   {
    "id": "aggregate-16",
    "category": "aggregate",
-   "question": "鷹森航空部品向けの報告書は何件ありますか?",
+   "question": "遠原精密工業向けの報告書は何件ありますか?",
    "expected": [
-    "2"
+    "4"
    ],
-   "stat": "鷹森航空部品の件数=2",
+   "stat": "遠原精密工業の件数=4",
    "required_tools": [
     [
      "get_statistics",
@@ -817,9 +817,9 @@
    "category": "aggregate",
    "question": "報告書は全部で何件登録されていますか?",
    "expected": [
-    "117"
+    "110"
    ],
-   "stat": "総件数=117",
+   "stat": "総件数=110",
    "required_tools": [
     [
      "get_statistics",
@@ -830,11 +830,11 @@
   {
    "id": "aggregate-20",
    "category": "aggregate",
-   "question": "工程が旋削の報告書は何件ありますか?",
+   "question": "工程が組付の報告書は何件ありますか?",
    "expected": [
-    "29"
+    "7"
    ],
-   "stat": "旋削の件数=29",
+   "stat": "組付の件数=7",
    "required_tools": [
     [
      "get_statistics",
@@ -849,7 +849,7 @@
    "expected": [
     "汎用フライス"
    ],
-   "stat": "最多機械=汎用フライス(49件)",
+   "stat": "最多機械=汎用フライス(46件)",
    "required_tools": [
     [
      "get_statistics",
@@ -875,82 +875,27 @@
   {
    "id": "semantic-01",
    "category": "semantic",
-   "question": "「吸込ノズルフランジの新規プログラムの座標系設定ミスで初品の穴群全体が0.161mmオ」という内容に該当する報告書はどれですか?",
+   "question": "「チェーンテンショナのM4タップ加工中に折損が発生。折れ込みの摘出時にポケット隅Rへ二」という内容に該当する報告書はどれですか?",
    "gold_ids": [
-    "KZ25-0065"
+    "KZ25-0078"
    ],
    "expected": [
-    "KZ25-0065"
+    "KZ25-0078"
    ]
   },
   {
    "id": "semantic-02",
    "category": "semantic",
-   "question": "「出荷前検査でステムガイドの全長が図面値120mmに対して0.197mm不足しているこ」という内容に該当する報告書はどれですか?",
+   "question": "「洗浄後の目視検査でギヤケースの軸受はめあい面に長さ16mmの円弧状の擦り傷を確認。チ」という内容に該当する報告書はどれですか?",
    "gold_ids": [
-    "KZ25-0080"
+    "KZ25-0074"
    ],
    "expected": [
-    "KZ25-0080"
+    "KZ25-0074"
    ]
   },
   {
    "id": "semantic-03",
-   "category": "semantic",
-   "question": "「ノズルホルダのOリング溝で荒加工と仕上げ加工の境界に目視で分かる約0.151mmの段」という内容に該当する報告書はどれですか?",
-   "gold_ids": [
-    "KZ25-0053"
-   ],
-   "expected": [
-    "KZ25-0053"
-   ]
-  },
-  {
-   "id": "semantic-04",
-   "category": "semantic",
-   "question": "「チェーンテンショナの新規プログラムの座標系設定ミスで初品の穴群全体が0.212mmオ」という内容に該当する報告書はどれですか?",
-   "gold_ids": [
-    "KZ25-0013"
-   ],
-   "expected": [
-    "KZ25-0013"
-   ]
-  },
-  {
-   "id": "semantic-05",
-   "category": "semantic",
-   "question": "「ノズルホルダのタップ下穴口元で荒加工と仕上げ加工の境界に目視で分かる約0.117mm」という内容に該当する報告書はどれですか?",
-   "gold_ids": [
-    "KZ25-0054"
-   ],
-   "expected": [
-    "KZ25-0054"
-   ]
-  },
-  {
-   "id": "semantic-06",
-   "category": "semantic",
-   "question": "「洗浄後の目視検査でマニホールドブロックの皿モミ部に長さ15mmの円弧状の擦り傷を確認」という内容に該当する報告書はどれですか?",
-   "gold_ids": [
-    "KZ25-0112"
-   ],
-   "expected": [
-    "KZ25-0112"
-   ]
-  },
-  {
-   "id": "semantic-07",
-   "category": "semantic",
-   "question": "「洗浄後の目視検査でマニホールドブロックの軸受はめあい面に長さ14mmの円弧状の擦り傷」という内容に該当する報告書はどれですか?",
-   "gold_ids": [
-    "KZ25-0095"
-   ],
-   "expected": [
-    "KZ25-0095"
-   ]
-  },
-  {
-   "id": "semantic-08",
    "category": "semantic",
    "question": "「洗浄後の目視検査でステムガイドの位置決めダボ穴に長さ16mmの円弧状の擦り傷を確認。」という内容に該当する報告書はどれですか?",
    "gold_ids": [
@@ -961,47 +906,102 @@
    ]
   },
   {
-   "id": "semantic-09",
+   "id": "semantic-04",
    "category": "semantic",
-   "question": "「梱包開封時にインペラハウジングの皿モミ部へ打痕状の凹み(深さ約0.175mm)が1点」という内容に該当する報告書はどれですか?",
+   "question": "「出荷前検査でギヤケースの全長が図面値45mmに対して0.179mm不足していることが」という内容に該当する報告書はどれですか?",
    "gold_ids": [
-    "KZ25-0004"
+    "KZ25-0027"
    ],
    "expected": [
-    "KZ25-0004"
+    "KZ25-0027"
+   ]
+  },
+  {
+   "id": "semantic-05",
+   "category": "semantic",
+   "question": "「洗浄後の目視検査でマニホールドブロックの軸受はめあい面に長さ14mmの円弧状の擦り傷」という内容に該当する報告書はどれですか?",
+   "gold_ids": [
+    "KZ25-0095"
+   ],
+   "expected": [
+    "KZ25-0095"
+   ]
+  },
+  {
+   "id": "semantic-06",
+   "category": "semantic",
+   "question": "「洗浄後の目視検査でチェーンテンショナのOリング溝に長さ7mmの円弧状の擦り傷を確認。」という内容に該当する報告書はどれですか?",
+   "gold_ids": [
+    "KZ25-0037"
+   ],
+   "expected": [
+    "KZ25-0037"
+   ]
+  },
+  {
+   "id": "semantic-07",
+   "category": "semantic",
+   "question": "「洗浄後の目視検査でスラストカラーの外周リブに長さ4mmの円弧状の擦り傷を確認。チャッ」という内容に該当する報告書はどれですか?",
+   "gold_ids": [
+    "KZ25-0046"
+   ],
+   "expected": [
+    "KZ25-0046"
+   ]
+  },
+  {
+   "id": "semantic-08",
+   "category": "semantic",
+   "question": "「シール摺動面の幅寸法が規格を0.156mm超過。仕上げ代の残し過ぎが疑われ、三次元測」という内容に該当する報告書はどれですか?",
+   "gold_ids": [
+    "KZ25-0011"
+   ],
+   "expected": [
+    "KZ25-0011"
+   ]
+  },
+  {
+   "id": "semantic-09",
+   "category": "semantic",
+   "question": "「弁座リングの横穴とオイル溝の交差エッジに高さ約0.148mmの微細バリ。エア吹きでは」という内容に該当する報告書はどれですか?",
+   "gold_ids": [
+    "KZ25-0035"
+   ],
+   "expected": [
+    "KZ25-0035"
    ]
   },
   {
    "id": "semantic-10",
    "category": "semantic",
-   "question": "「洗浄後の目視検査でギヤケースのポケット隅Rに長さ17mmの円弧状の擦り傷を確認。チャ」という内容に該当する報告書はどれですか?",
+   "question": "「ノズルホルダのOリング溝で荒加工と仕上げ加工の境界に目視で分かる約0.151mmの段」という内容に該当する報告書はどれですか?",
    "gold_ids": [
-    "KZ25-0044"
+    "KZ25-0053"
    ],
    "expected": [
-    "KZ25-0044"
+    "KZ25-0053"
    ]
   },
   {
    "id": "semantic-11",
    "category": "semantic",
-   "question": "「洗浄後の目視検査でバルブボディの外周リブに長さ18mmの円弧状の擦り傷を確認。チャッ」という内容に該当する報告書はどれですか?",
+   "question": "「梱包開封時にメカニカルシール座のボス端面へ打痕状の凹み(深さ約0.124mm)が2点」という内容に該当する報告書はどれですか?",
    "gold_ids": [
-    "KZ25-0021"
+    "KZ25-0069"
    ],
    "expected": [
-    "KZ25-0021"
+    "KZ25-0069"
    ]
   },
   {
    "id": "semantic-12",
    "category": "semantic",
-   "question": "「梱包開封時にノズルホルダのタップ下穴口元へ打痕状の凹み(深さ約0.178mm)が2点」という内容に該当する報告書はどれですか?",
+   "question": "「洗浄後の目視検査でメカニカルシール座の外周リブに長さ6mmの円弧状の擦り傷を確認。チ」という内容に該当する報告書はどれですか?",
    "gold_ids": [
-    "KZ25-0090"
+    "KZ25-0006"
    ],
    "expected": [
-    "KZ25-0090"
+    "KZ25-0006"
    ]
   },
   {
@@ -1187,7 +1187,7 @@
   {
    "id": "ui-05",
    "category": "ui",
-   "question": "KZ25-0081を画面で開いて",
+   "question": "KZ25-0094を画面で開いて",
    "required_tools": [
     [
      "ui_open_report",
@@ -1219,7 +1219,7 @@
   {
    "id": "ui-08",
    "category": "ui",
-   "question": "KZ25-0001の4M分析を画面で実行して",
+   "question": "KZ25-0042の4M分析を画面で実行して",
    "required_tools": [
     [
      "ui_run_4m_analysis"
@@ -1299,9 +1299,9 @@
   {
    "id": "multiturn-01",
    "category": "multiturn",
-   "question": "KZ25-0064を画面で開いて",
+   "question": "KZ25-0009を画面で開いて",
    "pre_turns": [
-    "KZ25-0079の内容を教えて"
+    "KZ25-0091の内容を教えて"
    ],
    "required_tools": [
     [
@@ -1309,14 +1309,14 @@
      "ui_navigate"
     ]
    ],
-   "gold_customer": "翠峰重工業"
+   "gold_customer": "遠原精密工業"
   },
   {
    "id": "multiturn-02",
    "category": "multiturn",
-   "question": "KZ25-0112の客先はどこですか?",
+   "question": "KZ25-0073の客先はどこですか?",
    "pre_turns": [
-    "KZ25-0106の内容を教えて"
+    "KZ25-0025の内容を教えて"
    ],
    "required_tools": [
     [
@@ -1326,10 +1326,10 @@
     ]
    ],
    "expected": [
-    "汐峰造機"
+    "蒼井田機器工業"
    ],
    "gold_ids": [
-    "KZ25-0112"
+    "KZ25-0073"
    ]
   },
   {
@@ -1337,7 +1337,7 @@
    "category": "multiturn",
    "question": "では損失額の大きい順に並び替えて",
    "pre_turns": [
-    "a61nxの報告書一覧を画面に出して"
+    "YZ-8WRの報告書一覧を画面に出して"
    ],
    "required_tools": [
     [
@@ -1348,7 +1348,7 @@
   {
    "id": "multiturn-04",
    "category": "multiturn",
-   "question": "KZ25-0032の現象と対策を教えて",
+   "question": "KZ25-0031の現象と対策を教えて",
    "pre_turns": [
     "報告件数が最も多い機械はどれですか?"
    ],
@@ -1360,19 +1360,19 @@
     ]
    ],
    "expected": [
-    "表面キズ"
+    "工具破損"
    ],
    "gold_ids": [
-    "KZ25-0032"
+    "KZ25-0031"
    ]
   },
   {
    "id": "multiturn-05",
    "category": "multiturn",
-   "question": "KZ25-0091を画面で開いて",
+   "question": "KZ25-0070を画面で開いて",
    "pre_turns": [
-    "KZ25-0094の内容を教えて",
-    "KZ25-0042の内容も教えて"
+    "KZ25-0103の内容を教えて",
+    "KZ25-0019の内容も教えて"
    ],
    "required_tools": [
     [
@@ -1380,14 +1380,14 @@
      "ui_navigate"
     ]
    ],
-   "gold_customer": "翠峰重工業"
+   "gold_customer": "汐峰造機"
   },
   {
    "id": "multiturn-06",
    "category": "multiturn",
-   "question": "KZ25-0025の使用機械は?",
+   "question": "KZ25-0012の使用機械は?",
    "pre_turns": [
-    "KZ25-0009の使用機械は?"
+    "KZ25-0058の使用機械は?"
    ],
    "required_tools": [
     [
@@ -1397,10 +1397,10 @@
     ]
    ],
    "expected": [
-    "QUICK TURN 250MSY"
+    "汎用フライス"
    ],
    "gold_ids": [
-    "KZ25-0025"
+    "KZ25-0012"
    ]
   },
   {
@@ -1432,9 +1432,9 @@
   {
    "id": "multiturn-09",
    "category": "multiturn",
-   "question": "KZ25-0029の対策を教えて",
+   "question": "KZ25-0041の対策を教えて",
    "pre_turns": [
-    "KZ25-0073の対策を教えて"
+    "KZ25-0011の対策を教えて"
    ],
    "required_tools": [
     [
@@ -1444,13 +1444,13 @@
     ]
    ],
    "gold_ids": [
-    "KZ25-0029"
+    "KZ25-0041"
    ]
   },
   {
    "id": "multiturn-10",
    "category": "multiturn",
-   "question": "KZ25-0103の客先と損失額を教えて",
+   "question": "KZ25-0063の客先と損失額を教えて",
    "pre_turns": [
     "重大度がcriticalの報告書は何件?"
    ],
@@ -1462,10 +1462,10 @@
     ]
    ],
    "expected": [
-    "深名電子工業"
+    "遠原精密工業"
    ],
    "gold_ids": [
-    "KZ25-0103"
+    "KZ25-0063"
    ]
   },
   {

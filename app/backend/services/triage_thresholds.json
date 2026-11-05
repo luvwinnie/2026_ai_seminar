@@ -8,7 +8,7 @@
   "model": "typesafe/jev-1.13-20260917",
   "criteria_hash": "f86958941269",
   "mode": "split",
-  "n": 117,
+  "n": 110,
   "target_accuracy": 0.98,
   "rule": "p_top >= thresholds かつ margin >= margins",
   "thresholds": {
@@ -29,13 +29,13 @@
   "cross_validation": {
     "phenomenon": {
       "pm": {
-        "n": 107,
-        "coverage": 0.915,
+        "n": 101,
+        "coverage": 0.918,
         "accuracy": 1.0,
         "errors": 0
       },
       "conf": {
-        "n": 117,
+        "n": 110,
         "coverage": 1.0,
         "accuracy": 1.0,
         "errors": 0
@@ -43,14 +43,14 @@
     },
     "factor": {
       "pm": {
-        "n": 111,
-        "coverage": 0.949,
+        "n": 104,
+        "coverage": 0.945,
         "accuracy": 1.0,
         "errors": 0
       },
       "conf": {
-        "n": 111,
-        "coverage": 0.949,
+        "n": 104,
+        "coverage": 0.945,
         "accuracy": 1.0,
         "errors": 0
       }
@@ -74,13 +74,13 @@
     "phenomenon": {
       "label_flips": 0,
       "accept_flips": 1,
-      "mean_abs_diff_p_top": 0.0033,
+      "mean_abs_diff_p_top": 0.0035,
       "max_abs_diff_p_top": 0.08
     },
     "factor": {
       "label_flips": 0,
       "accept_flips": 0,
-      "mean_abs_diff_p_top": 0.0038,
+      "mean_abs_diff_p_top": 0.0036,
       "max_abs_diff_p_top": 0.05
     }
   },
@@ -98,30 +98,30 @@
   },
   "accuracy_all": {
     "full": {
-      "phenomenon": 0.949,
-      "factor": 0.949,
-      "category_4m": 0.955,
-      "category_4m_jev": 0.883,
-      "severity": 0.248
+      "phenomenon": 0.945,
+      "factor": 0.945,
+      "category_4m": 0.952,
+      "category_4m_jev": 0.875,
+      "severity": 0.245
     },
     "split": {
       "phenomenon": 1.0,
-      "factor": 0.949,
-      "category_4m": 0.955,
-      "category_4m_jev": 0.883,
-      "severity": 0.291
+      "factor": 0.945,
+      "category_4m": 0.952,
+      "category_4m_jev": 0.875,
+      "severity": 0.282
     },
     "split_repeat": {
       "phenomenon": 1.0,
-      "factor": 0.949,
-      "category_4m": 0.955,
-      "category_4m_jev": 0.892,
-      "severity": 0.291
+      "factor": 0.945,
+      "category_4m": 0.952,
+      "category_4m_jev": 0.885,
+      "severity": 0.282
     }
   },
   "latency_ms": {
     "median": 400,
-    "p90": 457
+    "p90": 467
   },
-  "cost_usd_total": 0.04902
+  "cost_usd_total": 0.04608
 }

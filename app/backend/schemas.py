@@ -106,6 +106,8 @@ class IngestResult(BaseModel):
     confidence: str  # high / medium / low
     warnings: list[str] = []
     source_filename: str
+    field_checks: dict | None = None   # 判断モデルが画像と照らした項目ごとの結果 {field: {p, ok, box?}}
+    verification: dict | None = None   # {model, cost_usd, mismatch} 確信度の決め方の根拠
 
 
 # --- チャット ---
@@ -136,6 +138,8 @@ class ChatResponse(BaseModel):
     answer: str
     sources: list[ChatSource] = []
     session_id: int | None = None
+    route: dict | None = None        # 判断モデルが決めた質問の種類(DECISIONS_ENABLED=1 のとき)
+    citations: dict | None = None    # 判断モデルによる引用の確かめ
 
 
 # --- チャット履歴(永続化) ---
@@ -211,6 +215,7 @@ class SmartSearchResult(BaseModel):
     snippet: str
     score: float
     search_mode: str
+    relevance: float | None = None   # 判断モデルが付けた「質問に当てはまる確率」(hybrid+rerank のとき)
 
 
 class SmartSearchResponse(BaseModel):

@@ -1,0 +1,280 @@
+[
+ {
+  "model": "typesafe/jev-1.14",
+  "zdr": true,
+  "ok": true,
+  "ms": 392,
+  "served": "typesafe/jev-1.14-20261014",
+  "provider": "TypeSafe",
+  "relevant": 0.95,
+  "intent": "search",
+  "intent_p": {
+   "search": 0.73,
+   "count": 0,
+   "one": 0.16,
+   "other": 0.11
+  },
+  "cost": 2.2512e-05,
+  "tokens": 536
+ },
+ {
+  "model": "typesafe/jev-1.13",
+  "zdr": true,
+  "ok": true,
+  "ms": 374,
+  "served": "typesafe/jev-1.13-20260917",
+  "provider": "TypeSafe",
+  "relevant": 0.95,
+  "intent": "search",
+  "intent_p": {
+   "search": 0.73,
+   "count": 0,
+   "one": 0.2,
+   "other": 0.07
+  },
+  "cost": 2.2512e-05,
+  "tokens": 536
+ },
+ {
+  "model": "perplexity/pplx-decider-flash-v1.2",
+  "zdr": true,
+  "ok": true,
+  "ms": 434,
+  "served": "perplexity/pplx-decider-flash-v1.2-20261016",
+  "provider": "Perplexity",
+  "relevant": 0.9227099478249879,
+  "intent": "search",
+  "intent_p": {
+   "search": 0.9654356950233748,
+   "count": 0.009451710358488581,
+   "one": 0.01406760403237662,
+   "other": 0.011044990585760023
+  },
+  "cost": 2.29e-06,
+  "tokens": 229
+ },
+ {
+  "model": "perplexity/pplx-decider-v1.2",
+  "zdr": true,
+  "ok": true,
+  "ms": 655,
+  "served": "perplexity/pplx-decider-v1.2-20261016",
+  "provider": "Perplexity",
+  "relevant": 0.9802560064391953,
+  "intent": "search",
+  "intent_p": {
+   "search": 0.9736165712343942,
+   "count": 0.024098929182050498,
+   "one": 0.0008127883191697319,
+   "other": 0.00147171126438564
+  },
+  "cost": 4.58e-06,
+  "tokens": 229
+ },
+ {
+  "model": "microsoft/microsoft-decision-1",
+  "zdr": true,
+  "ok": true,
+  "ms": 539,
+  "served": "microsoft/microsoft-decision-1-20261009",
+  "provider": "Azure",
+  "relevant": 0.9984988172982774,
+  "intent": "search",
+  "intent_p": {
+   "count": 0.0004721027798606962,
+   "one": 0.006517177848035484,
+   "other": 0.025775932260436882,
+   "search": 0.9672347871116669
+  },
+  "cost": 7.056e-06,
+  "tokens": 168
+ },
+ {
+  "model": "openai/gpt-6-luna-decisions",
+  "zdr": true,
+  "ok": false,
+  "ms": 203,
+  "status": 404,
+  "err": "{\"error\":{\"message\":\"No endpoints found matching your data policy (Zero data retention). Configure: https://openrouter.ai/settings/privacy\",\"code\":404,\"metadata"
+ },
+ {
+  "model": "openai/gpt-6-luna-decisions",
+  "zdr": false,
+  "ok": true,
+  "ms": 420,
+  "served": "openai/gpt-6-luna-decisions-20261006",
+  "provider": "OpenAI",
+  "relevant": 1,
+  "intent": "search",
+  "intent_p": {
+   "search": 0.72,
+   "count": 0.02,
+   "one": 0.06,
+   "other": 0.2
+  },
+  "cost": 4.27e-05,
+  "tokens": 427
+ },
+ {
+  "model": "liquid/d1",
+  "zdr": true,
+  "ok": true,
+  "ms": 468,
+  "served": "liquid/d1-20260930",
+  "provider": "Liquid",
+  "relevant": 0.9908743634192695,
+  "intent": "one",
+  "intent_p": {
+   "search": 0.23636231949988698,
+   "count": 0.016084657701299628,
+   "one": 0.683936967528258,
+   "other": 0.06361605527055536
+  },
+  "cost": 3.98e-06,
+  "tokens": 199
+ },
+ {
+  "model": "liquid/d1-ultra",
+  "zdr": true,
+  "ok": true,
+  "ms": 510,
+  "served": "liquid/d1-ultra-20261015",
+  "provider": "Liquid",
+  "relevant": 0.9851676183025464,
+  "intent": "search",
+  "intent_p": {
+   "search": 0.949547434832421,
+   "count": 0.0023013431497082267,
+   "one": 0.001404731781172642,
+   "other": 0.04674649023669808
+  },
+  "cost": 8.358e-06,
+  "tokens": 199
+ },
+ {
+  "model": "cloudflare/clef",
+  "zdr": true,
+  "ok": true,
+  "ms": 919,
+  "served": "cloudflare/clef",
+  "provider": "PrimeIntellect",
+  "relevant": 0.8986,
+  "intent": "search",
+  "intent_p": {
+   "search": 0.8551,
+   "count": 0.0176,
+   "one": 0.0379,
+   "other": 0.0894
+  },
+  "cost": 1.365e-05,
+  "tokens": 325
+ },
+ {
+  "model": "cloudflare/clef-flash",
+  "zdr": true,
+  "ok": true,
+  "ms": 922,
+  "served": "cloudflare/clef-flash",
+  "provider": "Cloudflare",
+  "relevant": 0.8506,
+  "intent": "search",
+  "intent_p": {
+   "search": 0.9038,
+   "count": 0.0042,
+   "one": 0.0745,
+   "other": 0.0175
+  },
+  "cost": 1.235e-05,
+  "tokens": 325
+ },
+ {
+  "model": "inception/mercury-decide",
+  "zdr": true,
+  "ok": true,
+  "ms": 469,
+  "served": "inception/mercury-decide-20260930",
+  "provider": "Inception",
+  "relevant": 0.9989677691058567,
+  "intent": "search",
+  "intent_p": {
+   "search": 0.9633746422923487,
+   "count": 0.0010596539330001817,
+   "one": 0.019994202899574244,
+   "other": 0.015571500875076973
+  },
+  "cost": 5.14e-06,
+  "tokens": 257
+ },
+ {
+  "model": "upstage/solar-decide",
+  "zdr": true,
+  "ok": true,
+  "ms": 9310,
+  "served": "upstage/solar-decide-20260928",
+  "provider": "Upstage",
+  "relevant": 0.985659,
+  "intent": "other",
+  "intent_p": {
+   "count": 0.003482,
+   "one": 0.115312,
+   "other": 0.85205,
+   "search": 0.029156
+  },
+  "cost": 4.585e-05,
+  "tokens": 917
+ },
+ {
+  "model": "togethercomputer/tev1-4b-experimental",
+  "zdr": true,
+  "ok": true,
+  "ms": 540,
+  "served": "togethercomputer/tev1-4b-experimental-20260923",
+  "provider": "Together",
+  "relevant": 0.974042638883249,
+  "intent": "one",
+  "intent_p": {
+   "search": 0.1921494995868508,
+   "count": 0.005120610205560941,
+   "one": 0.6706676124227238,
+   "other": 0.13206227778486443
+  },
+  "cost": 1.5414e-05,
+  "tokens": 367
+ },
+ {
+  "model": "jaredpalmer/kev-4b",
+  "zdr": true,
+  "ok": true,
+  "ms": 666,
+  "served": "jaredpalmer/kev-4b-20260924",
+  "provider": "SiliconFlow",
+  "relevant": 0.8366,
+  "intent": "one",
+  "intent_p": {
+   "search": 0.3281,
+   "count": 0.0315,
+   "one": 0.3999,
+   "other": 0.2405
+  },
+  "cost": 6.426e-06,
+  "tokens": 153
+ },
+ {
+  "model": "nace-ai/drex-v2.0",
+  "zdr": true,
+  "ok": true,
+  "ms": 682,
+  "served": "nace-ai/drex-v2.0-20261009",
+  "provider": "DeepInfra",
+  "relevant": 0.956,
+  "intent": "other",
+  "intent_p": {
+   "search": 0.2055,
+   "count": 0.0024,
+   "one": 0.0533,
+   "other": 0.7389
+  },
+  "cost": 9.18e-06,
+  "tokens": 153
+ }
+]

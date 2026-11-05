@@ -14,7 +14,7 @@ from sqlalchemy.orm import Session
 
 from database import get_db
 from schemas import IngestResult, ReportCreate, ReportOut
-from services import llm
+from services import decisions, llm
 
 from . import reports as reports_router
 
@@ -217,11 +217,34 @@ async def upload(file: UploadFile, db: Session = Depends(get_db)):
             raise HTTPException(status_code=503, detail="AIバックエンドが設定されていません(OPENCODE_URL / OPENROUTER_API_KEY)")
         extracted = llm.extract_from_document(file_bytes, media, file.filename or "")
         extracted = {k: v for k, v in extracted.items() if v is not None}
+        confidence, field_checks, verification = "high", None, None
+        if decisions.enabled("ocr_verify"):
+            # ④ 判断モデルで、読み取った値を画像と照らす(2026-10-18)。確信度は AI の自己申告ではなく、この結果で決める
+            image, mime = (file_bytes, media)
+            if media == "application/pdf":
+                image, mime = decisions.pdf_first_page_png(file_bytes), "image/png"
+            if image:
+                try:
+                    v = decisions.verify_fields(image, mime, extracted)
+                    field_checks = v["checks"]
+                    verification = {"model": v["model"], "cost_usd": v["cost_usd"], "mismatch": v["mismatch"]}
+                    for f in v["mismatch"]:
+                        warnings.append(f"「{decisions.FIELD_LABELS.get(f, f)}」の読み取りが画像と合わない可能性があります"
+                                        f"(確率 {v['checks'][f]['p']:.2f})。原本で確かめてください。")
+                    confidence = "low" if len(v["mismatch"]) >= 3 else ("medium" if v["mismatch"] else "high")
+                except Exception as exc:  # noqa: BLE001 — 確かめられなくても読み取りの結果は返す
+                    warnings.append(f"読み取りの確かめ(判断モデル)に失敗しました: {exc}")
+                    confidence = "medium"
+            else:
+                warnings.append("PDF を画像にできないため、読み取りの確かめをしていません(pypdfium2 が必要)。")
+                confidence = "medium"
         return IngestResult(
             extracted=extracted,
-            confidence="high",
+            confidence=confidence,
             warnings=warnings,
             source_filename=file.filename or "",
+            field_checks=field_checks,
+            verification=verification,
         )
 
     raise HTTPException(

@@ -1,0 +1,226 @@
+{
+ "route": {
+  "perplexity/pplx-decider-v1.2": {
+   "kind": "decision",
+   "accuracy": 0.983,
+   "median_ms": 538,
+   "p95_ms": 751,
+   "n": 117,
+   "cost_per_1000": 0.0092
+  },
+  "liquid/d1-ultra": {
+   "kind": "decision",
+   "accuracy": 0.983,
+   "median_ms": 510,
+   "p95_ms": 811,
+   "n": 117,
+   "cost_per_1000": 0.0167
+  },
+  "typesafe/jev-1.14": {
+   "kind": "decision",
+   "accuracy": 0.966,
+   "median_ms": 355,
+   "p95_ms": 452,
+   "n": 117,
+   "cost_per_1000": 0.0388
+  },
+  "openai/gpt-4o-mini": {
+   "kind": "llm",
+   "accuracy": 0.966,
+   "median_ms": 1163,
+   "p95_ms": 2036,
+   "n": 117,
+   "cost_per_1000": 0.076,
+   "errors": 0
+  },
+  "google/gemini-2.5-flash": {
+   "kind": "llm",
+   "accuracy": 0.991,
+   "median_ms": 826,
+   "p95_ms": 1267,
+   "n": 117,
+   "cost_per_1000": 0.1404,
+   "errors": 0
+  },
+  "anthropic/claude-sonnet-4.5": {
+   "kind": "llm",
+   "accuracy": 0.974,
+   "median_ms": 1877,
+   "p95_ms": 3302,
+   "n": 39,
+   "cost_per_1000": 2.0105,
+   "errors": 0
+  }
+ },
+ "cite": {
+  "liquid/d1-ultra": {
+   "kind": "decision",
+   "accuracy": 1.0,
+   "median_ms": 502,
+   "p95_ms": 989,
+   "n": 54,
+   "cost_per_1000": 0.0138
+  },
+  "typesafe/jev-1.14": {
+   "kind": "decision",
+   "accuracy": 0.981,
+   "median_ms": 339,
+   "p95_ms": 395,
+   "n": 54,
+   "cost_per_1000": 0.0298
+  },
+  "perplexity/pplx-decider-v1.2": {
+   "kind": "decision",
+   "accuracy": 0.981,
+   "median_ms": 527,
+   "p95_ms": 603,
+   "n": 54,
+   "cost_per_1000": 0.0074
+  },
+  "openai/gpt-4o-mini": {
+   "kind": "llm",
+   "accuracy": 0.815,
+   "median_ms": 1258,
+   "p95_ms": 1959,
+   "n": 54,
+   "cost_per_1000": 0.0529,
+   "errors": 0
+  },
+  "google/gemini-2.5-flash": {
+   "kind": "llm",
+   "accuracy": 0.944,
+   "median_ms": 803,
+   "p95_ms": 1088,
+   "n": 54,
+   "cost_per_1000": 0.1097,
+   "errors": 0
+  },
+  "anthropic/claude-sonnet-4.5": {
+   "kind": "llm",
+   "accuracy": 0.907,
+   "median_ms": 1932,
+   "p95_ms": 4074,
+   "n": 54,
+   "cost_per_1000": 1.6072,
+   "errors": 0
+  }
+ },
+ "rerank": {
+  "hybrid_only": {
+   "mean_p5": 0.56,
+   "median_ms": 37,
+   "p95_ms": 6265,
+   "n": 16
+  },
+  "perplexity/pplx-decider-v1.2|per_candidate|w8": {
+   "kind": "decision",
+   "mean_p5": 0.733,
+   "median_ms": 2293,
+   "p95_ms": 7073,
+   "n": 16,
+   "cost_per_query": 0.000219
+  },
+  "perplexity/pplx-decider-v1.2|per_candidate|w30": {
+   "kind": "decision",
+   "mean_p5": 0.733,
+   "median_ms": 1096,
+   "p95_ms": 2333,
+   "n": 16,
+   "cost_per_query": 0.000219
+  },
+  "perplexity/pplx-decider-v1.2|joint": {
+   "kind": "decision",
+   "mean_p5": 0.733,
+   "median_ms": 2060,
+   "p95_ms": 2225,
+   "n": 16,
+   "cost_per_query": 0.00017
+  },
+  "typesafe/jev-1.14|per_candidate|w8": {
+   "kind": "decision",
+   "mean_p5": 0.693,
+   "median_ms": 1473,
+   "p95_ms": 1763,
+   "n": 16,
+   "cost_per_query": 0.000903
+  },
+  "typesafe/jev-1.14|per_candidate|w30": {
+   "kind": "decision",
+   "mean_p5": 0.707,
+   "median_ms": 482,
+   "p95_ms": 1667,
+   "n": 16,
+   "cost_per_query": 0.000903
+  },
+  "typesafe/jev-1.14|joint": {
+   "kind": "decision",
+   "mean_p5": 0.72,
+   "median_ms": 399,
+   "p95_ms": 436,
+   "n": 16,
+   "cost_per_query": 0.000514
+  },
+  "openai/gpt-4o-mini|listwise": {
+   "kind": "llm",
+   "mean_p5": 0.667,
+   "median_ms": 1751,
+   "p95_ms": 3353,
+   "n": 16,
+   "cost_per_query": 0.000519
+  },
+  "google/gemini-2.5-flash|listwise": {
+   "kind": "llm",
+   "mean_p5": 0.68,
+   "median_ms": 876,
+   "p95_ms": 1330,
+   "n": 16,
+   "cost_per_query": 0.000898
+  },
+  "anthropic/claude-sonnet-4.5|listwise": {
+   "kind": "llm",
+   "mean_p5": 0.627,
+   "median_ms": 2150,
+   "p95_ms": 5538,
+   "n": 16,
+   "cost_per_query": 0.012515
+  }
+ },
+ "ocr": {
+  "typesafe/jev-1.14": {
+   "kind": "decision",
+   "caught": "23/35",
+   "false_alarm": "0/223",
+   "median_ms": 487,
+   "p95_ms": 567,
+   "n": 12,
+   "cost_per_form": 0.000309
+  },
+  "liquid/d1-ultra": {
+   "kind": "decision",
+   "caught": "25/35",
+   "false_alarm": "3/223",
+   "median_ms": 1334,
+   "p95_ms": 2056,
+   "n": 12,
+   "cost_per_form": 0.000198
+  },
+  "openai/gpt-4o-mini": {
+   "kind": "llm",
+   "caught": "6/35",
+   "false_alarm": "42/223",
+   "median_ms": 3625,
+   "p95_ms": 6974,
+   "n": 12,
+   "cost_per_form": 0.005627
+  },
+  "google/gemini-2.5-flash": {
+   "kind": "llm",
+   "caught": "26/35",
+   "false_alarm": "9/223",
+   "median_ms": 1620,
+   "p95_ms": 1936,
+   "n": 12,
+   "cost_per_form": 0.000751
+  }
+ }
+}

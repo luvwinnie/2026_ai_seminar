@@ -1,0 +1,18 @@
+{
+ "decisions_off": {
+  "median_ms": 22,
+  "p95_ms": 25,
+  "max_ms": 25,
+  "search_mode": [
+   "hybrid"
+  ]
+ },
+ "decisions_on": {
+  "median_ms": 428,
+  "p95_ms": 460,
+  "max_ms": 466,
+  "search_mode": [
+   "hybrid+rerank"
+  ]
+ }
+}

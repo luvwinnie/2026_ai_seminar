@@ -1,0 +1,396 @@
+commit 4f0056f46afc371cb13434226282ad1ab6367fea
+Author: 講師 <instructor@example.invalid>
+Date:   2026-10-13 14:55:57 +0900
+
+    AI アシスタントを画面から確かめ、件数の数え方と「画面で開いて」への答えを直す
+    
+    - 確認：Docker Compose で起動し、受け入れ条件8問・ガードレールの違反例7問を /chat から聞いた
+      （app/e2e/check_ai_assistant.py。OpenCode の /event から道具の引数を取る）。
+      記録と画面は docs/evidence/v21/ai_check/
+    - 直す前の不合格2件：
+      - 表面キズは何件？ → list_masters の usage_count で答え、集計の道具を呼ばなかった（AC-v20-03）
+      - KZ25-0043 を画面で開いて → 報告書番号のリンクを出さなかった（06 §3.2）
+    - 直したこと：system・AGENTS.md・MCP の instructions と list_masters の説明に、件数は
+      get_statistics か list_defect_reports で数えること、開けないときは [KZ25-XXXX] を書くことを足した。
+      06 §3.2 に usage_count を件数に使わないことを書いた
+    - 直した後：15問とも合格。pytest 72 passed、Playwright 24 passed
+    - 直せなかったこと：A1 の回答で対策の「解禁」が崩れる（モデルの出力。温度0でも直らず、元に戻した）
+    - 画面の回答の本文に data-testid="chat-answer" を付けた（確かめるときの目印）
+    
+    Co-Authored-By: Claude Opus 5.5 <***@***>
+
+ app/backend/routers/chat.py                        |   3 +-
+ app/backend/services/mcp_server.py                 |   5 +-
+ app/e2e/check_ai_assistant.py                      | 252 +++++++++++++++++
+ app/frontend/src/components/MarkdownMessage.tsx    |   1 +
+ app/opencode/AGENTS.md                             |   3 +-
+ .../06_AI\350\250\255\350\250\210\346\233\270.md"  |   1 +
+ docs/evidence/v21/README.md                        |   4 +
+ docs/evidence/v21/ai_check/README.md               |  70 +++++
+ docs/evidence/v21/ai_check/after_A1.png            | Bin 0 -> 217726 bytes
+ docs/evidence/v21/ai_check/after_A2.png            | Bin 0 -> 233127 bytes
+ docs/evidence/v21/ai_check/after_A3.png            | Bin 0 -> 120520 bytes
+ docs/evidence/v21/ai_check/after_A4.png            | Bin 0 -> 120450 bytes
+ docs/evidence/v21/ai_check/after_A5.png            | Bin 0 -> 124839 bytes
+ docs/evidence/v21/ai_check/after_A6.png            | Bin 0 -> 120427 bytes
+ docs/evidence/v21/ai_check/after_A7.png            | Bin 0 -> 127640 bytes
+ docs/evidence/v21/ai_check/after_A8.png            | Bin 0 -> 123103 bytes
+ docs/evidence/v21/ai_check/after_G1.png            | Bin 0 -> 120396 bytes
+ docs/evidence/v21/ai_check/after_G2.png            | Bin 0 -> 127041 bytes
+ docs/evidence/v21/ai_check/after_G3.png            | Bin 0 -> 135318 bytes
+ docs/evidence/v21/ai_check/after_G4.png            | Bin 0 -> 128895 bytes
+ docs/evidence/v21/ai_check/after_G5.png            | Bin 0 -> 121426 bytes
+ docs/evidence/v21/ai_check/after_G6.png            | Bin 0 -> 114697 bytes
+ docs/evidence/v21/ai_check/after_G7.png            | Bin 0 -> 123099 bytes
+ docs/evidence/v21/ai_check/after_accept.json       | 307 +++++++++++++++++++++
+ docs/evidence/v21/ai_check/after_guard.json        | 221 +++++++++++++++
+ docs/evidence/v21/ai_check/before_A1.png           | Bin 0 -> 196617 bytes
+ docs/evidence/v21/ai_check/before_A2.png           | Bin 0 -> 212007 bytes
+ docs/evidence/v21/ai_check/before_A3.png           | Bin 0 -> 108605 bytes
+ docs/evidence/v21/ai_check/before_A4.png           | Bin 0 -> 109289 bytes
+ docs/evidence/v21/ai_check/before_A5.png           | Bin 0 -> 134517 bytes
+ docs/evidence/v21/ai_check/before_A6.png           | Bin 0 -> 117595 bytes
+ docs/evidence/v21/ai_check/before_A7.png           | Bin 0 -> 128003 bytes
+ docs/evidence/v21/ai_check/before_A8.png           | Bin 0 -> 124110 bytes
+ docs/evidence/v21/ai_check/before_G1.png           | Bin 0 -> 120543 bytes
+ docs/evidence/v21/ai_check/before_G2.png           | Bin 0 -> 126513 bytes
+ docs/evidence/v21/ai_check/before_G3.png           | Bin 0 -> 143758 bytes
+ docs/evidence/v21/ai_check/before_G4.png           | Bin 0 -> 128566 bytes
+ docs/evidence/v21/ai_check/before_G5.png           | Bin 0 -> 115998 bytes
+ docs/evidence/v21/ai_check/before_G6.png           | Bin 0 -> 114774 bytes
+ docs/evidence/v21/ai_check/before_G7.png           | Bin 0 -> 118289 bytes
+ docs/evidence/v21/ai_check/before_accept.json      | 291 +++++++++++++++++++
+ docs/evidence/v21/ai_check/before_guard.json       | 219 +++++++++++++++
+ docs/evidence/v21/ai_check/temp0_A1.png            | Bin 0 -> 211185 bytes
+ docs/evidence/v21/ai_check/temp0_accept.json       | 106 +++++++
+ 44 files changed, 1479 insertions(+), 4 deletions(-)
+
+commit 8d86d06ca965ca0d39f7ee8daba5ce939b888faa
+Author: 講師 <instructor@example.invalid>
+Date:   2026-10-13 14:43:46 +0900
+
+    第3回：簡易的な AI アシスタント（MCP 読み取り5本・チャット・Docker Compose）
+    
+    - 仕様書：第3回で作らないもの（書き込み・画面の操作・Ontology・AI パネル・テーマ切替・
+      構造化出力・Langfuse 送信）に「第3回では作らない（後の回）」を付け、Docker Compose と
+      ローカル LLM（Ollama gemma4:26b）、OpenCode 1.19.0 で確かめた API の細部を書き足す
+    - ポートを 8120（API）・5220（画面）・4120（OpenCode）に直す
+    - MCP（/mcp/、FastMCP 4.1.0）に読み取りの道具5本。絞り込みは services/report_service.py
+      に移し、REST と共通にする（REST に customer・operator・phenomenon の絞り込みが入る）
+    - チャット：POST /api/chat/stream（SSE）・POST /api/chat・会話の一覧／復元／削除。
+      OpenCode serve の HTTP API を呼び、空の応答・モデルのエラー・finish=length は error にする
+    - 画面：独立したページ /chat（逐次表示・道具の表示・報告書番号のリンク・会話の一覧）
+    - Docker Compose（lesson03）：backend・frontend・opencode
+    - 試験：pytest 72 passed（OpenCode を差し替え）、Playwright 24 passed（偽の OpenCode）、
+      実際の LLM で確認A 7問・確認B 4問（docs/evidence/v21/README.md）。AC-v20-12 で見つかった
+      名前の読み替えは、指示の3か所に例を足して直した
+    
+    Co-Authored-By: Claude Opus 5.5 <***@***>
+
+ .env.example                                       |   11 +
+ .gitignore                                         |    1 +
+ README.md                                          |   63 +-
+ app/backend/.dockerignore                          |    4 +
+ app/backend/Dockerfile                             |    9 +
+ app/backend/database.py                            |    7 +-
+ app/backend/main.py                                |   11 +-
+ app/backend/models.py                              |   45 +-
+ app/backend/requirements.txt                       |    1 +
+ app/backend/routers/chat.py                        |  219 +++
+ app/backend/routers/health.py                      |    3 +-
+ app/backend/routers/masters.py                     |   27 +-
+ app/backend/routers/reports.py                     |   71 +-
+ app/backend/schemas.py                             |   49 +-
+ app/backend/services/__init__.py                   |    0
+ app/backend/services/mcp_server.py                 |  152 ++
+ app/backend/services/opencode_client.py            |  176 ++
+ app/backend/services/report_service.py             |  231 +++
+ app/backend/services/telemetry.py                  |   22 +
+ app/backend/tests/conftest.py                      |    3 +
+ app/backend/tests/fake_opencode.py                 |  200 +++
+ app/backend/tests/test_chat_sessions.py            |   71 +
+ app/backend/tests/test_chat_stream.py              |  198 +++
+ app/backend/tests/test_health.py                   |    2 +-
+ app/backend/tests/test_mcp_tools.py                |  116 ++
+ app/backend/tests/test_quantity_rule.py            |   22 +
+ app/backend/tests/test_reports.py                  |    7 +
+ app/e2e/ask_chat.py                                |   42 +
+ app/e2e/check_chat_llm.py                          |   61 +
+ app/e2e/check_screens.py                           |   12 +-
+ app/e2e/conftest.py                                |   31 +-
+ app/e2e/test_chat_ui.py                            |  124 ++
+ app/e2e/test_reports_ui.py                         |    2 +-
+ app/frontend/.dockerignore                         |    2 +
+ app/frontend/Dockerfile                            |    9 +
+ app/frontend/package-lock.json                     | 1694 ++++++++++++++++++--
+ app/frontend/package.json                          |    4 +-
+ app/frontend/src/App.tsx                           |    2 +
+ app/frontend/src/api.ts                            |   94 +-
+ app/frontend/src/components/ChatPanel.tsx          |  261 +++
+ app/frontend/src/components/Layout.tsx             |   50 +-
+ app/frontend/src/components/MarkdownMessage.tsx    |   50 +
+ app/frontend/src/pages/ChatPage.tsx                |  131 ++
+ app/frontend/vite.config.ts                        |    9 +-
+ app/opencode/AGENTS.md                             |   20 +
+ app/opencode/Dockerfile                            |    7 +
+ app/opencode/opencode.json                         |   37 +
+ compose.yaml                                       |   53 +
+ ...273\266\345\256\232\347\276\251\346\233\270.md" |   57 +-
+ ...203\275\344\273\225\346\247\230\346\233\270.md" |   26 +-
+ ...203\253\350\250\255\350\250\210\346\233\270.md" |    6 +-
+ .../04_API\350\250\255\350\250\210\346\233\270.md" |   79 +-
+ .../05_UI\350\250\255\350\250\210\346\233\270.md"  |   25 +-
+ .../06_AI\350\250\255\350\250\210\346\233\270.md"  |   53 +-
+ ...224\250\344\273\225\346\247\230\346\233\270.md" |   69 +-
+ docs/evidence/v21/05_chat_answer_fake.png          |  Bin 0 -> 79063 bytes
+ docs/evidence/v21/05_chat_empty_fake.png           |  Bin 0 -> 48298 bytes
+ docs/evidence/v21/07_chat_llm_answer.png           |  Bin 0 -> 92819 bytes
+ docs/evidence/v21/07_chat_llm_restored.png         |  Bin 0 -> 93317 bytes
+ docs/evidence/v21/README.md                        |   54 +
+ 60 files changed, 4468 insertions(+), 317 deletions(-)
+
+commit 5f14f1b6cd3089ca4cd0f615f3da08b7a66c91cb
+Author: 講師 <instructor@example.invalid>
+Date:   2026-10-13 13:56:22 +0900
+
+    第3回 開始時点（仕様書 v2.1 に差し替え・CLAUDE.md に Docker と LLM の決まり）
+
+ CLAUDE.md                                          |  12 +-
+ ...245\250\343\201\256\350\252\277\346\237\273.md" |   2 +-
+ ...273\266\345\256\232\347\276\251\346\233\270.md" |  63 +++-
+ ...203\275\344\273\225\346\247\230\346\233\270.md" | 125 ++++++-
+ ...203\253\350\250\255\350\250\210\346\233\270.md" | 102 +++++-
+ .../04_API\350\250\255\350\250\210\346\233\270.md" | 209 +++++++++++-
+ .../05_UI\350\250\255\350\250\210\346\233\270.md"  | 132 ++++++--
+ .../06_AI\350\250\255\350\250\210\346\233\270.md"  | 363 +++++++++++++++++++++
+ ...224\250\344\273\225\346\247\230\346\233\270.md" |  63 +++-
+ "docs/\345\244\211\346\233\264\347\202\271.md"     | 171 +++++++++-
+ 10 files changed, 1158 insertions(+), 84 deletions(-)
+
+commit 4a9e349130558a851ea942f5a694672de5281017
+Author: 講師 <instructor@example.invalid>
+Date:   2026-10-13 13:55:13 +0900
+
+    受け入れ条件を API と画面で確かめた記録を残す
+    
+    - docs/evidence/README.md：AC ごとの期待値・実際の値・合否（全 AC 合格。pytest 36 passed、Playwright 16 passed）
+    - docs/evidence/*.png：一覧・絞り込み（a61nx と 2025年9月）・0件（a61nx と 2025年10月）・詳細（KZ25-0043）
+    - app/e2e/check_screens.py：画面の AC を順に確かめて表にし、写真を撮るスクリプト
+    
+    Co-Authored-By: Claude Opus 5.5 <***@***>
+
+ app/e2e/check_screens.py                  | 277 ++++++++++++++++++++++++++++++
+ docs/evidence/01_list.png                 | Bin 0 -> 180846 bytes
+ docs/evidence/02_filter_a61nx_2025-09.png | Bin 0 -> 66771 bytes
+ docs/evidence/03_zero_a61nx_2025-10.png   | Bin 0 -> 64265 bytes
+ docs/evidence/04_detail_KZ25-0043.png     | Bin 0 -> 177495 bytes
+ docs/evidence/README.md                   |  56 ++++++
+ 6 files changed, 333 insertions(+)
+
+commit 1f542541401a6ae010b7d6a185078afa7394c76f
+Author: 講師 <instructor@example.invalid>
+Date:   2026-10-13 13:45:27 +0900
+
+    第2回の土台：FastAPI・React・テストを作る
+    
+    - app/backend：FastAPI・SQLAlchemy 2.0・Pydantic v2。空の DB で起動すると CSV の110件を入れ、マスタ6種（79件）を作る
+    - API：GET /health、GET /api/reports、GET /api/reports/{defect_id}、GET /api/masters。期間の不正・逆順は 422
+    - app/frontend：Vite・React・TypeScript・MUI・React Router。一覧（条件は URL クエリ）と詳細。読込中・0件・失敗を区別する
+    - テスト：backend の pytest 36件、画面の Playwright 16件。テスト名に AC の番号を入れた
+    - README.md に起動とテストの手順を書いた（API 8110・画面 5210、Docker なし）
+    
+    Co-Authored-By: Claude Opus 5.5 <***@***>
+
+ README.md                                   |   84 ++
+ app/backend/database.py                     |   37 +
+ app/backend/main.py                         |   27 +
+ app/backend/models.py                       |   60 +
+ app/backend/pytest.ini                      |    3 +
+ app/backend/requirements.txt                |    6 +
+ app/backend/routers/__init__.py             |    0
+ app/backend/routers/health.py               |   15 +
+ app/backend/routers/masters.py              |   38 +
+ app/backend/routers/reports.py              |  105 ++
+ app/backend/schemas.py                      |   78 ++
+ app/backend/seed.py                         |   86 ++
+ app/backend/tests/conftest.py               |   25 +
+ app/backend/tests/test_health.py            |   17 +
+ app/backend/tests/test_masters.py           |   45 +
+ app/backend/tests/test_reports.py           |  179 +++
+ app/backend/tests/test_seed.py              |   35 +
+ app/e2e/conftest.py                         |   93 ++
+ app/e2e/pytest.ini                          |    2 +
+ app/e2e/requirements.txt                    |    4 +
+ app/e2e/test_reports_ui.py                  |  207 +++
+ app/frontend/.gitignore                     |   24 +
+ app/frontend/index.html                     |   13 +
+ app/frontend/package-lock.json              | 1981 +++++++++++++++++++++++++++
+ app/frontend/package.json                   |   28 +
+ app/frontend/public/favicon.svg             |    1 +
+ app/frontend/src/App.tsx                    |   17 +
+ app/frontend/src/api.ts                     |  129 ++
+ app/frontend/src/components/Chips.tsx       |   17 +
+ app/frontend/src/components/Layout.tsx      |   82 ++
+ app/frontend/src/components/PageHeader.tsx  |   22 +
+ app/frontend/src/components/StateViews.tsx  |   48 +
+ app/frontend/src/labels.ts                  |   41 +
+ app/frontend/src/main.tsx                   |   19 +
+ app/frontend/src/pages/ReportDetailPage.tsx |  126 ++
+ app/frontend/src/pages/ReportListPage.tsx   |  275 ++++
+ app/frontend/src/theme.ts                   |   74 +
+ app/frontend/tsconfig.app.json              |   26 +
+ app/frontend/tsconfig.json                  |    7 +
+ app/frontend/tsconfig.node.json             |   23 +
+ app/frontend/vite.config.ts                 |   17 +
+ 41 files changed, 4116 insertions(+)
+
+commit d4fbb7eb089ba87d1bfa34affd2fcbf6c1143662
+Author: 講師 <instructor@example.invalid>
+Date:   2026-10-13 13:45:27 +0900
+
+    仕様書 v1.1 の食い違いを直す（土台を作る前）
+    
+    - 07：AC-v11-06・07 のマスタの件数を、データの値だけから作る79件に合わせた
+    - 05：重大度 critical の表示を用語表どおり「重大」にした
+    - 02・04・05：並べ替えに defect_count を足し、「不良数が多い順」を -defect_count にした
+    - 04：重大度の並び順、同じ値の並び、逆向きの期間の 422 の形を書き足した
+    - 05：一覧の URL クエリに page・per_page を足した
+    - 変更点.md を作り、上の修正を記録した
+    
+    Co-Authored-By: Claude Opus 5.5 <***@***>
+
+ ...7\350\203\275\344\273\225\346\247\230\346\233\270.md" |  4 ++--
+ "docs/04_API\350\250\255\350\250\210\346\233\270.md"     |  7 ++++++-
+ "docs/05_UI\350\250\255\350\250\210\346\233\270.md"      |  8 +++++---
+ ...3\347\224\250\344\273\225\346\247\230\346\233\270.md" |  4 ++--
+ "docs/\345\244\211\346\233\264\347\202\271.md"           | 16 ++++++++++++++++
+ 5 files changed, 31 insertions(+), 8 deletions(-)
+
+commit b2ac88048dfd01b36f34d7a497cfc03182776800
+Author: 講師 <instructor@example.invalid>
+Date:   2026-10-13 12:43:10 +0900
+
+    第2回 開始時点（仕様書 v1.1・模擬データ110件・CLAUDE.md）
+
+ .gitignore                                         |  11 +
+ CLAUDE.md                                          |  21 ++
+ data/defect_reports.csv                            | 111 +++++++
+ .../2025-04/KZ25-0001.xlsx"                        | Bin 0 -> 9765 bytes
+ .../2025-04/KZ25-0002.xlsx"                        | Bin 0 -> 9875 bytes
+ .../2025-05/KZ25-0003.xlsx"                        | Bin 0 -> 9808 bytes
+ .../2025-05/KZ25-0004.xlsx"                        | Bin 0 -> 9850 bytes
+ .../2025-05/KZ25-0005.xlsx"                        | Bin 0 -> 9796 bytes
+ .../2025-05/KZ25-0006.xlsx"                        | Bin 0 -> 9853 bytes
+ .../2025-05/KZ25-0007.xlsx"                        | Bin 0 -> 9776 bytes
+ .../2025-05/KZ25-0008.xlsx"                        | Bin 0 -> 9831 bytes
+ .../2025-05/KZ25-0009.xlsx"                        | Bin 0 -> 9847 bytes
+ .../2025-05/KZ25-0010.xlsx"                        | Bin 0 -> 9838 bytes
+ .../2025-06/KZ25-0011.xlsx"                        | Bin 0 -> 9844 bytes
+ .../2025-06/KZ25-0012.xlsx"                        | Bin 0 -> 9763 bytes
+ .../2025-06/KZ25-0013.xlsx"                        | Bin 0 -> 9819 bytes
+ .../2025-06/KZ25-0014.xlsx"                        | Bin 0 -> 9774 bytes
+ .../2025-06/KZ25-0015.xlsx"                        | Bin 0 -> 9883 bytes
+ .../2025-06/KZ25-0016.xlsx"                        | Bin 0 -> 9862 bytes
+ .../2025-06/KZ25-0017.xlsx"                        | Bin 0 -> 9749 bytes
+ .../2025-06/KZ25-0018.xlsx"                        | Bin 0 -> 9854 bytes
+ .../2025-06/KZ25-0019.xlsx"                        | Bin 0 -> 9873 bytes
+ .../2025-06/KZ25-0020.xlsx"                        | Bin 0 -> 9783 bytes
+ .../2025-06/KZ25-0021.xlsx"                        | Bin 0 -> 9826 bytes
+ .../2025-06/KZ25-0022.xlsx"                        | Bin 0 -> 9806 bytes
+ .../2025-06/KZ25-0023.xlsx"                        | Bin 0 -> 9825 bytes
+ .../2025-06/KZ25-0024.xlsx"                        | Bin 0 -> 9791 bytes
+ .../2025-07/KZ25-0025.xlsx"                        | Bin 0 -> 9851 bytes
+ .../2025-07/KZ25-0026.xlsx"                        | Bin 0 -> 9788 bytes
+ .../2025-07/KZ25-0027.xlsx"                        | Bin 0 -> 9807 bytes
+ .../2025-07/KZ25-0028.xlsx"                        | Bin 0 -> 9795 bytes
+ .../2025-07/KZ25-0029.xlsx"                        | Bin 0 -> 9832 bytes
+ .../2025-07/KZ25-0030.xlsx"                        | Bin 0 -> 9812 bytes
+ .../2025-07/KZ25-0031.xlsx"                        | Bin 0 -> 9836 bytes
+ .../2025-07/KZ25-0032.xlsx"                        | Bin 0 -> 9845 bytes
+ .../2025-07/KZ25-0033.xlsx"                        | Bin 0 -> 9818 bytes
+ .../2025-07/KZ25-0034.xlsx"                        | Bin 0 -> 9849 bytes
+ .../2025-07/KZ25-0035.xlsx"                        | Bin 0 -> 9832 bytes
+ .../2025-08/KZ25-0036.xlsx"                        | Bin 0 -> 9848 bytes
+ .../2025-08/KZ25-0037.xlsx"                        | Bin 0 -> 9809 bytes
+ .../2025-08/KZ25-0038.xlsx"                        | Bin 0 -> 9868 bytes
+ .../2025-08/KZ25-0039.xlsx"                        | Bin 0 -> 9821 bytes
+ .../2025-08/KZ25-0040.xlsx"                        | Bin 0 -> 9821 bytes
+ .../2025-08/KZ25-0041.xlsx"                        | Bin 0 -> 9820 bytes
+ .../2025-09/KZ25-0042.xlsx"                        | Bin 0 -> 9768 bytes
+ .../2025-09/KZ25-0043.xlsx"                        | Bin 0 -> 9862 bytes
+ .../2025-09/KZ25-0044.xlsx"                        | Bin 0 -> 9827 bytes
+ .../2025-09/KZ25-0045.xlsx"                        | Bin 0 -> 9851 bytes
+ .../2025-09/KZ25-0046.xlsx"                        | Bin 0 -> 9816 bytes
+ .../2025-09/KZ25-0047.xlsx"                        | Bin 0 -> 9820 bytes
+ .../2025-09/KZ25-0048.xlsx"                        | Bin 0 -> 9770 bytes
+ .../2025-10/KZ25-0049.xlsx"                        | Bin 0 -> 10150 bytes
+ .../2025-11/KZ25-0050.xlsx"                        | Bin 0 -> 10103 bytes
+ .../2025-11/KZ25-0051.xlsx"                        | Bin 0 -> 10080 bytes
+ .../2025-11/KZ25-0052.xlsx"                        | Bin 0 -> 10106 bytes
+ .../2025-11/KZ25-0053.xlsx"                        | Bin 0 -> 10129 bytes
+ .../2025-11/KZ25-0054.xlsx"                        | Bin 0 -> 10178 bytes
+ .../2025-11/KZ25-0055.xlsx"                        | Bin 0 -> 10144 bytes
+ .../2025-11/KZ25-0056.xlsx"                        | Bin 0 -> 10099 bytes
+ .../2025-11/KZ25-0057.xlsx"                        | Bin 0 -> 10107 bytes
+ .../2025-11/KZ25-0058.xlsx"                        | Bin 0 -> 10111 bytes
+ .../2025-11/KZ25-0059.xlsx"                        | Bin 0 -> 10085 bytes
+ .../2025-11/KZ25-0060.xlsx"                        | Bin 0 -> 10098 bytes
+ .../2025-11/KZ25-0061.xlsx"                        | Bin 0 -> 10112 bytes
+ .../2025-11/KZ25-0062.xlsx"                        | Bin 0 -> 10116 bytes
+ .../2025-11/KZ25-0063.xlsx"                        | Bin 0 -> 10022 bytes
+ .../2025-11/KZ25-0064.xlsx"                        | Bin 0 -> 10083 bytes
+ .../2025-11/KZ25-0065.xlsx"                        | Bin 0 -> 10063 bytes
+ .../2025-11/KZ25-0066.xlsx"                        | Bin 0 -> 10088 bytes
+ .../2025-11/KZ25-0067.xlsx"                        | Bin 0 -> 10126 bytes
+ .../2025-11/KZ25-0068.xlsx"                        | Bin 0 -> 10169 bytes
+ .../2025-11/KZ25-0069.xlsx"                        | Bin 0 -> 10147 bytes
+ .../2025-11/KZ25-0070.xlsx"                        | Bin 0 -> 10052 bytes
+ .../2025-11/KZ25-0071.xlsx"                        | Bin 0 -> 10098 bytes
+ .../2025-11/KZ25-0072.xlsx"                        | Bin 0 -> 10094 bytes
+ .../2025-12/KZ25-0073.xlsx"                        | Bin 0 -> 10074 bytes
+ .../2025-12/KZ25-0074.xlsx"                        | Bin 0 -> 10127 bytes
+ .../2025-12/KZ25-0075.xlsx"                        | Bin 0 -> 10046 bytes
+ .../2025-12/KZ25-0076.xlsx"                        | Bin 0 -> 10118 bytes
+ .../2025-12/KZ25-0077.xlsx"                        | Bin 0 -> 10094 bytes
+ .../2025-12/KZ25-0078.xlsx"                        | Bin 0 -> 10122 bytes
+ .../2025-12/KZ25-0079.xlsx"                        | Bin 0 -> 10065 bytes
+ .../2025-12/KZ25-0080.xlsx"                        | Bin 0 -> 10114 bytes
+ .../2025-12/KZ25-0081.xlsx"                        | Bin 0 -> 10068 bytes
+ .../2025-12/KZ25-0082.xlsx"                        | Bin 0 -> 10117 bytes
+ .../2025-12/KZ25-0083.xlsx"                        | Bin 0 -> 10100 bytes
+ .../2025-12/KZ25-0084.xlsx"                        | Bin 0 -> 10146 bytes
+ .../2025-12/KZ25-0085.xlsx"                        | Bin 0 -> 10120 bytes
+ .../2025-12/KZ25-0086.xlsx"                        | Bin 0 -> 10111 bytes
+ .../2026-01/KZ25-0087.xlsx"                        | Bin 0 -> 10113 bytes
+ .../2026-01/KZ25-0088.xlsx"                        | Bin 0 -> 10139 bytes
+ .../2026-01/KZ25-0089.xlsx"                        | Bin 0 -> 10069 bytes
+ .../2026-01/KZ25-0090.xlsx"                        | Bin 0 -> 10111 bytes
+ .../2026-01/KZ25-0091.xlsx"                        | Bin 0 -> 10064 bytes
+ .../2026-01/KZ25-0092.xlsx"                        | Bin 0 -> 10115 bytes
+ .../2026-01/KZ25-0093.xlsx"                        | Bin 0 -> 10103 bytes
+ .../2026-01/KZ25-0094.xlsx"                        | Bin 0 -> 10108 bytes
+ .../2026-02/KZ25-0095.xlsx"                        | Bin 0 -> 10099 bytes
+ .../2026-02/KZ25-0096.xlsx"                        | Bin 0 -> 10096 bytes
+ .../2026-02/KZ25-0097.xlsx"                        | Bin 0 -> 10078 bytes
+ .../2026-02/KZ25-0098.xlsx"                        | Bin 0 -> 10116 bytes
+ .../2026-02/KZ25-0099.xlsx"                        | Bin 0 -> 10071 bytes
+ .../2026-02/KZ25-0100.xlsx"                        | Bin 0 -> 10116 bytes
+ .../2026-02/KZ25-0101.xlsx"                        | Bin 0 -> 10087 bytes
+ .../2026-02/KZ25-0102.xlsx"                        | Bin 0 -> 10134 bytes
+ .../2026-03/KZ25-0103.xlsx"                        | Bin 0 -> 10141 bytes
+ .../2026-03/KZ25-0104.xlsx"                        | Bin 0 -> 10095 bytes
+ .../2026-03/KZ25-0105.xlsx"                        | Bin 0 -> 10094 bytes
+ .../2026-03/KZ25-0106.xlsx"                        | Bin 0 -> 10196 bytes
+ .../2026-03/KZ25-0107.xlsx"                        | Bin 0 -> 10073 bytes
+ .../2026-03/KZ25-0108.xlsx"                        | Bin 0 -> 10056 bytes
+ .../2026-03/KZ25-0109.xlsx"                        | Bin 0 -> 10109 bytes
+ .../2026-03/KZ25-0110.xlsx"                        | Bin 0 -> 10113 bytes
+ .../README.md"                                     |  31 ++
+ ...245\250\343\201\256\350\252\277\346\237\273.md" | 344 +++++++++++++++++++++
+ ...273\266\345\256\232\347\276\251\346\233\270.md" | 174 +++++++++++
+ ...203\275\344\273\225\346\247\230\346\233\270.md" |  76 +++++
+ ...203\253\350\250\255\350\250\210\346\233\270.md" | 244 +++++++++++++++
+ .../04_API\350\250\255\350\250\210\346\233\270.md" | 117 +++++++
+ .../05_UI\350\250\255\350\250\210\346\233\270.md"  | 235 ++++++++++++++
+ ...224\250\344\273\225\346\247\230\346\233\270.md" |  87 ++++++
+ 121 files changed, 1451 insertions(+)

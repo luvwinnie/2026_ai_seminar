@@ -1,0 +1,4 @@
+pytest>=8
+pytest-playwright>=0.5
+# この PC に入っているブラウザ（~/Library/Caches/ms-playwright の chromium_headless_shell-1234）に合う版
+playwright==1.62.0

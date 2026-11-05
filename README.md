@@ -24,7 +24,7 @@
 | ⑧ | 不良写真+AI外観アシスト | 報告書に写真を添付し、visionモデルが観察所見と現象候補を提案 |
 | ⑨ | 音声入力 | チャット入力にWeb Speech API(ja-JP)のマイクボタン(対応ブラウザのみ) |
 | ⑩ | 業務Ontology | 意味モデルをOpenCodeへ供給し、対象IDの解決・関係探索・指標計算・CAPA更新検証に使用。構造グラフと実データグラフを閲覧(`/analysis/ontology?view=graph`) |
-| ⑪ | 報告書トリアージ(Jev+LangGraph) | 判断モデル **Jev** が現象・要因・4M・重要度と客先流出・再発のおそれを約0.3秒で判断(型付きの答え＋確率)。閾値(117件で測定)に届かない項目だけ LLM と人へ、CAPA は処置案を用意して**人の承認で止める**(LangGraph の interrupt)。新規作成では分類を提案。`JEV_ENABLED=1` で有効([docs/11](docs/11_報告書トリアージ_JevとLangGraph.md)) |
+| ⑪ | 報告書トリアージ(Jev+LangGraph) | 判断モデル **Jev** が現象・要因・4M・重要度と客先流出・再発のおそれを約0.4秒で判断(型付きの答え＋確率)。閾値(110件で測定)に届かない項目だけ LLM と人へ、CAPA は処置案を用意して**人の承認で止める**(LangGraph の interrupt)。新規作成では分類を提案。`JEV_ENABLED=1` で有効([docs/11](docs/11_報告書トリアージ_JevとLangGraph.md)) |
 
 補助機能: 報告書の CRUD(一覧・検索・作成・編集・削除)、**全項目フィルタ+スマート検索(意味検索、`GET /api/reports/search`)**、各画面の期間フィルタ、マスタ管理。フィルタ状態はURLクエリが正本で、**人間のUI操作とAIの画面操作(ui_navigate)が同じ状態を共有**する。
 
@@ -89,7 +89,7 @@ example_app/
 │  └─ 07_発展トピック.md
 ├─ data/                     ← 模擬データと生成スクリプト
 │  ├─ generate_mock_data.py  ← 模擬データ生成(完全架空・seed=774123)
-│  ├─ defect_reports.csv     ← 不良報告 117件(ID: KZ25-XXXX)
+│  ├─ defect_reports.csv     ← 不良報告 110件(ID: KZ25-XXXX)
 │  ├─ forms_xlsx/            ← 帳票 Excel(全件)
 │  └─ forms_pdf/             ← 帳票 PDF(先頭10件、OCRデモ用)
 ├─ app/                      ← 完成形アプリ(第7回の到達点)
@@ -193,14 +193,14 @@ docker compose up --build
 > 作業者名・部品番号・不具合内容はすべて `generate_mock_data.py` がテンプレートと
 > 乱数から合成したものです。
 
-疑似の不良報告データ(117件、乱数シード固定 seed=774123 で再現可能・完全架空)と帳票ファイル(Excel 全件 / PDF 先頭10件)は次で生成します。
+疑似の不良報告データ(110件、乱数シード固定で再現可能・完全架空)と帳票ファイル(Excel 全件 / PDF 先頭10件)は次で生成します。
 
 ```bash
 python data/generate_mock_data.py
 ```
 
 生成物:
-- `data/defect_reports.csv` — 不良報告 117件(ID: KZ25-XXXX)
+- `data/defect_reports.csv` — 不良報告 110件(ID: KZ25-XXXX)
 - `data/forms_xlsx/KZ25-XXXX.xlsx` — 帳票 Excel(取り込みデモ用)
 - `data/forms_pdf/KZ25-XXXX.pdf` — 帳票 PDF(OCR/vision デモ用、先頭10件)
 
@@ -228,14 +228,18 @@ python data/generate_mock_data.py
 
 | ファイル | 内容 |
 |---|---|
-| [`docs/01_要件定義書.md`](docs/01_要件定義書.md) | 背景・目的・対象ユーザー・機能要件(FR)・非機能要件・スコープ外 |
-| [`docs/02_機能仕様書.md`](docs/02_機能仕様書.md) | 各機能の画面・操作フロー・入出力・エラー時挙動、ユースケース3本 |
-| [`docs/03_データモデル設計書.md`](docs/03_データモデル設計書.md) | SQLite テーブル・Chroma コレクション・模擬データ定義(**正本**) |
-| [`docs/04_API設計書.md`](docs/04_API設計書.md) | REST/SSE エンドポイント・Claude API 利用規則(**正本**) |
+| [`docs/00_帳票の調査.md`](docs/00_帳票の調査.md) | 元データ(Excel の不適合報告書110件)の様式・項目・表記の揺れ・欠損 |
+| [`docs/01_要件定義書.md`](docs/01_要件定義書.md) | 背景・目的・対象ユーザー・機能要件(FR)・非機能要件・スコープ外・講座の回と仕様書の版 |
+| [`docs/02_機能仕様書.md`](docs/02_機能仕様書.md) | 各機能の画面・操作フロー・入出力・エラー時挙動、ユースケース |
+| [`docs/03_データモデル設計書.md`](docs/03_データモデル設計書.md) | 用語表と関係図・テーブル(PostgreSQL/SQLite)・Chroma・模擬データ定義 |
+| [`docs/04_API設計書.md`](docs/04_API設計書.md) | REST/SSE エンドポイント・MCP の道具28本・Docker Compose |
 | [`docs/05_UI設計書.md`](docs/05_UI設計書.md) | 画面一覧・ワイヤーフレーム・画面遷移・配色・コンポーネント方針 |
-| [`docs/06_AI設計書.md`](docs/06_AI設計書.md) | AI 利用3箇所(構造化抽出・RAGチャット・4M分析)の設計とプロンプト例(OpenCode+OpenRouter が主、Anthropic は代替) |
+| [`docs/06_AI設計書.md`](docs/06_AI設計書.md) | AI の設計(OpenCode+OpenRouter、MCP、ガードレール、検索、帳票抽出、4M分析、評価、Trace、CAPA下書き・トリアージ) |
+| [`docs/13_試験・運用仕様書.md`](docs/13_試験・運用仕様書.md) | 受け入れ条件(版ごとの期待値)・評価・試験・運用(起動・停止・復旧) |
 | [`docs/07_発展トピック.md`](docs/07_発展トピック.md) | Neo4j/ハイブリッドRAG・RAGAS・Langfuse・認証・ローカルLLM・OpenRouter・MCP |
-| [`docs/11_報告書トリアージ_JevとLangGraph.md`](docs/11_報告書トリアージ_JevとLangGraph.md) | 判断モデル Jev と LangGraph による報告書トリアージ(考え方・質問・117件の測定と閾値・API・設定) |
+| [`docs/11_報告書トリアージ_JevとLangGraph.md`](docs/11_報告書トリアージ_JevとLangGraph.md) | 判断モデル Jev と LangGraph による報告書トリアージ(考え方・質問・110件の測定と閾値・API・設定) |
+
+仕様書 00〜06・13 は、講座の回ごとに少しずつ育つ版(v1.0〜v5.0)の最後の版(v5.0)です。正本は `docs/spec_src/`(どの版から入るかの印つき。版ごとに足すものの台帳は `docs/spec_src/VERSIONS.md`)で、`python3 docs/spec_src/render_versions.py --out <フォルダ>` で全版を書き出せます。例アプリに未実装の決まりは、各仕様書に「例アプリには未実装」と書いてあります。
 
 ## OntologyをAIエージェントで使う実装（2026-09-15）
 

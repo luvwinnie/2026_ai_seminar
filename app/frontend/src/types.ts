@@ -159,11 +159,21 @@ export interface FourMAnalysisResult {
 
 // --- 帳票取り込み ---
 
+export interface FieldBox {
+  top: number
+  bottom: number
+  left: number
+  right: number
+}
+
 export interface IngestUploadResponse {
   extracted: ReportInput
   confidence: 'high' | 'medium' | 'low'
   warnings: string[]
   source_filename: string
+  // 判断モデルが画像と照らした項目ごとの結果(DECISIONS_ENABLED=1 のとき)。box は合わない欄の位置(画像に対する割合)
+  field_checks?: Record<string, { p: number; ok: boolean; box?: FieldBox }> | null
+  verification?: { model: string; cost_usd: number; mismatch: string[] } | null
 }
 
 // --- チャット ---
@@ -179,6 +189,31 @@ export interface ChatSource {
   phenomenon: string
   snippet: string
   score: number
+}
+
+// 判断モデル(DECISIONS_ENABLED=1)の結果。質問の種類(SSE event: route)と引用の確かめ(event: citations)
+export interface ChatRoute {
+  intent: 'one' | 'filter' | 'count' | 'search' | 'ui' | 'other'
+  p: number
+  margin: number
+  taken: boolean
+  hint: string
+  model: string
+}
+
+export interface ChatCitationCheck {
+  defect_id: string
+  sentence: string
+  p: number | null
+  exists: boolean
+  supported: boolean
+  malformed?: boolean // 番号の形が崩れている(例: KZ2判-0039)
+}
+
+export interface ChatCitations {
+  model: string
+  checks: ChatCitationCheck[]
+  unsupported: number
 }
 
 // MCPツールの状態遷移(SSE event: tool)
@@ -270,6 +305,7 @@ export interface SmartSearchResult {
   snippet: string
   score: number
   search_mode: string
+  relevance?: number | null // 判断モデルが付けた「質問に当てはまる確率」(search_mode が hybrid+rerank のとき)
 }
 
 export interface SmartSearchResponse {

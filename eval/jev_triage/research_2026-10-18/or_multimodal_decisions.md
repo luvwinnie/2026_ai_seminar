@@ -1,0 +1,133 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://openrouter.ai/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Multimodal Decisions: Images, Audio, and Video in the Decisions API
+
+> Send images, audio, and video to Decisions models on OpenRouter. Quickstart, part formats, supported models, and size limits.
+
+Decisions models answer typed questions about content you send in `state`. Some of them also read media parts in `state`: images, and on some models audio and video. Text-only Decisions requests work the same as before.
+
+## Supported models
+
+The catalog records which media each Decisions model accepts, so browse the Models page or query the [Models API](/docs/api/api-reference/models/list-all-models-and-their-properties) with `output_modalities=decisions` and the `input_modalities` you need:
+
+* [Decisions models that take images](https://openrouter.ai/models?output_modalities=decisions\&input_modalities=image)
+* [Decisions models that take audio](https://openrouter.ai/models?output_modalities=decisions\&input_modalities=audio)
+* [Decisions models that take video](https://openrouter.ai/models?output_modalities=decisions\&input_modalities=video)
+
+```bash lines theme={null}
+# Decisions models that take images
+curl "https://openrouter.ai/api/v1/models?output_modalities=decisions&input_modalities=image"
+
+# Decisions models that take audio
+curl "https://openrouter.ai/api/v1/models?output_modalities=decisions&input_modalities=audio"
+
+# Decisions models that take video
+curl "https://openrouter.ai/api/v1/models?output_modalities=decisions&input_modalities=video"
+```
+
+Each model's `architecture.input_modalities` in the response lists what it accepts. Passing several `input_modalities` values as a comma-separated list (for example `input_modalities=image,audio`) returns only models that accept all of them.
+
+## Quickstart
+
+Encode an image as base64 and put it in the `state` array as an `image_url` part, next to any text:
+
+```bash theme={null}
+IMAGE=$(base64 < listing.png | tr -d '\n')
+
+curl https://openrouter.ai/api/alpha/decisions \
+  -H "Authorization: Bearer $OPENROUTER_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d @- <<EOF
+{
+  "model": "cloudflare/clef-flash",
+  "state": [
+    "Listing title: Red square sticker",
+    { "type": "image_url", "image_url": { "url": "data:image/png;base64,$IMAGE" } }
+  ],
+  "questions": {
+    "matches_title": { "type": "noul", "instructions": "The photo shows the item in the title." },
+    "color": {
+      "type": "choice",
+      "instructions": "What color is the item?",
+      "criteria": { "red": null, "green": null, "blue": null }
+    }
+  }
+}
+EOF
+```
+
+The response has one typed answer per question:
+
+```json theme={null}
+{
+  "model": "cloudflare/clef-flash",
+  "answers": {
+    "matches_title": { "type": "noul", "noul": 0.8607 },
+    "color": {
+      "type": "choice",
+      "choice": "red",
+      "probabilities": { "red": 0.9844, "green": 0.008, "blue": 0.0076 },
+      "confidence": 0.9536
+    }
+  },
+  "usage": { "input_tokens": 289, "output_tokens": 0, "cost": 0.00002601 },
+  "id": "gen-dec-1791209504-cXRBLHSCBmsjQX93jkWe",
+  "provider": "Cloudflare"
+}
+```
+
+## Image part format
+
+An image is an item of the `state` array with this shape, the same image part Chat Completions uses in message content:
+
+```json theme={null}
+{ "type": "image_url", "image_url": { "url": "data:image/jpeg;base64,/9j/4AAQ..." } }
+```
+
+* `url` must be a base64 data URL with the type `image/png`, `image/jpeg`, or `image/webp`. Jev accepts only `image/png` and `image/jpeg`. Remote `http(s)` URLs are not fetched.
+* `detail` (`auto`, `low`, or `high`) is accepted, but Clef, Clef Flash, Clef Omni, and Mercury Decide ignore it.
+* Put image parts directly in the top-level `state` array. Images nested inside other objects in `state` are not read as images, except by Jev, which also reads image parts at any depth in `state` and in a question's `instructions` and `criteria`. A Score answer whose `legend` names an image returns your original image part.
+* Send at most 4 images per request to Clef, Clef Flash, and Clef Omni, at most 16 to Mercury Decide, and at most 128 to GPT-6 Luna Decisions.
+* Text items in the array are plain strings, not `{ "type": "text" }` parts.
+* Jev 1.14 and [`~typesafe/jev-latest`](https://openrouter.ai/~typesafe/jev-latest) also answer [Box](/docs/guides/community/jev#box-questions) questions about images.
+
+These shapes are not image inputs:
+
+* A top-level `images` field. The API rejects it with a `400`.
+* The Responses API `input_image` part (`{ "type": "input_image", "image_url": "data:..." }`).
+* A raw base64 string without the `data:image/...;base64,` prefix.
+
+## Audio and video parts (Clef Omni)
+
+[`cloudflare/clef-omni`](https://openrouter.ai/cloudflare/clef-omni) also takes audio and video items in the top-level `state` array, using the same part shapes Chat Completions uses in message content:
+
+```json theme={null}
+{ "type": "input_audio", "input_audio": { "data": "UklGRiQAAABXQVZF...", "format": "wav" } }
+```
+
+```json theme={null}
+{ "type": "video_url", "video_url": { "url": "data:video/mp4;base64,AAAAIGZ0eXBpc29t..." } }
+```
+
+* `input_audio.data` is raw base64 (no `data:` prefix). `format` must be one of `wav`, `mp3`, `mpeg`, `m4a`, `mp4`, `aac`, `aiff`, `aif`, `flac`, `ogg`, `opus`, or `webm`.
+* `video_url.url` must be a base64 `data:video/...` URL. Remote `http(s)` URLs are not fetched. `processing` is accepted but ignored. Clef Omni samples every video at 2 frames per second regardless.
+* Send at most 4 audio clips and 2 videos per request. Each audio clip can be up to 8 MiB or 300 seconds, each video up to 16 MiB or 60 seconds, and all audio and video together up to 16 MiB decoded.
+* Audio costs about 780 input tokens per minute; audio, video, and image tokens all count toward the 65,536-token context window.
+* Only Clef Omni reads audio and video. Clef and Clef Flash reject requests that contain them; other Decisions models see these parts as plain JSON text.
+
+## Limits
+
+* **Image size on Clef and Clef Flash.** Workers AI estimates a request's tokens from the base64 length before it processes the image, at about 4 base64 characters per token, and rejects the request with a `413` once that estimate passes its 65,536-token window. Keep each image under about 300 KB before encoding, and resize or recompress larger images. Billing uses the tokens the model actually processes.
+* **Text length on Clef and Clef Flash.** Workers AI reads roughly the first 2,000 tokens of text in `state` and drops the rest without an error. Images are counted separately.
+* **Image size on Mercury Decide.** A 7 MB JPEG (a 10 MB request body) is accepted and billed as about 1,000 input tokens. A 12 MB image fails with a `422`, and a 16 MB image with a `413`, so keep each image under a few MB.
+* **Provider errors on Mercury Decide.** Image parts pass through to Inception as sent, so an image it can't read (a remote URL, a raw base64 string) or more than 16 images fails with a `422` from the provider rather than a `400` from OpenRouter.
+* **Images on Liquid d1 and d1-ultra.** Send at most 8 images per request, in a request body of at most 4.5 MB and at most 10,000 image patches in total. Each 32x32-pixel patch counts as 1.5 input tokens, rounded up, for every question in the request.
+* **Image size on Jev.** Each image must be 256 to 1,568 pixels on each side and 78,400 to 2,458,624 pixels in total, with inclusive limits. Images below the minimum dimensions return a `400`; images above the maximum dimensions or other size limits return a `413`. Each decoded PNG or JPEG file can be at most 16 MiB. TypeSafe also limits the request body (including base64), all processed images together, and the expanded request (text, questions, structure, and image occurrences) to 32 MiB each. Processing can make images larger than the uploaded files, so fitting the upload-body limit alone is not enough. See [TypeSafe's image limits](https://docs.typesafe.ai/images#limits) for details. Animated PNGs are rejected, and EXIF orientation is not applied, so rotate photos before encoding them. Images count as input tokens at the normal price, and every request with an image runs in TypeSafe's long-context mode.
+* See each [model page](https://openrouter.ai/models) for the current context length and pricing.
+
+## Related
+
+* [Jev Documentation](/docs/guides/community/jev) covers the Decisions primitives (Choice, Noul, Score) in depth.
+* [Decisions API reference](/docs/api/api-reference/alphadecisions/submit-a-decisions-questions-and-answers-request) has the full request and response schema.

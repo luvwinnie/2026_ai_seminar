@@ -1,0 +1,517 @@
+{
+ "cases": [
+  {
+   "id": "ont-count-a61nx",
+   "category": "ontology",
+   "kind": "count",
+   "question": "a61nx の不適合報告書は何件ありますか？",
+   "expected_any": [
+    [
+     "3件",
+     "3 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": {
+    "tool": "query",
+    "machine": "a61nx",
+    "metric": "report_count",
+    "value": 3
+   },
+   "forbid": []
+  },
+  {
+   "id": "ont-count-GENOS M660-V",
+   "category": "ontology",
+   "kind": "count",
+   "question": "GENOS M660-V の不適合報告書は何件ありますか？",
+   "expected_any": [
+    [
+     "1件",
+     "1 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": {
+    "tool": "query",
+    "machine": "GENOS M660-V",
+    "metric": "report_count",
+    "value": 1
+   },
+   "forbid": []
+  },
+  {
+   "id": "ont-count-QUICK TURN 250MSY",
+   "category": "ontology",
+   "kind": "count",
+   "question": "QUICK TURN 250MSY の不適合報告書は何件ありますか？",
+   "expected_any": [
+    [
+     "18件",
+     "18 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": {
+    "tool": "query",
+    "machine": "QUICK TURN 250MSY",
+    "metric": "report_count",
+    "value": 18
+   },
+   "forbid": []
+  },
+  {
+   "id": "ont-count-TSL-550",
+   "category": "ontology",
+   "kind": "count",
+   "question": "TSL-550 の不適合報告書は何件ありますか？",
+   "expected_any": [
+    [
+     "8件",
+     "8 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": {
+    "tool": "query",
+    "machine": "TSL-550",
+    "metric": "report_count",
+    "value": 8
+   },
+   "forbid": []
+  },
+  {
+   "id": "ont-none-GENOS M560-V",
+   "category": "ontology",
+   "kind": "no_substitution",
+   "question": "GENOS M560-V の不適合報告書は何件ありますか？",
+   "expected_any": [
+    [
+     "0件",
+     "0 件",
+     "ありません",
+     "存在しません",
+     "見つかりません",
+     "登録されていません"
+    ]
+   ],
+   "required_tools": [
+    [
+     "resolve_ontology_entity",
+     "list_defect_reports",
+     "query_quality_ontology",
+     "get_statistics",
+     "list_masters"
+    ]
+   ],
+   "tool_check": {
+    "tool": "resolve",
+    "machine": "GENOS M560-V",
+    "expect_none": true
+   },
+   "forbid": [
+    "GENOS M660-V"
+   ]
+  },
+  {
+   "id": "ont-none-TXG-9000",
+   "category": "ontology",
+   "kind": "no_substitution",
+   "question": "TXG-9000 の不適合報告書は何件ありますか？",
+   "expected_any": [
+    [
+     "0件",
+     "0 件",
+     "ありません",
+     "存在しません",
+     "見つかりません",
+     "登録されていません"
+    ]
+   ],
+   "required_tools": [
+    [
+     "resolve_ontology_entity",
+     "list_defect_reports",
+     "query_quality_ontology",
+     "get_statistics",
+     "list_masters"
+    ]
+   ],
+   "tool_check": {
+    "tool": "resolve",
+    "machine": "TXG-9000",
+    "expect_none": true
+   },
+   "forbid": [
+    "MEGATURN NEXUS 900"
+   ]
+  },
+  {
+   "id": "ont-rate-a61nx",
+   "category": "ontology",
+   "kind": "rate",
+   "question": "a61nx の不良率(不適合数の合計÷加工数の合計)は？",
+   "expected_any": [
+    [
+     "10.0%",
+     "10.00%",
+     "10%"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": {
+    "tool": "query",
+    "machine": "a61nx",
+    "metric": "recorded_defect_rate",
+    "value": 0.1
+   },
+   "forbid": []
+  },
+  {
+   "id": "ont-rate-汎用フライス",
+   "category": "ontology",
+   "kind": "rate",
+   "question": "汎用フライス の不良率(不適合数の合計÷加工数の合計)は？",
+   "expected_any": [
+    [
+     "15.6%",
+     "15.63%",
+     "16%"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": {
+    "tool": "query",
+    "machine": "汎用フライス",
+    "metric": "recorded_defect_rate",
+    "value": 0.1563
+   },
+   "forbid": []
+  },
+  {
+   "id": "ont-rate-all",
+   "category": "ontology",
+   "kind": "rate",
+   "question": "全体の不良率(不適合数の合計÷加工数の合計)は？",
+   "expected_any": [
+    [
+     "17.5%",
+     "17.49%",
+     "17%"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-loss-YZ-8WR",
+   "category": "ontology",
+   "kind": "sum",
+   "question": "YZ-8WR の報告書の損失合計は何円？",
+   "expected_any": [
+    [
+     "1,868,996円",
+     "1,868,996",
+     "1868996円"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": {
+    "tool": "query",
+    "machine": "YZ-8WR",
+    "metric": "known_loss_jpy",
+    "value": 1868996
+   },
+   "forbid": []
+  },
+  {
+   "id": "ont-top-process",
+   "category": "ontology",
+   "kind": "group",
+   "question": "工程別で不適合報告書が一番多い工程と件数は？",
+   "expected_any": [
+    [
+     "フライス加工"
+    ],
+    [
+     "43件",
+     "43 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-top-customer",
+   "category": "ontology",
+   "kind": "group",
+   "question": "客先別で不適合報告書が一番多い客先と件数は？",
+   "expected_any": [
+    [
+     "翠峰重工業"
+    ],
+    [
+     "32件",
+     "32 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-4m-man",
+   "category": "ontology",
+   "kind": "count",
+   "question": "4M分類が Man(人)の報告書は何件？",
+   "expected_any": [
+    [
+     "50件",
+     "50 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-crit",
+   "category": "ontology",
+   "kind": "count",
+   "question": "重大度が critical(重大)の報告書は何件？",
+   "expected_any": [
+    [
+     "7件",
+     "7 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-open",
+   "category": "ontology",
+   "kind": "count",
+   "question": "状態が未対応(open)の報告書は何件？",
+   "expected_any": [
+    [
+     "4件",
+     "4 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-recur",
+   "category": "ontology",
+   "kind": "count",
+   "question": "再発ありの報告書は何件？",
+   "expected_any": [
+    [
+     "9件",
+     "9 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-2025-09",
+   "category": "ontology",
+   "kind": "count",
+   "question": "2025年9月に発生した報告書は何件？",
+   "expected_any": [
+    [
+     "7件",
+     "7 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-a61nx-2025-09",
+   "category": "ontology",
+   "kind": "filter",
+   "question": "a61nx で2025年9月に発生した報告書はどれ？",
+   "expected_any": [
+    [
+     "KZ25-0043"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-surface",
+   "category": "ontology",
+   "kind": "count",
+   "question": "現象が表面キズの報告書は何件？",
+   "expected_any": [
+    [
+     "38件",
+     "38 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  },
+  {
+   "id": "ont-cust-count",
+   "category": "ontology",
+   "kind": "count",
+   "question": "翠峰重工業向けの不適合報告書は何件？",
+   "expected_any": [
+    [
+     "32件",
+     "32 件"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": {
+    "tool": "query",
+    "customer": "翠峰重工業",
+    "metric": "report_count",
+    "value": 32
+   },
+   "forbid": []
+  },
+  {
+   "id": "ont-cust-process",
+   "category": "ontology",
+   "kind": "group",
+   "question": "翠峰重工業向けの不適合は、どの工程で一番多い？",
+   "expected_any": [
+    [
+     "フライス加工"
+    ]
+   ],
+   "required_tools": [
+    [
+     "query_quality_ontology",
+     "get_statistics",
+     "list_defect_reports"
+    ]
+   ],
+   "tool_check": null,
+   "forbid": []
+  }
+ ]
+}

@@ -23,7 +23,7 @@ import TriageSuggest from '../components/TriageSuggest'
 import { ErrorState } from '../components/StateViews'
 import { createReport, ingestConfirm, ingestUpload } from '../api/endpoints'
 import { errorMessage } from '../api/client'
-import type { IngestUploadResponse, ReportInput } from '../types'
+import type { FieldBox, IngestUploadResponse, ReportInput } from '../types'
 
 const ACCEPT = '.xlsx,.pdf,.png,.jpg,.jpeg'
 
@@ -50,6 +50,72 @@ const PREFILL_KEYS = [
   'part_number', 'part_name', 'phenomenon', 'severity', 'defect_description',
   'cause', 'countermeasure', 'category_4m',
 ] as const
+
+// 判断モデルの照合で使う項目名(backend の services/decisions.py FIELD_LABELS と同じ)
+const FIELD_LABEL: Record<string, string> = {
+  defect_id: '報告書番号', report_date: '報告日', occurrence_date: '発生日', process: '発生工程', machine_name: '使用機械',
+  customer: '客先', operator_name: '作業者', discoverer: '発見者', part_number: '部品番号', part_name: '部品名称',
+  production_count: '加工数', defect_count: '不適合数', severity: '重要度', phenomenon: '現象', factor: '要因',
+  category_4m: '4M分類', status: '状態', material_cost: '材料費', processing_cost: '加工費', outsourcing_cost: '外注費',
+  other_cost: 'その他費用', total_cost: '損失合計',
+}
+
+// 画像の上に、合わない欄の位置(判断モデルの Box)を枠で重ねる
+function FieldCheckPanel({ result, imageUrl }: { result: IngestUploadResponse; imageUrl: string | null }) {
+  const [hover, setHover] = useState<string | null>(null)
+  const checks = result.field_checks ?? {}
+  const entries = Object.entries(checks).sort((a, b) => Number(a[1].ok) - Number(b[1].ok))
+  if (entries.length === 0) return null
+  const boxes = entries.filter(([, c]) => c.box) as [string, { p: number; ok: boolean; box: FieldBox }][]
+  return (
+    <Card variant="outlined" sx={{ mb: 2 }} data-testid="field-checks">
+      <CardContent>
+        <Typography sx={{ fontWeight: 700, mb: 1 }}>
+          読み取りの確かめ(判断モデル{result.verification ? `: ${result.verification.model}` : ''})
+        </Typography>
+        <Stack direction={{ xs: 'column', md: 'row' }} spacing={2}>
+          {imageUrl && (
+            <Box sx={{ position: 'relative', flex: '0 0 auto', width: { xs: '100%', md: 360 } }}>
+              <img src={imageUrl} alt="帳票の画像" style={{ width: '100%', display: 'block', border: '1px solid #ccc' }} />
+              {boxes.map(([f, c]) => (
+                <Box
+                  key={f}
+                  title={FIELD_LABEL[f] ?? f}
+                  sx={{
+                    position: 'absolute',
+                    left: `${c.box.left * 100}%`,
+                    top: `${c.box.top * 100}%`,
+                    width: `${(c.box.right - c.box.left) * 100}%`,
+                    height: `${(c.box.bottom - c.box.top) * 100}%`,
+                    border: `2px solid ${hover === f ? '#d32f2f' : '#ed6c02'}`,
+                    bgcolor: hover === f ? 'rgba(211,47,47,0.15)' : 'rgba(237,108,2,0.08)',
+                  }}
+                />
+              ))}
+            </Box>
+          )}
+          <Stack spacing={0.5} sx={{ flex: 1 }}>
+            {entries.map(([f, c]) => (
+              <Stack
+                key={f}
+                direction="row"
+                spacing={1}
+                sx={{ alignItems: 'center' }}
+                onMouseEnter={() => setHover(f)}
+                onMouseLeave={() => setHover(null)}
+              >
+                <Chip size="small" color={c.ok ? 'success' : 'warning'} variant={c.ok ? 'outlined' : 'filled'}
+                  label={c.ok ? '合っている' : '要確認'} sx={{ minWidth: 84 }} />
+                <Typography variant="body2" sx={{ minWidth: 88 }}>{FIELD_LABEL[f] ?? f}</Typography>
+                <Typography variant="body2" color="text.secondary">確率 {c.p.toFixed(2)}{c.box ? '(画像に枠)' : ''}</Typography>
+              </Stack>
+            ))}
+          </Stack>
+        </Stack>
+      </CardContent>
+    </Card>
+  )
+}
 
 export default function ReportNew() {
   const navigate = useNavigate()
@@ -85,6 +151,7 @@ function FileTab({ onSaved }: { onSaved: (defectId: string) => void }) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [uploading, setUploading] = useState(false)
   const [result, setResult] = useState<IngestUploadResponse | null>(null)
+  const [imageUrl, setImageUrl] = useState<string | null>(null)
   const [draft, setDraft] = useState<ReportInput>({})
   const [error, setError] = useState<string | null>(null)
   const [saving, setSaving] = useState(false)
@@ -93,6 +160,7 @@ function FileTab({ onSaved }: { onSaved: (defectId: string) => void }) {
     setUploading(true)
     setError(null)
     setResult(null)
+    setImageUrl(file.type.startsWith('image/') ? URL.createObjectURL(file) : null)
     try {
       const res = await ingestUpload(file)
       setResult(res)
@@ -187,6 +255,8 @@ function FileTab({ onSaved }: { onSaved: (defectId: string) => void }) {
                 </ul>
               </Alert>
             )}
+
+            <FieldCheckPanel result={result} imageUrl={imageUrl} />
 
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
               内容を確認・修正して保存してください。

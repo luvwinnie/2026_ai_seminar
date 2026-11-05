@@ -1,0 +1,106 @@
+{
+  "before": {
+    "KZ25-0043": {
+      "id": 43,
+      "defect_id": "KZ25-0043",
+      "occurrence_date": "2025-09-13",
+      "report_date": "2025-09-24",
+      "customer": "翠峰重工業",
+      "discoverer": "祢津",
+      "process": "マシニング",
+      "machine_name": "a61nx",
+      "operator_name": "荻原",
+      "part_number": "KRS-A58-5211-D",
+      "part_name": "補機マウントリブ",
+      "production_count": 12,
+      "defect_count": 3,
+      "defect_description": "補機マウントリブの位置決めダボ穴に長さ約3mmの線状キズ。搬送トレイ上で隣接品と接触した痕跡があった。",
+      "good_condition": "機能面・意匠面に目視で判別できる線状・点状の傷が無いこと。",
+      "phenomenon": "表面キズ",
+      "cause": "配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。",
+      "factor": "習熟不足",
+      "category_4m": "Man",
+      "severity": "medium",
+      "status": "completed",
+      "countermeasure": "新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。",
+      "material_cost": 20179.0,
+      "processing_cost": 40402.0,
+      "outsourcing_cost": 0.0,
+      "other_cost": 0.0,
+      "total_cost": 60581.0,
+      "is_recurrence": false,
+      "has_procedure": true,
+      "notes": "客先へ経緯を報告済み。代替品を特急で製作し納期内に納入した。",
+      "created_at": "2026-10-13T05:34:21",
+      "updated_at": null,
+      "defect_rate": 0.25
+    },
+    "reports": 110
+  },
+  "after": {
+    "KZ25-0043": {
+      "id": 43,
+      "defect_id": "KZ25-0043",
+      "occurrence_date": "2025-09-13",
+      "report_date": "2025-09-24",
+      "customer": "翠峰重工業",
+      "discoverer": "祢津",
+      "process": "マシニング",
+      "machine_name": "a61nx",
+      "operator_name": "荻原",
+      "part_number": "KRS-A58-5211-D",
+      "part_name": "補機マウントリブ",
+      "production_count": 12,
+      "defect_count": 3,
+      "defect_description": "補機マウントリブの位置決めダボ穴に長さ約3mmの線状キズ。搬送トレイ上で隣接品と接触した痕跡があった。",
+      "good_condition": "機能面・意匠面に目視で判別できる線状・点状の傷が無いこと。",
+      "phenomenon": "表面キズ",
+      "cause": "配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。",
+      "factor": "習熟不足",
+      "category_4m": "Man",
+      "severity": "medium",
+      "status": "completed",
+      "countermeasure": "新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。",
+      "material_cost": 20179.0,
+      "processing_cost": 40402.0,
+      "outsourcing_cost": 0.0,
+      "other_cost": 0.0,
+      "total_cost": 60581.0,
+      "is_recurrence": false,
+      "has_procedure": true,
+      "notes": "客先へ経緯を報告済み。代替品を特急で製作し納期内に納入した。",
+      "created_at": "2026-10-13T05:34:21",
+      "updated_at": null,
+      "defect_rate": 0.25
+    },
+    "reports": 110
+  },
+  "results": [
+    {
+      "seconds": 6.4,
+      "answer": "KZ25-0043 の内容は以下の通りです。\n\n発生日: 2025-09-13\n客先: 翠峰重工業\n工程: マシニング\n機械: a61nx\n作業者: 荻原\n部品名: 補機マウントリブ (KRS-A58-5211-D)\n不具合内容: 補機マウントリブの位置決めダボ穴に長さ約3mmの線状キズ。搬送トレイ上で隣接品と接触した痕跡があった。\n現象: 表面キズ\n原因: 配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。\n対策: 新任者の単独段取りを解防する前に、技能評価チェックリストでの認定を必須化する。\n重要度: medium\n状態: completed\n費用: 60,581円 (材料費: 20,179円、加工費: 40,402円)\n不具合率: 25.00% (加工数: 12, 不具合数: 3)",
+      "ui_tools": [
+        "get_defect_report\n\n完了"
+      ],
+      "links": [
+        "/reports/KZ25-0043"
+      ],
+      "error": "",
+      "calls": [
+        {
+          "tool": "get_defect_report",
+          "status": "completed",
+          "input": {
+            "defect_id": "KZ25-0043"
+          },
+          "output": "{\"id\":43,\"defect_id\":\"KZ25-0043\",\"occurrence_date\":\"2025-09-13\",\"report_date\":\"2025-09-24\",\"customer\":\"翠峰重工業\",\"discoverer\":\"祢津\",\"process\":\"マシニング\",\"machine_name\":\"a61nx\",\"operator_name\":\"荻原\",\"part_numb"
+        }
+      ],
+      "problems": [],
+      "id": "A1",
+      "kind": "AC-v20-01",
+      "question": "KZ25-0043 の内容を教えて",
+      "expect": "get_defect_report(KZ25-0043)。a61nx・翠峰重工業・表面キズ。KZ25-0043 へのリンク"
+    }
+  ]
+}

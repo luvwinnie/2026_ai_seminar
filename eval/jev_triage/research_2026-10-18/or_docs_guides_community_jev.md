@@ -1,0 +1,164 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://openrouter.ai/docs/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# Jev Documentation: Using the TypeSafe Decision Model on OpenRouter
+
+> The OpenRouter hub for Jev, the TypeSafe decision model. What Jev is, how to get access, the Decisions API, TypeScript and Python SDKs, cookbooks, pricing, and demos
+
+## Jev on OpenRouter
+
+Jev is a structured decision model from [TypeSafe](https://docs.typesafe.ai), and the first of its System One models. Send it application state and one or more typed questions, and get back a typed answer with probabilities instead of generated text. `typesafe/jev-1.14` (or the `~typesafe/jev-latest` alias) is available to anyone with an [OpenRouter API key](https://openrouter.ai/settings/keys), and billed to your OpenRouter account.
+
+This is the index for every Jev resource on OpenRouter, and your entry point to the upstream TypeSafe documentation.
+
+<CardGroup cols={2}>
+  <Card title="Jev Tutorial" icon="bolt" href="/docs/guides/community/jev-tutorial">
+    Step-by-step quickstart. Make your first Choice, Noul, and Score call with curl, TypeScript, or Python.
+  </Card>
+
+  <Card title="Jev model page" icon="cube" href="https://openrouter.ai/typesafe/jev-1.14">
+    Current pricing, context length, provider, and data policy.
+  </Card>
+
+  <Card title="Decisions API reference" icon="code" href="/docs/api/api-reference/alphadecisions/submit-a-decisions-questions-and-answers-request">
+    Full request and response schema for `POST /api/alpha/decisions`.
+  </Card>
+
+  <Card title="Jev SDK for TypeScript and Python" icon="puzzle-piece" href="/docs/guides/community/typesafe-sdk">
+    Point the official TypeSafe SDK at OpenRouter with a one-line base URL change.
+  </Card>
+
+  <Card title="Jev Router" icon="route" href="/docs/guides/routing/routers/jev-router">
+    OpenRouter router that uses Jev to pick a model and reasoning effort for each request.
+  </Card>
+</CardGroup>
+
+### What Jev is
+
+Jev is a [System One](https://docs.typesafe.ai/concepts/system-one) model. System One models make fast, structured decisions for software. They are suited for any routing, classification, verification, ranking, or other decision point in your app where a predictable typed answer matters more than generated prose.
+
+Jev answers four kinds of question, called primitives:
+
+| Primitive | Question it answers | What comes back |
+| - | - | - |
+| [Choice](https://docs.typesafe.ai/primitives/choice) | Which one of these options? | The selected option, a probability for each option, and a confidence value |
+| [Noul](https://docs.typesafe.ai/primitives/noul) | Does this condition hold? | The probability of yes |
+| [Score](https://docs.typesafe.ai/primitives/score) | Where does this fall on an ordered scale? | A probability-weighted position, a probability for each level, and a confidence value |
+| [Box](https://docs.typesafe.ai/go/box) | Where in this image is the thing I describe? | The box's `top`, `bottom`, `left`, and `right` edges as fractions of the image's width and height, and a confidence value |
+
+Because the output is typed, code branches on it directly. Jev does not produce reasoning traces, explanations, or free-form text. It is not a drop-in replacement for a chat model. It replaces the prompt-and-parse step where you were asking an LLM a narrow question and extracting a label from its answer.
+
+Below are the key facts, current as of the [Jev model page](https://openrouter.ai/typesafe/jev-1.14):
+
+* **Model ID:** `typesafe/jev-1.14`. The `~typesafe/jev-latest` alias tracks the newest release. `typesafe/jev-1.13` is still available.
+* **Input:** text and images, as a `state` object plus your `questions`. Context length is 262,144 tokens. See [Multimodal Decisions](/docs/guides/community/multimodal-decisions) for the image format and limits.
+* **Output:** typed decisions. Output tokens are free. You pay per input token at the price on the model page.
+* **Provider:** TypeSafe, routed through OpenRouter.
+
+### Box questions
+
+A Box question asks Jev 1.14 to find one target in an image in `state` and answers with one box. It takes `type` and `instructions` and no `criteria`. Write `instructions` as a description of the target, not a command, and name the image it is in. Box needs `typesafe/jev-1.14` (or `~typesafe/jev-latest`): Jev 1.13 rejects it with a `400`, and no other Decisions model supports it.
+
+```json theme={null}
+{
+  "model": "typesafe/jev-1.14",
+  "state": [
+    "Product photo from the listing:",
+    { "type": "image_url", "image_url": { "url": "data:image/png;base64,iVBORw0KGgo..." } }
+  ],
+  "questions": {
+    "product": { "type": "box", "instructions": "the product in the listing photo" }
+  }
+}
+```
+
+The answer nests the four edges under `box`. `left` and `right` are fractions of the image's width, and `top` and `bottom` are fractions of its height, measured from the top-left corner:
+
+```json theme={null}
+{
+  "product": {
+    "type": "box",
+    "box": { "top": 0.49, "bottom": 0.89, "left": 0.58, "right": 0.96 },
+    "confidence": 0.93
+  }
+}
+```
+
+Box has no "not found" answer: it returns four edges even when the target is not in the image. To check whether the target is there, ask a [Noul](https://docs.typesafe.ai/primitives/noul) question about it in the same request.
+
+TypeSafe marks image input and Box as early features whose request format, answers, and limits can change between releases.
+
+### Get access to Jev
+
+There's no waitlist or separate TypeSafe account. Just create an [OpenRouter API key](https://openrouter.ai/settings/keys), and then follow the [Jev tutorial](/docs/guides/community/jev-tutorial). Your first call takes under five minutes.
+
+### Two ways to call Jev
+
+Jev is exposed via two OpenRouter API surfaces, the Decisions API and the System One API. Both surfaces require the same OpenRouter API key and are billed to the same OpenRouter account.
+
+| Surface | Endpoint | Use it when |
+| - | - | - |
+| Decisions API | `POST https://openrouter.ai/api/alpha/decisions` | You are calling Jev from any language with plain HTTP, or through the OpenRouter [TypeScript](/docs/client-sdks/typescript/sdks/decisions/README), [Python](/docs/client-sdks/python/sdks/decisions/README), or [Go](/docs/client-sdks/go/sdks/decisions/README) SDK |
+| System One API | `POST https://openrouter.ai/api/v1/systemone` | You already use the TypeSafe JavaScript or Python SDK and want to switch it to OpenRouter by changing the base URL |
+
+The [Jev SDK guide](/docs/guides/community/typesafe-sdk) documents the System One path. The [Decisions API reference](/docs/api/api-reference/alphadecisions/submit-a-decisions-questions-and-answers-request) covers the Decisions path.
+
+### Cookbooks
+
+Step-by-step recipes with runnable code:
+
+* [Gate Agent Tool Calls with Jev](/docs/cookbook/building-agents/gate-tool-calls-with-jev) checks each risky agent tool call against the user's request so safe calls run, unsupported calls are refused, and only ambiguous calls pause for a human.
+* [Cut LLM Cost with a Jev-Verified Cascade](/docs/cookbook/evaluate-and-optimize/jev-verified-cascade) drafts with a cheap model, verifies the draft against retrieved context with Jev, and escalates to a stronger model only when the check fails.
+* [Classify and Tag Text at Scale with Jev](/docs/cookbook/evaluate-and-optimize/jev-classification) labels each item in a batch with one category and any number of tags, picks a threshold per tag from a small labeled sample, and computes cost per 1,000 items from `usage.cost`.
+* [Classify Reddit and YouTube Comments with Jev and ScrapeCreators](/docs/cookbook/evaluate-and-optimize/classify-reddit-comments-with-jev) scrapes comments, scores each one for relevance and sentiment, and stores the raw judgments so you can re-tune thresholds without new requests.
+* [Auto-Approve Coding Agent Permission Prompts with Jev](/docs/cookbook/coding-agents/auto-approve-permission-prompts-with-jev) answers the permission prompts from Claude Code, Codex, Cursor, and OpenCode with a Jev reversibility check, so routine commands run and risky ones still ask.
+
+### Interactive demos
+
+[Jev Lab](https://openrouter.ai/labs/jev) runs Jev live in the browser across several patterns, including [ticket triage](https://openrouter.ai/labs/jev/triage), [agent oversight](https://openrouter.ai/labs/jev/overseer), and [structured extraction](https://openrouter.ai/labs/jev/extract). Each demo shows you the state, the questions, and the raw probabilities Jev returns.
+
+### TypeSafe documentation
+
+TypeSafe maintains the concept, prompting, and SDK documentation for Jev. These are the pages to read when designing questions and thresholds:
+
+* [System One](https://docs.typesafe.ai/concepts/system-one) explains the model family and how it differs from generative models.
+* [How to build with System One](https://docs.typesafe.ai/concepts/how-to-build-with-system-one) covers decomposing a workflow into judgments.
+* [State](https://docs.typesafe.ai/concepts/state) covers what to send as context and how to reference nested fields.
+* [Primitives](https://docs.typesafe.ai/primitives) covers Choice, Noul, and Score in detail.
+* [Confidence](https://docs.typesafe.ai/confidence) covers reading probabilities and choosing thresholds.
+* [JavaScript SDK](https://docs.typesafe.ai/sdk/javascript) and [Python SDK](https://docs.typesafe.ai/sdk/python) are the official client references.
+
+### Other decision models
+
+Jev was the first decision model on OpenRouter. As of October 16, 2026, there are [22 decision models from 13 makers](https://openrouter.ai/models?output_modalities=decisions), and they all use the same Decisions API, so most requests on this page work with any of them by changing `model`:
+
+| Maker | Models | Input |
+| - | - | - |
+| OpenAI | [`openai/gpt-6-luna-decisions`](https://openrouter.ai/openai/gpt-6-luna-decisions) | Text and images |
+| Microsoft | [`microsoft/microsoft-decision-1`](https://openrouter.ai/microsoft/microsoft-decision-1) | Text |
+| Perplexity | [`perplexity/pplx-decider-v1.2`](https://openrouter.ai/perplexity/pplx-decider-v1.2), [`perplexity/pplx-decider-flash-v1.2`](https://openrouter.ai/perplexity/pplx-decider-flash-v1.2) | Text and images |
+| Cloudflare | [`cloudflare/clef`](https://openrouter.ai/cloudflare/clef), [`cloudflare/clef-flash`](https://openrouter.ai/cloudflare/clef-flash), [`cloudflare/clef-omni`](https://openrouter.ai/cloudflare/clef-omni) | Text and images. Clef Omni adds audio and video |
+| Inception | [`inception/mercury-decide`](https://openrouter.ai/inception/mercury-decide) | Text and images |
+| Liquid AI | [`liquid/d1`](https://openrouter.ai/liquid/d1), [`liquid/d1-ultra`](https://openrouter.ai/liquid/d1-ultra) | Text and images |
+| Upstage | [`upstage/solar-decide`](https://openrouter.ai/upstage/solar-decide), [`upstage/solar-decide-flash`](https://openrouter.ai/upstage/solar-decide-flash) | Text |
+
+Nace.AI, Respan, ScaleDown, Together, and Jared Palmer also serve decision models. Box questions are Jev-only, and ScaleDown Classify-1 and Respan Span-01 take their own `state` shapes, so check the model page before you switch. Probabilities differ between models on the same question, so pick thresholds again for each model you try. See every model in the [decision models list](https://openrouter.ai/models?output_modalities=decisions), and which ones developers use most on the [decision model rankings](https://openrouter.ai/rankings/decisions).
+
+### Frequently asked questions
+
+**Is Jev an LLM?** No. Jev is a System One decision model. It returns typed answers, with probabilities associated with them. Jev doesn't return text, reasoning, or explanations. When you need prose, use a chat model. When you need a decision that your code can act on, use Jev.
+
+**Who makes Jev?** TypeSafe. OpenRouter routes your request to TypeSafe, then bills it to your OpenRouter account.
+
+**How much does Jev cost?** Jev charges for input tokens, and output tokens are free. To find the current input token price, see the [Jev model page](https://openrouter.ai/typesafe/jev-1.14). Every Jev response includes a `usage.cost` field that tells you the cost of the response in USD.
+
+**What is Jev's context window?** 262,144 tokens. That's the `state` you send plus the questions. Requests with more than about 32,000 bytes of text, and every request with an image, run in TypeSafe's long-context mode, which TypeSafe says is slower and less accurate than staying within its default limits. Shorter text requests use the default mode.
+
+**Are there other decision models besides Jev?** Yes. OpenAI, Microsoft, Perplexity, Cloudflare, Inception, Liquid AI, Upstage, and others serve decision models through the same Decisions API. See [Other decision models](#other-decision-models) and the [full list](https://openrouter.ai/models?output_modalities=decisions).
+
+**Do I need a TypeSafe account or API key?** No, an OpenRouter API key authenticates both the Decisions API and the TypeSafe SDK pointed at OpenRouter.
+
+**Can Jev explain its answers?** No, Jev doesn't return the reasoning it goes through to make its decision. It returns probabilities. If you need a written justification for the decision, you can use Jev to make the decision, then use a chat model to explain it, or if the confidence is low, you can route that case to a human.
+
+**Where are the Jev docs?** It's all here on OpenRouter. Once you're in, use the [TypeSafe documentation](https://docs.typesafe.ai) to dig deeper into the concepts and for the SDK reference.

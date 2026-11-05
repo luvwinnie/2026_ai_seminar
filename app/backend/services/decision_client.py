@@ -20,6 +20,10 @@ Jev(TypeSafe)は「状態(state)」と「質問(questions)」を受け取り、�
   TypeSafe は jev-1.13.0)。閾値はこの版で測ったので、jev-latest のように動く名前は使わない(公式の Models の勧め)。
   DECISION_ZDR=1(既定)なら、OpenRouter にデータを残さない経路(provider.zdr)だけを使うよう頼む。
   DECISION_CACHE_TTL(秒、既定 600)の間は、同じモデル・同じ state・同じ質問の答えを使い回す(0 で無効)。
+  2026-10-18：decide(model=…) で、呼ぶたびに OpenRouter の判断モデルを選べる(検索の並べ替え・質問の振り分け・
+  引用の確かめ・読み取りの確かめで、それぞれ測って選んだモデルを使う。services/decisions.py)。
+  画像は state の配列に {"type": "image_url", "image_url": {"url": "data:image/png;base64,…"}} の部品で入れる。
+  Box(画像の中の位置)は typesafe/jev-1.14 だけが答える(OpenRouter の Multimodal Decisions)。
   ※ state は外部サービスに送られる。秘密情報や個人情報を入れない。ログにも本文は出さない。
 """
 from __future__ import annotations
@@ -135,6 +139,9 @@ def _parse_answer(raw: dict) -> Answer:
                       raw.get("legend"))
     if t == "noul":
         return Answer("noul", float(raw["noul"]))
+    if t == "box":
+        # 4つの辺(top・bottom・left・right)を画像の幅・高さに対する割合で返す
+        return Answer("box", dict(raw.get("box") or {}), {}, raw.get("confidence"))
     raise DecisionError(f"未知の答えの型: {t}")
 
 
@@ -217,13 +224,15 @@ def ledger() -> dict:
 
 
 def decide(state: str | dict | list, questions: dict[str, dict], *, retries: int = 3,
-           session_id: str | None = None, use_cache: bool = True) -> DecisionResult:
+           session_id: str | None = None, use_cache: bool = True, model: str | None = None,
+           zdr: bool | None = None) -> DecisionResult:
     """state に対して questions をまとめて聞く(1往復)。429/529 等は指数バックオフで再試行する
     (Retry-After があればそれに従う)。同じ入力は DECISION_CACHE_TTL 秒のあいだ使い回す。"""
     ep = _endpoint()
     if ep is None:
         raise DecisionError("判断モデルのキー(TYPESAFE_API_KEY か OPENROUTER_API_KEY)がありません")
-    url, key, model = ep
+    url, key, default_model = ep
+    model = model or default_model
     ttl = _cache_ttl() if use_cache else 0
     ckey = _cache_key(model, state, questions) if ttl > 0 else None
     if ckey:
@@ -235,9 +244,12 @@ def decide(state: str | dict | list, questions: dict[str, dict], *, retries: int
                 r = hit[1]
                 return DecisionResult(answers=r.answers, model=r.model, latency_ms=0, input_tokens=0,
                                       cost_usd=0.0, request_id=r.request_id, cached=True)
+    if model.startswith("respan/") and not isinstance(state, str):
+        # Respan(span-01)は state に文字列か会話の形だけを受け取る(2026-10-18 に確認)。項目を「名前: 値」の行にする
+        state = _state_text(state)
     body: dict = {"model": model, "state": state, "questions": questions}
     if url == _OPENROUTER_URL:
-        if zdr_enabled():
+        if zdr_enabled() if zdr is None else zdr:
             # データを残さない経路だけを使う。TypeSafe の経路は対応している(2026-09-27 に確認)
             body["provider"] = {"zdr": True, "data_collection": "deny"}
         if session_id:
@@ -294,6 +306,14 @@ def decide(state: str | dict | list, questions: dict[str, dict], *, retries: int
     with _ledger_lock:
         _ledger["errors"] += 1
     raise DecisionError(f"判断モデルの呼び出しに失敗しました({last_error})")
+
+
+def _state_text(state) -> str:
+    if isinstance(state, dict):
+        return "\n".join(f"{k}: {_state_text(v) if isinstance(v, (dict, list)) else v}" for k, v in state.items())
+    if isinstance(state, list):
+        return "\n".join(_state_text(x) if isinstance(x, (dict, list)) else str(x) for x in state)
+    return str(state)
 
 
 def _retry_after(value: str | None) -> float | None:

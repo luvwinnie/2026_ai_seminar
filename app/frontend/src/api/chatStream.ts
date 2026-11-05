@@ -1,4 +1,4 @@
-import type { ChatSource, ChatToolEvent, ChatSessionEvent } from '../types'
+import type { ChatCitations, ChatRoute, ChatSource, ChatToolEvent, ChatSessionEvent } from '../types'
 
 interface StreamHandlers {
   onSession?: (session: ChatSessionEvent) => void
@@ -6,13 +6,16 @@ interface StreamHandlers {
   onToken?: (text: string) => void
   onTool?: (tool: ChatToolEvent) => void
   onThinking?: (text: string) => void
+  onRoute?: (route: ChatRoute) => void
+  onCitations?: (c: ChatCitations) => void
   onDone?: (traceId?: string | null) => void
   onError?: (detail: string) => void
 }
 
 /**
  * POST /api/chat/stream を叩き、SSE(text/event-stream)を逐次パースする。
- * イベント: session(先頭) / sources / token / tool / thinking / done / error。
+ * イベント: session(先頭) / sources / route / token / tool / thinking / citations / done / error。
+ * route・citations は判断モデルを有効にしたときだけ届く。
  * サーバ側でセッション管理するため履歴は送らず、session_id のみ渡す。
  */
 export async function streamChat(
@@ -76,6 +79,12 @@ export async function streamChat(
         }
         break
       }
+      case 'route':
+        handlers.onRoute?.(data as ChatRoute)
+        break
+      case 'citations':
+        handlers.onCitations?.(data as ChatCitations)
+        break
       case 'done':
         handlers.onDone?.((data as { trace_id?: string | null }).trace_id ?? null)
         break

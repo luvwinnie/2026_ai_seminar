@@ -1,0 +1,79 @@
+[
+ {
+  "id": "capa-data",
+  "ok": null,
+  "note": "CAPA 7 件(すべて試しのデータ。問いから外した)"
+ },
+ {
+  "id": "ont-count-a61nx",
+  "ok": true,
+  "metric": "report_count",
+  "got": 3,
+  "want": 3
+ },
+ {
+  "id": "ont-count-GENOS M660-V",
+  "ok": true,
+  "metric": "report_count",
+  "got": 1,
+  "want": 1
+ },
+ {
+  "id": "ont-count-QUICK TURN 250MSY",
+  "ok": true,
+  "metric": "report_count",
+  "got": 18,
+  "want": 18
+ },
+ {
+  "id": "ont-count-TSL-550",
+  "ok": true,
+  "metric": "report_count",
+  "got": 8,
+  "want": 8
+ },
+ {
+  "id": "ont-none-GENOS M560-V",
+  "ok": true,
+  "got": {
+   "total": 0,
+   "can_auto_select": false
+  }
+ },
+ {
+  "id": "ont-none-TXG-9000",
+  "ok": true,
+  "got": {
+   "total": 0,
+   "can_auto_select": false
+  }
+ },
+ {
+  "id": "ont-rate-a61nx",
+  "ok": true,
+  "metric": "recorded_defect_rate",
+  "got": 0.1,
+  "want": 0.1
+ },
+ {
+  "id": "ont-rate-汎用フライス",
+  "ok": true,
+  "metric": "recorded_defect_rate",
+  "got": 0.15633672525439407,
+  "want": 0.1563
+ },
+ {
+  "id": "ont-loss-YZ-8WR",
+  "ok": true,
+  "metric": "known_loss_jpy",
+  "got": "1868996",
+  "want": 1868996
+ },
+ {
+  "id": "ont-cust-count",
+  "ok": true,
+  "metric": "report_count",
+  "got": 32,
+  "want": 32
+ }
+]

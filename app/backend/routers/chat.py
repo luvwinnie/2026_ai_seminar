@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from concurrent.futures import ThreadPoolExecutor
 
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import StreamingResponse
@@ -18,7 +19,8 @@ from schemas import (
     ChatSessionDetail,
     ChatSessionOut,
 )
-from services import opencode_client, telemetry, rag
+from services import decisions, opencode_client, telemetry, rag
+from models import DefectReport
 from services.ontology_contract import agent_context
 
 router = APIRouter(prefix="/api/chat", tags=["chat"])
@@ -63,9 +65,12 @@ def chat_backend() -> str:
     return "opencode" if opencode_client.is_configured() else "none"
 
 
-def _opencode_prompt(message: str, history: list[dict], context: str) -> str:
-    """OpenCode は1問1答なので、履歴と文脈をプロンプトに畳み込む。"""
+def _opencode_prompt(message: str, history: list[dict], context: str, hint: str = "") -> str:
+    """OpenCode は1問1答なので、履歴と文脈をプロンプトに畳み込む。
+    hint は判断モデルが決めた「質問の種類」に応じた道具の使い方の注意(2026-10-18)。"""
     lines = ["# 参考: 関連する不適合報告書", context, ""]
+    if hint:
+        lines += ["# 質問の種類(判断モデルの判定)", hint, ""]
     if history:
         lines.append("# これまでの会話")
         for m in history[-20:]:
@@ -88,6 +93,31 @@ def _build_context(db: Session, message: str) -> tuple[str, list[dict]]:
     context = "\n".join(lines) if lines else "(該当する報告書は見つかりませんでした)"
 
     return context, sources
+
+
+# 質問の振り分け(判断モデル)を、検索(並べ替えを含む)と同時に走らせる。DB は使わないのでスレッドで安全
+_POOL = ThreadPoolExecutor(max_workers=4, thread_name_prefix="decision")
+
+
+def _route(message: str) -> dict | None:
+    """② 質問の振り分け。使えない・失敗したときは None(チャットは続ける)。"""
+    if not decisions.enabled("route"):
+        return None
+    try:
+        return decisions.route(message)
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def _citations(db: Session, answer: str) -> dict | None:
+    """③ 引用の確かめ。使えない・失敗したときは None。"""
+    if not decisions.enabled("cite") or not answer:
+        return None
+    try:
+        return decisions.check_citations(
+            answer, lambda did: db.query(DefectReport).filter(DefectReport.defect_id == did).first())
+    except Exception:  # noqa: BLE001
+        return None
 
 
 def _sse(event: str, data: dict) -> str:
@@ -194,10 +224,17 @@ def chat_stream(payload: ChatRequest):
             # Langfuse トレース(未設定時は no-op)
             trace = telemetry.ChatTrace(payload.message, session.id)
 
+            route_future = _POOL.submit(_route, payload.message)
             context, sources = _build_context(db, payload.message)
             source_items = _source_items(sources)
             trace.sources(source_items)
             yield _sse("sources", {"items": source_items})
+
+            route = route_future.result()
+            if route:
+                yield _sse("route", route)
+                trace.decision("route", {"intent": route["intent"], "p": route["p"], "taken": route["taken"]},
+                               {"model": route["model"]})
 
             backend = chat_backend()
             # 履歴は現在の user メッセージ保存より前にロードする(二重計上を防ぐ)
@@ -213,7 +250,7 @@ def chat_stream(payload: ChatRequest):
             thinking_parts: list[str] = []
             tools_by_name: dict[str, dict] = {}
             for ev in opencode_client.stream(
-                _OPENCODE_SYSTEM, _opencode_prompt(payload.message, history, context)
+                _OPENCODE_SYSTEM, _opencode_prompt(payload.message, history, context, (route or {}).get("hint", ""))
             ):
                 yield _sse(ev["type"], {k: v for k, v in ev.items() if k != "type"})
                 etype = ev.get("type")
@@ -238,6 +275,12 @@ def chat_stream(payload: ChatRequest):
                 "".join(thinking_parts) or None,
             )
             trace.finish("".join(content_parts), sorted(tools_by_name))
+            cit = _citations(db, "".join(content_parts))
+            if cit:
+                yield _sse("citations", cit)
+                checked = [c for c in cit["checks"] if c["p"] is not None]
+                trace.decision("citation_support", cit["checks"], {"model": cit["model"]},
+                               score=(sum(c["supported"] for c in checked) / len(checked)) if checked else None)
             # trace_id を渡し、画面の 👍/👎 を Langfuse スコアに紐づけられるようにする
             yield _sse("done", {"trace_id": trace.trace_id})
         except Exception as exc:  # noqa: BLE001 — 例外は error イベントで通知
@@ -255,6 +298,7 @@ def chat_stream(payload: ChatRequest):
 @router.post("", response_model=ChatResponse)
 def chat(payload: ChatRequest, db: Session = Depends(get_db)):
     """非ストリーミング版(テスト用)。session_id 対応。"""
+    route_future = _POOL.submit(_route, payload.message)
     context, sources = _build_context(db, payload.message)
 
     backend = chat_backend()
@@ -265,13 +309,15 @@ def chat(payload: ChatRequest, db: Session = Depends(get_db)):
     history = _load_history(db, session)
     _save_user(db, session, payload.message)
 
+    route = route_future.result()
     answer = opencode_client.ask(
-        _OPENCODE_SYSTEM, _opencode_prompt(payload.message, history, context)
+        _OPENCODE_SYSTEM, _opencode_prompt(payload.message, history, context, (route or {}).get("hint", ""))
     )
     source_items = _source_items(sources)
     _save_assistant(db, session, answer, source_items, None, None)
 
-    return {"answer": answer, "sources": source_items, "session_id": session.id}
+    return {"answer": answer, "sources": source_items, "session_id": session.id,
+            "route": route, "citations": _citations(db, answer)}
 
 
 # --- 会話履歴の閲覧・削除 ---

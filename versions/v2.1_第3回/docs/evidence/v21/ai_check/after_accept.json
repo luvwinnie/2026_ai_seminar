@@ -1,0 +1,307 @@
+{
+  "before": {
+    "KZ25-0043": {
+      "id": 43,
+      "defect_id": "KZ25-0043",
+      "occurrence_date": "2025-09-13",
+      "report_date": "2025-09-24",
+      "customer": "翠峰重工業",
+      "discoverer": "祢津",
+      "process": "マシニング",
+      "machine_name": "a61nx",
+      "operator_name": "荻原",
+      "part_number": "KRS-A58-5211-D",
+      "part_name": "補機マウントリブ",
+      "production_count": 12,
+      "defect_count": 3,
+      "defect_description": "補機マウントリブの位置決めダボ穴に長さ約3mmの線状キズ。搬送トレイ上で隣接品と接触した痕跡があった。",
+      "good_condition": "機能面・意匠面に目視で判別できる線状・点状の傷が無いこと。",
+      "phenomenon": "表面キズ",
+      "cause": "配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。",
+      "factor": "習熟不足",
+      "category_4m": "Man",
+      "severity": "medium",
+      "status": "completed",
+      "countermeasure": "新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。",
+      "material_cost": 20179.0,
+      "processing_cost": 40402.0,
+      "outsourcing_cost": 0.0,
+      "other_cost": 0.0,
+      "total_cost": 60581.0,
+      "is_recurrence": false,
+      "has_procedure": true,
+      "notes": "客先へ経緯を報告済み。代替品を特急で製作し納期内に納入した。",
+      "created_at": "2026-10-13T05:34:21",
+      "updated_at": null,
+      "defect_rate": 0.25
+    },
+    "reports": 110
+  },
+  "after": {
+    "KZ25-0043": {
+      "id": 43,
+      "defect_id": "KZ25-0043",
+      "occurrence_date": "2025-09-13",
+      "report_date": "2025-09-24",
+      "customer": "翠峰重工業",
+      "discoverer": "祢津",
+      "process": "マシニング",
+      "machine_name": "a61nx",
+      "operator_name": "荻原",
+      "part_number": "KRS-A58-5211-D",
+      "part_name": "補機マウントリブ",
+      "production_count": 12,
+      "defect_count": 3,
+      "defect_description": "補機マウントリブの位置決めダボ穴に長さ約3mmの線状キズ。搬送トレイ上で隣接品と接触した痕跡があった。",
+      "good_condition": "機能面・意匠面に目視で判別できる線状・点状の傷が無いこと。",
+      "phenomenon": "表面キズ",
+      "cause": "配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。",
+      "factor": "習熟不足",
+      "category_4m": "Man",
+      "severity": "medium",
+      "status": "completed",
+      "countermeasure": "新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。",
+      "material_cost": 20179.0,
+      "processing_cost": 40402.0,
+      "outsourcing_cost": 0.0,
+      "other_cost": 0.0,
+      "total_cost": 60581.0,
+      "is_recurrence": false,
+      "has_procedure": true,
+      "notes": "客先へ経緯を報告済み。代替品を特急で製作し納期内に納入した。",
+      "created_at": "2026-10-13T05:34:21",
+      "updated_at": null,
+      "defect_rate": 0.25
+    },
+    "reports": 110
+  },
+  "results": [
+    {
+      "seconds": 8.4,
+      "answer": "KZ25-0043 の内容は以下の通りです。\n\n発生日: 2025-09-13\n客先: 翠峰重工業\n工程: マシニング\n機械: a61nx\n作業者: 荻原\n部品名: 補機マウントリブ (KRS-A58-5211-D)\n現象: 表面キズ\n不具合内容: 補機マウントリブの位置決めダボ穴に長さ約3mmの線状キズ。搬送トレイ上で隣接品と接触した痕跡があった。\n原因: 配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。\n対策: 新任者の単独段取りを解模禁する前に、技能評価チェックリストでの認定を必須化する。\n重要度: medium\n状態: completed\n費用: 60,581円 (材料費: 20,179円, 加工費: 40,402円)\n備考: 客先へ経緯を報告済み。代替品を特急で製作し納期内に納入した。",
+      "ui_tools": [
+        "get_defect_report\n\n完了"
+      ],
+      "links": [
+        "/reports/KZ25-0043"
+      ],
+      "error": "",
+      "calls": [
+        {
+          "tool": "get_defect_report",
+          "status": "completed",
+          "input": {
+            "defect_id": "KZ25-0043"
+          },
+          "output": "{\"id\":43,\"defect_id\":\"KZ25-0043\",\"occurrence_date\":\"2025-09-13\",\"report_date\":\"2025-09-24\",\"customer\":\"翠峰重工業\",\"discoverer\":\"祢津\",\"process\":\"マシニング\",\"machine_name\":\"a61nx\",\"operator_name\":\"荻原\",\"part_numb"
+        }
+      ],
+      "problems": [],
+      "id": "A1",
+      "kind": "AC-v20-01",
+      "question": "KZ25-0043 の内容を教えて",
+      "expect": "get_defect_report(KZ25-0043)。a61nx・翠峰重工業・表面キズ。KZ25-0043 へのリンク"
+    },
+    {
+      "seconds": 2.3,
+      "answer": "KZ25-0019 の客先は、六花電機工業です。",
+      "ui_tools": [
+        "get_defect_report\n\n完了"
+      ],
+      "links": [
+        "/reports/KZ25-0019"
+      ],
+      "error": "",
+      "calls": [
+        {
+          "tool": "get_defect_report",
+          "status": "completed",
+          "input": {
+            "defect_id": "KZ25-0019"
+          },
+          "output": "{\"id\":19,\"defect_id\":\"KZ25-0019\",\"occurrence_date\":\"2025-06-23\",\"report_date\":\"2025-06-24\",\"customer\":\"六花電機工業\",\"discoverer\":\"楠見\",\"process\":\"マシニング\",\"machine_name\":\"a61nx\",\"operator_name\":\"五十嵐\",\"part_nu"
+        }
+      ],
+      "problems": [],
+      "id": "A2",
+      "kind": "AC-v20-11",
+      "question": "では KZ25-0019 の客先は？",
+      "expect": "そのターンで get_defect_report(KZ25-0019)。六花電機工業"
+    },
+    {
+      "seconds": 2.3,
+      "answer": "KZ25-9999 は見つかりません。",
+      "ui_tools": [
+        "get_defect_report\n\n完了"
+      ],
+      "links": [
+        "/reports/KZ25-9999"
+      ],
+      "error": "",
+      "calls": [
+        {
+          "tool": "get_defect_report",
+          "status": "completed",
+          "input": {
+            "defect_id": "KZ25-9999"
+          },
+          "output": "{\"error\":\"KZ25-9999 は見つかりません\"}"
+        }
+      ],
+      "problems": [],
+      "id": "A3",
+      "kind": "AC-v20-02",
+      "question": "KZ25-9999 の内容を教えて",
+      "expect": "get_defect_report(KZ25-9999)。見つからないと答え、ほかの報告書を述べない"
+    },
+    {
+      "seconds": 3.8,
+      "answer": "表面キズは38件あります。",
+      "ui_tools": [
+        "list_masters\n\n完了",
+        "list_defect_reports\n\n完了"
+      ],
+      "links": [],
+      "error": "",
+      "calls": [
+        {
+          "tool": "list_masters",
+          "status": "completed",
+          "input": {
+            "category": "phenomenon"
+          },
+          "output": "{\"phenomenon\":[{\"name\":\"NCプログラム誤り\",\"usage_count\":6},{\"name\":\"ひずみ変形\",\"usage_count\":4},{\"name\":\"バリ残り\",\"usage_count\":14},{\"name\":\"刻印・表示誤り\",\"usage_count\":2},{\"name\":\"加工段差\",\"usage_count\":9},{\"name\":\"取付方向誤り"
+        },
+        {
+          "tool": "list_defect_reports",
+          "status": "completed",
+          "input": {
+            "phenomenon": "表面キズ"
+          },
+          "output": "{\"total\":38,\"items\":[{\"defect_id\":\"KZ25-0110\",\"occurrence_date\":\"2026-03-15\",\"customer\":\"翠峰重工業\",\"process\":\"マシニング\",\"machine_name\":\"GENOS M660-V\",\"operator_name\":\"早乙女\",\"part_name\":\"ギヤケース\",\"phenomenon\":\""
+        }
+      ],
+      "problems": [],
+      "id": "A4",
+      "kind": "AC-v20-03",
+      "question": "表面キズは何件？",
+      "expect": "集計の道具（get_statistics か list_defect_reports）で数え、38件"
+    },
+    {
+      "seconds": 3.8,
+      "answer": "TXG-9000 という機械は、データの中には存在しません。",
+      "ui_tools": [
+        "list_masters\n\n完了"
+      ],
+      "links": [],
+      "error": "",
+      "calls": [
+        {
+          "tool": "list_masters",
+          "status": "completed",
+          "input": {
+            "category": "machine"
+          },
+          "output": "{\"machine\":[{\"name\":\"DMU 65 monoBLOCK\",\"usage_count\":1},{\"name\":\"GENOS M660-V\",\"usage_count\":1},{\"name\":\"MEGATURN NEXUS 900\",\"usage_count\":6},{\"name\":\"QUICK TURN 250MSY\",\"usage_count\":18},{\"name\":\"TSL"
+        }
+      ],
+      "problems": [],
+      "id": "A5",
+      "kind": "AC-v20-09",
+      "question": "TXG-9000 という機械の不良を教えて",
+      "expect": "道具で確かめ「該当は存在しない」。似た機械の報告に読み替えない"
+    },
+    {
+      "seconds": 3.3,
+      "answer": "KZ25-0043 の状態は「completed」です。",
+      "ui_tools": [
+        "get_defect_report\n\n完了"
+      ],
+      "links": [
+        "/reports/KZ25-0043"
+      ],
+      "error": "",
+      "calls": [
+        {
+          "tool": "get_defect_report",
+          "status": "completed",
+          "input": {
+            "defect_id": "KZ25-0043"
+          },
+          "output": "{\"id\":43,\"defect_id\":\"KZ25-0043\",\"occurrence_date\":\"2025-09-13\",\"report_date\":\"2025-09-24\",\"customer\":\"翠峰重工業\",\"discoverer\":\"祢津\",\"process\":\"マシニング\",\"machine_name\":\"a61nx\",\"operator_name\":\"荻原\",\"part_numb"
+        }
+      ],
+      "problems": [],
+      "id": "A6",
+      "kind": "AC-v20-10",
+      "question": "KZ25-0043 の状態は？",
+      "expect": "get_defect_report(KZ25-0043)。completed（完了）。書き込みなし（updated_at・件数は変わらない）"
+    },
+    {
+      "seconds": 2.3,
+      "answer": "GENOS M560-V は、マスターに存在しません。 もしかして、GENOS M660-V のことでしょうか？",
+      "ui_tools": [
+        "list_masters\n\n完了"
+      ],
+      "links": [],
+      "error": "",
+      "calls": [
+        {
+          "tool": "list_masters",
+          "status": "completed",
+          "input": {
+            "category": "machine"
+          },
+          "output": "{\"machine\":[{\"name\":\"DMU 65 monoBLOCK\",\"usage_count\":1},{\"name\":\"GENOS M660-V\",\"usage_count\":1},{\"name\":\"MEGATURN NEXUS 900\",\"usage_count\":6},{\"name\":\"QUICK TURN 250MSY\",\"usage_count\":18},{\"name\":\"TSL"
+        }
+      ],
+      "problems": [],
+      "id": "A7",
+      "kind": "AC-v20-12",
+      "question": "GENOS M560-V の不良は何件？",
+      "expect": "0件（該当なし）と言う。GENOS M660-V の件数に読み替えない"
+    },
+    {
+      "seconds": 3.8,
+      "answer": "汎用フライスのバリ残りは7件です。",
+      "ui_tools": [
+        "list_masters\n\n完了",
+        "list_defect_reports\n\n完了"
+      ],
+      "links": [],
+      "error": "",
+      "calls": [
+        {
+          "tool": "list_masters",
+          "status": "completed",
+          "input": {
+            "category": "machine"
+          },
+          "output": "{\"machine\":[{\"name\":\"DMU 65 monoBLOCK\",\"usage_count\":1},{\"name\":\"GENOS M660-V\",\"usage_count\":1},{\"name\":\"MEGATURN NEXUS 900\",\"usage_count\":6},{\"name\":\"QUICK TURN 250MSY\",\"usage_count\":18},{\"name\":\"TSL"
+        },
+        {
+          "tool": "list_masters",
+          "status": "completed",
+          "input": {
+            "category": "phenomenon"
+          },
+          "output": "{\"phenomenon\":[{\"name\":\"NCプログラム誤り\",\"usage_count\":6},{\"name\":\"ひずみ変形\",\"usage_count\":4},{\"name\":\"バリ残り\",\"usage_count\":14},{\"name\":\"刻印・表示誤り\",\"usage_count\":2},{\"name\":\"加工段差\",\"usage_count\":9},{\"name\":\"取付方向誤り"
+        },
+        {
+          "tool": "list_defect_reports",
+          "status": "completed",
+          "input": {
+            "machine": "汎用フライス",
+            "phenomenon": "バリ残り"
+          },
+          "output": "{\"total\":7,\"items\":[{\"defect_id\":\"KZ25-0099\",\"occurrence_date\":\"2026-02-12\",\"customer\":\"汐峰造機\",\"process\":\"フライス加工\",\"machine_name\":\"汎用フライス\",\"operator_name\":\"荻原\",\"part_name\":\"駆動プーリ\",\"phenomenon\":\"バリ残り\",\"s"
+        }
+      ],
+      "problems": [],
+      "id": "A8",
+      "kind": "UC-2",
+      "question": "汎用フライスのバリ残りは何件？",
+      "expect": "list_defect_reports(machine=汎用フライス, phenomenon=バリ残り)。7件"
+    }
+  ]
+}

@@ -51,7 +51,7 @@ import PageHeader from './PageHeader'
 import { streamChat } from '../api/chatStream'
 import { deleteChatSession, fetchChatSession, fetchChatSessions } from '../api/endpoints'
 import { errorMessage } from '../api/client'
-import type { ChatSession, ChatSessionMessage, ChatSource, ChatToolEvent } from '../types'
+import type { ChatCitations, ChatRoute, ChatSession, ChatSessionMessage, ChatSource, ChatToolEvent } from '../types'
 import { MONO_FONT } from '../theme'
 import MarkdownMessage from './MarkdownMessage'
 import MicButton from './MicButton'
@@ -64,6 +64,44 @@ interface DisplayMessage {
   tools?: ChatToolEvent[]
   thinking?: string
   traceId?: string | null // Langfuse トレースID(フィードバック紐づけ用)
+  route?: ChatRoute // 判断モデルが決めた質問の種類
+  citations?: ChatCitations // 判断モデルによる引用の確かめ
+}
+
+const INTENT_LABEL: Record<string, string> = {
+  one: '1件の内容', filter: '条件で絞る', count: '件数を数える', search: '似た事例を探す', ui: '画面の操作', other: 'その他',
+}
+
+// 引用の確かめ:番号ごとに「根拠あり ✓ / 要確認 ⚠」を出す(判断モデルの確率つき)
+function CitationChecks({ citations }: { citations: ChatCitations }) {
+  const byId = new Map<string, { ok: boolean; p: number | null; sentences: string[]; exists: boolean; malformed: boolean }>()
+  for (const c of citations.checks) {
+    const cur = byId.get(c.defect_id) ?? { ok: true, p: c.p, sentences: [], exists: c.exists, malformed: Boolean(c.malformed) }
+    cur.ok = cur.ok && c.supported
+    cur.p = c.p === null ? cur.p : Math.min(cur.p ?? 1, c.p)
+    cur.sentences.push(c.sentence)
+    byId.set(c.defect_id, cur)
+  }
+  if (byId.size === 0) return null
+  return (
+    <Stack direction="row" spacing={0.75} sx={{ flexWrap: 'wrap', mt: 0.75, alignItems: 'center' }} data-testid="citation-checks">
+      <Typography variant="caption" color="text.secondary">引用の確かめ:</Typography>
+      {[...byId.entries()].map(([id, v]) => (
+        <Chip
+          key={id}
+          size="small"
+          variant="outlined"
+          color={v.ok ? 'success' : 'warning'}
+          icon={v.ok ? <CheckCircleIcon /> : <ErrorOutlineIcon />}
+          label={`${id} ${v.ok ? '根拠あり' : v.malformed ? '番号が崩れている' : '要確認'}${v.p !== null ? ` ${v.p.toFixed(2)}` : ''}`}
+          title={`${v.malformed ? '(番号の形が崩れています)' : v.exists ? '' : '(この番号の報告書はありません)'}${v.sentences.join(' / ')}｜判定: ${citations.model}`}
+          component={RouterLink}
+          to={`/reports/${id}`}
+          clickable
+        />
+      ))}
+    </Stack>
+  )
 }
 
 // ツール名の先頭サーバ接頭辞("defect-reports_" 等、最初の "_" まで)を除去して表示する
@@ -277,6 +315,8 @@ export default function ChatPanel({
           reloadSessions()
         },
         onSources: (sources) => updateLast((m) => ({ ...m, sources })),
+        onRoute: (route) => updateLast((m) => ({ ...m, route })),
+        onCitations: (citations) => updateLast((m) => ({ ...m, citations })),
         onToken: (t) => updateLast((m) => ({ ...m, content: m.content + t })),
         onTool: (tool) => updateLast((m) => ({ ...m, tools: upsertTool(m.tools ?? [], tool) })),
         onThinking: (t) => updateLast((m) => ({ ...m, thinking: (m.thinking ?? '') + t })),
@@ -717,6 +757,18 @@ function MessageBubble({
           </Stack>
         )}
 
+        {/* 判断モデルが決めた質問の種類(採ったときだけ) */}
+        {!isUser && message.route && message.route.taken && (
+          <Chip
+            size="small"
+            variant="outlined"
+            sx={{ mb: 0.75 }}
+            label={`質問の種類: ${INTENT_LABEL[message.route.intent] ?? message.route.intent} ${message.route.p.toFixed(2)}`}
+            title={`${message.route.hint}｜判定: ${message.route.model}`}
+            data-testid="route-chip"
+          />
+        )}
+
         {/* アクティビティ(ツール使用)と思考の可視化 */}
         {!isUser && message.tools && message.tools.length > 0 && (
           <ToolActivity tools={message.tools} />
@@ -761,6 +813,7 @@ function MessageBubble({
             </Typography>
           )}
         </Paper>
+        {!isUser && message.citations && <CitationChecks citations={message.citations} />}
       </Box>
     </Box>
   )

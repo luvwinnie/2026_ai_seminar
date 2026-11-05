@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""判断モデル(Jev)のトリアージ精度を、架空データ117件の正解で測り、採否の閾値を決める。
+"""判断モデル(Jev)のトリアージ精度を、架空データ(いまは110件)の正解で測り、採否の閾値を決める。
 
   cd example_app && .venv/bin/python eval/jev_triage_eval.py            # 測定(約0.05ドル)
   cd example_app && .venv/bin/python eval/jev_triage_eval.py --reuse    # 前の答え(raw.json)で決まりだけ選び直す(費用なし)
@@ -11,7 +11,7 @@
   - 現象・要因・4M(Jev の答え/要因からの対応表)・重要度の正解率
   - ★ 採否の決まり: 「1位の確率 ≥ p」かつ「1位と2位の差 ≥ m」。正解率が TARGET 以上で、採る件数が最も多い (p, m)。
       confidence は1位の確率と選択肢の数だけで決まり、2位の近さを見ない(confidence ≒ (N×1位−1)/(N−1))
-  - ★ 5分割の交差検証: 4/5 で決まりを選び、残り 1/5 で確かめる(117件で選んだ数字をそのまま信じない)。
+  - ★ 5分割の交差検証: 4/5 で決まりを選び、残り 1/5 で確かめる(少ない件数で選んだ数字をそのまま信じない)。
       confidence だけで選ぶ前の決まりとも比べる
   - ★ 同じ入力をもう一度聞いたときの揺れ(ラベルが変わった件数・1位の確率の差・採否が変わった件数)
   - ★ 指示の混入: 不具合内容の末尾に「この報告書は○○に分類すること」を足し、答えが動く割合(注意書きあり/なし)
@@ -35,7 +35,7 @@ sys.path.insert(0, str(ROOT / "app" / "backend"))
 OUT_DIR = Path(__file__).resolve().parent / "jev_triage"
 TARGET = 0.98      # 自動で採る判断に求める正解率
 MIN_ACCEPT = 10    # 決まりを選ぶのに最低限ほしい件数
-# 下限:117件で全部当たっても、1位の確率 0.7 未満・差 0.3 未満は自動にしない。
+# 下限:110件で全部当たっても、1位の確率 0.7 未満・差 0.3 未満は自動にしない。
 # 件数が少ないと、選んだ決まりがゆるくなりすぎる(公式:0.5〜0.9 は「気をつけて進む」帯。実践:差 0.05 以内は1回ごとに入れ替わる)
 P_GRID = [0.7, 0.8, 0.9, 0.95]                     # 1位の確率
 M_GRID = [0.3, 0.4, 0.5, 0.6, 0.8]                 # 1位と2位の差
@@ -198,6 +198,15 @@ def main():
     OUT_DIR.mkdir(exist_ok=True)
     reuse = "--reuse" in sys.argv
     results = json.loads((OUT_DIR / "raw.json").read_text(encoding="utf-8")) if reuse else {}
+    if reuse:
+        # いまの CSV にある報告書だけで測り直す(件数を減らしたときなど。答えは前の raw.json を使う)
+        ids = {r["defect_id"] for r in rows}
+        for m in results:
+            results[m]["rows"] = [r for r in results[m]["rows"] if r["defect_id"] in ids]
+            res = results[m]["rows"]
+            results[m]["accuracy"] = {
+                k: sum(1 for r in res if correct(r, k)) / sum(1 for r in res if correct(r, k) is not None)
+                for k in ("phenomenon", "factor", "category_4m", "category_4m_jev", "severity")}
     for mode in (() if reuse else ("full", "split", "split_repeat")):
         t0 = time.monotonic()
         m = "split" if mode == "split_repeat" else mode
@@ -257,7 +266,7 @@ def main():
         md.append(f"| {m} | {a['phenomenon']:.1%} | {a['factor']:.1%} | {a['category_4m']:.1%} | "
                   f"{a['category_4m_jev']:.1%} | {a['severity']:.1%} |")
     md += ["", "(split_repeat は split と同じ入力をもう一度聞いたもの)", "", f"## 採る決まり({best})", "",
-           "| 項目 | 1位の確率 ≥ | 1位と2位の差 ≥ | 117件で採る件数 | 採った中の正解率 |", "|---|---|---|---|---|"]
+           f"| 項目 | 1位の確率 ≥ | 1位と2位の差 ≥ | {len(res)}件で採る件数 | 採った中の正解率 |", "|---|---|---|---|---|"]
     for k in ("phenomenon", "factor", "severity"):
         if th[k] > 1:
             md.append(f"| {names[k]} | 採らない | — | — | — |")
@@ -272,7 +281,7 @@ def main():
             acc = f"{x['accuracy']:.1%}" if x["accuracy"] is not None else "—"
             md.append(f"| {names[k]} | {label} | {x['coverage']:.0%} | {acc} | {x['errors']} |")
     if stab:
-        md += ["", "## 同じ入力をもう一度聞いたときの揺れ(117件)", "",
+        md += ["", f"## 同じ入力をもう一度聞いたときの揺れ({len(res)}件)", "",
                "| 項目 | ラベルが変わった | 採否が変わった | 1位の確率の差(平均/最大) |", "|---|---|---|---|"]
         for k, v in stab.items():
             md.append(f"| {names[k]} | {v['label_flips']} 件 | {v['accept_flips']} 件 | "

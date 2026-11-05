@@ -1,0 +1,53 @@
+# DefectReport AI（第3回）：backend・frontend・opencode の3つ（04_API設計書.md §3.3、06_AI設計書.md §0.1.1）
+# 外に出すポートはこの PC の決まり（API 8120・画面 5220・OpenCode 4120）。コンテナの中は 8000・5173・4096
+# DB はボリューム db に置く。`docker compose down -v` はボリュームごと消すので使わない
+name: lesson03
+
+services:
+  backend:
+    build: ./app/backend
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DB_PATH: /var/lib/defectreport/defect_reports.db
+      DATA_CSV: /data/defect_reports.csv
+      OPENCODE_URL: http://opencode:4096
+      OPENCODE_MODEL: ${OPENCODE_MODEL:-ollama/gemma4:26b}
+    volumes:
+      - db:/var/lib/defectreport
+      - ./data/defect_reports.csv:/data/defect_reports.csv:ro  # 原本は読むだけ
+    ports:
+      - "127.0.0.1:8120:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  opencode:
+    build: ./app/opencode
+    environment:
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11435}
+      DEFECT_REPORTS_MCP_URL: http://backend:8000/mcp/
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "127.0.0.1:4120:4096"
+    depends_on:
+      backend:
+        condition: service_healthy  # OpenCode は起動したときに MCP の道具の一覧を読む
+
+  frontend:
+    build: ./app/frontend
+    environment:
+      API_TARGET: http://backend:8000
+      WEB_HOST: 0.0.0.0
+      WEB_PORT: "5173"
+    ports:
+      - "127.0.0.1:5220:5173"
+    depends_on:
+      - backend
+
+volumes:
+  db:

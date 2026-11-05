@@ -1,0 +1,47 @@
+{"id": "fact-03", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.2963850342736367, "factual_correctness(mode=f1)": 0.5, "sec": 34.4}
+{"id": "fact-06", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.6359954081322532, "factual_correctness(mode=f1)": 0.0, "sec": 36.7}
+{"id": "fact-07", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.7725595957364216, "factual_correctness(mode=f1)": 1.0, "sec": 34.6}
+{"id": "fact-12", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.8451893049799837, "factual_correctness(mode=f1)": 1.0, "sec": 29.7}
+{"id": "fact-13", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.7788626822079201, "factual_correctness(mode=f1)": 0.5, "sec": 40.1}
+{"id": "fact-20", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.7381220222166126, "factual_correctness(mode=f1)": 1.0, "sec": 29.9}
+{"id": "fact-22", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.8000384876517249, "factual_correctness(mode=f1)": 1.0, "sec": 29.7}
+{"id": "fact-25", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.6061976316861356, "factual_correctness(mode=f1)": 0.0, "sec": 29.6}
+{"id": "fact-26", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.8403899770912264, "factual_correctness(mode=f1)": 1.0, "sec": 32.0}
+{"id": "fact-28", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.7783243445533351, "factual_correctness(mode=f1)": 0.67, "sec": 26.6}
+{"id": "fact-30", "category": "fact", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.9952370276320093, "factual_correctness(mode=f1)": 1.0, "sec": 30.7}
+{"id": "aggregate-02", "category": "aggregate", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.9651145289085516, "factual_correctness(mode=f1)": 0.0, "sec": 30.5}
+{"id": "aggregate-16", "category": "aggregate", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.7610030052009438, "factual_correctness(mode=f1)": 0.0, "sec": 40.2}
+{"id": "aggregate-21", "category": "aggregate", "judge": "gpt-oss:120b", "faithfulness": 0.3333333333333333, "answer_relevancy": 0.6700999053549614, "factual_correctness(mode=f1)": 0.2, "sec": 68.1}
+{"id": "semantic-02", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.5714285714285714, "answer_relevancy": 0.40514952931848497, "factual_correctness(mode=f1)": 0.8, "context_recall": 1.0, "sec": 95.8}
+{"id": "semantic-03", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.5, "answer_relevancy": 0.0, "factual_correctness(mode=f1)": 0.5, "context_recall": 1.0, "sec": 68.8}
+{"id": "semantic-04", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.0, "factual_correctness(mode=f1)": 0.0, "context_recall": 1.0, "sec": 50.8}
+{"id": "semantic-05", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.3731803754986311, "factual_correctness(mode=f1)": 0.0, "context_recall": 1.0, "sec": 56.2}
+{"id": "semantic-06", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.42952381476917123, "factual_correctness(mode=f1)": 0.0, "context_recall": 1.0, "sec": 53.4}
+{"id": "semantic-07", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.6666666666666666, "answer_relevancy": 0.35458908534842026, "factual_correctness(mode=f1)": 0.29, "context_recall": 1.0, "sec": 68.8}
+{"id": "semantic-08", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.5, "answer_relevancy": 0.5952493936361248, "factual_correctness(mode=f1)": 0.67, "context_recall": 1.0, "sec": 96.0}
+{"id": "semantic-10", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 0.5, "answer_relevancy": 0.35587750942355223, "factual_correctness(mode=f1)": 0.67, "context_recall": 1.0, "sec": 68.5}
+{"id": "semantic-12", "category": "semantic", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.4646810959548089, "factual_correctness(mode=f1)": 0.4, "context_recall": 1.0, "sec": 74.7}
+{"id": "fabrication-07", "category": "fabrication", "judge": "gpt-oss:120b", "faithfulness": 0.25, "answer_relevancy": 0.7336555483546471, "sec": 41.4}
+{"id": "fabrication-08", "category": "fabrication", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.8557590064052955, "sec": 28.5}
+{"id": "fabrication-10", "category": "fabrication", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.7322392025391286, "sec": 19.4}
+{"id": "multiturn-02", "category": "multiturn", "judge": "gpt-oss:120b", "faithfulness": 1.0, "answer_relevancy": 0.7232928183827365, "factual_correctness(mode=f1)": 0.0, "sec": 45.0}
+{"id": "multiturn-05", "category": "multiturn", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.8187803899501654, "sec": 20.6}
+{"id": "multiturn-07", "category": "multiturn", "judge": "gpt-oss:120b", "faithfulness": 0.8, "answer_relevancy": 0.7329752984625345, "sec": 43.9}
+{"id": "ont-rate-a61nx", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.547541245471178, "factual_correctness(mode=f1)": 0.0, "sec": 29.4}
+{"id": "ont-rate-汎用フライス", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.9202297156462128, "factual_correctness(mode=f1)": 0.5, "sec": 50.6}
+{"id": "ont-rate-all", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.7278476574146557, "factual_correctness(mode=f1)": 0.44, "sec": 67.9}
+{"id": "ont-top-customer", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.5708056718421551, "factual_correctness(mode=f1)": 0.33, "sec": 58.9}
+{"id": "ont-open", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.8, "answer_relevancy": 0.9102330954885569, "factual_correctness(mode=f1)": 0.33, "sec": 53.1}
+{"id": "ont-2025-09", "category": "ontology", "judge": "gpt-oss:120b", "faithfulness": 0.625, "answer_relevancy": 0.9837378839049539, "factual_correctness(mode=f1)": 0.22, "sec": 66.5}
+{"id": "rag-Q1", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.3333333333333333, "answer_relevancy": 0.6988829357881705, "context_recall": 0.0, "sec": 77.9}
+{"id": "rag-Q2", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.9, "answer_relevancy": 0.8210824040864589, "context_recall": 1.0, "sec": 63.0}
+{"id": "rag-Q5", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.8571428571428571, "answer_relevancy": 0.7159558464132312, "context_recall": 0.8333333333333334, "sec": 90.9}
+{"id": "rag-P1", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.5930401832942928, "context_recall": 0.8181818181818182, "sec": 82.1}
+{"id": "rag-P2", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.3869970854937475, "context_recall": 0.25, "sec": 40.4}
+{"id": "rag-P3", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.45454545454545453, "answer_relevancy": 0.6485714006488439, "context_recall": 0.3333333333333333, "sec": 149.9}
+{"id": "rag-P4", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.5910187058880818, "context_recall": 0.1111111111111111, "sec": 77.0}
+{"id": "rag-P5", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.779743291234439, "context_recall": 0.5, "sec": 47.1}
+{"id": "rag-P6", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.14285714285714285, "answer_relevancy": 0.6521203790973207, "context_recall": 0.5, "sec": 141.8}
+{"id": "rag-P7", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.0, "answer_relevancy": 0.6252613583069893, "context_recall": 1.0, "sec": 34.4}
+{"id": "rag-P8", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.5, "answer_relevancy": 0.6913362648438917, "context_recall": 0.0, "sec": 43.8}
+{"id": "rag-N1", "category": "rag", "judge": "gpt-oss:120b", "faithfulness": 0.7777777777777778, "answer_relevancy": 0.7476181663861912, "context_recall": 0.3333333333333333, "sec": 128.9}

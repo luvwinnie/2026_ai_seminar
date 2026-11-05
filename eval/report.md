@@ -2,6 +2,7 @@
 
 - 実行: 2026-09-09 15:39 / モデル: OpenCode+OpenRouter(本番同等) / judge: openai/gpt-4o-mini
 - データ: 架空117件(霧沢精機) を Ground Truth に 36 ケース
+- (2026-09-27)報告書を110件に減らしたので `dataset.json` は作り直した。この表は117件のときの結果。測り直しは `run_eval.py`
 
 | カテゴリ | 正答率 | ツール正答率 | 引用の妥当性 | faithfulness平均 | relevancy平均 |
 |---|---|---|---|---|---|

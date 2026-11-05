@@ -1,0 +1,7 @@
+docs/ の仕様書 v1.1 に沿って、アプリの土台（第2回の到達点）を作る計画を立ててください。まだコードは書かないでください。
+- app/backend：FastAPI・SQLAlchemy 2.0・Pydantic v2。database.py・models.py・schemas.py・routers/・main.py に分ける。空の DB で起動したら data/defect_reports.csv の110件を入れ、続けてマスタ6種を作る
+- API：04_API設計書.md のとおり（GET /health、GET /api/reports、GET /api/reports/{defect_id}、GET /api/masters）。期間の不正な日付や逆順は 422
+- app/frontend：Vite の React + TypeScript・MUI・React Router。/api と /health を backend へ転送。一覧（キーワードと絞り込み・並べ替え・ページ送り。状態は URL クエリ）と詳細（不良率を表示）。読込中・0件・失敗を区別する
+- テスト：app/backend/tests に pytest（AC の ID をテスト名に入れる）。画面は Playwright（Python、app/e2e/）
+- 起動の手順を README.md に書く（Docker は使わない）
+計画には、作るファイル、作る順番（雛形 → モデル → 取込 → API → 画面 → テスト）、AC ごとの確かめ方（コマンドと期待値）を書いてください。

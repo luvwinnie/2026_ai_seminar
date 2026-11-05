@@ -5,6 +5,7 @@ sentence-transformers が利用不可の環境では SQLite の LIKE 検索に�
 """
 from __future__ import annotations
 
+import logging
 import os
 import threading
 from pathlib import Path
@@ -13,6 +14,8 @@ from sqlalchemy.orm import Session
 
 from database import BACKEND_DIR
 from models import DefectReport
+
+logger = logging.getLogger(__name__)
 
 # 埋め込みを使うかどうか。EMBEDDINGS=off でキーワード検索に固定できる(Docker軽量化・テスト用)。
 _EMBEDDINGS_ENABLED = os.getenv("EMBEDDINGS", "on").lower() != "off"
@@ -201,8 +204,24 @@ def search(db: Session, query: str, top_k: int = 5) -> list[dict]:
     """
     dense_hits = _dense_search(query)
     try:
-        from services import hybrid  # 遅延 import(循環回避)
+        from services import decisions, hybrid  # 遅延 import(循環回避)
 
+        if decisions.enabled("rerank"):
+            # ① 判断モデルで並べ直す(2026-10-18)。候補を多めに取り、「質問に当てはまる確率」の順に上位 top_k 件
+            n = decisions.DECISION_PROFILE["rerank"]["candidates"]
+            cand = hybrid.fuse(db, query, dense_hits, top_k=max(n, top_k))
+            if cand:
+                try:
+                    rows = {r.defect_id: r for r in db.query(DefectReport).filter(
+                        DefectReport.defect_id.in_([c["defect_id"] for c in cand])).all()}
+                    ranked, info = decisions.rerank(query, cand, rows, top_k=top_k)
+                    for it in ranked:
+                        it["search_mode"] = (it.get("search_mode") or "hybrid") + "+rerank"
+                        it["rerank_abstain"] = info["abstain"]
+                    return ranked
+                except Exception as exc:  # noqa: BLE001 — 判断モデルが使えなくても検索は続ける
+                    logger.warning("rerank failed, fallback to hybrid: %s", exc)
+                    return cand[:top_k]
         out = hybrid.fuse(db, query, dense_hits, top_k=top_k)
         if out:
             return out

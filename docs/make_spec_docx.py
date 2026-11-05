@@ -1,3 +1,8 @@
+"""【2026-09-27 以降は使わない】この台本は 2026-09-26 までの Word 仕様書を作っていた。
+今の docs/DefectReport_AI_仕様書.docx は、仕様書 v5.0(docs/00〜06・13)を pandoc で1冊にしたもの:
+  cd docs && pandoc --toc 00_帳票の調査.md 01_要件定義書.md 02_機能仕様書.md 03_データモデル設計書.md \
+    04_API設計書.md 05_UI設計書.md 06_AI設計書.md 13_試験・運用仕様書.md -o DefectReport_AI_仕様書.docx
+"""
 # -*- coding: utf-8 -*-
 """DefectReport AI 仕様書(Word)生成 — 一般的な RAG システム仕様書の
 構成(番号付き章立て・項目/内容表・段階導入・受入条件)に倣い、本アプリ仕様へ書き下ろす。

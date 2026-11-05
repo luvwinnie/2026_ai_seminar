@@ -1,0 +1,8 @@
+docs/ を仕様書 v2.1（第3回：AI アシスタント）に差し替えました。この版を作る計画を立ててください。まだコードは書かないでください。
+- 第3回から Docker Compose で動かします（backend・frontend・opencode の3つ）。仕様書は「手元の PC で venv と npm」のままなので、先に仕様書（01・04・06・07）に Docker で動かす形を書き足してから作ってください。v1.1 の venv と npm での起動も残します
+- AI：06_AI設計書.md のとおり、OpenCode（opencode serve の HTTP API）を backend から呼び、報告書には FastAPI に同居させた MCP の道具（/mcp/）で触れる。LLM は CLAUDE.md のローカル LLM（Ollama の gemma4:26b）
+- チャット：POST /api/chat/stream（SSE）、会話の保存・一覧・復元・削除、/chat 画面（逐次表示・道具の表示・参照した報告書へのリンク）
+- 作る順番：仕様書の追記 → MCP の道具（LLM なしで pytest）→ OpenCode を通したチャット API（OpenCode を差し替えた pytest）→ チャット画面 → Docker Compose → 実際の LLM での確認
+- このフォルダは第2回の版をコピーしたもので、コードや README はまだ 8110・5210 を使っています。CLAUDE.md の 8120・5220・4120 に直してください
+- Langfuse は今回は Compose に入れません。LANGFUSE_* が無いときに記録しないで動くことだけ確かめてください
+計画には、作るファイル、作る順番、AC ごとの確かめ方（コマンドと期待値）、まだ確かめていないこと（OpenCode の API の細部など）を書いてください。

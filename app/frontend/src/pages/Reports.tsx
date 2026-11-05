@@ -287,7 +287,7 @@ export default function Reports() {
                     <TableCell>工程</TableCell>
                     <TableCell>現象</TableCell>
                     <TableCell>内容(抜粋)</TableCell>
-                    <TableCell align="right">類似度</TableCell>
+                    <TableCell align="right">{smartItems.some((r) => r.relevance != null) ? '当てはまる確率' : '類似度'}</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -309,7 +309,13 @@ export default function Reports() {
                         </Typography>
                       </TableCell>
                       <TableCell align="right">
-                        <Chip size="small" label={r.score.toFixed(3)} variant="outlined" color="primary" />
+                        {r.relevance != null ? (
+                          <Chip size="small" label={r.relevance.toFixed(2)} variant="outlined"
+                            color={r.relevance >= 0.5 ? 'success' : 'default'}
+                            title={`判断モデルの並べ替え(順位を合わせた点 ${r.score.toFixed(3)})`} />
+                        ) : (
+                          <Chip size="small" label={r.score.toFixed(3)} variant="outlined" color="primary" />
+                        )}
                       </TableCell>
                     </TableRow>
                   ))}

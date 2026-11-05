@@ -1,0 +1,3454 @@
+{
+ "n": 54,
+ "pairs": [
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0110] では、GENOS M660-V で表面キズが起きた。",
+   "KZ25-0110"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0110] では、YZ-8WR で表面キズが起きた。",
+   "KZ25-0110"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0101] の原因は「設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。」とされている。",
+   "KZ25-0101"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0101] の原因は「材質ごとの切削条件の使い分けを理解しておらず、不適切な条件で加工した。」とされている。",
+   "KZ25-0101"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0026] では、加工数2個のうち1個が不適合だった。",
+   "KZ25-0026"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0026] では、加工数2個のうち4個が不適合だった。",
+   "KZ25-0026"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0043] の現象は表面キズで、対策は「新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。」などである。",
+   "KZ25-0043"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0043] の現象は穴位置ずれで、対策は「新任者の単独段取りを解禁する前に、技能評価チェックリストでの認定を必須化する。」などである。",
+   "KZ25-0043"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0100] では、汎用フライス で表面キズが起きた。",
+   "KZ25-0100"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0100] では、QUICK TURN 250MSY で表面キズが起きた。",
+   "KZ25-0100"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0009] の原因は「工具寿命管理表の更新が漏れ、摩耗限度を超えた工具を使用し続けた。」とされている。",
+   "KZ25-0009"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0009] の原因は「設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。」とされている。",
+   "KZ25-0009"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0059] では、加工数39個のうち8個が不適合だった。",
+   "KZ25-0059"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0059] では、加工数39個のうち11個が不適合だった。",
+   "KZ25-0059"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0065] の現象はNCプログラム誤りで、対策は「対称形状部品は加工前に治具上でマーキング照合する手順を追加する。」などである。",
+   "KZ25-0065"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0065] の現象は表面キズで、対策は「対称形状部品は加工前に治具上でマーキング照合する手順を追加する。」などである。",
+   "KZ25-0065"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0070] では、YZ-8WR で寸法公差外れが起きた。",
+   "KZ25-0070"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0070] では、QUICK TURN 250MSY で寸法公差外れが起きた。",
+   "KZ25-0070"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0015] の原因は「配属間もない作業者が単独で段取りを行い、基準面の当たりを誤った。」とされている。",
+   "KZ25-0015"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0015] の原因は「プログラム転送時に旧版を呼び出し、修正前の座標で加工した。」とされている。",
+   "KZ25-0015"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0029] では、加工数7個のうち1個が不適合だった。",
+   "KZ25-0029"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0029] では、加工数7個のうち4個が不適合だった。",
+   "KZ25-0029"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0008] の現象はバリ残りで、対策は「工程順序をポカヨケ化(前工程の検印が無いと次工程の治具が使えない)する。」などである。",
+   "KZ25-0008"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0008] の現象は取付方向誤りで、対策は「工程順序をポカヨケ化(前工程の検印が無いと次工程の治具が使えない)する。」などである。",
+   "KZ25-0008"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0080] では、QUICK TURN 250MSY で寸法公差外れが起きた。",
+   "KZ25-0080"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0080] では、VARIAXIS i-800 NEO で寸法公差外れが起きた。",
+   "KZ25-0080"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0035] の原因は「標準書で定める中間検査を飛ばして次工程へ進めた。」とされている。",
+   "KZ25-0035"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0035] の原因は「材質ごとの切削条件の使い分けを理解しておらず、不適切な条件で加工した。」とされている。",
+   "KZ25-0035"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0033] では、加工数234個のうち5個が不適合だった。",
+   "KZ25-0033"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0033] では、加工数234個のうち8個が不適合だった。",
+   "KZ25-0033"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0074] の現象は表面キズで、対策は「図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。」などである。",
+   "KZ25-0074"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0074] の現象は加工段差で、対策は「図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。」などである。",
+   "KZ25-0074"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0024] では、汎用フライス でバリ残りが起きた。",
+   "KZ25-0024"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0024] では、YZ-8WR でバリ残りが起きた。",
+   "KZ25-0024"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0102] の原因は「プログラム転送時に旧版を呼び出し、修正前の座標で加工した。」とされている。",
+   "KZ25-0102"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0102] の原因は「段取り替え後の初品測定を省略し、ずれに気付かないまま連続加工した。」とされている。",
+   "KZ25-0102"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0066] では、加工数13個のうち3個が不適合だった。",
+   "KZ25-0066"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0066] では、加工数13個のうち6個が不適合だった。",
+   "KZ25-0066"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0007] の現象は表面キズで、対策は「図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。」などである。",
+   "KZ25-0007"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0007] の現象はひずみ変形で、対策は「図面改訂時は旧版を回収し、作業台には最新版のみ置く運用に変更する。」などである。",
+   "KZ25-0007"
+  ],
+  [
+   "machine_phen",
+   true,
+   "[KZ25-0031] では、TSL-550 で工具破損が起きた。",
+   "KZ25-0031"
+  ],
+  [
+   "machine_swap",
+   false,
+   "[KZ25-0031] では、汎用フライス で工具破損が起きた。",
+   "KZ25-0031"
+  ],
+  [
+   "cause",
+   true,
+   "[KZ25-0017] の原因は「図面改訂版の反映を確認せず、旧寸法のまま加工した。」とされている。",
+   "KZ25-0017"
+  ],
+  [
+   "cause_swap",
+   false,
+   "[KZ25-0017] の原因は「設計変更の連絡が現場に届いておらず、変更前の仕様で製作した。」とされている。",
+   "KZ25-0017"
+  ],
+  [
+   "count",
+   true,
+   "[KZ25-0082] では、加工数93個のうち16個が不適合だった。",
+   "KZ25-0082"
+  ],
+  [
+   "count_swap",
+   false,
+   "[KZ25-0082] では、加工数93個のうち19個が不適合だった。",
+   "KZ25-0082"
+  ],
+  [
+   "phen",
+   true,
+   "[KZ25-0109] の現象はひずみ変形で、対策は「受入時の抜き取り探傷を追加し、素材メーカーへ是正を要求する。」などである。",
+   "KZ25-0109"
+  ],
+  [
+   "phen_swap",
+   false,
+   "[KZ25-0109] の現象は表面キズで、対策は「受入時の抜き取り探傷を追加し、素材メーカーへ是正を要求する。」などである。",
+   "KZ25-0109"
+  ],
+  [
+   "shift",
+   false,
+   "[KZ25-0012] では、工具チップの欠けが原因で面粗さ不良が起きた。",
+   "KZ25-0012"
+  ],
+  [
+   "shift_ok",
+   true,
+   "[KZ25-0012] では、面粗さ不良のあとで工具チップの欠けも確認された。",
+   "KZ25-0012"
+  ],
+  [
+   "shift",
+   false,
+   "[KZ25-0026] では、工具チップの欠けが原因で面粗さ不良が起きた。",
+   "KZ25-0026"
+  ],
+  [
+   "shift_ok",
+   true,
+   "[KZ25-0026] では、面粗さ不良のあとで工具チップの欠けも確認された。",
+   "KZ25-0026"
+  ],
+  [
+   "shift",
+   false,
+   "[KZ25-0063] では、工具チップの欠けが原因で面粗さ不良が起きた。",
+   "KZ25-0063"
+  ],
+  [
+   "shift_ok",
+   true,
+   "[KZ25-0063] では、面粗さ不良のあとで工具チップの欠けも確認された。",
+   "KZ25-0063"
+  ]
+ ],
+ "results": {
+  "typesafe/jev-1.14": {
+   "summary": {
+    "accuracy@0.5": 0.87,
+    "auroc": 0.929,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 1.0,
+     "cause": 1.0,
+     "cause_swap": 0.83,
+     "count": 0.0,
+     "count_swap": 1.0,
+     "phen": 1.0,
+     "phen_swap": 1.0,
+     "shift": 1.0,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0.001587,
+    "sec": 3.4
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.94,
+     "cost": 2.856e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.45,
+     "cost": 2.8434e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.98,
+     "cost": 3.0156e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.02,
+     "cost": 3.0366e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.18,
+     "cost": 2.8812e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.06,
+     "cost": 2.8812e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.96,
+     "cost": 3.0534e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.08,
+     "cost": 3.0576e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.88,
+     "cost": 2.8434e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.18,
+     "cost": 2.8518e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.98,
+     "cost": 3.0324e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.02,
+     "cost": 3.024e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.13,
+     "cost": 2.877e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.11,
+     "cost": 2.8812e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.95,
+     "cost": 3.0492e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.07,
+     "cost": 3.0282e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.97,
+     "cost": 2.8728e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.41,
+     "cost": 2.8938e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.95,
+     "cost": 3.0366e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.03,
+     "cost": 3.0198e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.17,
+     "cost": 2.8938e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.05,
+     "cost": 2.8938e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.91,
+     "cost": 2.9694e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.08,
+     "cost": 2.982e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.96,
+     "cost": 2.9316e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.05,
+     "cost": 2.94e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.98,
+     "cost": 2.9316e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.03,
+     "cost": 2.9778e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.15,
+     "cost": 2.8644e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.15,
+     "cost": 2.8644e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.86,
+     "cost": 3.0702e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.09,
+     "cost": 3.0702e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.96,
+     "cost": 2.919e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.45,
+     "cost": 2.9064e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.98,
+     "cost": 2.9988e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.03,
+     "cost": 3.0156e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.12,
+     "cost": 2.8854e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.11,
+     "cost": 2.8854e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.94,
+     "cost": 2.9652e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.24,
+     "cost": 2.9694e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.97,
+     "cost": 2.94e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.05,
+     "cost": 2.9442e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.98,
+     "cost": 2.8476e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.6,
+     "cost": 2.8686e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.12,
+     "cost": 2.9148e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.15,
+     "cost": 2.9148e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.95,
+     "cost": 2.982e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.04,
+     "cost": 2.9778e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.46,
+     "cost": 2.9022e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.94,
+     "cost": 2.9106e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.15,
+     "cost": 2.898e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.94,
+     "cost": 2.9064e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.04,
+     "cost": 2.8728e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.92,
+     "cost": 2.8812e-05
+    }
+   ]
+  },
+  "typesafe/jev-1.13": {
+   "summary": {
+    "accuracy@0.5": 0.852,
+    "auroc": 0.946,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 1.0,
+     "cause": 1.0,
+     "cause_swap": 0.83,
+     "count": 0.0,
+     "count_swap": 1.0,
+     "phen": 1.0,
+     "phen_swap": 1.0,
+     "shift": 0.67,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0.001587,
+    "sec": 2.5
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.92,
+     "cost": 2.856e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.25,
+     "cost": 2.8434e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.97,
+     "cost": 3.0156e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.02,
+     "cost": 3.0366e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.24,
+     "cost": 2.8812e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.11,
+     "cost": 2.8812e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.95,
+     "cost": 3.0534e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.11,
+     "cost": 3.0576e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.71,
+     "cost": 2.8434e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.18,
+     "cost": 2.8518e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.97,
+     "cost": 3.0324e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.02,
+     "cost": 3.024e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.14,
+     "cost": 2.877e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.13,
+     "cost": 2.8812e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.95,
+     "cost": 3.0492e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.1,
+     "cost": 3.0282e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.96,
+     "cost": 2.8728e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.37,
+     "cost": 2.8938e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.88,
+     "cost": 3.0366e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.03,
+     "cost": 3.0198e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.27,
+     "cost": 2.8938e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.06,
+     "cost": 2.8938e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.86,
+     "cost": 2.9694e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.06,
+     "cost": 2.982e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.94,
+     "cost": 2.9316e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.06,
+     "cost": 2.94e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.98,
+     "cost": 2.9316e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.02,
+     "cost": 2.9778e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.19,
+     "cost": 2.8644e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.17,
+     "cost": 2.8644e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.66,
+     "cost": 3.0702e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.08,
+     "cost": 3.0702e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9,
+     "cost": 2.919e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.26,
+     "cost": 2.9064e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.97,
+     "cost": 2.9988e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.03,
+     "cost": 3.0156e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.17,
+     "cost": 2.8854e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.14,
+     "cost": 2.8854e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.89,
+     "cost": 2.9652e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.14,
+     "cost": 2.9694e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.95,
+     "cost": 2.94e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.08,
+     "cost": 2.9442e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.97,
+     "cost": 2.8476e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.81,
+     "cost": 2.8686e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.13,
+     "cost": 2.9148e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.12,
+     "cost": 2.9148e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.96,
+     "cost": 2.982e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.06,
+     "cost": 2.9778e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.5,
+     "cost": 2.9022e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.93,
+     "cost": 2.9106e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.13,
+     "cost": 2.898e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.92,
+     "cost": 2.9064e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.03,
+     "cost": 2.8728e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.93,
+     "cost": 2.8812e-05
+    }
+   ]
+  },
+  "perplexity/pplx-decider-flash-v1.2": {
+   "summary": {
+    "accuracy@0.5": 0.778,
+    "auroc": 0.916,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 0.67,
+     "cause": 1.0,
+     "cause_swap": 0.83,
+     "count": 0.0,
+     "count_swap": 1.0,
+     "phen": 1.0,
+     "phen_swap": 1.0,
+     "shift": 0.0,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0.000185,
+    "sec": 3.2
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9913111394123318,
+     "cost": 3.35e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.2556175717972976,
+     "cost": 3.32e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9939363022189396,
+     "cost": 3.46e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.062182185632625425,
+     "cost": 3.47e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.26731084120151716,
+     "cost": 3.35e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.10239407811407482,
+     "cost": 3.35e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9950929414172814,
+     "cost": 3.58e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.07778516785985859,
+     "cost": 3.58e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9883140087274178,
+     "cost": 3.3e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.3720011040444994,
+     "cost": 3.35e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9954779607449517,
+     "cost": 3.53e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.07200501050852053,
+     "cost": 3.51e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.15767644071426679,
+     "cost": 3.35e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.15762894833355887,
+     "cost": 3.36e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9920395227243122,
+     "cost": 3.56e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.059945100976764615,
+     "cost": 3.56e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9916816966072766,
+     "cost": 3.34e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.24802495457791626,
+     "cost": 3.39e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9936782679672204,
+     "cost": 3.57e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.04987313498328972,
+     "cost": 3.54e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.1738609921302055,
+     "cost": 3.36e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.05096207893189686,
+     "cost": 3.36e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.992991401094083,
+     "cost": 3.52e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.10350174349666207,
+     "cost": 3.54e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9910793885239662,
+     "cost": 3.45e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.06572422809553034,
+     "cost": 3.46e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9945294309978131,
+     "cost": 3.47e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.05561548277250769,
+     "cost": 3.52e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.10706811194557102,
+     "cost": 3.29e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.11198948759010421,
+     "cost": 3.29e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9956605280177269,
+     "cost": 3.61e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.08180250413215556,
+     "cost": 3.61e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.988354148493025,
+     "cost": 3.34e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.5260479454646906,
+     "cost": 3.34e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9946185189302096,
+     "cost": 3.5e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.07304555898895615,
+     "cost": 3.52e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.15852744140749198,
+     "cost": 3.3e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.21411154260651777,
+     "cost": 3.3e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9947819414896256,
+     "cost": 3.47e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.0685491225356375,
+     "cost": 3.48e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9918956474970004,
+     "cost": 3.42e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.9358218241455426,
+     "cost": 3.4e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.994900009918102,
+     "cost": 3.29e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.8262459628222865,
+     "cost": 3.31e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.15221392218469573,
+     "cost": 3.38e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.10898634426423896,
+     "cost": 3.38e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.993282027342858,
+     "cost": 3.51e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.06848423987336669,
+     "cost": 3.5e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.9500500301221375,
+     "cost": 3.35e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9812311457850817,
+     "cost": 3.36e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.9654454215922417,
+     "cost": 3.38e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9869917230909011,
+     "cost": 3.39e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.9627296323726987,
+     "cost": 3.32e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9821896808014325,
+     "cost": 3.33e-06
+    }
+   ]
+  },
+  "perplexity/pplx-decider-v1.2": {
+   "summary": {
+    "accuracy@0.5": 0.87,
+    "auroc": 0.849,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 1.0,
+     "cause": 1.0,
+     "cause_swap": 1.0,
+     "count": 0.0,
+     "count_swap": 1.0,
+     "phen": 1.0,
+     "phen_swap": 1.0,
+     "shift": 0.67,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0.00037,
+    "sec": 3.9
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.998993510271921,
+     "cost": 6.7e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.01746482509569974,
+     "cost": 6.64e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9995769627688821,
+     "cost": 6.92e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0070908867601862475,
+     "cost": 6.94e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.007048537242789015,
+     "cost": 6.7e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.003077392376812419,
+     "cost": 6.7e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9985265496236603,
+     "cost": 7.16e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.022422649847737598,
+     "cost": 7.16e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9990916068135051,
+     "cost": 6.6e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.006136544860169048,
+     "cost": 6.7e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9992119676608319,
+     "cost": 7.06e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0011679650154279003,
+     "cost": 7.02e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.0035394194369952068,
+     "cost": 6.7e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0031544201324276593,
+     "cost": 6.72e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9991880791198774,
+     "cost": 7.12e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.015418977078756986,
+     "cost": 7.12e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9995788049138409,
+     "cost": 6.68e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.01276056326199535,
+     "cost": 6.78e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9970297795599982,
+     "cost": 7.14e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.002267914401838988,
+     "cost": 7.08e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.013598693354254766,
+     "cost": 6.72e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.00501410103613148,
+     "cost": 6.72e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9989533151577534,
+     "cost": 7.04e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.019441061382661662,
+     "cost": 7.08e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9989746371834247,
+     "cost": 6.9e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.0032366631635905824,
+     "cost": 6.92e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9991892187234663,
+     "cost": 6.94e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0028827252446953374,
+     "cost": 7.04e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.0025027083742707253,
+     "cost": 6.58e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0027166760319681476,
+     "cost": 6.58e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9993263245984101,
+     "cost": 7.22e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.012836407827042274,
+     "cost": 7.22e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9994958945148312,
+     "cost": 6.68e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.034956894238939114,
+     "cost": 6.68e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.999418777893412,
+     "cost": 7e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0017562237364323458,
+     "cost": 7.04e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.0029981948450078177,
+     "cost": 6.6e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0023549362347829767,
+     "cost": 6.6e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9986762433609888,
+     "cost": 6.94e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.01225059607113882,
+     "cost": 6.96e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.999236362830694,
+     "cost": 6.84e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.3847552345229021,
+     "cost": 6.8e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9995910167806409,
+     "cost": 6.58e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.015747497984850898,
+     "cost": 6.62e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.0021642230565462146,
+     "cost": 6.76e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.00244794706948429,
+     "cost": 6.76e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9988680231664326,
+     "cost": 7.02e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.01407419653035457,
+     "cost": 7e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.9207154613422767,
+     "cost": 6.7e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9968168431199534,
+     "cost": 6.72e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.41794690348598784,
+     "cost": 6.76e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9939735311499683,
+     "cost": 6.78e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.1092433238694822,
+     "cost": 6.64e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9939950125687764,
+     "cost": 6.66e-06
+    }
+   ]
+  },
+  "microsoft/microsoft-decision-1": {
+   "summary": {
+    "accuracy@0.5": 0.722,
+    "auroc": 0.908,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 0.17,
+     "cause": 1.0,
+     "cause_swap": 0.83,
+     "count": 0.0,
+     "count_swap": 1.0,
+     "phen": 1.0,
+     "phen_swap": 0.83,
+     "shift": 0.33,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0.000659,
+    "sec": 3.5
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9994472211744738,
+     "cost": 1.1886e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.8933094975359013,
+     "cost": 1.176e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9996646498110874,
+     "cost": 1.2348e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.002182720349216914,
+     "cost": 1.239e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.26894235966238944,
+     "cost": 1.1886e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0373269604216655,
+     "cost": 1.1886e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9998204719048155,
+     "cost": 1.2852e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.13296450939053076,
+     "cost": 1.2852e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9993736658475587,
+     "cost": 1.1676e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.9859363794235276,
+     "cost": 1.1886e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.999876605334228,
+     "cost": 1.2642e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0028009317022368546,
+     "cost": 1.2558e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.22270094574180693,
+     "cost": 1.1886e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.14804762325355417,
+     "cost": 1.1928e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9982992774451817,
+     "cost": 1.2768e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.06754679953733826,
+     "cost": 1.2768e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9997388096592423,
+     "cost": 1.1844e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.9964063980580681,
+     "cost": 1.2054e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9992903293887323,
+     "cost": 1.281e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.004609580450816727,
+     "cost": 1.2684e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.29421619056694787,
+     "cost": 1.1928e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.06754681586613688,
+     "cost": 1.1928e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9989677687666532,
+     "cost": 1.26e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.5312104368865639,
+     "cost": 1.2684e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9995694429600855,
+     "cost": 1.2306e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.7773002654479791,
+     "cost": 1.2348e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9997694932291583,
+     "cost": 1.239e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0019267388819050985,
+     "cost": 1.26e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.46879244759760796,
+     "cost": 1.1634e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.40733459346638085,
+     "cost": 1.1634e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9989677685143253,
+     "cost": 1.2978e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.14804748790880737,
+     "cost": 1.2978e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.999664649889629,
+     "cost": 1.1844e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.9706877890217059,
+     "cost": 1.1844e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9997694932272071,
+     "cost": 1.2516e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.001325024298419566,
+     "cost": 1.26e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.16451692261991782,
+     "cost": 1.1676e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.16451681273652374,
+     "cost": 1.1676e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9994472211972552,
+     "cost": 1.239e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.10669073992630632,
+     "cost": 1.2432e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9997388096574837,
+     "cost": 1.218e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.29421561215819086,
+     "cost": 1.2096e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9997388095701597,
+     "cost": 1.1634e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.9840936232908788,
+     "cost": 1.1718e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.2227007404083593,
+     "cost": 1.2012e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.2942156090487021,
+     "cost": 1.2012e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9984988173061039,
+     "cost": 1.2558e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.07585835332245035,
+     "cost": 1.2516e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.7310590970640363,
+     "cost": 1.1886e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9997694932497071,
+     "cost": 1.1928e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.9324533700695261,
+     "cost": 1.2012e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9998601779364379,
+     "cost": 1.2054e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.060086766742693545,
+     "cost": 1.176e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9996646499000876,
+     "cost": 1.1802e-05
+    }
+   ]
+  },
+  "liquid/d1-ultra": {
+   "summary": {
+    "accuracy@0.5": 0.889,
+    "auroc": 0.92,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 1.0,
+     "cause": 1.0,
+     "cause_swap": 1.0,
+     "count": 0.0,
+     "count_swap": 1.0,
+     "phen": 1.0,
+     "phen_swap": 1.0,
+     "shift": 1.0,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0.000694,
+    "sec": 4.0
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9958458341617635,
+     "cost": 1.2264e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.013456724500540522,
+     "cost": 1.2264e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9970559878001057,
+     "cost": 1.2936e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0012128142141776589,
+     "cost": 1.302e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.012816872865622922,
+     "cost": 1.26e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.011072165181107508,
+     "cost": 1.26e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9938465104292716,
+     "cost": 1.3356e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.008671445371485639,
+     "cost": 1.3356e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9828406685798737,
+     "cost": 1.239e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.003584394047222213,
+     "cost": 1.2474e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9928712796845195,
+     "cost": 1.3566e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0009021867637700761,
+     "cost": 1.3398e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.01890625238483294,
+     "cost": 1.2348e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.030604412913353203,
+     "cost": 1.2348e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9913285526809293,
+     "cost": 1.3398e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.006787688638714855,
+     "cost": 1.3398e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.997197391829829,
+     "cost": 1.2516e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.0035843938081471993,
+     "cost": 1.2642e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9970559880160271,
+     "cost": 1.3356e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0011544649617911767,
+     "cost": 1.323e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.051538263910251216,
+     "cost": 1.2348e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.017159331469748962,
+     "cost": 1.2348e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9913285555264268,
+     "cost": 1.3356e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.01054448436366188,
+     "cost": 1.3398e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9971973918678612,
+     "cost": 1.2642e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.003092527643554589,
+     "cost": 1.2684e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9981100555725984,
+     "cost": 1.3062e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0015518183594957443,
+     "cost": 1.323e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.017159334844090043,
+     "cost": 1.2096e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.04692038186750869,
+     "cost": 1.2096e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9836536564955158,
+     "cost": 1.4112e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.005056446343986217,
+     "cost": 1.4112e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.995416743206502,
+     "cost": 1.2642e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.062090633029576604,
+     "cost": 1.26e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9970559886465175,
+     "cost": 1.302e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0017125715173249368,
+     "cost": 1.3146e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.013456723465403369,
+     "cost": 1.2096e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.02407170537179687,
+     "cost": 1.2096e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9913285547233643,
+     "cost": 1.3398e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.004363463384622004,
+     "cost": 1.3482e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9921373665823192,
+     "cost": 1.2642e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.015571264151467803,
+     "cost": 1.2726e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9982874286876631,
+     "cost": 1.2474e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.12189697789365846,
+     "cost": 1.2474e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.014128058885129387,
+     "cost": 1.2726e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.02780723631387749,
+     "cost": 1.2726e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9917427753807468,
+     "cost": 1.3356e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.002085650698643086,
+     "cost": 1.3272e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.3448530892810048,
+     "cost": 1.2684e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9708266761162567,
+     "cost": 1.2684e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.08174503934995946,
+     "cost": 1.2768e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9747409537642134,
+     "cost": 1.2768e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.08946860690544207,
+     "cost": 1.2558e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9865432763197569,
+     "cost": 1.2558e-05
+    }
+   ]
+  },
+  "inception/mercury-decide": {
+   "summary": {
+    "accuracy@0.5": 0.852,
+    "auroc": 0.9,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 0.67,
+     "cause": 1.0,
+     "cause_swap": 1.0,
+     "count": 0.0,
+     "count_swap": 1.0,
+     "phen": 1.0,
+     "phen_swap": 1.0,
+     "shift": 1.0,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0.00034,
+    "sec": 3.2
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.998830489939473,
+     "cost": 6.02e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.025957356962325234,
+     "cost": 6.02e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9997040429201042,
+     "cost": 6.52e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.00016865268897309538,
+     "cost": 6.24e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.00407013722512239,
+     "cost": 6.26e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.000804085915800313,
+     "cost": 6.12e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9995955184321196,
+     "cost": 6.7e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.0019267347322792108,
+     "cost": 6.72e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.994088932468118,
+     "cost": 6.1e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.0031726832091895697,
+     "cost": 6.12e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.999569442872181,
+     "cost": 6.38e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.000123394523359307,
+     "cost": 6.36e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.0009697520692886489,
+     "cost": 6.28e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0005193048060048388,
+     "cost": 6.18e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9995121428209054,
+     "cost": 6.64e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.000804085973042298,
+     "cost": 6.6e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9993736658448054,
+     "cost": 6.24e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.731058584489497,
+     "cost": 6.08e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9994472214773021,
+     "cost": 6.56e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.00021654412288470173,
+     "cost": 6.6e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.014063627947195484,
+     "cost": 6.16e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.003172682384472951,
+     "cost": 6.16e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9995694428192734,
+     "cost": 6.34e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.007577241204830352,
+     "cost": 6.62e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9993736658803655,
+     "cost": 6.44e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.0006667021609438799,
+     "cost": 6.5e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9995694428858085,
+     "cost": 6.4e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0003569706044627353,
+     "cost": 6.42e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.0008040859490979379,
+     "cost": 6.14e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0009697517561988716,
+     "cost": 5.9e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9986749778606904,
+     "cost": 6.68e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.2942149783515162,
+     "cost": 6.72e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9991959140172302,
+     "cost": 6.22e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.9902915252287288,
+     "cost": 6.02e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9995416870857124,
+     "cost": 6.5e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.00029595707438498446,
+     "cost": 6.36e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.0006667023132768455,
+     "cost": 6.16e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0004583129040481704,
+     "cost": 6.08e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9991959140089994,
+     "cost": 6.22e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.0007096703218264191,
+     "cost": 6.32e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9994472214834766,
+     "cost": 6.32e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.013222818641424959,
+     "cost": 6.34e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9996200154427977,
+     "cost": 5.94e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.03308597529010575,
+     "cost": 6.04e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.0009697518392082551,
+     "cost": 6.18e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0008559008342617073,
+     "cost": 6.08e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9996200155340661,
+     "cost": 6.46e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.0005527785924167005,
+     "cost": 6.28e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.007577242591500567,
+     "cost": 6.24e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9971990731135182,
+     "cost": 6.02e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.002050743903960933,
+     "cost": 6.32e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9982992776707884,
+     "cost": 6.32e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.0018102113795987838,
+     "cost": 6.1e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9980732656662081,
+     "cost": 6.22e-06
+    }
+   ]
+  },
+  "cloudflare/clef-flash": {
+   "summary": {
+    "accuracy@0.5": 0.833,
+    "auroc": 0.957,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 1.0,
+     "cause": 1.0,
+     "cause_swap": 0.83,
+     "count": 0.83,
+     "count_swap": 0.33,
+     "phen": 1.0,
+     "phen_swap": 0.83,
+     "shift": 0.33,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0.00056,
+    "sec": 4.2
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9711,
+     "cost": 7.917e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.1449,
+     "cost": 1.4212e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9728,
+     "cost": 8.148e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0806,
+     "cost": 1.4782e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.7341,
+     "cost": 7.917e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.1931,
+     "cost": 1.4326e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9683,
+     "cost": 1.52e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.6095,
+     "cost": 8.4e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9702,
+     "cost": 7.812e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.2886,
+     "cost": 7.917e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9709,
+     "cost": 8.295e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.068,
+     "cost": 8.253e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.6876,
+     "cost": 7.917e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.6514,
+     "cost": 7.938e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9648,
+     "cost": 1.5124e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.1235,
+     "cost": 1.5124e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9722,
+     "cost": 1.4288e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.2069,
+     "cost": 8.001e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9724,
+     "cost": 8.379e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0558,
+     "cost": 8.316e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.904,
+     "cost": 7.938e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.1772,
+     "cost": 7.938e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9711,
+     "cost": 8.274e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.1297,
+     "cost": 1.5048e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9698,
+     "cost": 8.127e-06
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.0891,
+     "cost": 8.148e-06
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9623,
+     "cost": 1.4782e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0637,
+     "cost": 8.274e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.4844,
+     "cost": 7.791e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.6828,
+     "cost": 1.4098e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9654,
+     "cost": 8.463e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.1059,
+     "cost": 8.463e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9657,
+     "cost": 1.4288e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.1063,
+     "cost": 1.4288e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9734,
+     "cost": 8.232e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0623,
+     "cost": 8.274e-06
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.7341,
+     "cost": 7.812e-06
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.6619,
+     "cost": 7.812e-06
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9674,
+     "cost": 8.169e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.0911,
+     "cost": 8.19e-06
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.9662,
+     "cost": 1.4592e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.1059,
+     "cost": 1.4516e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.9718,
+     "cost": 7.791e-06
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.8768,
+     "cost": 1.4174e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.7545,
+     "cost": 1.444e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.57,
+     "cost": 1.444e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.9728,
+     "cost": 8.253e-06
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.1074,
+     "cost": 8.232e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.9696,
+     "cost": 7.917e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9659,
+     "cost": 1.4364e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.8886,
+     "cost": 1.444e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9689,
+     "cost": 8.001e-06
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.2234,
+     "cost": 7.854e-06
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 0.9563,
+     "cost": 7.875e-06
+    }
+   ]
+  },
+  "openai/gpt-6-luna-decisions": {
+   "summary": {
+    "accuracy@0.5": 0.889,
+    "auroc": 0.923,
+    "by_kind": {
+     "machine_phen": 1.0,
+     "machine_swap": 1.0,
+     "cause": 1.0,
+     "cause_swap": 1.0,
+     "count": 0.17,
+     "count_swap": 1.0,
+     "phen": 1.0,
+     "phen_swap": 1.0,
+     "shift": 0.67,
+     "shift_ok": 1.0
+    },
+    "errors": 0,
+    "cost_usd": 0.002629,
+    "sec": 3.2
+   },
+   "rows": [
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.95,
+     "cost": 4.75e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 4.74e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.99e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 5.01e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.81,
+     "cost": 4.72e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 4.72e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 1.0,
+     "cost": 5.1e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.01,
+     "cost": 5.1e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 0.74,
+     "cost": 4.71e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 4.72e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 1.0,
+     "cost": 5.04e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 5.02e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.1,
+     "cost": 4.77e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.01,
+     "cost": 4.77e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 1.0,
+     "cost": 5.05e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.02,
+     "cost": 5.02e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.76e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.01,
+     "cost": 4.79e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 0.99,
+     "cost": 5.07e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 5.03e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.04,
+     "cost": 4.81e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 4.81e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 1.0,
+     "cost": 5e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.03,
+     "cost": 5.02e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.87e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 4.89e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.9e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 4.95e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.01,
+     "cost": 4.67e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.01,
+     "cost": 4.67e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 0.98,
+     "cost": 5.16e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 5.15e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.82e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.17,
+     "cost": 4.8e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.93e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 4.97e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.0,
+     "cost": 4.72e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.03,
+     "cost": 4.72e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.99e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.02,
+     "cost": 5e-05
+    },
+    {
+     "kind": "machine_phen",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.88e-05
+    },
+    {
+     "kind": "machine_swap",
+     "gold": false,
+     "p": 0.0,
+     "cost": 4.9e-05
+    },
+    {
+     "kind": "cause",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.71e-05
+    },
+    {
+     "kind": "cause_swap",
+     "gold": false,
+     "p": 0.03,
+     "cost": 4.74e-05
+    },
+    {
+     "kind": "count",
+     "gold": true,
+     "p": 0.01,
+     "cost": 4.77e-05
+    },
+    {
+     "kind": "count_swap",
+     "gold": false,
+     "p": 0.01,
+     "cost": 4.77e-05
+    },
+    {
+     "kind": "phen",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.93e-05
+    },
+    {
+     "kind": "phen_swap",
+     "gold": false,
+     "p": 0.05,
+     "cost": 4.92e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.87,
+     "cost": 4.84e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.83e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.15,
+     "cost": 4.76e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.75e-05
+    },
+    {
+     "kind": "shift",
+     "gold": false,
+     "p": 0.07,
+     "cost": 4.7e-05
+    },
+    {
+     "kind": "shift_ok",
+     "gold": true,
+     "p": 1.0,
+     "cost": 4.69e-05
+    }
+   ]
+  }
+ }
+}

@@ -19,3 +19,6 @@ langfuse>=2.53,<3
 # 報告書トリアージ(判断モデル Jev の呼び出しは httpx。流れと承認待ちは LangGraph+SQLite チェックポイント)
 langgraph>=1.2,<2
 langgraph-checkpoint-sqlite>=3.1,<4
+# 帳票の PDF を画像にして、判断モデルで読み取りを確かめる(services/decisions.py)
+pypdfium2
+pillow

@@ -10,7 +10,7 @@ DefectReport AI — 模擬データ生成スクリプト(完全架空版・ゼ�
 - 客先・自社: fictional_world.json の架空企業(Web実在チェック済み)
 - 機械: 実在の市販工作機械モデル(ユーザー指示。fictional_world.json の catalog)
 - 部品: 霧沢精機の受託品ライン(ポンプP/バルブV/搬送C/航空補機A)として新規設定
-- 出力: defect_reports.csv(100件) / forms_xlsx(全件) / forms_pdf(先頭10件)
+- 出力: defect_reports.csv(110件) / forms_xlsx(全件) / forms_pdf(先頭10件)
 - 乱数 seed=2026 固定(旧版 seed=42 とはデータ系列も完全に別物)
 """
 
@@ -21,7 +21,8 @@ import os
 import random
 
 SEED = 8091417  # 前版(2026)から変更 — 全乱数系列を刷新し、統計量が過去と重ならないようにする
-N_ROWS = 117   # 件数もあえて半端な数に(100件は前版と同じで紛らわしいため)
+N_ROWS = 117   # 乱数の系列はこの件数で作る(変えると全件の中身が変わる)
+N_KEEP = 110   # 2026-09-27: 日付順で先頭の110件だけ残す(KZ25-0001〜0110。2026-03-19 以降の7件を外した)
 N_PDF = 10
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -392,7 +393,7 @@ def generate_rows():
     rows.sort(key=lambda r: r["occurrence_date"])
     for i, r in enumerate(rows, start=1):
         r["defect_id"] = f"KZ25-{i:04d}"
-    return rows
+    return rows[:N_KEEP]
 
 
 def write_csv(rows):

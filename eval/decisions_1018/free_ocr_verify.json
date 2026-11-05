@@ -1,0 +1,1825 @@
+{
+ "runs": 12,
+ "results": {
+  "inception/mercury-decide:free": {
+   "summary": {
+    "fields": 258,
+    "wrong_fields": 35,
+    "auroc_detect_wrong": 0.879,
+    "caught@0.5": "23/35",
+    "false_alarm@0.5": "2/223",
+    "errors": 0,
+    "cost_usd": 0.0,
+    "sec": 18.4
+   },
+   "rows": [
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "report_date",
+     "value": "2025-11-06",
+     "correct": true,
+     "p": 0.995390427711659
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "occurrence_date",
+     "value": "2025-11-01",
+     "correct": true,
+     "p": 0.9940889297810859
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "process",
+     "value": "最終検査",
+     "correct": true,
+     "p": 0.9991959139930988
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "machine_name",
+     "value": "沈用フライス",
+     "correct": false,
+     "p": 0.9465966711417692
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "customer",
+     "value": "蒼井田機器工業",
+     "correct": true,
+     "p": 0.9947798751092579
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "operator_name",
+     "value": "荻原",
+     "correct": true,
+     "p": 0.9994472214550488
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "discoverer",
+     "value": "郡司",
+     "correct": true,
+     "p": 0.9992903295363391
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "part_number",
+     "value": "KRS-V81-9111-D",
+     "correct": true,
+     "p": 0.9994472213916329
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "part_name",
+     "value": "グランド押えナット",
+     "correct": true,
+     "p": 0.9994472213777404
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "production_count",
+     "value": 10,
+     "correct": true,
+     "p": 0.991422514515009
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.999512142824425
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "severity",
+     "value": "中",
+     "correct": true,
+     "p": 0.999373665951486
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "phenomenon",
+     "value": "バリ残り",
+     "correct": true,
+     "p": 0.9996646498975744
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "factor",
+     "value": "図面の読み違い",
+     "correct": true,
+     "p": 0.9993736659585541
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "category_4m",
+     "value": "人",
+     "correct": true,
+     "p": 0.9998088957426553
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "status",
+     "value": "完了",
+     "correct": true,
+     "p": 0.9996646498106811
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "material_cost",
+     "value": 3179,
+     "correct": true,
+     "p": 0.9968273165838949
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "processing_cost",
+     "value": 6250,
+     "correct": true,
+     "p": 0.99807326507385
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9998601779090377
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "other_cost",
+     "value": 1363,
+     "correct": true,
+     "p": 0.9933071478807582
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050.png",
+     "field": "total_cost",
+     "value": 10792,
+     "correct": true,
+     "p": 0.9991959141265698
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "defect_id",
+     "value": "KZ25-0005",
+     "correct": true,
+     "p": 0.9996200155004596
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "report_date",
+     "value": "2025-05-17",
+     "correct": true,
+     "p": 0.995390427856948
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "occurrence_date",
+     "value": "2025-05-14",
+     "correct": true,
+     "p": 0.9953904283120449
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "process",
+     "value": "フライス加工",
+     "correct": true,
+     "p": 0.9994472213602466
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "machine_name",
+     "value": "汎用フライス",
+     "correct": true,
+     "p": 0.9990889489041455
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "customer",
+     "value": "蒼井田機器工業",
+     "correct": true,
+     "p": 0.9947798742870966
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "operator_name",
+     "value": "笹森",
+     "correct": true,
+     "p": 0.9988304900120916
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "discoverer",
+     "value": "峰岸",
+     "correct": true,
+     "p": 0.9995121428859598
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "part_number",
+     "value": "KRS-A65-8411-E",
+     "correct": true,
+     "p": 0.9995121427769684
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "part_name",
+     "value": "スラストカーラー",
+     "correct": false,
+     "p": 0.9986749775337994
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "production_count",
+     "value": 9,
+     "correct": true,
+     "p": 0.9996200154651284
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9995694429883171
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "severity",
+     "value": "高",
+     "correct": true,
+     "p": 0.9995694429602098
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "phenomenon",
+     "value": "ひずみ変形",
+     "correct": true,
+     "p": 0.9990889486823636
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "factor",
+     "value": "薄内部のスラストカーラーがクランプ圧により歪み、平面度が0.09mm超過。除去後のスプリングバックも確認された。",
+     "correct": false,
+     "p": 7.484625194944564e-05
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "category_4m",
+     "value": "図面の読み違い 4M",
+     "correct": false,
+     "p": 0.13296424535145931
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "status",
+     "value": "未対応",
+     "correct": true,
+     "p": 0.9997040430274824
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "material_cost",
+     "value": 6996,
+     "correct": true,
+     "p": 0.9995694429529451
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "processing_cost",
+     "value": 12820,
+     "correct": true,
+     "p": 0.9996200155561314
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9998313472512718
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "other_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9997546305833983
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005.png",
+     "field": "total_cost",
+     "value": 19816,
+     "correct": true,
+     "p": 0.9990889487902347
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "report_date",
+     "value": "2025-11-06",
+     "correct": true,
+     "p": 0.9947798750270417
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "occurrence_date",
+     "value": "2025-11-01",
+     "correct": true,
+     "p": 0.9933071489518855
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "process",
+     "value": "最終検査",
+     "correct": true,
+     "p": 0.9994472213114947
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "machine_name",
+     "value": "沈用フライス",
+     "correct": false,
+     "p": 0.8933094159957173
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "customer",
+     "value": "藤井機器工業",
+     "correct": false,
+     "p": 0.1480471980316895
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "operator_name",
+     "value": "荻原",
+     "correct": true,
+     "p": 0.9982992773292435
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "discoverer",
+     "value": "部司",
+     "correct": false,
+     "p": 0.9986749777091067
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "part_number",
+     "value": "KRS-V81-9111-D",
+     "correct": true,
+     "p": 0.9988304895181769
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "part_name",
+     "value": "グランド押えナット",
+     "correct": true,
+     "p": 0.9984988178423782
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "production_count",
+     "value": 10,
+     "correct": true,
+     "p": 0.9914225132399075
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9990889490140299
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "severity",
+     "value": "中",
+     "correct": true,
+     "p": 0.9740426437440897
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "phenomenon",
+     "value": "パリ残り,取付方向誤り",
+     "correct": false,
+     "p": 0.0033766127311913178
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "factor",
+     "value": "グランド押えナットの横穴とオイル満の交差エッジに高さ約0.138mmの微細バリ。エア吹きでは除去しきれず、客先受入で指摘された。",
+     "correct": false,
+     "p": 7.48461977309657e-05
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "category_4m",
+     "value": "人",
+     "correct": true,
+     "p": 0.9995121428962345
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "status",
+     "value": "完了",
+     "correct": true,
+     "p": 0.999447221397743
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "material_cost",
+     "value": 3179,
+     "correct": true,
+     "p": 0.9914225136596613
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "processing_cost",
+     "value": 6250,
+     "correct": true,
+     "p": 0.9902915215038888
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.999643029326619
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "other_cost",
+     "value": 1363,
+     "correct": true,
+     "p": 0.9740426408713359
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0050_scan.jpg",
+     "field": "total_cost",
+     "value": 10792,
+     "correct": true,
+     "p": 0.9984988178348745
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "defect_id",
+     "value": "KZ25-0005",
+     "correct": true,
+     "p": 0.9978172831205824
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "report_date",
+     "value": "2025-05-17",
+     "correct": true,
+     "p": 0.9975273763420197
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "occurrence_date",
+     "value": "2025-05-14",
+     "correct": true,
+     "p": 0.9978172837103327
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "process",
+     "value": "フライス加工",
+     "correct": true,
+     "p": 0.9995121428356648
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "machine_name",
+     "value": "沈用フライス",
+     "correct": false,
+     "p": 0.7310585727705126
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "customer",
+     "value": "藤井田機器工業",
+     "correct": false,
+     "p": 0.14804719239327382
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "operator_name",
+     "value": "笹森",
+     "correct": true,
+     "p": 0.9971990731791999
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "discoverer",
+     "value": "峰岸",
+     "correct": true,
+     "p": 0.9991959138773053
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "part_number",
+     "value": "KRS-A65-8411-E",
+     "correct": true,
+     "p": 0.998967769172841
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "part_name",
+     "value": "スラストカラー",
+     "correct": true,
+     "p": 0.9992903296104763
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "production_count",
+     "value": 1,
+     "correct": false,
+     "p": 0.8933093954028817
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "defect_count",
+     "value": 9,
+     "correct": false,
+     "p": 0.01798620973179608
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "severity",
+     "value": "高",
+     "correct": true,
+     "p": 0.9995121428097227
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "phenomenon",
+     "value": "ひずみ変形",
+     "correct": true,
+     "p": 0.9988304897319528
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "factor",
+     "value": "薄肉部のスラストカラーがクランプ圧により歪み、平面度が0.09mm超過。除去後のスプリングバックも確認された。",
+     "correct": false,
+     "p": 0.00012339463091129936
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "category_4m",
+     "value": "4M",
+     "correct": false,
+     "p": 0.9990889488300769
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "status",
+     "value": "未対応",
+     "correct": true,
+     "p": 0.9993736659499556
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "material_cost",
+     "value": 6996,
+     "correct": true,
+     "p": 0.9992903295067008
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "processing_cost",
+     "value": 12820,
+     "correct": true,
+     "p": 0.9991959141535074
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9997040429430435
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "other_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9995121428431579
+    },
+    {
+     "run": "qwen3-vl:8b|KZ25-0005_scan.jpg",
+     "field": "total_cost",
+     "value": 19816,
+     "correct": true,
+     "p": 0.9982992772225104
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "defect_id",
+     "value": "KZ25-0050",
+     "correct": true,
+     "p": 0.9994472212367591
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "report_date",
+     "value": "2025-11-06",
+     "correct": true,
+     "p": 0.9947798746812505
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "occurrence_date",
+     "value": "2025-11-01",
+     "correct": true,
+     "p": 0.9914225127805538
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "process",
+     "value": "最終検査",
+     "correct": true,
+     "p": 0.9990889489672999
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "machine_name",
+     "value": "沢用フライス",
+     "correct": false,
+     "p": 0.00263167459578443
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "customer",
+     "value": "蒼井田機器工業",
+     "correct": true,
+     "p": 0.9933071483327369
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "operator_name",
+     "value": "萩原",
+     "correct": false,
+     "p": 0.9995121428054083
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "discoverer",
+     "value": "郡司",
+     "correct": true,
+     "p": 0.9993736658376641
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "part_number",
+     "value": "KRS-V81-9111-D",
+     "correct": true,
+     "p": 0.9995121428651832
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "part_name",
+     "value": "グランド押ネット",
+     "correct": false,
+     "p": 0.006692849964604709
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "production_count",
+     "value": 10,
+     "correct": true,
+     "p": 0.9953904267565964
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9995694430201818
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "severity",
+     "value": "中",
+     "correct": true,
+     "p": 0.9993736659530161
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "phenomenon",
+     "value": "バリ残り",
+     "correct": true,
+     "p": 0.9996200154568595
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "factor",
+     "value": "図面の読み違い",
+     "correct": true,
+     "p": 0.9993736659047039
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "category_4m",
+     "value": "人",
+     "correct": true,
+     "p": 0.9998415637589244
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "status",
+     "value": "完了",
+     "correct": true,
+     "p": 0.9995955184600783
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "material_cost",
+     "value": 3179,
+     "correct": true,
+     "p": 0.9964063982289303
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "processing_cost",
+     "value": 6250,
+     "correct": true,
+     "p": 0.9982992778055881
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9998204720055154
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "other_cost",
+     "value": 1363,
+     "correct": true,
+     "p": 0.9914225159960276
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050.png",
+     "field": "total_cost",
+     "value": 10792,
+     "correct": true,
+     "p": 0.999290329544017
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "defect_id",
+     "value": "KZ25-0005",
+     "correct": true,
+     "p": 0.999664649729193
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "report_date",
+     "value": "2025-05-17",
+     "correct": true,
+     "p": 0.9959298622312515
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "occurrence_date",
+     "value": "2025-05-14",
+     "correct": true,
+     "p": 0.9953904286944971
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "process",
+     "value": "フライス加工",
+     "correct": true,
+     "p": 0.9995121429057146
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "machine_name",
+     "value": "汎用フライス",
+     "correct": true,
+     "p": 0.9993736657084671
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "customer",
+     "value": "蒼井田機器工業",
+     "correct": true,
+     "p": 0.9947798734794441
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "operator_name",
+     "value": "笹森",
+     "correct": true,
+     "p": 0.9988304898410164
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "discoverer",
+     "value": "峰岸",
+     "correct": true,
+     "p": 0.9995121428430443
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "part_number",
+     "value": "KRS-A65-8411-E",
+     "correct": true,
+     "p": 0.9994472214782026
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "part_name",
+     "value": "スラストカラー",
+     "correct": true,
+     "p": 0.9992903295735727
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "production_count",
+     "value": 9,
+     "correct": true,
+     "p": 0.99962001554857
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9995121429105395
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "severity",
+     "value": "高",
+     "correct": true,
+     "p": 0.9996200154404984
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "phenomenon",
+     "value": "ひずみ変形",
+     "correct": true,
+     "p": 0.9989677690584396
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "factor",
+     "value": "図面の読み違い",
+     "correct": true,
+     "p": 0.9984988180563129
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "category_4m",
+     "value": "4M",
+     "correct": false,
+     "p": 0.9995694428674712
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "status",
+     "value": "未対応",
+     "correct": true,
+     "p": 0.9997694933499202
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "material_cost",
+     "value": 6996,
+     "correct": true,
+     "p": 0.9995694429157694
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "processing_cost",
+     "value": 12820,
+     "correct": true,
+     "p": 0.9996430294084153
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9998204720425222
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "other_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9997546305980198
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005.png",
+     "field": "total_cost",
+     "value": 19816,
+     "correct": true,
+     "p": 0.9990889486104142
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "defect_id",
+     "value": "KZ25-0050",
+     "correct": true,
+     "p": 0.9988304899775502
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "report_date",
+     "value": "2025-11-06",
+     "correct": true,
+     "p": 0.994779874214553
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "occurrence_date",
+     "value": "2025-11-01",
+     "correct": true,
+     "p": 0.9924227590542948
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "process",
+     "value": "最終検査",
+     "correct": true,
+     "p": 0.9995121429125264
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "machine_name",
+     "value": "汎用フライス",
+     "correct": true,
+     "p": 0.9978172839075923
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "customer",
+     "value": "蒼井田機器工業",
+     "correct": true,
+     "p": 0.46879062662624377
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "operator_name",
+     "value": "荻原",
+     "correct": true,
+     "p": 0.998498817443475
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "discoverer",
+     "value": "郡司",
+     "correct": true,
+     "p": 0.9992903295971844
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "part_number",
+     "value": "KRS-V81-9111-D",
+     "correct": true,
+     "p": 0.9989677689418774
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "part_name",
+     "value": "グランド押ネット",
+     "correct": false,
+     "p": 0.053403334131154334
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "production_count",
+     "value": 10,
+     "correct": true,
+     "p": 0.9890130562460906
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9988304894583414
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "severity",
+     "value": "中",
+     "correct": true,
+     "p": 0.9875683507590004
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "phenomenon",
+     "value": "バリ残り",
+     "correct": true,
+     "p": 0.9994115910697172
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "factor",
+     "value": "取付方向誤り",
+     "correct": false,
+     "p": 7.967300422218424e-05
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "category_4m",
+     "value": "人",
+     "correct": true,
+     "p": 0.9993736657518242
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "status",
+     "value": "完了",
+     "correct": true,
+     "p": 0.9994806951072268
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "material_cost",
+     "value": 3179,
+     "correct": true,
+     "p": 0.9924227604339614
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "processing_cost",
+     "value": 6250,
+     "correct": true,
+     "p": 0.9890130565800496
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9996646498328092
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "other_cost",
+     "value": 1363,
+     "correct": true,
+     "p": 0.970687769513633
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0050_scan.jpg",
+     "field": "total_cost",
+     "value": 10792,
+     "correct": true,
+     "p": 0.9984988176654368
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "defect_id",
+     "value": "KZ25-0005",
+     "correct": true,
+     "p": 0.9978172831205824
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "report_date",
+     "value": "2025-05-17",
+     "correct": true,
+     "p": 0.9975273763420197
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "occurrence_date",
+     "value": "2025-05-14",
+     "correct": true,
+     "p": 0.9978172837103327
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "process",
+     "value": "フライス加工",
+     "correct": true,
+     "p": 0.9995121428356648
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "machine_name",
+     "value": "汎用フライス",
+     "correct": true,
+     "p": 0.9990889490185864
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "customer",
+     "value": "蒼井田機器工業",
+     "correct": true,
+     "p": 0.015906392382418578
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "operator_name",
+     "value": "笹森",
+     "correct": true,
+     "p": 0.9971990731791999
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "discoverer",
+     "value": "峰岸",
+     "correct": true,
+     "p": 0.9991959138773053
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "part_number",
+     "value": "KRS-A65-8411-E",
+     "correct": true,
+     "p": 0.998967769172841
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "part_name",
+     "value": "スラストカラー",
+     "correct": true,
+     "p": 0.9992903296104763
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "production_count",
+     "value": 9,
+     "correct": true,
+     "p": 0.9989677691208624
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9980732657575467
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "severity",
+     "value": "高",
+     "correct": true,
+     "p": 0.9994472213379929
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "phenomenon",
+     "value": "ひずみ変形",
+     "correct": true,
+     "p": 0.9978172837027262
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "factor",
+     "value": "図面の読み違い",
+     "correct": true,
+     "p": 0.9990889489287291
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "category_4m",
+     "value": "4M",
+     "correct": false,
+     "p": 0.9988304896019465
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "status",
+     "value": "未対応",
+     "correct": true,
+     "p": 0.9991959138777732
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "material_cost",
+     "value": 6996,
+     "correct": true,
+     "p": 0.9992903296477922
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "processing_cost",
+     "value": 12820,
+     "correct": true,
+     "p": 0.998830489898676
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9996849612264682
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "other_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9995694428751369
+    },
+    {
+     "run": "qwen3-vl:30b|KZ25-0005_scan.jpg",
+     "field": "total_cost",
+     "value": 19816,
+     "correct": true,
+     "p": 0.9986749778150921
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "defect_id",
+     "value": "KZ5-0050",
+     "correct": false,
+     "p": 0.0005884088979699595
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "report_date",
+     "value": "2025-11-06",
+     "correct": true,
+     "p": 0.9959298621406469
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "occurrence_date",
+     "value": "2025-11-01",
+     "correct": true,
+     "p": 0.9933071504161716
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "process",
+     "value": "最終検査",
+     "correct": true,
+     "p": 0.9992903296491132
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "machine_name",
+     "value": "汎用フライス",
+     "correct": true,
+     "p": 0.9991959142496588
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "customer",
+     "value": "蒼井精密工業",
+     "correct": false,
+     "p": 0.005911069086091773
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "operator_name",
+     "value": "荻原",
+     "correct": true,
+     "p": 0.999373665772082
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "discoverer",
+     "value": "郡司",
+     "correct": true,
+     "p": 0.9992903296966665
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "part_number",
+     "value": "KRS-V81-9111-D",
+     "correct": true,
+     "p": 0.9994472213207563
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "part_name",
+     "value": "グランド押えナット",
+     "correct": true,
+     "p": 0.9995121428332806
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "production_count",
+     "value": 10,
+     "correct": true,
+     "p": 0.9953904267565964
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9996200154060073
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "severity",
+     "value": "低",
+     "correct": false,
+     "p": 0.00016865268732413794
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "phenomenon",
+     "value": "バリ残り",
+     "correct": true,
+     "p": 0.9996646498975744
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "category_4m",
+     "value": "人",
+     "correct": true,
+     "p": 0.9998088957426553
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "material_cost",
+     "value": 3179,
+     "correct": true,
+     "p": 0.9968273165838949
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "processing_cost",
+     "value": 6250,
+     "correct": true,
+     "p": 0.99807326507385
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9998601779090377
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "other_cost",
+     "value": 1363,
+     "correct": true,
+     "p": 0.9933071478807582
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050.png",
+     "field": "total_cost",
+     "value": 10792,
+     "correct": true,
+     "p": 0.9991959141265698
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "defect_id",
+     "value": "KZ25-0005",
+     "correct": true,
+     "p": 0.9996646498877981
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "report_date",
+     "value": "2025-05-17",
+     "correct": true,
+     "p": 0.9953904278825874
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "occurrence_date",
+     "value": "2025-05-14",
+     "correct": true,
+     "p": 0.9947798749327349
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "process",
+     "value": "フライス加工",
+     "correct": true,
+     "p": 0.9995121428694975
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "machine_name",
+     "value": "汎用フライス",
+     "correct": true,
+     "p": 0.9990889488884629
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "customer",
+     "value": "蒼井機械工業",
+     "correct": false,
+     "p": 0.009708474529514916
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "operator_name",
+     "value": "笹森",
+     "correct": true,
+     "p": 0.998830489530688
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "discoverer",
+     "value": "樺岸",
+     "correct": false,
+     "p": 0.01406362890279984
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "part_number",
+     "value": "KRS-A65-8411-E",
+     "correct": true,
+     "p": 0.9995694428566492
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "part_name",
+     "value": "スラストカラー",
+     "correct": true,
+     "p": 0.9992903294413976
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "production_count",
+     "value": 9,
+     "correct": true,
+     "p": 0.9996646499060234
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9995694429883171
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "severity",
+     "value": "高",
+     "correct": true,
+     "p": 0.9995694429602098
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "phenomenon",
+     "value": "ひずみ変形",
+     "correct": true,
+     "p": 0.9990889486823636
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "factor",
+     "value": "薄肉部のスラストカラーがクランプ圧により歪み、平面度が0.09mm超過。除去後のスプリングバックも確認された。",
+     "correct": false,
+     "p": 9.610244299643184e-05
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "category_4m",
+     "value": "4M",
+     "correct": false,
+     "p": 0.9996200155210215
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "status",
+     "value": "未対応",
+     "correct": true,
+     "p": 0.9997040430274824
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "material_cost",
+     "value": 6996,
+     "correct": true,
+     "p": 0.9995694429529451
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "processing_cost",
+     "value": 12820,
+     "correct": true,
+     "p": 0.9996200155561314
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9998313472512718
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "other_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9997546305833983
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005.png",
+     "field": "total_cost",
+     "value": 19816,
+     "correct": true,
+     "p": 0.9990889487902347
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "defect_id",
+     "value": "KZ25-0050",
+     "correct": true,
+     "p": 0.9989677691267443
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "report_date",
+     "value": "2025-11-06",
+     "correct": true,
+     "p": 0.9947798744031665
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "occurrence_date",
+     "value": "2025-11-01",
+     "correct": true,
+     "p": 0.9924227579827771
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "process",
+     "value": "最終検査",
+     "correct": true,
+     "p": 0.9994472213188912
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "machine_name",
+     "value": "汎用フライス",
+     "correct": true,
+     "p": 0.9975273768950503
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "customer",
+     "value": "斎田機器工業",
+     "correct": false,
+     "p": 0.09534947004048376
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "operator_name",
+     "value": "萩原",
+     "correct": false,
+     "p": 0.9980732655305433
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "discoverer",
+     "value": "郡司",
+     "correct": true,
+     "p": 0.9992903296208784
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "part_number",
+     "value": "KRS-V81-9111-D",
+     "correct": true,
+     "p": 0.9989677691872463
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "part_name",
+     "value": "グランド押えナット",
+     "correct": true,
+     "p": 0.9984988179275331
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "production_count",
+     "value": 10,
+     "correct": true,
+     "p": 0.9902915239124993
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9989677687780181
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "severity",
+     "value": "高",
+     "correct": false,
+     "p": 0.07585818158818373
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "phenomenon",
+     "value": "グランド押えナットのHex穴とオイル溝の交差エッジに高さ約0.138mmの微細なバリ、エア吹きでは除去できず、客先受領で指摘された。",
+     "correct": false,
+     "p": 0.01798621062007865
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "factor",
+     "value": "図面の読み違い",
+     "correct": true,
+     "p": 0.9982992777866133
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "category_4m",
+     "value": "人",
+     "correct": true,
+     "p": 0.9994115911563185
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "material_cost",
+     "value": 3179,
+     "correct": true,
+     "p": 0.9924227593344301
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "processing_cost",
+     "value": 6250,
+     "correct": true,
+     "p": 0.9890130553757736
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9997219691473371
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "other_cost",
+     "value": 1363,
+     "correct": true,
+     "p": 0.9740426442150328
+    },
+    {
+     "run": "gemma4:26b|KZ25-0050_scan.jpg",
+     "field": "total_cost",
+     "value": 10792,
+     "correct": true,
+     "p": 0.9988304895002261
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "defect_id",
+     "value": "KZ25-0005",
+     "correct": true,
+     "p": 0.9978172831205824
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "report_date",
+     "value": "2025-05-17",
+     "correct": true,
+     "p": 0.9975273763420197
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "occurrence_date",
+     "value": "2025-05-14",
+     "correct": true,
+     "p": 0.9978172837103327
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "process",
+     "value": "フライス加工",
+     "correct": true,
+     "p": 0.9995121428356648
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "machine_name",
+     "value": "汎用フライス",
+     "correct": true,
+     "p": 0.9990889490185864
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "customer",
+     "value": "斎田機器工業",
+     "correct": false,
+     "p": 0.0031726833225881215
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "operator_name",
+     "value": "笹森",
+     "correct": true,
+     "p": 0.9971990731791999
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "discoverer",
+     "value": "峰岸",
+     "correct": true,
+     "p": 0.9991959138773053
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "part_number",
+     "value": "KRS-A65-8411-E",
+     "correct": true,
+     "p": 0.998967769172841
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "part_name",
+     "value": "スラストカラー",
+     "correct": true,
+     "p": 0.9992903296104763
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "production_count",
+     "value": 9,
+     "correct": true,
+     "p": 0.9991959140455707
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "defect_count",
+     "value": 1,
+     "correct": true,
+     "p": 0.9978172833868068
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "severity",
+     "value": "高",
+     "correct": true,
+     "p": 0.9995694429134147
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "phenomenon",
+     "value": "ひずみ変形",
+     "correct": true,
+     "p": 0.9986749776967826
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "factor",
+     "value": "薄肉部のスラストカラーがクランプ圧により歪み、平面度が0.09mm超過。除去後のスプリングバックも確認された。",
+     "correct": false,
+     "p": 9.610245650999255e-05
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "status",
+     "value": "未対応",
+     "correct": true,
+     "p": 0.9991959142442339
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "material_cost",
+     "value": 6996,
+     "correct": true,
+     "p": 0.999373665977136
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "processing_cost",
+     "value": 12820,
+     "correct": true,
+     "p": 0.99919591414378
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "outsourcing_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.9996646498214526
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "other_cost",
+     "value": 0,
+     "correct": true,
+     "p": 0.999595518494062
+    },
+    {
+     "run": "gemma4:26b|KZ25-0005_scan.jpg",
+     "field": "total_cost",
+     "value": 19816,
+     "correct": true,
+     "p": 0.9982992778933462
+    }
+   ]
+  }
+ }
+}

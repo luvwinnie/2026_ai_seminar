@@ -34,3 +34,6 @@ eval/local_llm/light_20260915/agent_prompt_diagnostic.json
 eval/local_llm/**/generation_remaining/
 eval/local_llm/opencode_openapi.json
 eval/local_llm/light_20260915/tool_execution_audit.json
+
+# ---- 回ごとの版の録画(大きいので GitHub に入れない。手元の versions/*/記録/ にある) ----
+versions/**/*.mp4

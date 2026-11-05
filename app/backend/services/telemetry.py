@@ -82,6 +82,17 @@ class ChatTrace:
         except Exception:  # noqa: BLE001
             pass
 
+    def decision(self, name: str, output, metadata: dict | None = None, score: float | None = None) -> None:
+        """判断モデルの結果(質問の振り分け・引用の確かめ)を span で残す。score があればトレースのスコアにも。"""
+        if self._trace is None:
+            return
+        try:
+            self._trace.span(name=name, input=None, output=output, metadata=metadata or {}).end()
+            if score is not None:
+                self._trace.score(name=name, value=float(score))
+        except Exception:  # noqa: BLE001
+            pass
+
     def finish(self, answer: str, tools: list[str], error: str | None = None) -> None:
         if self._trace is None:
             return

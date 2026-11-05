@@ -53,9 +53,14 @@ def _extract_text(parts: list[dict]) -> str:
 
 # チャット用途では OpenCode 標準のコーディング系ツールは使わない
 # (MCP ツール defect-reports_* はそのまま有効)
+# 名前は OpenCode の版で変わる。v1.19.0 の組み込み(tool/registry.ts)の apply_patch・skill・websearch・question も止める。
+# 古い版の名前(patch・list・todoread)は、無い版では効かないだけなので残す。版を上げたら一覧を見直す。
 _DISABLED_TOOLS = {
     name: False
-    for name in ("bash", "edit", "write", "patch", "read", "glob", "grep", "list", "webfetch", "todowrite", "todoread", "task")
+    for name in (
+        "bash", "edit", "write", "patch", "apply_patch", "read", "glob", "grep", "list",
+        "webfetch", "websearch", "todowrite", "todoread", "task", "skill", "question",
+    )
 }
 
 # 構造化抽出など「純粋な生成」では MCP ツールも含めて全ツールを無効化する
