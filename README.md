@@ -1,6 +1,6 @@
 # DefectReport AI
 
-製造業の**不適合報告書(不良報告書)を AI で構造化・分析**するローカル動作の Web アプリケーション。2026年度 AIセミナー(全10回)の前半(第3〜7回)で、受講者がステップバイステップに構築する「完成イメージアプリ」です。
+製造業の**不適合報告書(不良報告書)を AI で構造化・分析**するローカル動作の Web アプリケーション。2026年度 AIセミナーの前半(第1〜6回)で、第2回から第6回まで回ごとに育てる「完成イメージアプリ」の完成形(仕様書 v5.0)です。
 
 不適合報告書(Excel / PDF / 画像)を取り込むと、AI が項目を構造化抽出し、4M(Man/Machine/Material/Method)に分類。蓄積した報告書には自然言語で質問でき、根拠(報告書ID)付きで回答します。チャットは OpenCode + OpenRouter を生成エンジンに、報告書データへは MCP(Model Context Protocol)経由でアクセスするエージェント型構成です。経営者向けの KPI ダッシュボード(パレート図・管理図・機械別/担当者別集計・トレンド・予兆アラート)で全体傾向も可視化します。
 
@@ -25,6 +25,7 @@
 | ⑨ | 音声入力 | チャット入力にWeb Speech API(ja-JP)のマイクボタン(対応ブラウザのみ) |
 | ⑩ | 業務Ontology | 意味モデルをOpenCodeへ供給し、対象IDの解決・関係探索・指標計算・CAPA更新検証に使用。構造グラフと実データグラフを閲覧(`/analysis/ontology?view=graph`) |
 | ⑪ | 報告書トリアージ(Jev+LangGraph) | 判断モデル **Jev** が現象・要因・4M・重要度と客先流出・再発のおそれを約0.4秒で判断(型付きの答え＋確率)。閾値(110件で測定)に届かない項目だけ LLM と人へ、CAPA は処置案を用意して**人の承認で止める**(LangGraph の interrupt)。新規作成では分類を提案。`JEV_ENABLED=1` で有効([docs/11](docs/11_報告書トリアージ_JevとLangGraph.md)) |
+| ⑫ | 判断モデルによる強化 | OpenRouter の Decisions API で、狭い判断だけを**判断モデル**に任せる:検索の並べ替え(typesafe/jev-1.14)・質問の振り分け(perplexity/pplx-decider-v1.2)・引用の確かめ(liquid/d1-ultra)・帳票の読み取りの確かめ(typesafe/jev-1.14)。モデルは機能ごとに測って選んだ。使えないときは今までの動きに戻る。`DECISIONS_ENABLED=1` で有効([docs/14](docs/14_判断モデルによる強化.md)) |
 
 補助機能: 報告書の CRUD(一覧・検索・作成・編集・削除)、**全項目フィルタ+スマート検索(意味検索、`GET /api/reports/search`)**、各画面の期間フィルタ、マスタ管理。フィルタ状態はURLクエリが正本で、**人間のUI操作とAIの画面操作(ui_navigate)が同じ状態を共有**する。
 
@@ -86,13 +87,15 @@ example_app/
 │  ├─ 04_API設計書.md
 │  ├─ 05_UI設計書.md
 │  ├─ 06_AI設計書.md
-│  └─ 07_発展トピック.md
+│  ├─ 07_発展トピック.md
+│  ├─ 00・11〜14             ← 帳票の調査・トリアージ・Ontology・試験と運用・判断モデル
+│  └─ spec_src/              ← 仕様書の正本(回ごとの版 v1.0〜v5.0 を書き出す)
 ├─ data/                     ← 模擬データと生成スクリプト
 │  ├─ generate_mock_data.py  ← 模擬データ生成(完全架空・seed=774123)
 │  ├─ defect_reports.csv     ← 不良報告 110件(ID: KZ25-XXXX)
 │  ├─ forms_xlsx/            ← 帳票 Excel(全件)
 │  └─ forms_pdf/             ← 帳票 PDF(先頭10件、OCRデモ用)
-├─ app/                      ← 完成形アプリ(第7回の到達点)
+├─ app/                      ← 完成形アプリ(第6回の到達点、仕様書 v5.0)
 │  ├─ docker-compose.yml
 │  ├─ .env.example
 │  ├─ backend/               ← FastAPI
@@ -104,7 +107,9 @@ example_app/
 │  ├─ opencode/              ← OpenCode サーバー(Dockerfile / entrypoint.sh / opencode.json)
 │  └─ frontend/              ← React + Vite
 │     └─ src/                ← pages / components / api / theme.ts など
-└─ steps/                    ← 各回の演習ステップ(第3〜7回)
+├─ eval/                     ← 評価(RAG の評価セット・Jev の振り分け・判断モデルの測定)
+├─ versions/                 ← 回ごとの版(第2回 v1.1・第3回 v2.1。Claude Code が仕様書から作ったもの)
+└─ steps/                    ← 前の構成の演習ステップ(回の番号は前の割り当て)
    ├─ step01_第3回_土台
    ├─ step02_第4回_ClaudeAPI
    ├─ step03_第5回_RAG取込
@@ -126,6 +131,7 @@ example_app/
 | `ANTHROPIC_API_KEY` | 任意 | 帳票抽出・4M分析の**代替**経路(チャットには使わない) | [Anthropic Console](https://console.anthropic.com/) |
 | `JEV_ENABLED` | 任意 | `1` で報告書トリアージ(判断モデル Jev)を有効にする。Jev は `OPENROUTER_API_KEY` で呼ぶ | — |
 | `TYPESAFE_API_KEY` | 任意 | Jev を TypeSafe から直接呼ぶとき(あれば OpenRouter より優先) | [TypeSafe](https://console.typesafe.ai/settings/keys) |
+| `DECISIONS_ENABLED` | 任意 | `1` で判断モデルによる強化(並べ替え・振り分け・引用と読み取りの確かめ)を有効にする。`OPENROUTER_API_KEY` で呼ぶ。機能ごとの切り替え・モデルの替え方は [docs/14](docs/14_判断モデルによる強化.md) §3 | — |
 
 `.env` は `example_app/.env`(リポジトリ直下)または `app/.env` のどちらに置いても Docker Compose が読み込みます(両方任意)。
 
@@ -208,19 +214,21 @@ python data/generate_mock_data.py
 
 ---
 
-## セミナー対応表(第3〜7回)
+## セミナー対応表(第1〜6回)
 
-前半では、下表の順に機能を積み上げて `app/`(完成形)に到達します。各ステップの成果物は `steps/` 以下にあります。
+仕様書は1つの正本から回ごとに版を書き出し([docs/01 §10](docs/01_要件定義書.md))、アプリはその版に合わせて育てます。`app/` は最後の版 v5.0(第6回)の姿です。
 
-| 回 | テーマ | ステップ | 主に作るもの |
+| 回 | テーマ | 仕様書の版 | 主に足すもの |
 |---|---|---|---|
-| 第3回 | アプリ設計と土台づくり | `steps/step01_第3回_土台` | プロジェクト雛形、データモデル、EDA、報告書の一覧・詳細表示 |
-| 第4回 | Claude API の組み込み | `steps/step02_第4回_ClaudeAPI` | チャット機能(ストリーミング)、構造化出力(JSON抽出)の基礎 |
-| 第5回 | データ連携・RAG・取り込み | `steps/step03_第5回_RAG取込` | 帳票(Excel/PDF/画像)取り込み、RAG による根拠付き回答 |
-| 第6回 | データ分析・KPIダッシュボード | `steps/step04_第6回_KPI分析` | パレート図・p管理図・各種集計・トレンド、4M分析、予兆アラート |
-| 第7回 | テスト・デバッグ・仕上げ・デプロイ | `steps/step05_第7回_仕上げ` | CRUD 完成、テスト、Docker、README/仕様書 → 完成形は `app/` |
+| 第1回 | オリエンテーション・AI駆動型開発の全体像 | v0.1(目的メモ) | 困りごと・使う人・データ・最初にできること |
+| 第2回 | アプリ設計と土台づくり | v1.0 → v1.1 | 帳票の Excel(110件)を調べて仕様書、一覧・詳細・絞り込み、backend(→ `versions/v1.1_第2回/`) |
+| 第3回 | OpenRouter・ローカル LLM | v2.0 → v2.1 | AI アシスタント(OpenCode+MCP の読み取りの道具)、Docker Compose(→ `versions/v2.1_第3回/`) |
+| 第4回 | 帳票の取込・RAG・Ontology | v3.0 → v3.1 | 帳票(Excel/PDF/画像)の取込、ハイブリッド検索、引用 |
+| 第5回 | データ分析・KPI・AI の評価 | v4.0 → v4.1 | KPI ダッシュボード・4M 分析・予兆アラート・評価 |
+| 第6回 | テスト・デバッグ・引き継ぎ・UI の仕上げ | v5.0 | 登録・編集・削除の完成、試験、運用、Trace(Langfuse)、画面の操作(ui_*)、判断モデル |
 
-> 後半(第8〜10回)は、受講者が各自の業務課題を題材に、ここで学んだ手法を応用します。
+> 第7回は、受講者が自社の課題と使えそうなデータを持ち寄り、仕様書を書きます。第8回からは、前半で学んだことを使って Claude Code で作ります。
+> `steps/` は前の構成(第3〜7回の割り当て)の演習ステップで、回の番号は今の講座と合っていません。
 
 ---
 
@@ -238,6 +246,8 @@ python data/generate_mock_data.py
 | [`docs/13_試験・運用仕様書.md`](docs/13_試験・運用仕様書.md) | 受け入れ条件(版ごとの期待値)・評価・試験・運用(起動・停止・復旧) |
 | [`docs/07_発展トピック.md`](docs/07_発展トピック.md) | Neo4j/ハイブリッドRAG・RAGAS・Langfuse・認証・ローカルLLM・OpenRouter・MCP |
 | [`docs/11_報告書トリアージ_JevとLangGraph.md`](docs/11_報告書トリアージ_JevとLangGraph.md) | 判断モデル Jev と LangGraph による報告書トリアージ(考え方・質問・110件の測定と閾値・API・設定) |
+| [`docs/14_判断モデルによる強化.md`](docs/14_判断モデルによる強化.md) | 判断モデル(Decisions API)による検索の並べ替え・質問の振り分け・引用と読み取りの確かめ(選んだモデルと測定・設定・限界) |
+| [`versions/README.md`](versions/README.md) | 回ごとの版(第2回・第3回)を Claude Code に仕様書から作らせた記録(録画は大きいので GitHub には入れていない) |
 
 仕様書 00〜06・13 は、講座の回ごとに少しずつ育つ版(v1.0〜v5.0)の最後の版(v5.0)です。正本は `docs/spec_src/`(どの版から入るかの印つき。版ごとに足すものの台帳は `docs/spec_src/VERSIONS.md`)で、`python3 docs/spec_src/render_versions.py --out <フォルダ>` で全版を書き出せます。例アプリに未実装の決まりは、各仕様書に「例アプリには未実装」と書いてあります。
 
