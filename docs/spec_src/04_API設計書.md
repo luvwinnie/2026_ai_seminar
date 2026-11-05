@@ -66,6 +66,11 @@ FastAPI のバックエンド（`app/backend`、ポート 8000）が出す REST 
 | `JEV_ENABLED` | `0` | `1` で報告書トリアージを有効にする | <!-- v5.0 -->
 | `DECISION_MODEL`・`TYPESAFE_API_KEY` | 空 | トリアージの判断モデルとキー（無ければ `OPENROUTER_API_KEY` で呼ぶ） | <!-- v5.0 -->
 | `TRIAGE_CHECKPOINT_DB` | `app/backend/data/triage_checkpoints.db` | トリアージの途中の状態 | <!-- v5.0 -->
+| `DECISIONS_ENABLED` | `0` | `1` で判断モデルによる強化（検索の並べ替え・質問の振り分け・引用と読み取りの確かめ）を有効にする | <!-- v5.0 -->
+| `DECISION_RERANK`・`DECISION_ROUTE`・`DECISION_CITE`・`DECISION_OCR_VERIFY` | `1` | `0` でその機能だけ止める | <!-- v5.0 -->
+| `DECISION_MODEL_RERANK`・`DECISION_MODEL_ROUTE`・`DECISION_MODEL_CITE`・`DECISION_MODEL_OCR` | 空（測って選んだモデル） | 機能ごとのモデルを替える（替えたら測り直す） | <!-- v5.0 -->
+| `DECISION_RERANK_MODE` | `joint` | `per_candidate` で候補ごとに1リクエスト | <!-- v5.0 -->
+| `DECISION_ZDR`・`DECISION_CACHE_TTL` | `1`・`600` | データを残さない経路だけを使う・同じ入力の答えを使い回す秒数（トリアージと共通） | <!-- v5.0 -->
 | `BACKEND_PORT`・`FRONTEND_PORT`・`LANGFUSE_PORT` | `8000`・`5173`・`3390` | Docker Compose でホストに出すポート | <!-- v5.0 -->
 
 キーは `.env` に置き、画面のコードや応答に出さない。 <!-- v2.0 -->
@@ -84,6 +89,7 @@ FastAPI のバックエンド（`app/backend`、ポート 8000）が出す REST 
 | 埋め込み（sentence-transformers が無い、`EMBEDDINGS=off`） | 検索は BM25（`search_mode` が `bm25`）、それも失敗したらキーワードの部分一致（`keyword`） | <!-- v3.0..v4.1 -->
 | 埋め込み（sentence-transformers が無い、`EMBEDDINGS=off`） | 検索は BM25（`search_mode` が `bm25`）、それも失敗したらキーワードの部分一致（`keyword`）。関連マップは語の重なり（Jaccard）で作る | <!-- v5.0 -->
 | 判断モデル（`JEV_ENABLED=1` とキー） | トリアージは 503（状態と記録の読み出しは動く） | <!-- v5.0 -->
+| 判断モデルによる強化（`DECISIONS_ENABLED=1` とキー）、または判断モデルが失敗した | 検索は並べ替える前の順、チャットは振り分けの注意と引用の確かめなしで答える。取込は確かめず、確信度は今までの決まり（確かめに失敗したときは medium と警告） | <!-- v5.0 -->
 <!-- /v -->
 
 ## 2. エンドポイントの一覧
@@ -226,7 +232,8 @@ Report（報告書1件）は、`defect_reports` の全列と派生値 `defect_ra
 | `top_k` | 10 | 1〜40 |
 | `machine`・`process` | | 検索の結果を後から完全一致で絞る（候補は `top_k` の4倍、40件まで取る） |
 
-- 応答：`{"items": [{defect_id, part_name, machine_name, process, phenomenon, snippet, score, search_mode}], "search_mode": "hybrid" | "bm25" | "keyword"}`。`snippet` は本文・原因・対策の先頭140文字。応答の `search_mode` は先頭の1件のもの。
+- 応答：`{"items": [{defect_id, part_name, machine_name, process, phenomenon, snippet, score, search_mode}], "search_mode": "hybrid" | "bm25" | "keyword"}`。`snippet` は本文・原因・対策の先頭140文字。応答の `search_mode` は先頭の1件のもの。 <!-- v3.0..v4.1 -->
+- 応答：`{"items": [{defect_id, part_name, machine_name, process, phenomenon, snippet, score, search_mode, relevance}], "search_mode": "hybrid" | "bm25" | "keyword"}`（判断モデルで並べ替えたときは `+rerank` が付く。通常は `hybrid+rerank`）。`snippet` は本文・原因・対策の先頭140文字。応答の `search_mode` は先頭の1件のもの。`relevance` は判断モデルが付けた「質問に当てはまる確率」（判断モデルで並べ替えたときだけ。ほかは null）。並べ替えは、同じ検索を使う似ている報告書・チャットの事前の検索・道具の並びにも効く <!-- v5.0 -->
 - 並べ替えとページ送りは無い（上位だけを返す）。
 - 件数を数える用途には使わない（件数は `GET /api/reports` の `total` で数える）。 <!-- v3.1 -->
 - パスは `/{defect_id}` より前に定める（`search` を番号として読まないため）。
@@ -307,14 +314,17 @@ Master（選択肢1つ）＝ `{"id", "category", "name", "sort_order", "is_activ
 |---|---|---|
 | `session` | `{"id": int, "title": str}` | 最初に1回 |
 | `sources` | `{"items": [{defect_id, part_name, phenomenon, snippet, score}]}` | 回答の前に1回（事前の検索の上位5件） | <!-- v3.0 -->
+| `route` | `{"intent": str, "p": float, "margin": float, "taken": bool, "hint": str, "model": str, "cost_usd": float}`（`intent` は `one`・`filter`・`count`・`search`・`ui`・`other`。`hint` は採らなかったときは空文字） | `sources` のあとに1回（判断モデルが使えるときだけ） | <!-- v5.0 -->
 | `thinking` | `{"text": str}` | 推論の文の差分 |
 | `tool` | `{"name": str, "status": str, "title": str}`（`status` は `pending`・`running`・`completed`・`error`、`title` は null もある） | 道具の状態が変わるたび |
 | `token` | `{"text": str}` | 回答の本文の差分 |
+| `citations` | `{"model": str, "checks": [{defect_id, sentence, p, exists, supported, malformed?}], "unsupported": int, "cost_usd": float}`（`p` は無い番号・崩れた番号では null） | 回答のあと、`done` の前に1回（判断モデルが使えるときだけ） | <!-- v5.0 -->
 | `done` | `{"trace_id": str}`（Langfuse が無ければ null） | 成功で終わった |
 | `error` | `{"detail": str}` | 失敗で終わった |
 
 - 順番：`session` → `thinking`・`tool`・`token`（まざって何回でも） → `done` か `error` のどちらか1つ。 <!-- v2.0..v2.1 -->
-- 順番：`session` → `sources` → `thinking`・`tool`・`token`（まざって何回でも） → `done` か `error` のどちらか1つ。 <!-- v3.0 -->
+- 順番：`session` → `sources` → `thinking`・`tool`・`token`（まざって何回でも） → `done` か `error` のどちらか1つ。 <!-- v3.0..v4.1 -->
+- 順番：`session` → `sources` →（`route`）→ `thinking`・`tool`・`token`（まざって何回でも） →（`citations`）→ `done` か `error` のどちらか1つ。`route`・`citations` は判断モデルが使えるときだけ。 <!-- v5.0 -->
 - `done` の `trace_id` で、画面の回答と Langfuse のトレースを照合する（1問1トレース）。
 - 回答の本文は Markdown（箇条書き・太字・表）。報告書は `[KZ25-XXXX]` の形で示し、画面はリンクにする。 <!-- v2.0..v2.1 -->
 - 回答の本文は Markdown（箇条書き・太字・表）。参照した報告書は本文で `[KZ25-XXXX]` の形で引用し、画面はリンクにする（FR-CH-04）。`sources` は事前の検索の候補で、回答の根拠そのものではない。 <!-- v3.0 -->
@@ -331,6 +341,7 @@ sequenceDiagram
     API-->>B: event: session
     API->>API: 質問で検索（上位5件） <!-- v3.0 -->
     API-->>B: event: sources <!-- v3.0 -->
+    API-->>B: event: route（質問の種類。検索と同時に判断モデルで決める） <!-- v5.0 -->
     API->>DB: 直近20件の発言を読み、質問を保存
     API->>OC: 新しいセッション、GET /event を購読、prompt_async
     OC->>MCP: 道具を呼ぶ
@@ -338,6 +349,8 @@ sequenceDiagram
     OC-->>API: 推論・道具・本文の差分
     API-->>B: event: thinking / tool / token
     API->>DB: 回答を保存
+    API->>API: 引用を確かめる（判断モデル） <!-- v5.0 -->
+    API-->>B: event: citations <!-- v5.0 -->
     API-->>B: event: done（trace_id）
 ```
 
@@ -345,7 +358,9 @@ sequenceDiagram
 - 直近20件の発言は、質問を保存する前に読む（同じ質問を二重に入れない）。
 - プロンプトは、システムプロンプト・これまでの会話・質問をまとめた1つの文にする。 <!-- v2.0..v2.1 -->
 - プロンプトは、システムプロンプト・事前の検索の候補・これまでの会話・質問をまとめた1つの文にする。事前の検索の候補は粗い候補で、質問に合わなければ道具で引き直す。 <!-- v3.0 -->
-- チャットでは OpenCode に元からある道具（bash・edit・write・patch・read・glob・grep・list・webfetch・todowrite・todoread・task）を切り、MCP の `defect-reports` の道具だけを使わせる。
+- 判断モデルが質問の種類を決めて採ったとき（1位の確率0.6以上）は、その種類の道具の使い方の注意（`hint`）もプロンプトに入れる（FR-DM-02）。 <!-- v5.0 -->
+- チャットでは OpenCode に元からある道具（bash・edit・write・patch・read・glob・grep・list・webfetch・todowrite・todoread・task）を切り、MCP の `defect-reports` の道具だけを使わせる。 <!-- v2.0..v4.1 -->
+- チャットでは OpenCode に元からある道具（bash・edit・write・patch・apply_patch・read・glob・grep・list・webfetch・websearch・todowrite・todoread・task・skill・question）を切り、MCP の `defect-reports` の道具だけを使わせる。道具の名前は OpenCode の版で変わるので、版を上げたら一覧を見直す（その版に無い名前は効かないだけなので残す）。 <!-- v5.0 -->
 - OpenCode の `GET /event` は全セッションの出来事を流すため、自分の sessionID のものだけを読む。本文と推論の差分（`message.part.delta`）を `token`・`thinking` に、道具の部品（`message.part.updated`）を `tool` に変え、`session.idle` で終わる。差分が取れなかったときは、終わったメッセージから本文をまとめて取り、`token` を1回送る。
 - 回答は、本文・使った道具（名前ごとの最後の状態）・推論の文を保存する。 <!-- v2.0..v2.1 -->
 - 回答は、本文・`sources`・使った道具（名前ごとの最後の状態）・推論の文を保存する。 <!-- v3.0 -->
@@ -372,7 +387,8 @@ sequenceDiagram
 ### 6.4 POST /api/chat（試験用）
 
 - 本文は 6.1 と同じ。回答をまとめて返す：`{"answer": str, "session_id": int}`。 <!-- v2.0..v2.1 -->
-- 本文は 6.1 と同じ。回答をまとめて返す：`{"answer": str, "sources": [...], "session_id": int}`。 <!-- v3.0 -->
+- 本文は 6.1 と同じ。回答をまとめて返す：`{"answer": str, "sources": [...], "session_id": int}`。 <!-- v3.0..v4.1 -->
+- 本文は 6.1 と同じ。回答をまとめて返す：`{"answer": str, "sources": [...], "session_id": int, "route": {…} | null, "citations": {…} | null}`（`route`・`citations` は 6.1 のイベントと同じ形。判断モデルが使えないときは null）。 <!-- v5.0 -->
 - `OPENCODE_URL` が無ければ 503。会話は 6.1 と同じく保存する。
 
 <!-- v5.0 -->
@@ -539,7 +555,8 @@ MCP の道具と同じ処理（`services/ui_control.py`）を REST でも出す�
 ### 9.1 POST /api/ingest/upload
 
 - 本文：multipart/form-data の `file`（`.xlsx`・`.pdf`・`.png`・`.jpg`・`.jpeg`）。それ以外は 400 `{"detail": "対応していないファイル形式です(.xlsx / .pdf / .png / .jpg)"}`。
-- 応答：`{"extracted": {報告書の項目の一部}, "confidence": "high" | "medium" | "low", "warnings": [str], "source_filename": str}`。値が取れなかった項目は `extracted` に入れない。
+- 応答：`{"extracted": {報告書の項目の一部}, "confidence": "high" | "medium" | "low", "warnings": [str], "source_filename": str}`。値が取れなかった項目は `extracted` に入れない。 <!-- v3.0..v4.1 -->
+- 応答：`{"extracted": {報告書の項目の一部}, "confidence": "high" | "medium" | "low", "warnings": [str], "source_filename": str, "field_checks": {項目: {p, ok, box?}} | null, "verification": {model, cost_usd, mismatch} | null}`。値が取れなかった項目は `extracted` に入れない。`field_checks`・`verification` は判断モデルで読み取りを確かめたときだけ（FR-DM-04。`box` は画像に対する割合の left・top・right・bottom）。 <!-- v5.0 -->
 - **保存しない**。画面は確認の画面に値を入れ、人が原本と見比べて直す。
 
 | 種類 | 取り出し方 | AI が無いとき |
@@ -550,7 +567,8 @@ MCP の道具と同じ処理（`services/ui_control.py`）を REST でも出す�
 - AI は OpenCode（全ての道具を切った生成だけ）を先に使い、無ければ `ANTHROPIC_API_KEY` で Anthropic に直接つなぐ。
 - 構造化出力の JSON Schema は報告書の25項目で、読み取れない項目は null を返させる（null と 0 を分ける）。日付は `YYYY-MM-DD`、重大度は4つの値に直させる。
 - `confidence` は取り出した結果全体の確からしさ、`warnings` は人が確かめるべき点。 <!-- v3.0..v3.0 -->
-- 確信度は AI の自己申告を使わず、サーバーが決まりで決める：xlsx で AI の整形に成功したら high、セルの値だけ（AI が無い・失敗した）なら medium と警告、PDF・画像は AI の抽出に成功したら high（low を返す決まりは持たない）。 <!-- v3.1 -->
+- 確信度は AI の自己申告を使わず、サーバーが決まりで決める：xlsx で AI の整形に成功したら high、セルの値だけ（AI が無い・失敗した）なら medium と警告、PDF・画像は AI の抽出に成功したら high（low を返す決まりは持たない）。 <!-- v3.1..v4.1 -->
+- 確信度は AI の自己申告を使わず、サーバーが決まりで決める：xlsx で AI の整形に成功したら high、セルの値だけ（AI が無い・失敗した）なら medium と警告。PDF・画像は、判断モデルで読み取りを確かめたときはその結果で決め（画像の欄と合わない項目が0なら high、1〜2なら medium、3以上なら low。合わない項目ごとに警告）、確かめられなかったときは medium と警告、判断モデルを使わないときは AI の抽出に成功したら high。PDF は1ページ目を画像にして確かめる（FR-DM-04）。 <!-- v5.0 -->
 - PDF・画像は、OpenCode のメッセージにファイルの部品（`{"type": "file", "mime", "filename", "url": "data:<mime>;base64,…"}`）として付ける。本文に貼らない。 <!-- v3.1 -->
 - 応答が JSON として読めなければ、「JSON だけを返す」と1回だけ頼み直す。
 

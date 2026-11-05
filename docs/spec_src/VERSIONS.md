@@ -99,6 +99,8 @@ x.1 で足すのは、下の表の「確かめて戻すこと」だけにする�
 - 試験：pytest（単体・結合）、Playwright（E2E）、結果は件数・日付・コマンドを組で書く。/code-review・/security-review、Hooks
 - 運用：起動・停止・復旧（down と down -v の違い）、README だけで別の人が起動できる、Trace に残す範囲と計っていない区間
 - **完成形の追加（発展）**：CAPA／8D（capa_actions、AI の下書きは人が採用したものだけ登録）、週次ダイジェスト（weekly_digests）、写真と vision、音声入力、関連マップ（/analysis/graph）、業務 Ontology の画面（/analysis/ontology）、マスタ管理（/settings/masters、FR-MA-02〜06）、回答の 👍/👎（chat_feedback、Langfuse のスコア）、画面幅 375〜1680px、報告書トリアージ（判断モデル Jev＋LangGraph、JEV_ENABLED=1 のときだけ。詳しくは 11_報告書トリアージ_JevとLangGraph.md）
+- **判断モデルによる強化（2026-10-18）**：検索の並べ替え・質問の振り分け・引用の確かめ・帳票の読み取りの確かめ（FR-DM-01〜05、DECISIONS_ENABLED=1 のときだけ。詳しくは 14_判断モデルによる強化.md）。有効なとき、PDF・画像の取込の確信度は読み取りの確かめの結果で決める。AC-v50-15
+- チャットで切る OpenCode の元からある道具に apply_patch・websearch・skill・question を足す（OpenCode v1.19.0 の名前。2026-10-13。v4.1 までは前の一覧のまま）
 - MCP：完成形の追加で list_capa_actions・draft_capa_actions・create_capa_action・update_capa_action・generate_8d_report・generate_weekly_digest・preview_capa_update を足して **28本**
 
 ## 3. 正本の書き方（印）
